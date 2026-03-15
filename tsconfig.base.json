@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "baseUrl": ".",
+    "paths": {
+      "@mikage/config": ["packages/config/src/index.ts"],
+      "@mikage/domain": ["packages/domain/src/index.ts"],
+      "@mikage/contracts": ["packages/contracts/src/index.ts"],
+      "@mikage/database": ["packages/database/src/index.ts"],
+      "@mikage/queue": ["packages/queue/src/index.ts"],
+      "@mikage/storage": ["packages/storage/src/index.ts"],
+      "@mikage/logging": ["packages/logging/src/index.ts"],
+      "@mikage/testing": ["packages/testing/src/index.ts"]
+    }
+  }
+}

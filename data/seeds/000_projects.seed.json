@@ -1,0 +1,11 @@
+[
+  {
+    "slug": "mikage",
+    "name": "Mikage",
+    "status": "active",
+    "metadata": {
+      "source": "phase_3_layer_2",
+      "description": "Canonical project seed placeholder"
+    }
+  }
+]

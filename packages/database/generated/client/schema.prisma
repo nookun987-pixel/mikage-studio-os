@@ -1,0 +1,551 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../generated/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProjectStatus {
+  active
+  archived
+}
+
+enum RuleSeverity {
+  info
+  warning
+  blocker
+}
+
+enum RulepackType {
+  canon
+  review
+  benchmark
+}
+
+enum WorldEntityKind {
+  character
+  location
+  scene
+  shot
+  timeline_anchor
+  visual_dna_profile
+  artifact
+}
+
+enum WorldEntityStatus {
+  active
+  draft
+  archived
+}
+
+enum SnapshotStatus {
+  active
+  superseded
+}
+
+enum PromptPresetStatus {
+  active
+  draft
+  archived
+}
+
+enum VariantStatus {
+  active
+  draft
+  archived
+}
+
+enum ProviderCapability {
+  image_generation
+  text_generation
+}
+
+enum ProviderStatus {
+  active
+  disabled
+}
+
+enum JobStatus {
+  queued
+  running
+  completed
+  failed
+  blocked
+}
+
+enum JobStepStatus {
+  pending
+  running
+  passed
+  failed
+  blocked
+  retrying
+}
+
+enum ValidationStatus {
+  passed
+  failed
+}
+
+enum AssetStatus {
+  pending_review
+  approved
+  rejected
+  archived
+}
+
+enum RiskLevel {
+  low
+  medium
+  high
+}
+
+enum ReviewDecision {
+  pending
+  approved
+  rejected
+  revised
+}
+
+model Project {
+  id               String            @id @default(uuid()) @db.Uuid
+  slug             String            @unique
+  name             String
+  status           ProjectStatus     @default(active)
+  metadata         Json?
+  createdAt        DateTime          @default(now())
+  updatedAt        DateTime          @updatedAt
+  worldEntities    WorldEntity[]
+  promptPresets    PromptPreset[]
+  providerProfiles ProviderProfile[]
+  benchmarkSets    BenchmarkSet[]
+  jobs             Job[]
+  archives         Archive[]
+
+  @@map("projects")
+}
+
+model CanonRule {
+  id          String       @id @default(uuid()) @db.Uuid
+  ruleCode    String       @unique
+  layer       String
+  severity    RuleSeverity
+  description String
+  expression  Json?
+  metadata    Json?
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  @@map("canon_rules")
+}
+
+model ValidatorRulepack {
+  id           String       @id @default(uuid()) @db.Uuid
+  rulepackCode String       @unique
+  name         String
+  rulepackType RulepackType
+  version      Int          @default(1)
+  criteria     Json
+  metadata     Json?
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+
+  @@map("validator_rulepacks")
+}
+
+model WorldEntity {
+  id                 String                   @id @default(uuid()) @db.Uuid
+  projectId          String                   @db.Uuid
+  entityCode         String                   @unique
+  entityKind         WorldEntityKind
+  name               String
+  status             WorldEntityStatus        @default(active)
+  summary            String?
+  currentVersion     Int                      @default(1)
+  metadata           Json?
+  createdAt          DateTime                 @default(now())
+  updatedAt          DateTime                 @updatedAt
+  project            Project                  @relation(fields: [projectId], references: [id])
+  versions           WorldEntityVersion[]
+  sourceAnchors      TimelineAnchor[]         @relation("AnchorEntity")
+  characterSnapshots CharacterStateSnapshot[] @relation("SnapshotCharacter")
+  anchorSnapshots    CharacterStateSnapshot[] @relation("SnapshotAnchor")
+  sceneLinks         Scene[]                  @relation("SceneEntity")
+  shotLinks          Shot[]                   @relation("ShotEntity")
+
+  @@index([projectId, entityKind])
+  @@map("world_entities")
+}
+
+model WorldEntityVersion {
+  id            String      @id @default(uuid()) @db.Uuid
+  worldEntityId String      @db.Uuid
+  versionNumber Int
+  data          Json
+  metadata      Json?
+  createdAt     DateTime    @default(now())
+  worldEntity   WorldEntity @relation(fields: [worldEntityId], references: [id])
+
+  @@unique([worldEntityId, versionNumber])
+  @@map("world_entity_versions")
+}
+
+model TimelineAnchor {
+  id            String      @id @default(uuid()) @db.Uuid
+  worldEntityId String      @unique @db.Uuid
+  anchorCode    String      @unique
+  name          String
+  metadata      Json?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  worldEntity   WorldEntity @relation("AnchorEntity", fields: [worldEntityId], references: [id])
+
+  @@map("timeline_anchors")
+}
+
+model CharacterStateSnapshot {
+  id                String         @id @default(uuid()) @db.Uuid
+  characterEntityId String         @db.Uuid
+  anchorEntityId    String         @db.Uuid
+  snapshotCode      String         @unique
+  status            SnapshotStatus @default(active)
+  stateData         Json
+  metadata          Json?
+  createdAt         DateTime       @default(now())
+  updatedAt         DateTime       @updatedAt
+  characterEntity   WorldEntity    @relation("SnapshotCharacter", fields: [characterEntityId], references: [id])
+  anchorEntity      WorldEntity    @relation("SnapshotAnchor", fields: [anchorEntityId], references: [id])
+
+  @@unique([characterEntityId, anchorEntityId])
+  @@map("character_state_snapshots")
+}
+
+model Scene {
+  id            String      @id @default(uuid()) @db.Uuid
+  worldEntityId String      @unique @db.Uuid
+  sceneCode     String      @unique
+  name          String
+  metadata      Json?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  worldEntity   WorldEntity @relation("SceneEntity", fields: [worldEntityId], references: [id])
+  shots         Shot[]
+
+  @@map("scenes")
+}
+
+model Shot {
+  id            String      @id @default(uuid()) @db.Uuid
+  sceneId       String      @db.Uuid
+  worldEntityId String      @unique @db.Uuid
+  shotCode      String      @unique
+  name          String
+  metadata      Json?
+  createdAt     DateTime    @default(now())
+  updatedAt     DateTime    @updatedAt
+  scene         Scene       @relation(fields: [sceneId], references: [id])
+  worldEntity   WorldEntity @relation("ShotEntity", fields: [worldEntityId], references: [id])
+
+  @@index([sceneId])
+  @@map("shots")
+}
+
+model PromptPreset {
+  id                  String               @id @default(uuid()) @db.Uuid
+  projectId           String               @db.Uuid
+  presetCode          String               @unique
+  name                String
+  status              PromptPresetStatus   @default(active)
+  objective           String?
+  modality            String?
+  requiresState       Boolean              @default(false)
+  presetData          Json
+  metadata            Json?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  project             Project              @relation(fields: [projectId], references: [id])
+  variants            PromptVariant[]
+  compiledPromptPacks CompiledPromptPack[]
+
+  @@index([projectId])
+  @@map("prompt_presets")
+}
+
+model PromptVariant {
+  id                  String               @id @default(uuid()) @db.Uuid
+  presetId            String               @db.Uuid
+  variantCode         String               @unique
+  name                String
+  status              VariantStatus        @default(active)
+  variantData         Json
+  metadata            Json?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  preset              PromptPreset         @relation(fields: [presetId], references: [id])
+  compiledPromptPacks CompiledPromptPack[]
+
+  @@index([presetId])
+  @@map("prompt_variants")
+}
+
+model NegativeProfile {
+  id          String   @id @default(uuid()) @db.Uuid
+  profileCode String   @unique
+  name        String
+  profileData Json
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("negative_profiles")
+}
+
+model ProviderProfile {
+  id           String             @id @default(uuid()) @db.Uuid
+  projectId    String             @db.Uuid
+  providerCode String             @unique
+  name         String
+  capability   ProviderCapability
+  status       ProviderStatus     @default(active)
+  config       Json
+  metadata     Json?
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  project      Project            @relation(fields: [projectId], references: [id])
+  jobs         Job[]
+
+  @@index([projectId])
+  @@map("provider_profiles")
+}
+
+model Job {
+  id                  String               @id @default(uuid()) @db.Uuid
+  projectId           String               @db.Uuid
+  providerProfileId   String?              @db.Uuid
+  jobCode             String               @unique
+  status              JobStatus            @default(queued)
+  requestPayload      Json
+  metadata            Json?
+  createdAt           DateTime             @default(now())
+  updatedAt           DateTime             @updatedAt
+  project             Project              @relation(fields: [projectId], references: [id])
+  providerProfile     ProviderProfile?     @relation(fields: [providerProfileId], references: [id])
+  steps               JobStep[]
+  compiledPromptPacks CompiledPromptPack[]
+  validationReports   ValidationReport[]
+  assets              Asset[]
+  ingestionReports    IngestionReport[]
+  benchmarkScores     BenchmarkScore[]
+  driftReports        DriftReport[]
+  reviewTasks         ReviewTask[]
+  archives            Archive[]
+
+  @@index([projectId])
+  @@map("jobs")
+}
+
+model JobStep {
+  id            String        @id @default(uuid()) @db.Uuid
+  jobId         String        @db.Uuid
+  stepCode      String
+  stepName      String
+  status        JobStepStatus @default(pending)
+  inputPayload  Json?
+  outputPayload Json?
+  errorPayload  Json?
+  startedAt     DateTime?
+  completedAt   DateTime?
+  createdAt     DateTime      @default(now())
+  updatedAt     DateTime      @updatedAt
+  job           Job           @relation(fields: [jobId], references: [id])
+
+  @@unique([jobId, stepCode])
+  @@map("job_steps")
+}
+
+model CompiledPromptPack {
+  id             String        @id @default(uuid()) @db.Uuid
+  jobId          String        @db.Uuid
+  presetId       String        @db.Uuid
+  variantId      String        @db.Uuid
+  promptPackCode String        @unique
+  compiledPrompt String
+  negativePrompt String?
+  lineageData    Json?
+  metadata       Json?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+  job            Job           @relation(fields: [jobId], references: [id])
+  preset         PromptPreset  @relation(fields: [presetId], references: [id])
+  variant        PromptVariant @relation(fields: [variantId], references: [id])
+  assets         Asset[]
+
+  @@index([jobId])
+  @@map("compiled_prompt_packs")
+}
+
+model ValidationReport {
+  id         String           @id @default(uuid()) @db.Uuid
+  jobId      String           @db.Uuid
+  reportCode String           @unique
+  status     ValidationStatus
+  reportData Json
+  metadata   Json?
+  createdAt  DateTime         @default(now())
+  updatedAt  DateTime         @updatedAt
+  job        Job              @relation(fields: [jobId], references: [id])
+
+  @@index([jobId])
+  @@map("validation_reports")
+}
+
+model Asset {
+  id                   String              @id @default(uuid()) @db.Uuid
+  jobId                String              @db.Uuid
+  compiledPromptPackId String?             @db.Uuid
+  assetCode            String              @unique
+  status               AssetStatus         @default(pending_review)
+  storagePath          String?
+  publicUrl            String?
+  assetMetadata        Json?
+  createdAt            DateTime            @default(now())
+  updatedAt            DateTime            @updatedAt
+  job                  Job                 @relation(fields: [jobId], references: [id])
+  compiledPromptPack   CompiledPromptPack? @relation(fields: [compiledPromptPackId], references: [id])
+  manifests            AssetManifest[]
+  embeddingRecords     EmbeddingRecord[]
+  benchmarkScores      BenchmarkScore[]
+  driftReports         DriftReport[]
+  reviewTasks          ReviewTask[]
+
+  @@index([jobId])
+  @@map("assets")
+}
+
+model AssetManifest {
+  id           String   @id @default(uuid()) @db.Uuid
+  assetId      String   @db.Uuid
+  manifestCode String   @unique
+  manifestData Json
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  asset        Asset    @relation(fields: [assetId], references: [id])
+
+  @@index([assetId])
+  @@map("asset_manifests")
+}
+
+model IngestionReport {
+  id         String   @id @default(uuid()) @db.Uuid
+  jobId      String   @db.Uuid
+  reportCode String   @unique
+  reportData Json
+  metadata   Json?
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+  job        Job      @relation(fields: [jobId], references: [id])
+
+  @@index([jobId])
+  @@map("ingestion_reports")
+}
+
+model EmbeddingRecord {
+  id           String   @id @default(uuid()) @db.Uuid
+  assetId      String   @db.Uuid
+  providerCode String?
+  vector       Json?
+  metadata     Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  asset        Asset    @relation(fields: [assetId], references: [id])
+
+  @@index([assetId])
+  @@map("embedding_records")
+}
+
+model BenchmarkSet {
+  id            String           @id @default(uuid()) @db.Uuid
+  projectId     String           @db.Uuid
+  benchmarkCode String           @unique
+  name          String
+  criteria      Json
+  metadata      Json?
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  project       Project          @relation(fields: [projectId], references: [id])
+  scores        BenchmarkScore[]
+
+  @@index([projectId])
+  @@map("benchmark_sets")
+}
+
+model BenchmarkScore {
+  id             String       @id @default(uuid()) @db.Uuid
+  jobId          String       @db.Uuid
+  assetId        String       @db.Uuid
+  benchmarkSetId String       @db.Uuid
+  score          Decimal      @db.Decimal(5, 4)
+  scoreData      Json?
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  job            Job          @relation(fields: [jobId], references: [id])
+  asset          Asset        @relation(fields: [assetId], references: [id])
+  benchmarkSet   BenchmarkSet @relation(fields: [benchmarkSetId], references: [id])
+
+  @@unique([assetId, benchmarkSetId])
+  @@map("benchmark_scores")
+}
+
+model DriftReport {
+  id         String    @id @default(uuid()) @db.Uuid
+  jobId      String    @db.Uuid
+  assetId    String    @db.Uuid
+  reportCode String    @unique
+  riskLevel  RiskLevel
+  driftScore Decimal   @db.Decimal(5, 4)
+  reportData Json
+  createdAt  DateTime  @default(now())
+  updatedAt  DateTime  @updatedAt
+  job        Job       @relation(fields: [jobId], references: [id])
+  asset      Asset     @relation(fields: [assetId], references: [id])
+
+  @@index([jobId, assetId])
+  @@map("drift_reports")
+}
+
+model ReviewTask {
+  id        String         @id @default(uuid()) @db.Uuid
+  jobId     String         @db.Uuid
+  assetId   String         @db.Uuid
+  taskCode  String         @unique
+  decision  ReviewDecision @default(pending)
+  rationale String?
+  metadata  Json?
+  createdAt DateTime       @default(now())
+  updatedAt DateTime       @updatedAt
+  job       Job            @relation(fields: [jobId], references: [id])
+  asset     Asset          @relation(fields: [assetId], references: [id])
+
+  @@index([jobId, assetId])
+  @@map("review_tasks")
+}
+
+model Archive {
+  id          String   @id @default(uuid()) @db.Uuid
+  projectId   String   @db.Uuid
+  jobId       String?  @db.Uuid
+  archiveCode String   @unique
+  archiveData Json
+  metadata    Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  project     Project  @relation(fields: [projectId], references: [id])
+  job         Job?     @relation(fields: [jobId], references: [id])
+
+  @@index([projectId, jobId])
+  @@map("archives")
+}

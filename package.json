@@ -1,0 +1,26 @@
+{
+  "name": "mikage",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.6.2",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "format": "biome format --write .",
+    "check": "biome check .",
+    "prisma:generate": "pnpm --filter @mikage/database prisma:generate",
+    "db:push": "pnpm --filter @mikage/database db:push",
+    "seed": "tsx scripts/seed.ts",
+    "mvp:run": "tsx scripts/run-mvp-job.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/node": "^22.13.14",
+    "pg-embedded": "^0.2.3",
+    "tsx": "^4.19.3",
+    "turbo": "^2.4.4",
+    "typescript": "^5.8.2"
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "projectSlug": "mikage",
+    "presetCode": "mikage_cinematic_portrait",
+    "name": "Mikage Cinematic Portrait",
+    "status": "active",
+    "objective": "Compile a cinematic character portrait prompt pack.",
+    "modality": "image",
+    "requiresState": true,
+    "presetData": {
+      "outputMode": "cinematic_portrait",
+      "aspectRatio": "9:16",
+      "qualityTier": "mvp"
+    },
+    "metadata": {
+      "seedLayer": 2,
+      "notes": "Initial canonical preset scaffold"
+    }
+  }
+]

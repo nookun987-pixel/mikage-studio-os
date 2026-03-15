@@ -1,0 +1,18 @@
+{
+  "name": "@mikage/studio-web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/main.ts",
+  "types": "src/main.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "tsx src/main.ts",
+    "lint": "biome check src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mikage/contracts": "workspace:*",
+    "@mikage/logging": "workspace:*"
+  }
+}

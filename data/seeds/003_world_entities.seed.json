@@ -1,0 +1,64 @@
+{
+  "characters": [
+    {
+      "projectSlug": "mikage",
+      "entityCode": "char_mikage",
+      "name": "Mikage",
+      "summary": "Primary character seed placeholder for canonical rebuild.",
+      "status": "active",
+      "metadata": {
+        "archetype": "protagonist",
+        "seedLayer": 2
+      },
+      "version": {
+        "versionNumber": 1,
+        "data": {
+          "role": "character",
+          "tags": ["mikage", "heroine", "canonical-seed"]
+        }
+      }
+    }
+  ],
+  "locations": [
+    {
+      "projectSlug": "mikage",
+      "entityCode": "loc_rooftop_tokyo_night",
+      "name": "Storm Rooftop",
+      "summary": "Minimal location seed for early cinematic prompts.",
+      "status": "active",
+      "metadata": {
+        "environmentType": "rooftop",
+        "era": "modern-night"
+      },
+      "version": {
+        "versionNumber": 1,
+        "data": {
+          "weather": "storm",
+          "lighting": "neon-rain",
+          "region": "tokyo-inspired"
+        }
+      }
+    }
+  ],
+  "reference_styles": [
+    {
+      "projectSlug": "mikage",
+      "entityCode": "style_japanese_cinematic_ink",
+      "name": "Japanese Cinematic Ink",
+      "summary": "Reference style placeholder for visual DNA profile seeds.",
+      "status": "active",
+      "metadata": {
+        "styleFamily": "visual_dna_profile",
+        "sourceType": "seed"
+      },
+      "version": {
+        "versionNumber": 1,
+        "data": {
+          "brushwork": "ink wash",
+          "palette": ["indigo", "crimson", "charcoal"],
+          "composition": ["dynamic framing", "atmospheric depth"]
+        }
+      }
+    }
+  ]
+}
