@@ -1,5 +1,16 @@
-import { z } from 'zod';
-
-export const benchmarkRequestSchema = z.object({
-  assetCode: z.string().min(1)
-});
+export {
+  benchmarkAuditInputSchema,
+  benchmarkAuditRequestSchema,
+  benchmarkAuditResultSchema,
+  benchmarkDecisionShellSchema,
+  benchmarkFindingShellSchema,
+  benchmarkFlagShellSchema,
+  benchmarkSetReferenceShellSchema,
+  benchmarkSummaryShellSchema,
+  driftScoreShellSchema,
+  goldBenchmarkShellSchema,
+  redBenchmarkShellSchema,
+  riskScoreShellSchema,
+  similarityScoreShellSchema,
+  silverBenchmarkShellSchema
+} from '../benchmark-audit/index.js';

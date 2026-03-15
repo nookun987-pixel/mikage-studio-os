@@ -1,0 +1,23 @@
+{
+  "name": "@mikage/runtime-orchestration-boundary",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "biome check src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mikage/benchmark-auditor": "workspace:*",
+    "@mikage/canon-validator": "workspace:*",
+    "@mikage/contracts": "workspace:*",
+    "@mikage/persistence-shell": "workspace:*",
+    "@mikage/prompt-compiler": "workspace:*",
+    "@mikage/production-assembler": "workspace:*",
+    "@mikage/studio-control-shell": "workspace:*",
+    "zod": "^3.24.2"
+  }
+}

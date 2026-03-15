@@ -13,6 +13,16 @@
     "prisma:generate": "pnpm --filter @mikage/database prisma:generate",
     "db:push": "pnpm --filter @mikage/database db:push",
     "seed": "tsx scripts/seed.ts",
+    "smoke:layer3": "tsx scripts/smoke-layer3.ts",
+    "smoke:layer4": "tsx scripts/smoke-layer4.ts",
+    "smoke:layer5": "tsx scripts/smoke-layer5.ts",
+    "smoke:layer6": "tsx scripts/smoke-layer6.ts",
+    "smoke:layer7": "tsx scripts/smoke-layer7.ts",
+    "smoke:layer8": "tsx scripts/smoke-layer8.ts",
+    "smoke:layer9": "tsx scripts/smoke-layer9.ts",
+    "smoke:layer10": "tsx scripts/smoke-layer10.ts",
+    "smoke:layer11": "tsx scripts/smoke-layer11.ts",
+    "smoke:layer12": "tsx scripts/smoke-layer12.ts",
     "mvp:run": "tsx scripts/run-mvp-job.ts"
   },
   "devDependencies": {
