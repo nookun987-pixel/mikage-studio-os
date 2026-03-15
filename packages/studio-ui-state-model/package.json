@@ -1,0 +1,21 @@
+{
+  "name": "@mikage/studio-ui-state-model",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "biome check src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mikage/session-http-route-contracts": "workspace:*",
+    "@mikage/studio-execution-panel": "workspace:*",
+    "@mikage/studio-query-panel": "workspace:*",
+    "@mikage/studio-session-workspace": "workspace:*",
+    "@mikage/studio-worklist-panel": "workspace:*",
+    "zod": "^3.24.2"
+  }
+}

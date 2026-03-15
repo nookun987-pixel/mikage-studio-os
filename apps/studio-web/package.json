@@ -13,6 +13,11 @@
   },
   "dependencies": {
     "@mikage/contracts": "workspace:*",
-    "@mikage/logging": "workspace:*"
+    "@mikage/logging": "workspace:*",
+    "@mikage/studio-execution-panel": "workspace:*",
+    "@mikage/studio-query-panel": "workspace:*",
+    "@mikage/studio-session-workspace": "workspace:*",
+    "@mikage/studio-web-shell": "workspace:*",
+    "@mikage/studio-worklist-panel": "workspace:*"
   }
 }

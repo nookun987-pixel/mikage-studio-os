@@ -1,0 +1,19 @@
+{
+  "name": "@mikage/studio-session-workspace",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "biome check src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mikage/session-http-route-contracts": "workspace:*",
+    "@mikage/studio-host-clients": "workspace:*",
+    "@mikage/studio-session-application": "workspace:*",
+    "zod": "^3.24.2"
+  }
+}

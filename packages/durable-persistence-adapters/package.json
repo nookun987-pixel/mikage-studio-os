@@ -1,0 +1,22 @@
+{
+  "name": "@mikage/durable-persistence-adapters",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "biome check src",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@mikage/database": "workspace:*",
+    "@mikage/runtime-job-queue-adapter": "workspace:*",
+    "@mikage/runtime-session-store": "workspace:*",
+    "@mikage/structured-logging": "workspace:*",
+    "@mikage/studio-job-orchestration": "workspace:*",
+    "@mikage/studio-session-application": "workspace:*",
+    "zod": "^3.24.2"
+  }
+}

@@ -1,0 +1,38 @@
+services:
+  runtime-service-host:
+    image: node:22-bookworm
+    working_dir: /workspace
+    command: ["pnpm", "runtime:host"]
+    environment:
+      MIKAGE_HOST: 0.0.0.0
+      MIKAGE_PORT: "43154"
+      DATABASE_URL: ${DATABASE_URL}
+    volumes:
+      - ../../:/workspace
+    ports:
+      - "43154:43154"
+    depends_on:
+      postgres:
+        condition: service_started
+
+  worker-runtime-host:
+    image: node:22-bookworm
+    working_dir: /workspace
+    command: ["pnpm", "worker:host"]
+    environment:
+      MIKAGE_PROJECT_SLUG: mikage
+      DATABASE_URL: ${DATABASE_URL}
+    volumes:
+      - ../../:/workspace
+    depends_on:
+      postgres:
+        condition: service_started
+
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: mikage
+      POSTGRES_PASSWORD: mikage
+      POSTGRES_DB: mikage
+    ports:
+      - "5432:5432"
