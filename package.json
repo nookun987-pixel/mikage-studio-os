@@ -26,6 +26,9 @@
     "smoke:layer13": "tsx scripts/smoke-layer13.ts",
     "smoke:layer14": "tsx scripts/smoke-layer14.ts",
     "smoke:layer15": "pnpm exec tsx scripts/smoke-layer15.ts",
+    "smoke:layer16": "tsx scripts/smoke-layer16.ts",
+    "smoke:layer17": "tsx scripts/smoke-layer17.ts",
+    "smoke:layer18": "tsx scripts/smoke-layer18.ts",
     "mvp:run": "tsx scripts/run-mvp-job.ts"
   },
   "devDependencies": {
