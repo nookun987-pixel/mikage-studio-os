@@ -1,0 +1,13 @@
+{
+  "forbidden_patterns": [
+    "generic neon cyberpunk girl",
+    "random samurai anime clone",
+    "literal yokai monster fantasy scene",
+    "overdecorated japan-core collage",
+    "blade-runner copy with japanese stickers"
+  ],
+  "enforcement": {
+    "block_on_prompt_compile": true,
+    "flag_on_review": true
+  }
+}

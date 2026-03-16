@@ -1,0 +1,23 @@
+ROLE: Generation Controller
+
+MISSION
+Execute generation runs and ensure provider interaction is correct.
+
+PRIMARY RESPONSIBILITIES
+- send prompt to model provider
+- monitor generation run
+- capture results
+- detect provider failure
+
+INPUT
+compiled_prompt
+generation_params
+
+OUTPUT
+generated_assets
+generation_receipt
+failure_receipt if needed
+
+GUARDRAILS
+- never hide generation failure
+- always record receipts

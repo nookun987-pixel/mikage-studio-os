@@ -1,0 +1,16 @@
+{
+  "allowed_motifs": [
+    "seigaiha_wave",
+    "cloud",
+    "crane",
+    "bamboo",
+    "kitsune",
+    "spirit_animals"
+  ],
+  "conditional_motifs": [
+    "dragon",
+    "oni",
+    "yokai_parade"
+  ],
+  "usage_notes": "Conditional motifs must remain symbolic and system-driven, not literal fantasy characters."
+}

@@ -1,0 +1,58 @@
+{
+  "items": [
+    {
+      "id": "vg_wabi_sabi_fracture",
+      "label": "Wabi-Sabi Fracture",
+      "traits": ["fractured elegance", "asymmetric balance", "imperfection as identity"],
+      "composition_rules": ["preserve breathing room", "keep one dominant silhouette"],
+      "lighting_rules": ["soft directional", "highlight fracture seams only"],
+      "material_rules": ["porcelain", "weathered lacquer", "subtle gold seams"],
+      "negative_rules": ["avoid plastic smoothness", "avoid overpolished symmetry"]
+    },
+    {
+      "id": "vg_ma_negative_space",
+      "label": "Ma Negative Space",
+      "traits": ["visual silence", "interval rhythm", "sparse staging"],
+      "composition_rules": ["40-60% negative space", "remove non-essential props"],
+      "lighting_rules": ["low-noise key light", "avoid multi-source clutter"],
+      "material_rules": ["matte stone", "paper-like surfaces"],
+      "negative_rules": ["avoid dense clutter", "avoid random signage spam"]
+    },
+    {
+      "id": "vg_ukiyoe_poster_framing",
+      "label": "Ukiyo-e Poster Framing",
+      "traits": ["hero readability", "strong silhouette", "flat depth hierarchy"],
+      "composition_rules": ["poster-first framing", "clear foreground/background planes"],
+      "lighting_rules": ["focal contrast around hero", "minimal gradient noise"],
+      "material_rules": ["ink-edge contour", "pigment block color"],
+      "negative_rules": ["avoid cinematic depth overload", "avoid montage clutter"]
+    },
+    {
+      "id": "vg_kabuki_gesture",
+      "label": "Kabuki Gesture Discipline",
+      "traits": ["ceremonial pose", "expressive hand intent", "stage authority"],
+      "composition_rules": ["gesture near focal thirds", "keep limb silhouette clean"],
+      "lighting_rules": ["gesture accent light", "shadow for pose legibility"],
+      "material_rules": ["structured textile folds", "mask/crest accents"],
+      "negative_rules": ["avoid exaggerated cosplay action", "avoid random limb overlap"]
+    },
+    {
+      "id": "vg_neo_tokyo_verticality",
+      "label": "Neo Tokyo Verticality",
+      "traits": ["vertical density", "controlled signage rhythm", "silent megacity"],
+      "composition_rules": ["strong vertical axis", "use tiered depth bands"],
+      "lighting_rules": ["punctual neon pools", "dark massing dominance"],
+      "material_rules": ["wet concrete", "porcelain tech inserts", "brushed alloy"],
+      "negative_rules": ["avoid rainbow cyberpunk", "avoid blade-runner mimicry"]
+    },
+    {
+      "id": "vg_yokai_signal_symbolic",
+      "label": "Yokai Signal Symbolic",
+      "traits": ["folklore as signal", "non-literal motifs", "ritual-tech coding"],
+      "composition_rules": ["motif as secondary layer", "never replace hero read"],
+      "lighting_rules": ["mask edge highlights", "controlled ritual glow"],
+      "material_rules": ["engraved ceramic", "lacquer mask geometry"],
+      "negative_rules": ["avoid literal monster fantasy", "avoid mascot anime style"]
+    }
+  ]
+}

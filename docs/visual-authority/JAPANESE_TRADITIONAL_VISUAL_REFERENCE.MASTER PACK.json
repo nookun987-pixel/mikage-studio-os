@@ -1,0 +1,228 @@
+JAPANESE_TRADITIONAL_VISUAL_REFERENCE — MASTER PACK
+
+MỤC TIÊU
+Dùng toàn bộ bộ ảnh đã gom để làm dữ liệu học màu, chất liệu, bố cục và scene logic cho AI/Studio.
+Không dùng như bộ ảnh ngắm chơi.
+Dùng như visual knowledge pack.
+
+==================================================
+1. CẤU TRÚC DATASET
+==================================================
+
+A. edo_ukiyoe
+- số lượng: 41 ảnh
+- bản chất:
+  tranh khắc gỗ thời Edo
+- nhận diện:
+  indigo xanh, nền giấy beige, nét viền mực, màu phẳng, cảnh đời sống / phong cảnh / nhân vật
+- giá trị:
+  học palette chính, scene logic, bố cục phong cảnh, pigment truyền thống
+
+B. yamatoe_screen
+- số lượng: 12 ảnh
+- bản chất:
+  tranh cổ / bình phong / narrative screen / surface painting
+- nhận diện:
+  nền vàng hoặc giấy cổ, bố cục trải ngang, nhiều cảnh trên một mặt phẳng, cảm giác cung đình / cổ điển
+- giá trị:
+  học luxury palette, narrative spread, decorative composition
+
+C. momoyama_byobu
+- số lượng: 2 ảnh
+- bản chất:
+  bình phong vàng kiểu Momoyama
+- nhận diện:
+  nền gold leaf mạnh, cây tùng đậm, khoảng trống lớn, cảm giác sang trọng cổ điển
+- giá trị:
+  học luxury Japanese palette, negative space, premium decorative tone
+
+==================================================
+2. HỆ MÀU CHÍNH RÚT RA TỪ TOÀN BỘ BỘ ẢNH
+==================================================
+
+indigo_blue
+dusty_teal
+vermilion_red
+warm_paper_beige
+moss_green
+pine_green
+aged_gold
+earth_brown
+charcoal_black
+cloud_white
+ochre_earth
+
+==================================================
+3. PALETTE THEO NHÓM
+==================================================
+
+edo_ukiyoe_palette
+- indigo_blue
+- dusty_teal
+- vermilion_red
+- warm_paper_beige
+- moss_green
+- charcoal_black
+- faded_gold
+
+yamatoe_screen_palette
+- aged_gold
+- pine_green
+- deep_ink_black
+- earth_brown
+- faded_red
+- cloud_white
+
+momoyama_byobu_palette
+- gold_leaf
+- pine_green
+- dark_brown
+- ink_black
+- ochre_earth
+
+==================================================
+4. CHẤT LIỆU THỊ GIÁC AI PHẢI HỌC
+==================================================
+
+washi_paper
+woodblock_print
+mineral_pigment
+indigo_dye
+vegetal_dye
+ink_outline
+gold_leaf
+silk_painting
+ink_brush
+urushi_lacquer
+
+==================================================
+5. SCENE ARCHETYPES RÚT RA
+==================================================
+
+mount_fuji_landscape
+coastal_fishing
+bridge_crossing
+travelers_road
+rain_scene
+village_market
+temple_gate
+festival_street
+samurai_encounter
+courtesan_portrait
+boat_river_scene
+great_wave_ocean
+mountain_pass
+town_perspective
+imperial_court
+city_overview
+castle_complex
+battle_campaign
+ceremonial_procession
+river_settlement
+seasonal_landscape
+
+==================================================
+6. VISUAL GRAMMAR CHÍNH
+==================================================
+
+flat_color_planes
+ink_contour_lines
+asymmetric_balance
+negative_space_composition
+horizon_gradient
+diagonal_scene_flow
+foreground_midground_background
+narrative_panels
+bird_eye_composition
+cloud_cutaway
+decorative_pattern_fields
+multi_scene_surface
+luxury_surface
+decorative_minimalism
+
+==================================================
+7. AI SẼ HỌC ĐƯỢC GÌ TỪ PACK NÀY
+==================================================
+
+A. Color learning
+- muted indigo system
+- aged paper background logic
+- vermilion accent logic
+- gold luxury surface logic
+- natural earth tone harmony
+
+B. Composition learning
+- khoảng trống lớn có chủ đích
+- flow chéo trong phong cảnh
+- phân lớp trước / giữa / sau
+- silhouette rõ
+- horizon nhẹ, xa, trầm
+
+C. Scene learning
+- du hành / đường sá
+- sinh hoạt thường nhật
+- cung đình / nghi lễ
+- làng mạc / chợ / lễ hội
+- samurai / xung đột
+- thiên nhiên / núi / biển / mưa / sông
+
+D. Material learning
+- giấy cổ
+- mực
+- màu khoáng
+- nhuộm chàm
+- bề mặt vàng
+- tranh lụa / screen painting
+
+==================================================
+8. CÁCH HIỂU ĐÚNG VAI TRÒ TỪNG NHÓM
+==================================================
+
+edo_ukiyoe
+= nguồn chính để học màu Nhật cổ ứng dụng được ngay
+= mạnh nhất về indigo, beige giấy, vermilion, landscape, đời sống, print logic
+
+yamatoe_screen
+= nguồn chính để học bố cục kể chuyện và chất sang cổ
+= mạnh về gold, green, narrative spread, ceremonial composition
+
+momoyama_byobu
+= nguồn khóa chất premium / old-world / luxury Japanese
+= mạnh về gold-ground, pine silhouette, spacing, high-end editorial tone
+
+==================================================
+9. MỤC ĐÍCH DÙNG TRONG STUDIO
+==================================================
+
+visual_palette_system
+style_consistency
+prompt_grounding
+scene_generation
+material_realism
+editorial_art_direction
+premium_japanese_mood_control
+
+==================================================
+10. CHỐT CUỐI
+==================================================
+
+Toàn bộ bộ ảnh đã xem có thể đóng gói thành 1 visual knowledge pack như sau:
+
+DATASET NAME:
+japanese_traditional_visual_reference
+
+STYLE GROUPS:
+- edo_ukiyoe
+- yamatoe_screen
+- momoyama_byobu
+
+CORE OUTPUT FOR AI:
+- palette
+- material cues
+- scene archetypes
+- visual grammar
+
+TỨC LÀ:
+ảnh không chỉ để tham khảo
+mà đã được chuyển hóa thành dữ liệu thẩm mỹ có cấu trúc
+đủ để dùng làm nền cho AI học màu, học style, học scene và giữ art direction ổn định

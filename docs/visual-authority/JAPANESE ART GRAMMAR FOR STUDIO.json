@@ -1,0 +1,484 @@
+MASTER ONE-BLOCK PACK — JAPANESE ART GRAMMAR FOR STUDIO
+
+PURPOSE
+Turn the full Japanese Art Grammar system into one unified studio-ready pack:
+reference intelligence → preset family → mode variants → prompt compiler → API shape → seed direction.
+
+==================================================
+1) MASTER REFERENCE STYLE
+==================================================
+
+reference_style:
+  id: ref_japanese_art_grammar_master
+  slug: japanese-art-grammar-master
+  title: Japanese Art Grammar Master
+  culture: Japanese
+  period: Edo to Modern
+  movement: Ukiyo-e → Folklore → Manga / Anime
+  summary: Continuous Japanese visual grammar evolving from folklore storytelling and Edo woodblock prints into manga, anime, and game character design.
+  source_type: curated_internal_reference
+  notes: Preserve Edo visual grammar while adapting for modern character and concept design.
+
+==================================================
+2) MASTER VISUAL GRAMMAR
+==================================================
+
+grammar:
+
+  composition:
+    layout: vertical narrative poster
+    hero_focus: dominant central figure
+    support_elements:
+      - animals
+      - spirits
+      - symbolic objects
+    depth: flattened perspective
+    scene_logic: symbolic tableau storytelling
+
+  linework:
+    line_type: carved ink outline
+    line_weight: medium-heavy
+    variation: slight irregularity
+    shadow: minimal
+    style: graphic woodblock illustration
+
+  color_system:
+    pigment_type: flat mineral pigments
+    core_palette:
+      - indigo blue
+      - vermilion red
+      - ochre yellow
+      - moss green
+      - parchment beige
+    contrast: strong color blocks
+    gradient: none
+
+  material:
+    paper: washi paper
+    fiber_visibility: subtle
+    pigment_bleed: slight
+    texture: organic paper grain
+
+  motif:
+    animals:
+      - toad
+      - snake
+      - slug
+      - fox
+      - yokai spirits
+    nature_symbols:
+      - cloud swirl
+      - wave pattern
+      - mountain silhouette
+      - bamboo
+    story_logic: symbolic creatures represent natural or spiritual forces and interact with the hero through visual storytelling
+
+  character:
+    face:
+      skin: ivory pale
+      eyes: narrow almond
+      nose: straight minimal
+      mouth: small subtle
+      emotion: restrained
+    pose:
+      pose_type: kabuki theatrical stance
+      gesture: expressive hand movement
+      body_angle: dramatic twist
+
+  fashion:
+    bijin_ga_body:
+      body: elongated elegance
+      neck: long
+      shoulders: narrow
+      movement: restrained grace
+    hair:
+      style: shimada bun
+      structure: sculptural volume
+      accessory: hairpins and combs
+      outline: strong black contour
+    kimono_textile:
+      patterns:
+        - vertical stripes
+        - floral repeat
+        - geometric motifs
+      density: medium
+      colors: muted pigments
+
+  decorative:
+    cartouche:
+      shape: vertical red capsule
+      content: kanji brush lettering
+    cloud_swirl:
+      shape: rounded spiral cloud
+      function: decorative framing element
+    pattern_layers:
+      - textile motifs
+      - wave geometry
+      - repeating ornament
+
+  adaptation:
+    modern_bridge:
+      line: cleaner ink drawing or digital ink
+      color: brighter or more saturated palette
+      composition: narrative panels or dynamic action framing
+      emotion: more expressive faces
+
+==================================================
+3) PRESET FAMILY
+==================================================
+
+presets:
+
+  - slug: edo_folklore_print
+    title: Edo Folklore Print
+    preset_type: style_foundation
+    intent: folklore tableau illustration
+    subject_rule: central heroic or spiritual figure interacting with symbolic folklore creatures
+    composition_rule: vertical narrative poster, flattened perspective, dominant central figure, symbolic supporting elements
+    linework_rule: carved ink outline, medium-heavy weight, slight irregularity, minimal shadow
+    color_rule: flat mineral pigments using indigo, vermilion, ochre, moss green, parchment beige
+    material_rule: visible washi texture, subtle fiber grain, slight pigment bleed
+    motif_rule: include at least one folklore animal and one natural symbolic motif
+    wardrobe_rule: traditional Japanese robe or period costume
+    mood_rule: restrained, symbolic, mythic, ceremonial
+    decorative_rule: cloud swirl framing, optional red cartouche, patterned textiles
+    positive_prompt_template: Edo ukiyo-e inspired illustration, central heroic figure, symbolic folklore animals, decorative cloud swirl motifs, traditional Japanese costume, flat mineral pigment colors, carved woodblock ink outlines, visible washi paper texture, vertical narrative poster composition
+    negative_prompt_template: photorealism, cinematic depth blur, glossy 3D rendering, western costume, neon cyberpunk lighting, excessive gradients, soft airbrush shading, modern typography
+    default_params:
+      aspect_ratio: 2:3
+      stylization: high
+      detail_level: medium
+      palette_lock: true
+      texture_emphasis: medium
+
+  - slug: kabuki_actor_portrait
+    title: Kabuki Actor Portrait
+    preset_type: character_portrait
+    intent: dramatic theatrical portrait
+    subject_rule: single dominant character in theatrical kabuki pose
+    composition_rule: portrait-led vertical frame, dramatic twist, dominant face and hands
+    linework_rule: bold ink contour with minimal shadow
+    color_rule: flat pigments with strong red, indigo, parchment and black accents
+    material_rule: paper print feel and textile pattern emphasis
+    motif_rule: minimal symbolic props only
+    wardrobe_rule: kabuki costume styling and graphic patterning
+    mood_rule: dramatic, ceremonial, iconic
+    decorative_rule: optional cartouche and patterned border
+    positive_prompt_template: kabuki actor portrait, dramatic theatrical stance, bold carved ink contours, flat Edo pigment palette, strong pattern costume, iconic Japanese print composition, visible washi paper grain
+    negative_prompt_template: realistic photography, soft western fashion portrait, cinematic bokeh, metallic sci-fi armor, glossy skin, painterly oil brushwork
+    default_params:
+      aspect_ratio: 3:4
+      stylization: high
+      portrait_focus: face_hands
+      texture_emphasis: medium
+
+  - slug: bijin_ga_elegant_women
+    title: Bijin-ga Elegant Women
+    preset_type: female_beauty
+    intent: refined feminine elegance
+    subject_rule: elongated elegant female figure with restrained grace
+    composition_rule: vertical portrait or half-body composition with balanced posture
+    linework_rule: strong black contour, clean facial simplification, minimal shadow
+    color_rule: muted pigment palette with elegant textile accents
+    material_rule: silk and paper feel, subtle pattern rhythm
+    motif_rule: light decorative elements and floral geometry
+    wardrobe_rule: kimono with floral or geometric textile patterns, shimada bun with hairpins
+    mood_rule: refined, distant, graceful, poised
+    decorative_rule: ornamental pattern fields and optional calligraphic framing
+    positive_prompt_template: bijin-ga inspired elegant woman, elongated graceful proportions, shimada bun with hairpins, patterned kimono, strong black contour, muted Edo pigment palette, refined Japanese print composition, visible paper texture
+    negative_prompt_template: modern streetwear, glossy fashion editorial photography, hyperreal skin rendering, western hairstyle, excessive facial emotion, neon gradients, plastic textures
+    default_params:
+      aspect_ratio: 3:4
+      stylization: high
+      detail_level: medium
+      beauty_focus: hair_kimono_face
+
+  - slug: yokai_creature_scene
+    title: Yokai Creature Scene
+    preset_type: creature_scene
+    intent: mythic supernatural tableau
+    subject_rule: supernatural yokai or symbolic creature as dominant subject or force in scene
+    composition_rule: story tableau with flattened depth and strong silhouette staging
+    linework_rule: bold carved outlines with graphic clarity
+    color_rule: high-contrast flat pigment blocks with mythic atmosphere
+    material_rule: paper, ink and organic texture emphasis
+    motif_rule: cloud swirl, mountain, wave, spirit symbols
+    wardrobe_rule: optional period garments if human character present
+    mood_rule: uncanny, mythic, symbolic, ritualistic
+    decorative_rule: graphic framing and folklore symbols
+    positive_prompt_template: Edo folklore yokai scene, supernatural creature tableau, bold carved outlines, flat mineral pigments, symbolic cloud and wave motifs, Japanese print composition, visible washi texture
+    negative_prompt_template: 3D monster rendering, cinematic horror realism, slime CGI, western fantasy armor, deep perspective realism, modern action poster typography
+    default_params:
+      aspect_ratio: 2:3
+      stylization: high
+      silhouette_emphasis: high
+      mood_density: medium_high
+
+  - slug: edo_manga_hybrid
+    title: Edo Manga Hybrid
+    preset_type: hybrid_modern
+    intent: modern character design built on Edo grammar
+    subject_rule: central anime-style or manga-style hero built on ukiyo-e composition and symbolism
+    composition_rule: central hero framing with optional action energy while preserving graphic poster structure
+    linework_rule: clean digital ink inheriting carved contour logic
+    color_rule: saturated modern palette anchored by indigo, vermilion, ochre and parchment base
+    material_rule: paper-print influence mixed with clean illustration finish
+    motif_rule: animal spirit summons, cloud swirl graphics, symbolic props
+    wardrobe_rule: hybrid traditional-modern Japanese costume language
+    mood_rule: mythic, stylish, dynamic, iconic
+    decorative_rule: graphic framing, symbolic motifs, manga-era readability
+    positive_prompt_template: modern manga character design based on Edo ukiyo-e grammar, central hero composition, animal spirit motif, cloud swirl graphics, clean digital ink, saturated but controlled Japanese palette, symbolic costume design, iconic poster-like framing
+    negative_prompt_template: generic shonen screenshot, random sci-fi clutter, western superhero anatomy, 3D game render, photographic lighting, uncontrolled neon palette, empty background
+    default_params:
+      aspect_ratio: 3:4
+      stylization: medium_high
+      readability: high
+      hybrid_balance: edo_60_modern_40
+
+==================================================
+4) SHARED MODE VARIANTS
+==================================================
+
+variants:
+
+  - code: canon_core
+    title: Canon Core
+    mode: canon_core
+    delta_composition_rule: preserve flattened perspective, vertical poster logic, restrained storytelling
+    delta_color_rule: strictly limit palette to Edo mineral pigments and muted print behavior
+    delta_mood_rule: restrained, ceremonial, timeless
+    delta_prompt_append: preserve historical print grammar, avoid excessive modern stylization
+    delta_negative_append: anime facial exaggeration, glossy rendering, cinematic realism, modern fashion drift
+    params_override:
+      stylization: high
+      palette_lock: true
+      historical_fidelity: high
+
+  - code: luminous_fan_appeal
+    title: Luminous Fan Appeal
+    mode: luminous_fan_appeal
+    delta_composition_rule: increase clarity of hero silhouette and visual attraction while keeping poster logic
+    delta_color_rule: slightly brighter pigments with stronger focal contrast
+    delta_mood_rule: alluring, elegant, emotionally magnetic
+    delta_prompt_append: enhance hero appeal, improve silhouette attraction, preserve Edo symbolic structure
+    delta_negative_append: cheap idol gloss, overexposed highlights, plastic skin, random modern glam
+    params_override:
+      stylization: medium_high
+      fan_appeal_boost: medium
+      contrast_focus: hero
+
+  - code: luxury_mystical_editorial
+    title: Luxury Mystical Editorial
+    mode: luxury_mystical_editorial
+    delta_composition_rule: retain symbolic framing but add premium editorial elegance and stronger visual hierarchy
+    delta_color_rule: controlled luxury palette using deep indigo, aged gold, parchment and lacquer accents
+    delta_mood_rule: mystical, refined, elite, iconic
+    delta_prompt_append: premium visual hierarchy, refined ornamental elegance, mythic luxury atmosphere
+    delta_negative_append: cheap fantasy clutter, oversaturated anime colors, gaudy gold overload, noisy background
+    params_override:
+      stylization: high
+      luxury_tone: high
+      ornament_density: medium
+
+==================================================
+5) OBJECTIVE OVERRIDE MAP
+==================================================
+
+objective_overrides:
+  poster: iconic poster readability, strong focal hierarchy, clean hero silhouette
+  character_sheet: clear costume readability, front-facing design clarity, silhouette integrity
+  lore_scene: denser symbolic motifs, mythic environment storytelling, narrative object placement
+  social_asset: high visual clarity, compact symbolic framing, eye-catching central design
+  key_visual: premium composition balance, striking hero presentation, refined decorative rhythm
+
+==================================================
+6) PROMPT COMPILER LOGIC
+==================================================
+
+compile_order:
+  - subject_rule
+  - composition_rule
+  - linework_rule
+  - color_rule
+  - material_rule
+  - motif_rule
+  - wardrobe_rule
+  - mood_rule
+  - decorative_rule
+  - variant.delta_prompt_append
+  - objective_override
+  - subject_override_if_any
+
+positive_prompt_skeleton:
+  [subject_rule], [composition_rule], [linework_rule], [color_rule], [material_rule], [motif_rule], [wardrobe_rule], [mood_rule], [decorative_rule], [variant.delta_prompt_append], [objective_override], [subject_override_if_any]
+
+negative_prompt_skeleton:
+  [preset.negative_prompt_template], [variant.delta_negative_append], [objective_specific_negatives_if_any]
+
+compiler_rules:
+  - if preset == bijin_ga_elegant_women, auto preserve hair + kimono elegance
+  - if preset == edo_manga_hybrid, allow clean digital ink and modern readability
+  - if objective == poster, force strong focal hierarchy
+  - if objective == lore_scene, increase motif density
+  - if variant == canon_core, reduce modern drift
+  - if variant == luminous_fan_appeal, boost silhouette attraction without breaking Edo base
+  - if variant == luxury_mystical_editorial, increase ornamental refinement and premium mood
+
+==================================================
+7) EXAMPLE COMPILED OUTPUT
+==================================================
+
+example_a:
+  preset: edo_folklore_print
+  variant: canon_core
+  objective: lore_scene
+  positive_prompt: Edo ukiyo-e inspired illustration, central heroic or spiritual figure interacting with symbolic folklore creatures, vertical narrative poster, flattened perspective, dominant central figure, symbolic supporting elements, carved ink outline, medium-heavy weight, slight irregularity, minimal shadow, flat mineral pigments using indigo, vermilion, ochre, moss green, parchment beige, visible washi texture, subtle fiber grain, slight pigment bleed, include at least one folklore animal and one natural symbolic motif, traditional Japanese robe or period costume, restrained, symbolic, mythic, ceremonial mood, cloud swirl framing, optional red cartouche, patterned textiles, preserve historical print grammar, avoid excessive modern stylization, denser symbolic motifs, mythic environment storytelling, narrative object placement
+  negative_prompt: photorealism, cinematic depth blur, glossy 3D rendering, western costume, neon cyberpunk lighting, excessive gradients, soft airbrush shading, modern typography, anime facial exaggeration, glossy rendering, cinematic realism, modern fashion drift
+
+example_b:
+  preset: edo_manga_hybrid
+  variant: luminous_fan_appeal
+  objective: poster
+  positive_prompt: modern manga character design based on Edo ukiyo-e grammar, central anime-style or manga-style hero built on ukiyo-e composition and symbolism, central hero framing with optional action energy while preserving graphic poster structure, clean digital ink inheriting carved contour logic, saturated modern palette anchored by indigo, vermilion, ochre and parchment base, paper-print influence mixed with clean illustration finish, animal spirit summons, cloud swirl graphics, symbolic props, hybrid traditional-modern Japanese costume language, mythic, stylish, dynamic, iconic mood, graphic framing, symbolic motifs, manga-era readability, enhance hero appeal, improve silhouette attraction, preserve Edo symbolic structure, iconic poster readability, strong focal hierarchy, clean hero silhouette
+  negative_prompt: generic shonen screenshot, random sci-fi clutter, western superhero anatomy, 3D game render, photographic lighting, uncontrolled neon palette, empty background, cheap idol gloss, overexposed highlights, plastic skin, random modern glam
+
+==================================================
+8) MINIMAL API SHAPE
+==================================================
+
+POST /api/mikage/reference-styles
+POST /api/mikage/reference-styles/:id/blocks
+POST /api/mikage/presets/from-reference
+GET  /api/mikage/presets
+GET  /api/mikage/reference-styles/:id
+POST /api/mikage/compile-prompt
+
+==================================================
+9) UI REQUIREMENT
+==================================================
+
+Expose one coherent flow in Prompt Lab / Reference Library:
+
+Reference Style
+→ View Japanese Art Grammar Master
+→ Choose Preset
+→ Choose Variant
+→ Choose Objective
+→ Optional Subject Override
+→ Preview Positive Prompt
+→ Preview Negative Prompt
+→ Save Compiled Prompt Recipe
+→ Send to Generate
+
+Must show lineage:
+reference_style → preset → variant → objective → compiled_prompt
+
+==================================================
+10) SEED DIRECTION
+==================================================
+
+seed_reference_style:
+  - Japanese Art Grammar Master
+
+seed_presets:
+  - edo_folklore_print
+  - kabuki_actor_portrait
+  - bijin_ga_elegant_women
+  - yokai_creature_scene
+  - edo_manga_hybrid
+
+seed_variants:
+  - canon_core
+  - luminous_fan_appeal
+  - luxury_mystical_editorial
+
+==================================================
+11) TASK MASTER CHO CODEX
+==================================================
+
+AUDIT REPO FIRST, then implement one coherent Japanese Art Grammar ingestion system for the studio.
+
+GOAL
+Turn the curated Japanese Art Grammar into structured studio reference intelligence, reusable presets, shared mode variants, and deterministic prompt compilation.
+
+IMPLEMENT
+- Add normalized support for:
+  reference_styles
+  reference_grammar_blocks
+  studio_presets
+  preset_variants
+  compiled_prompt_recipes
+- Preserve backward compatibility with current mikage workflow data
+- Reuse current store/controller patterns where possible
+- Seed one master reference style:
+  Japanese Art Grammar Master
+- Seed the grammar blocks for:
+  composition
+  linework
+  color_system
+  material
+  motif
+  character
+  fashion
+  decorative
+  adaptation
+- Seed 5 presets:
+  edo_folklore_print
+  kabuki_actor_portrait
+  bijin_ga_elegant_women
+  yokai_creature_scene
+  edo_manga_hybrid
+- Seed 3 shared variants:
+  canon_core
+  luminous_fan_appeal
+  luxury_mystical_editorial
+- Add prompt compile logic using:
+  subject
+  composition
+  linework
+  color
+  material
+  motif
+  wardrobe
+  mood
+  decorative
+  variant delta
+  objective override
+- Support objectives:
+  poster
+  character_sheet
+  lore_scene
+  social_asset
+  key_visual
+- Add only minimal consistent endpoints:
+  POST /api/mikage/reference-styles
+  POST /api/mikage/reference-styles/:id/blocks
+  POST /api/mikage/presets/from-reference
+  POST /api/mikage/compile-prompt
+  GET /api/mikage/presets
+  GET /api/mikage/reference-styles/:id
+- Expose in Prompt Lab or Reference Library:
+  browse Japanese Art Grammar master reference
+  create preset from reference
+  choose preset + variant + objective
+  preview compiled positive/negative prompt
+  show lineage back to reference source
+- Add integration coverage for:
+  seed load
+  preset creation from reference
+  prompt compile correctness
+  variant delta application
+  objective override application
+
+DELIVERY FORMAT
+After implementation return only:
+1. repo conclusion
+2. implemented items
+3. files changed
+4. remaining next gap
+
+==================================================
+12) USE THIS NOW
+==================================================
+
+If chưa code DB ngay, lưu nguyên block này thành 1 file seed nội bộ rồi cho studio đọc trực tiếp ở Prompt Lab / Reference Library trước. Đây là bản gom hoàn chỉnh, không cần tự đi ghép lại nữa.

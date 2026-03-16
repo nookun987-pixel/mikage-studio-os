@@ -1,0 +1,34 @@
+{
+  "preset_families": [
+    {
+      "preset_id": "porcelain_tokyo_canon",
+      "summary": "Core Mikage baseline with quiet luxury, fracture identity, and disciplined Japanese futurism.",
+      "visual_dna": ["porcelain tech", "wabi_sabi fracture", "poster framing", "strong silhouette"],
+      "allowed_motifs": ["seigaiha_wave", "cloud", "crane", "bamboo", "kitsune"],
+      "forbidden_motifs": ["literal oni monster", "crowd yokai fantasy", "random dragon spam"],
+      "compatible_objectives": ["poster", "key_visual", "character_sheet"],
+      "compatible_variants": ["canon_core", "luminous_fan_appeal"],
+      "example_prompt_modules": ["pm_wabi_porcelain", "pm_ukiyoe_outline", "pm_kabuki_pose"]
+    },
+    {
+      "preset_id": "neon_ma_editorial",
+      "summary": "Tokyo future with silence and negative space, minimal composition, high-fashion sci-fi atmosphere.",
+      "visual_dna": ["ma", "silent city", "editorial restraint", "indigo-charcoal base with vermilion accents"],
+      "allowed_motifs": ["vertical_signage", "cloud", "seigaiha_wave"],
+      "forbidden_motifs": ["rainbow neon collage", "chaotic signage spam"],
+      "compatible_objectives": ["poster", "social_asset", "key_visual"],
+      "compatible_variants": ["luminous_fan_appeal", "luxury_mystical_editorial"],
+      "example_prompt_modules": ["pm_ma_silence", "pm_neo_tokyo_silent_density"]
+    },
+    {
+      "preset_id": "yokai_signal_reinterpretation",
+      "summary": "Symbolic folklore translated into technology motifs, never literal fantasy monsters.",
+      "visual_dna": ["ritual interface", "mask geometry", "signal motifs", "controlled threat"],
+      "allowed_motifs": ["kitsune", "spirit_animals", "oni (symbolic)", "yokai_parade (abstract)"],
+      "forbidden_motifs": ["monster battle scenes", "anime mascot styling", "RPG fantasy creature design"],
+      "compatible_objectives": ["lore_scene", "key_visual", "social_asset"],
+      "compatible_variants": ["luxury_mystical_editorial"],
+      "example_prompt_modules": ["pm_yokai_signal", "pm_kabuki_pose"]
+    }
+  ]
+}

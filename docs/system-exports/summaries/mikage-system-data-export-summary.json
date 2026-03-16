@@ -1,0 +1,50 @@
+{
+  "files_created": [
+    "docs/asset-system/asset_types.json",
+    "docs/asset-system/asset_naming_rules.md",
+    "docs/asset-system/asset_metadata_schema.json",
+    "docs/asset-system/asset_folder_structure.md",
+    "docs/style-guardrails/style_violation_rules.json",
+    "docs/style-guardrails/aesthetic_limits.md",
+    "docs/style-guardrails/prohibited_styles.json",
+    "docs/style-guardrails/canon_style_signature.json",
+    "docs/lore-core/mikage_identity.md",
+    "docs/lore-core/world_context.md",
+    "docs/lore-core/technology_philosophy.md",
+    "docs/lore-core/symbolic_system.md",
+    "configs/generation/image_models.json",
+    "configs/generation/render_modes.json",
+    "configs/generation/aspect_ratio_presets.json",
+    "configs/generation/quality_profiles.json",
+    "configs/generation/seed_rules.json",
+    "datasets/visual-index/dataset_index.json",
+    "datasets/visual-index/dataset_tags.json",
+    "datasets/visual-index/dataset_sources.md",
+    "datasets/visual-index/dataset_quality_rules.json",
+    "studio-os/agent_registry.json",
+    "studio-os/pipeline_routes.json",
+    "studio-os/task_templates.json",
+    "studio-os/production_modes.json"
+  ],
+  "files_updated": [
+    "docs/prompt-canon/prompt_structure.md",
+    "docs/prompt-canon/prompt_tokens_reference.json",
+    "docs/prompt-canon/prompt_style_modules.json",
+    "docs/prompt-canon/negative_prompt_rules.json",
+    "docs/prompt-canon/generation_modes.json"
+  ],
+  "placeholders_introduced": [
+    "docs/prompt-canon/negative_prompt_rules.json::negative_profiles.neg_pop_glamour_excess",
+    "docs/lore-core/mikage_identity.md::civilian_identity",
+    "docs/lore-core/mikage_identity.md::biography_timeline",
+    "docs/lore-core/world_context.md::faction_chronology",
+    "docs/lore-core/world_context.md::city_map"
+  ],
+  "unresolved_dependencies": [
+    "prompt-canon legacy reference to neg_pop_glamour_excess remains undefined in provided source stack",
+    "detailed Mikage biography timeline not present in provided source stack",
+    "detailed faction chronology and city topology not present in provided source stack",
+    "vendor-specific model bindings intentionally left unspecified in image_models.json"
+  ],
+  "recommended_next_lock_step": "Run canon audit on these new scaffolding packs, then connect them to the existing validator / ingest runtime so every generation receipt writes against the new schemas and mode registries."
+}

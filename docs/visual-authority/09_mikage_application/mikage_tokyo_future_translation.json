@@ -1,0 +1,14 @@
+{
+  "translation_map": {
+    "wabi_sabi": "fractured porcelain armor and imperfect seam detail",
+    "ma": "negative-space urban staging and low-clutter compositions",
+    "mono_no_aware": "quiet melancholy in lighting and gesture",
+    "ukiyoe_poster_framing": "hero-first readable campaign compositions",
+    "kabuki_pose": "ceremonial body language for run key frames"
+  },
+  "application_modes": [
+    "porcelain_tokyo_canon",
+    "neon_ma_editorial",
+    "yokai_signal_reinterpretation"
+  ]
+}

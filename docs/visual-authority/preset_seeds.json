@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "preset_id": "porcelain_tokyo_canon_seed",
+      "preset_label": "Porcelain Tokyo Canon Seed",
+      "base_reference": ["wabi_sabi", "ma", "poster_framing", "porcelain_neon_tokyo"],
+      "compatible_variants": ["canon_core", "luminous_fan_appeal"],
+      "suggested_objectives": ["poster", "key_visual", "character_sheet"],
+      "seed_policy_hint": "lock"
+    },
+    {
+      "preset_id": "neon_ma_editorial_seed",
+      "preset_label": "Neon Ma Editorial Seed",
+      "base_reference": ["ma", "flat_perspective", "rain_neon_alley", "indigo_red_ink"],
+      "compatible_variants": ["luminous_fan_appeal", "luxury_mystical_editorial"],
+      "suggested_objectives": ["poster", "social_asset"],
+      "seed_policy_hint": "reuse canon"
+    },
+    {
+      "preset_id": "yokai_signal_reinterpretation_seed",
+      "preset_label": "Yokai Signal Reinterpretation Seed",
+      "base_reference": ["kitsune", "oni", "ritual_interface", "moss_ochre"],
+      "compatible_variants": ["luxury_mystical_editorial"],
+      "suggested_objectives": ["lore_scene", "key_visual"],
+      "seed_policy_hint": "independent"
+    }
+  ]
+}

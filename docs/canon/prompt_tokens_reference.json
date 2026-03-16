@@ -1,0 +1,167 @@
+{
+  "pack_name": "mikage_prompt_canon",
+  "version": "1.0.0-export",
+  "sources": [
+    "MIKAGE_PROJECT_MASTER.md",
+    "03_Mikage_Prompt_Pack.txt",
+    "04_Studio_Test_Workflow.txt",
+    "MIKAGE — PROMPT COMPILER CONFIG PACK v1.md",
+    "MIKAGE — SEED DATA PACK v1.md",
+    "Japanese Visual Aesthetics AI Knowledge Packs.md",
+    "JAPANESE_TRADITIONAL_VISUAL_REFERENCE.MASTER PACK.json"
+  ],
+  "identity_tokens": [
+    "Mikage",
+    "sovereign porcelain warrior",
+    "calm introspective presence",
+    "minimal emotion",
+    "strong visual gravity",
+    "porcelain-like elegance",
+    "restrained futuristic aesthetic",
+    "Mikage standing with calm authority",
+    "Mikage standing like a museum sculpture"
+  ],
+  "mask_tokens": [
+    "perfectly symmetrical glossy white porcelain Kitsune mask",
+    "mirror polished porcelain mask",
+    "porcelain mask reflecting subtle highlights"
+  ],
+  "hair_tokens": [
+    "long black hair moving with restrained elegance",
+    "long hair moving in wind",
+    "delicate hair movement"
+  ],
+  "material_tokens": [
+    "ceramic armor plates",
+    "polished porcelain armor",
+    "minimal porcelain couture armor",
+    "matte carbon fiber reinforcement",
+    "refined carbon fiber textures",
+    "oxidized titanium joints",
+    "fine fracture lines revealing crimson internal energy",
+    "polished_ceramic",
+    "matte_porcelain",
+    "carbon_fiber",
+    "dark_titanium",
+    "porcelain_finish",
+    "couture_structural_layers",
+    "minimalist_ceramic_armor"
+  ],
+  "environment_tokens": [
+    "industrial megacity structures",
+    "wet surfaces reflecting faint light",
+    "dense cables and brutalist architecture",
+    "cinematic urban environment",
+    "controlled neon reflections",
+    "wet reflective surfaces",
+    "pure obsidian black void",
+    "subtle atmospheric haze",
+    "storm rain sweeping across rooftop",
+    "vast cyberpunk skyline behind",
+    "wind moving through cables",
+    "rain soaked neon street",
+    "steam rising from vents",
+    "reflections on wet asphalt",
+    "absolute black void",
+    "minimal atmospheric fog"
+  ],
+  "lighting_tokens": [
+    "high contrast chiaroscuro lighting",
+    "sharp rim light outlining silhouette",
+    "cold reflections sliding across porcelain surface",
+    "dramatic cinematic rim light",
+    "soft cold reflections",
+    "studio chiaroscuro lighting",
+    "thin rim light isolating silhouette",
+    "high_contrast_chiaroscuro",
+    "razor_rim_light",
+    "contained_specular_reflection",
+    "studio_chiaroscuro",
+    "thin_rim_isolation",
+    "cold_specular_edges"
+  ],
+  "camera_tokens": [
+    "cinematic anamorphic composition",
+    "controlled framing",
+    "extreme depth of field",
+    "ARRI Alexa 65 cinematic photography",
+    "cinematic portrait framing",
+    "ultra-detailed 8k photography",
+    "high fashion editorial photography",
+    "85mm anamorphic portrait lens",
+    "anamorphic",
+    "controlled composition",
+    "chiaroscuro bias"
+  ],
+  "mode_keywords": {
+    "canon_core": [
+      "clean portrait",
+      "soft lighting",
+      "minimal composition",
+      "editorial simplicity",
+      "baseline character representation"
+    ],
+    "luminous_fan_appeal": [
+      "radiant lighting",
+      "strong eye contact",
+      "vivid color accents",
+      "fan attraction and social appeal",
+      "luminous idol aesthetic portrait",
+      "captivating gaze",
+      "subtle sparkle highlights"
+    ],
+    "luxury_mystical_editorial": [
+      "dramatic lighting",
+      "dark palette",
+      "mystical elegance",
+      "high-fashion campaign visuals",
+      "dramatic chiaroscuro lighting",
+      "ethereal porcelain skin texture",
+      "avant-garde editorial composition"
+    ]
+  },
+  "palette_tokens": {
+    "core_hex": [
+      "#FAFAFA",
+      "#0A0A0A",
+      "#E60000"
+    ],
+    "controlled_extensions": [
+      "indigo",
+      "moss",
+      "cyan",
+      "purple",
+      "aged gold"
+    ],
+    "japanese_art_palette": [
+      "indigo blue",
+      "vermilion red",
+      "ochre yellow",
+      "moss green",
+      "parchment beige",
+      "aged gold",
+      "warm paper beige",
+      "cloud white",
+      "charcoal black"
+    ]
+  },
+  "composition_tokens": [
+    "minimalist breathing room",
+    "high-contrast silhouette",
+    "subject isolation",
+    "negative space composition",
+    "asymmetric balance",
+    "foreground occlusion",
+    "flattened perspective",
+    "vertical narrative poster"
+  ],
+  "drift_warning_tokens": [
+    "cheap fantasy styling",
+    "generic anime idol look",
+    "excessive visual clutter",
+    "loss of Mikage identity",
+    "childish anime character",
+    "exaggerated idol caricature",
+    "cartoonish fantasy figure"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "library_id": "calligraphy_line_system",
+  "items": [
+    {
+      "id": "fude_pressure_modulation",
+      "title": "Fude Pressure Modulation",
+      "summary": "Line weight transitions encode rhythm and intent.",
+      "line_traits": ["thick-thin modulation", "decisive stroke end", "breathing intervals"],
+      "studio_use": "Use for silhouette accents and interface stroke hierarchy.",
+      "tags": ["calligraphy", "line_system", "editorial", "canon_safe"]
+    },
+    {
+      "id": "tategaki_flow",
+      "title": "Tategaki Flow",
+      "summary": "Vertical writing rhythm translated into vertical composition.",
+      "line_traits": ["vertical cadence", "column hierarchy", "spatial pauses"],
+      "studio_use": "Use in vertical signage, UI stacks, and portrait framing.",
+      "tags": ["vertical", "ma", "neo_tokyo", "canon_safe"]
+    }
+  ]
+}

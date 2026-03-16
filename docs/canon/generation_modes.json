@@ -1,0 +1,138 @@
+{
+  "pack_name": "mikage_generation_modes",
+  "version": "1.0.0-export",
+  "modes": [
+    {
+      "mode": "canon_core",
+      "preset_id": "preset_canon_core",
+      "reference_style_id": "ref_porcelain_void",
+      "purpose": "baseline character representation",
+      "characteristics": [
+        "clean portrait",
+        "soft lighting",
+        "minimal composition",
+        "editorial simplicity"
+      ],
+      "use_cases": [
+        "lore illustration",
+        "reference images"
+      ],
+      "visual_intention": "Giữ đúng linh hồn Mikage. Tinh tế, porcelain elegance, editorial portrait sạch, không phá canon.",
+      "positive_prompt": "Mikage Zenith portrait, porcelain skin elegance, refined beauty, calm introspective gaze, minimal emotion but strong presence, high fashion editorial portrait, luxury photography, soft diffused studio lighting, subtle porcelain texture skin, minimalist background, cinematic clarity, elegant posture, graceful hands, couture inspired styling, clean composition, professional fashion photography, delicate highlights, sophisticated atmosphere, editorial magazine quality, ultra detailed, natural skin texture, controlled lighting, shallow depth of field",
+      "negative_prompt_profile_ids": [
+        "neg_childish_idol",
+        "neg_generic_neon",
+        "neg_fantasy_magic"
+      ],
+      "negative_prompt": "low quality, blurry, oversharpened, overprocessed skin, plastic skin texture, exaggerated anime style, childish proportions, distorted anatomy, extra limbs, bad hands, deformed fingers, clutter background, messy lighting, noisy shadows, cheap fantasy aesthetic, low resolution, jpeg artifacts, watermark, text artifacts, logo, duplicate face",
+      "sampler": "DPM++ 2M Karras",
+      "steps": 30,
+      "cfg": 6.5,
+      "seed_rule": "lock",
+      "seed_policy_id": "seed_stable_identity",
+      "output_goal": [
+        "Canon-faithful Mikage portrait",
+        "Clean editorial image",
+        "Usable as character reference",
+        "Suitable for lore illustration / official art direction reference"
+      ],
+      "canon_state": "hard_canon_locked"
+    },
+    {
+      "mode": "luminous_fan_appeal",
+      "preset_id": "preset_luminous_fan_appeal",
+      "reference_style_id": "ref_porcelain_void",
+      "purpose": "fan attraction and social appeal",
+      "characteristics": [
+        "radiant lighting",
+        "strong eye contact",
+        "vivid color accents"
+      ],
+      "use_cases": [
+        "posters",
+        "social media visuals"
+      ],
+      "visual_intention": "Mikage trở nên lung linh và hút fan hơn nhưng vẫn giữ tinh thần cốt lõi.",
+      "positive_prompt": "Mikage Zenith luminous idol aesthetic portrait, glowing porcelain skin, captivating gaze, subtle sparkle highlights, radiant lighting, modern K-pop inspired fashion editorial, expressive yet elegant pose, glossy highlights, soft luminous skin tones, vibrant but refined color palette, studio beauty lighting, delicate hair movement, fashionable styling, cinematic beauty photography, dynamic composition, polished idol visual presence, captivating fan-appeal aesthetic, magazine cover quality, ultra detailed",
+      "negative_prompt_profile_ids": [
+        "neg_childish_idol",
+        "neg_pop_glamour_excess",
+        "neg_fantasy_magic"
+      ],
+      "negative_prompt": "low quality, washed colors, flat lighting, overexposed glow, childish anime exaggeration, cartoon look, cheap idol aesthetic, heavy makeup distortion, clutter background, messy lighting, distorted anatomy, extra limbs, bad hands, watermark, logo, text artifacts, jpeg compression",
+      "sampler": "DPM++ 2M Karras",
+      "steps": 32,
+      "cfg": 7,
+      "seed_rule": "reuse_from_canon_core",
+      "seed_policy_id": "seed_stable_identity",
+      "output_goal": [
+        "Visual hút fan hơn",
+        "Suitable cho social media / poster",
+        "Idol-like beauty aesthetic",
+        "Strong eye-catch factor"
+      ],
+      "canon_state": "validated_soft",
+      "source_note": "Uses a negative profile id that is referenced in compiler config but not defined in provided negative profile registry."
+    },
+    {
+      "mode": "luxury_mystical_editorial",
+      "preset_id": "preset_luxury_mystical_editorial",
+      "reference_style_id": "ref_luxury_editorial_restrain",
+      "purpose": "high-fashion campaign visuals",
+      "characteristics": [
+        "dramatic lighting",
+        "dark palette",
+        "mystical elegance"
+      ],
+      "use_cases": [
+        "campaign visuals",
+        "editorial spreads"
+      ],
+      "visual_intention": "Mikage mang cảm giác mystical luxury, bí ẩn, high-fashion editorial.",
+      "positive_prompt": "Mikage Zenith mystical luxury portrait, dramatic chiaroscuro lighting, ethereal porcelain skin texture, mysterious gaze, high fashion couture styling, avant-garde editorial composition, cinematic atmosphere, elegant dark palette, luxurious fabric textures, subtle smoke or atmospheric haze, sophisticated mood lighting, dramatic shadows, refined elegance, haute couture photography, magazine editorial style, cinematic portrait framing, ultra detailed fashion photography",
+      "negative_prompt_profile_ids": [
+        "neg_childish_idol",
+        "neg_soft_glamour",
+        "neg_fantasy_magic"
+      ],
+      "negative_prompt": "low quality, muddy shadows, noisy image, fantasy cliché aesthetic, gothic caricature look, heavy visual effects, clutter scene, distorted anatomy, extra limbs, bad hands, cheap costume design, messy lighting, watermark, text artifacts, logo",
+      "sampler": "DPM++ SDE Karras",
+      "steps": 34,
+      "cfg": 6,
+      "seed_rule": "lock_independent_seed",
+      "seed_policy_id": "seed_stable_identity",
+      "output_goal": [
+        "High-fashion luxury aesthetic",
+        "Suitable cho campaign visual",
+        "Strong editorial mood",
+        "Potential key visual"
+      ],
+      "canon_state": "validated_soft"
+    }
+  ],
+  "batch_rules": {
+    "required_modes_per_run": 3,
+    "required_receipt_fields": [
+      "mode",
+      "prompt",
+      "negative_prompt",
+      "seed",
+      "sampler",
+      "steps",
+      "cfg",
+      "timestamp",
+      "asset_url"
+    ],
+    "required_review_fields": [
+      "score",
+      "classification",
+      "note"
+    ],
+    "valid_classifications": [
+      "reject",
+      "interesting_but_non_canon",
+      "usable_asset",
+      "canon_candidate"
+    ]
+  }
+}

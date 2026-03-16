@@ -5,6 +5,27 @@
  * prompt.ts
  */
 
+// Local validation function to avoid contracts dependency
+// TODO: MIGRATE to @mikage/canon-validator.validatePrompt() when monorepo TypeScript constraints allow
+// Current limitation: contracts dependency causes rootDir conflicts in cross-package imports
+export async function validatePromptInput(input: {
+  id: string
+  text: string
+  model?: string
+  parameters?: Record<string, unknown>
+}): Promise<boolean> {
+  // Basic validation - will be enhanced when canon-validator integration is resolved
+  if (!input.text || input.text.trim().length === 0) {
+    return false;
+  }
+  
+  if (input.parameters && typeof input.parameters !== 'object') {
+    return false;
+  }
+  
+  return true;
+}
+
 export interface PromptInput {
   id: string
   text: string

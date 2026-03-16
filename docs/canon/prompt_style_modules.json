@@ -1,0 +1,296 @@
+{
+  "pack_name": "mikage_prompt_style_modules",
+  "version": "1.0.0-export",
+  "reference_styles": [
+    {
+      "reference_style_id": "ref_porcelain_void",
+      "name": "Porcelain Void",
+      "purpose": "Core identity anchor for Mikage portrait and hero shots.",
+      "visual_principles": [
+        "porcelain_purity",
+        "void_black_contrast",
+        "visceral_crimson_accent",
+        "controlled_composition",
+        "sacred_fracture_aesthetic"
+      ],
+      "materials": [
+        "polished_ceramic",
+        "matte_porcelain",
+        "carbon_fiber",
+        "dark_titanium"
+      ],
+      "palette": [
+        "#FAFAFA",
+        "#0A0A0A",
+        "#E60000"
+      ],
+      "lighting": [
+        "high_contrast_chiaroscuro",
+        "razor_rim_light",
+        "contained_specular_reflection"
+      ],
+      "camera_language": {
+        "anamorphic_bias": true,
+        "controlled_composition": true,
+        "chiaroscuro_bias": true
+      },
+      "forbidden_drifts": [
+        "generic_anime_gloss",
+        "oversaturated_neon_chaos",
+        "fantasy_spell_visuals"
+      ]
+    },
+    {
+      "reference_style_id": "ref_luxury_editorial_restrain",
+      "name": "Luxury Editorial Restraint",
+      "purpose": "High-fashion mode without canon drift.",
+      "visual_principles": [
+        "luxury_restraint",
+        "museum_object_presence",
+        "elevated_material_control",
+        "damage_under_surface"
+      ],
+      "materials": [
+        "porcelain_finish",
+        "couture_structural_layers",
+        "minimalist_ceramic_armor"
+      ],
+      "palette": [
+        "#FAFAFA",
+        "#0A0A0A",
+        "#6A0000"
+      ],
+      "lighting": [
+        "studio_chiaroscuro",
+        "thin_rim_isolation",
+        "cold_specular_edges"
+      ],
+      "camera_language": {
+        "anamorphic_bias": true,
+        "controlled_composition": true,
+        "chiaroscuro_bias": true
+      },
+      "forbidden_drifts": [
+        "pop_fashion_editorial",
+        "cute_soft_glamour"
+      ]
+    }
+  ],
+  "preset_modules": [
+    {
+      "preset_id": "preset_canon_core",
+      "mode_name": "canon_core",
+      "reference_style_id": "ref_porcelain_void",
+      "prompt_blocks": {
+        "subject_identity": [
+          "Mikage, sovereign porcelain warrior",
+          "perfectly symmetrical glossy white porcelain Kitsune mask",
+          "minimalist and pristine geometry",
+          "long black hair moving with restrained elegance"
+        ],
+        "material_language": [
+          "ceramic armor plates",
+          "matte carbon fiber reinforcement",
+          "oxidized titanium joints",
+          "fine fracture lines revealing crimson internal energy"
+        ],
+        "environment_language": [
+          "industrial megacity structures",
+          "wet surfaces reflecting faint light",
+          "dense cables and brutalist architecture"
+        ],
+        "lighting_language": [
+          "high contrast chiaroscuro lighting",
+          "sharp rim light outlining silhouette",
+          "cold reflections sliding across porcelain surface"
+        ],
+        "camera_language": [
+          "cinematic anamorphic composition",
+          "controlled framing",
+          "extreme depth of field",
+          "ARRI Alexa 65 cinematic photography"
+        ]
+      },
+      "style_weights": {
+        "identity_lock": 1.0,
+        "beauty_bias": 0.6,
+        "environment_complexity": 0.6,
+        "visual_drift_tolerance": 0.1
+      }
+    },
+    {
+      "preset_id": "preset_luminous_fan_appeal",
+      "mode_name": "luminous_fan_appeal",
+      "reference_style_id": "ref_porcelain_void",
+      "prompt_blocks": {
+        "subject_identity": [
+          "Mikage standing with calm authority",
+          "mirror polished porcelain mask",
+          "elegant warrior silhouette"
+        ],
+        "material_language": [
+          "polished porcelain armor",
+          "refined carbon fiber textures"
+        ],
+        "environment_language": [
+          "cinematic urban environment",
+          "controlled neon reflections",
+          "wet reflective surfaces"
+        ],
+        "lighting_language": [
+          "dramatic cinematic rim light",
+          "soft cold reflections"
+        ],
+        "camera_language": [
+          "cinematic portrait framing",
+          "ultra-detailed 8k photography"
+        ]
+      },
+      "style_weights": {
+        "identity_lock": 0.9,
+        "beauty_bias": 0.9,
+        "environment_complexity": 0.5,
+        "visual_drift_tolerance": 0.15
+      }
+    },
+    {
+      "preset_id": "preset_luxury_mystical_editorial",
+      "mode_name": "luxury_mystical_editorial",
+      "reference_style_id": "ref_luxury_editorial_restrain",
+      "prompt_blocks": {
+        "subject_identity": [
+          "Mikage standing like a museum sculpture",
+          "porcelain mask reflecting subtle highlights"
+        ],
+        "material_language": [
+          "minimal porcelain couture armor",
+          "structured sculptural garment"
+        ],
+        "environment_language": [
+          "pure obsidian black void",
+          "subtle atmospheric haze"
+        ],
+        "lighting_language": [
+          "studio chiaroscuro lighting",
+          "thin rim light isolating silhouette"
+        ],
+        "camera_language": [
+          "high fashion editorial photography",
+          "85mm anamorphic portrait lens"
+        ]
+      },
+      "style_weights": {
+        "identity_lock": 0.9,
+        "beauty_bias": 1.0,
+        "environment_complexity": 0.2,
+        "visual_drift_tolerance": 0.1
+      }
+    }
+  ],
+  "variant_modules": [
+    {
+      "variant_id": "variant_rooftop_storm",
+      "applies_to_presets": [
+        "preset_canon_core"
+      ],
+      "delta_blocks": {
+        "environment_language": [
+          "storm rain sweeping across rooftop",
+          "vast cyberpunk skyline behind",
+          "wind moving through cables"
+        ],
+        "pose_language": [
+          "stepping forward through rain",
+          "long hair moving in wind"
+        ]
+      }
+    },
+    {
+      "variant_id": "variant_neon_street",
+      "applies_to_presets": [
+        "preset_canon_core",
+        "preset_luminous_fan_appeal"
+      ],
+      "delta_blocks": {
+        "environment_language": [
+          "rain soaked neon street",
+          "steam rising from vents",
+          "reflections on wet asphalt"
+        ]
+      }
+    },
+    {
+      "variant_id": "variant_void_editorial",
+      "applies_to_presets": [
+        "preset_luxury_mystical_editorial"
+      ],
+      "delta_blocks": {
+        "environment_language": [
+          "absolute black void",
+          "minimal atmospheric fog"
+        ],
+        "pose_language": [
+          "still sculptural posture"
+        ]
+      }
+    }
+  ],
+  "objective_modules": [
+    {
+      "objective_id": "obj_hero_key_visual",
+      "description": "hero identity visual",
+      "emphasis": {
+        "character_presence": 1.0,
+        "environment_complexity": 0.4,
+        "cinematic_scale": 0.8
+      }
+    },
+    {
+      "objective_id": "obj_character_portrait",
+      "description": "identity portrait",
+      "emphasis": {
+        "character_presence": 1.0,
+        "environment_complexity": 0.1,
+        "cinematic_scale": 0.6
+      }
+    },
+    {
+      "objective_id": "obj_action_scene",
+      "description": "combat cinematic moment",
+      "emphasis": {
+        "character_presence": 0.8,
+        "environment_complexity": 0.8,
+        "cinematic_scale": 1.0
+      }
+    }
+  ],
+  "japanese_visual_grammar_modules": {
+    "composition": [
+      "ma",
+      "notan",
+      "bokashi",
+      "ki_sho_ten_ketsu",
+      "oku",
+      "negative_space_composition",
+      "asymmetric_balance",
+      "flat_color_planes"
+    ],
+    "material": [
+      "washi_paper",
+      "woodblock_print",
+      "mineral_pigment",
+      "indigo_dye",
+      "gold_leaf",
+      "ink_outline"
+    ],
+    "palette": [
+      "indigo_blue",
+      "vermilion_red",
+      "warm_paper_beige",
+      "aged_gold",
+      "moss_green",
+      "cloud_white",
+      "charcoal_black"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "items": [
+    {
+      "id": "pm_wabi_porcelain",
+      "positive_prompt_fragment": "fractured porcelain luxury, elegant asymmetry, restrained imperfection",
+      "negative_prompt_fragment": "plastic smoothness, generic luxury gloss, sterile perfection",
+      "best_for": ["canon_core", "key_visual"],
+      "not_for": ["high-chaos montage"]
+    },
+    {
+      "id": "pm_ma_silence",
+      "positive_prompt_fragment": "negative space composition, quiet staging, visual silence",
+      "negative_prompt_fragment": "cluttered props, dense random signage, visual noise",
+      "best_for": ["luminous_fan_appeal", "poster"],
+      "not_for": ["crowd battle scenes"]
+    },
+    {
+      "id": "pm_ukiyoe_outline",
+      "positive_prompt_fragment": "bold contour silhouette, flat depth layering, poster readability",
+      "negative_prompt_fragment": "muddy edges, low silhouette contrast, generic cinematic blur",
+      "best_for": ["canon_core", "character_sheet"],
+      "not_for": ["hyper-real depth rendering"]
+    },
+    {
+      "id": "pm_kabuki_pose",
+      "positive_prompt_fragment": "ceremonial pose, deliberate gesture language, dramatic stillness",
+      "negative_prompt_fragment": "random action pose, over-acting expression, cosplay theatrics",
+      "best_for": ["key_visual", "poster"],
+      "not_for": ["casual snapshot styles"]
+    },
+    {
+      "id": "pm_neo_tokyo_silent_density",
+      "positive_prompt_fragment": "silent vertical megacity, disciplined neon pools, rain-reflective materials",
+      "negative_prompt_fragment": "rainbow cyberpunk clutter, blade-runner clone mood, billboard chaos",
+      "best_for": ["luxury_mystical_editorial", "lore_scene"],
+      "not_for": ["minimal studio portrait"]
+    },
+    {
+      "id": "pm_yokai_signal",
+      "positive_prompt_fragment": "kitsune/oni motifs as symbolic interface signals, ritual-tech abstraction",
+      "negative_prompt_fragment": "literal yokai monsters, fantasy battle creatures, anime mascot treatment",
+      "best_for": ["luxury_mystical_editorial", "social_asset"],
+      "not_for": ["canon baseline portrait"]
+    }
+  ]
+}

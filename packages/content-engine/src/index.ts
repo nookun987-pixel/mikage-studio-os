@@ -13,6 +13,7 @@ import type { ILineageService } from "@mikage/asset-lineage";
 import type { EvaluationEngine } from "@mikage/generation-evaluator";
 import type { AssetRegistry } from "@mikage/asset-registry";
 import type { SceneBuilder, SceneContext } from "@mikage/scene-graph";
+import { validateAll } from "@mikage/canon-validator";
 
 export async function runContentEngine(
   req: ContentGenerationRequest,
@@ -23,6 +24,28 @@ export async function runContentEngine(
   sceneBuilder?: SceneBuilder,
   sceneContext?: SceneContext
 ): Promise<ContentGenerationResponse> {
+
+  // Canon validation before generation
+  const validationResult = await validateAll({
+    prompt: {
+      text: req.productionPackage.promptPack.prompts.join(', '),
+      mode: 'canon_core', // Default mode for content engine
+      parameters: {
+        sampler: 'DPM++ 2M Karras',
+        steps: 30,
+        cfg: 6.5
+      }
+    },
+    visual_config: {
+      authority_level: 4,
+      domain: 'mikage_application'
+    },
+    validations: ['canon_registry_compliance', 'prompt_canon_compliance', 'visual_authority_compliance']
+  });
+
+  if (!validationResult.valid) {
+    throw new Error(`Canon validation failed: ${validationResult.issues.map((i: any) => i.message).join(', ')}`);
+  }
 
   const started = Date.now();
 

@@ -1,0 +1,456 @@
+{
+  "library_id": "ukiyoe_master_library_v1",
+  "label": "Ukiyo-e Master Library",
+  "purpose": "Reference grammar pack for Studio prompt compilation, preset routing, and visual testing",
+  "global_style_grammar": {
+    "positive_core": [
+      "ukiyo-e inspired illustration",
+      "carved ink outlines",
+      "flat mineral pigments",
+      "washi paper texture",
+      "graphic silhouette design",
+      "decorative cloud and wave motifs",
+      "traditional Japanese textile patterns",
+      "edo period aesthetic",
+      "vertical or panoramic narrative composition"
+    ],
+    "negative_core": [
+      "photorealism",
+      "3d rendering",
+      "western anatomy realism",
+      "modern fashion styling",
+      "oil painting brushwork",
+      "cinematic gradient lighting",
+      "hyper-detailed realistic skin",
+      "digital glossy plastic surfaces",
+      "sci-fi machinery unless explicitly requested"
+    ],
+    "material_language": [
+      "washi paper",
+      "woodblock print texture",
+      "mineral pigment flatness",
+      "ink-carved contour lines"
+    ],
+    "composition_language": [
+      "central hero composition",
+      "vertical figure emphasis",
+      "panoramic storytelling layout",
+      "flat depth layering",
+      "decorative negative space"
+    ]
+  },
+  "branches": [
+    {
+      "branch_id": "bijin_ga",
+      "label": "Bijin-ga",
+      "category": "female_character_design",
+      "intent": "Elegant feminine character design rooted in classical Japanese beauty painting",
+      "visual_grammar": [
+        "elongated feminine body",
+        "oval white face",
+        "large black hair mass",
+        "intricate kimono textile patterns",
+        "quiet elegant posture",
+        "minimal or soft background"
+      ],
+      "motifs": [
+        "kimono folds",
+        "hair ornaments",
+        "floral patterning",
+        "hand gesture elegance",
+        "soft seasonal accents"
+      ],
+      "prompt_atoms": {
+        "subject": [
+          "classical Japanese beauty",
+          "elegant noblewoman",
+          "refined kimono woman"
+        ],
+        "styling": [
+          "layered patterned kimono",
+          "ornamental hair arrangement",
+          "delicate sleeve drape"
+        ],
+        "mood": [
+          "quiet elegance",
+          "poised femininity",
+          "still refined grace"
+        ],
+        "camera": [
+          "three-quarter portrait",
+          "full standing figure",
+          "seated graceful pose"
+        ],
+        "background": [
+          "minimal parchment ground",
+          "soft decorative interior",
+          "subtle seasonal backdrop"
+        ]
+      },
+      "negative_constraints": [
+        "sexualized modern pin-up pose",
+        "realistic western facial structure",
+        "fashion photography lighting",
+        "latex or modern fabric feel",
+        "streetwear elements"
+      ],
+      "modern_use_cases": [
+        "anime heroine design",
+        "fashion editorial character sheet",
+        "poster portrait",
+        "luxury feminine key visual"
+      ]
+    },
+    {
+      "branch_id": "musha_e",
+      "label": "Musha-e",
+      "category": "warrior_hero_design",
+      "intent": "Heroic warrior and battle composition with strong narrative tension",
+      "visual_grammar": [
+        "heroic warrior figure",
+        "dramatic armor silhouette",
+        "oversized weapon presence",
+        "explosive motion pose",
+        "battle narrative framing",
+        "high tension gesture"
+      ],
+      "motifs": [
+        "samurai armor",
+        "spear and blade arcs",
+        "battle banners",
+        "flying cloth",
+        "storm and wave energy"
+      ],
+      "prompt_atoms": {
+        "subject": [
+          "samurai hero",
+          "mythic warrior",
+          "battle champion"
+        ],
+        "styling": [
+          "layered armor plates",
+          "ornamental helmet",
+          "flowing warrior garments"
+        ],
+        "mood": [
+          "heroic intensity",
+          "battle resolve",
+          "mythic courage"
+        ],
+        "camera": [
+          "dynamic full body",
+          "low-angle warrior framing",
+          "combat action composition"
+        ],
+        "background": [
+          "battlefield abstraction",
+          "storm-driven landscape",
+          "symbolic war setting"
+        ]
+      },
+      "negative_constraints": [
+        "modern tactical gear",
+        "gun-heavy military realism",
+        "photoreal action movie look",
+        "mecha armor unless explicitly requested",
+        "static mannequin pose"
+      ],
+      "modern_use_cases": [
+        "game hero splash art",
+        "anime battle poster",
+        "boss character concept",
+        "epic key visual"
+      ]
+    },
+    {
+      "branch_id": "yakusha_e",
+      "label": "Yakusha-e",
+      "category": "dramatic_character_portrait",
+      "intent": "Kabuki-derived theatrical portraiture with strong gesture and expression",
+      "visual_grammar": [
+        "theatrical hand gesture",
+        "exaggerated facial expression",
+        "stage-like character focus",
+        "graphic makeup emphasis",
+        "strong frontal pose",
+        "performance energy"
+      ],
+      "motifs": [
+        "kabuki costume",
+        "dramatic sleeves",
+        "stage gesture",
+        "makeup mask-like face",
+        "theatrical props"
+      ],
+      "prompt_atoms": {
+        "subject": [
+          "kabuki-inspired performer",
+          "dramatic stage hero",
+          "theatrical character portrait"
+        ],
+        "styling": [
+          "ornate stage costume",
+          "exaggerated sleeve volume",
+          "graphic face treatment"
+        ],
+        "mood": [
+          "theatrical intensity",
+          "ritual drama",
+          "performative tension"
+        ],
+        "camera": [
+          "waist-up portrait",
+          "frontal performance pose",
+          "gesture-focused composition"
+        ],
+        "background": [
+          "stage-like flat backdrop",
+          "minimal theatrical framing",
+          "decorative pattern field"
+        ]
+      },
+      "negative_constraints": [
+        "natural candid expression",
+        "casual everyday styling",
+        "photographic stage realism",
+        "subtle invisible gesture language",
+        "western theater costume"
+      ],
+      "modern_use_cases": [
+        "character poster",
+        "boss reveal portrait",
+        "cinematic key art",
+        "stylized dialogue scene cover"
+      ]
+    },
+    {
+      "branch_id": "fukei_ga",
+      "label": "Fukei-ga",
+      "category": "environment_landscape_design",
+      "intent": "Landscape and environment grammar for atmospheric Japanese worldbuilding",
+      "visual_grammar": [
+        "layered landscape composition",
+        "mountain horizon anchor",
+        "decorative waves and weather",
+        "flat distance perspective",
+        "travel scene atmosphere",
+        "architectural or bridge focal element"
+      ],
+      "motifs": [
+        "mount fuji silhouette",
+        "great wave forms",
+        "arched bridge",
+        "rain bands",
+        "riverbanks and travelers"
+      ],
+      "prompt_atoms": {
+        "subject": [
+          "edo landscape",
+          "travel scene",
+          "mythic japanese environment"
+        ],
+        "styling": [
+          "flat layered terrain",
+          "graphic water forms",
+          "weather as decorative structure"
+        ],
+        "mood": [
+          "poetic distance",
+          "serene grandeur",
+          "seasonal atmosphere"
+        ],
+        "camera": [
+          "wide panoramic view",
+          "mid-distance scenic framing",
+          "elevated landscape vantage"
+        ],
+        "background": [
+          "mountain horizon",
+          "river and bridge system",
+          "storm or sunrise sky"
+        ]
+      },
+      "negative_constraints": [
+        "cinematic realistic depth blur",
+        "photoreal landscape rendering",
+        "western oil-paint impressionism",
+        "ultra-detailed volumetric clouds",
+        "modern city infrastructure"
+      ],
+      "modern_use_cases": [
+        "anime background design",
+        "worldbuilding concept art",
+        "travel poster visual",
+        "environmental loading screen art"
+      ]
+    },
+    {
+      "branch_id": "yokai_e",
+      "label": "Yokai-e",
+      "category": "folklore_creature_design",
+      "intent": "Supernatural folklore imagery for creatures, spirits, and eerie narrative scenes",
+      "visual_grammar": [
+        "distorted creature anatomy",
+        "folklore monster motifs",
+        "dramatic supernatural scene",
+        "swirling smoke and cloud patterns",
+        "ritual or eerie framing",
+        "narrative horror staging"
+      ],
+      "motifs": [
+        "oni",
+        "tengu",
+        "ghost women",
+        "animal spirits",
+        "ritual masks",
+        "folklore chaos scenes"
+      ],
+      "prompt_atoms": {
+        "subject": [
+          "japanese folklore demon",
+          "spirit procession",
+          "yokai encounter"
+        ],
+        "styling": [
+          "grotesque stylized anatomy",
+          "graphic supernatural ornament",
+          "ritual costume fragments"
+        ],
+        "mood": [
+          "eerie folklore tension",
+          "chaotic supernatural dread",
+          "mythic strangeness"
+        ],
+        "camera": [
+          "multi-character supernatural tableau",
+          "close creature emphasis",
+          "narrative confrontation framing"
+        ],
+        "background": [
+          "haunted grove",
+          "ritual night field",
+          "smoke-filled decorative void"
+        ]
+      },
+      "negative_constraints": [
+        "zombie gore realism",
+        "western horror creature tropes",
+        "sci-fi alien design",
+        "photoreal monster skin",
+        "empty generic fantasy monster"
+      ],
+      "modern_use_cases": [
+        "monster concept art",
+        "dark fantasy poster",
+        "supernatural anime arc visual",
+        "folklore enemy library"
+      ]
+    },
+    {
+      "branch_id": "narrative_ukiyoe",
+      "label": "Narrative Ukiyo-e",
+      "category": "storytelling_panorama",
+      "intent": "Sequential and panoramic narrative design for lore scenes and multi-character storytelling",
+      "visual_grammar": [
+        "multi-character narrative scenes",
+        "horizontal panoramic layout",
+        "sequential storytelling flow",
+        "dense illustrative detail",
+        "ink-led scene rhythm",
+        "episodic composition"
+      ],
+      "motifs": [
+        "story-scroll pacing",
+        "battle sequence fragments",
+        "crowd action",
+        "ritual scene clusters",
+        "progressive scenic transitions"
+      ],
+      "prompt_atoms": {
+        "subject": [
+          "legendary japanese narrative scene",
+          "multi-character folklore tableau",
+          "episodic battle panorama"
+        ],
+        "styling": [
+          "dense narrative drawing",
+          "scroll-like sequencing",
+          "clustered action storytelling"
+        ],
+        "mood": [
+          "mythic narration",
+          "historic drama",
+          "dense story energy"
+        ],
+        "camera": [
+          "wide panoramic composition",
+          "scroll-inspired horizontal framing",
+          "multi-panel narrative spread"
+        ],
+        "background": [
+          "continuous environmental storytelling",
+          "linked episode scenery",
+          "ink-woven landscape transitions"
+        ]
+      },
+      "negative_constraints": [
+        "single-subject empty poster framing",
+        "random collage with no narrative order",
+        "photographic scene realism",
+        "western comic panel language",
+        "hyper-perspective blockbuster staging"
+      ],
+      "modern_use_cases": [
+        "manga splash layout",
+        "lore mural art",
+        "storyboard concept frame",
+        "event banner composition"
+      ]
+    }
+  ],
+  "routing_rules": {
+    "character_female_elegant": "bijin_ga",
+    "warrior_hero_battle": "musha_e",
+    "theatrical_portrait": "yakusha_e",
+    "landscape_environment": "fukei_ga",
+    "monster_folklore_supernatural": "yokai_e",
+    "multi_character_storytelling": "narrative_ukiyoe"
+  },
+  "preset_templates": [
+    {
+      "preset_id": "ukiyoe_bijin_editorial",
+      "branch_id": "bijin_ga",
+      "label": "Ukiyo-e Bijin Editorial",
+      "positive_prompt": "ukiyo-e inspired bijin-ga illustration, elongated feminine body, oval white face, large black hair mass, intricate kimono textile patterns, quiet elegant posture, carved ink outlines, flat mineral pigments, washi paper texture",
+      "negative_prompt": "photorealism, 3d rendering, western anatomy realism, sexualized modern pin-up pose, glossy fashion photography lighting"
+    },
+    {
+      "preset_id": "ukiyoe_musha_heroic",
+      "branch_id": "musha_e",
+      "label": "Ukiyo-e Musha Heroic",
+      "positive_prompt": "ukiyo-e inspired musha-e warrior illustration, heroic warrior figure, dramatic armor silhouette, oversized weapon, explosive motion pose, battle narrative framing, carved ink outlines, flat mineral pigments, washi paper texture",
+      "negative_prompt": "modern tactical gear, guns, photoreal action movie look, mecha armor, static pose"
+    },
+    {
+      "preset_id": "ukiyoe_fukei_landscape",
+      "branch_id": "fukei_ga",
+      "label": "Ukiyo-e Fukei Landscape",
+      "positive_prompt": "ukiyo-e inspired landscape illustration, layered landscape composition, mountain horizon anchor, decorative waves, flat distance perspective, travel scene atmosphere, carved ink outlines, flat mineral pigments, washi paper texture",
+      "negative_prompt": "photoreal landscape rendering, modern city, cinematic depth blur, volumetric realism, oil painting brushwork"
+    },
+    {
+      "preset_id": "ukiyoe_yokai_folklore",
+      "branch_id": "yokai_e",
+      "label": "Ukiyo-e Yokai Folklore",
+      "positive_prompt": "ukiyo-e inspired yokai illustration, distorted creature anatomy, folklore monster motifs, dramatic supernatural scene, swirling smoke and cloud patterns, narrative horror staging, carved ink outlines, flat mineral pigments, washi paper texture",
+      "negative_prompt": "zombie gore realism, sci-fi alien design, photoreal monster skin, western horror clichés, generic fantasy creature"
+    }
+  ],
+  "review_rubric": [
+    "Does the output preserve flat graphic ukiyo-e logic rather than drift into generic anime rendering?",
+    "Are silhouette, textile pattern, and contour language strong enough to read at a glance?",
+    "Is the branch identity clear and not mixed incoherently with unrelated western aesthetics?",
+    "Does the composition feel decorative and narrative rather than cinematic-photographic?",
+    "Is the material feeling closer to print, paper, pigment, and ink than to glossy digital illustration?"
+  ]
+}

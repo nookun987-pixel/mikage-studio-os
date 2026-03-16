@@ -1,0 +1,253 @@
+{
+  "pack_id": "japanese_art_grammar_seed_v1",
+  "sources": {
+    "mikage_core_spec": "studio-data/reference/mikage-core/01_Mikage_Core_Spec.source.txt",
+    "mikage_3_mode_visual_briefs": "studio-data/reference/mikage-core/02_Mikage_3_Mode_Visual_Briefs.source.txt",
+    "mikage_prompt_pack": "studio-data/reference/mikage-core/03_Mikage_Prompt_Pack.source.txt",
+    "studio_test_workflow": "studio-data/reference/mikage-core/04_Studio_Test_Workflow.source.txt",
+    "legacy_environment_registry": "environmentsenvironment_registry.json",
+    "legacy_archetype_registry": "studio-dataarchetypesarchetype_registry.json",
+    "legacy_preset_registry": "studio-datapresetspreset_registry.json",
+    "master_spec": "studio-data/reference/japanese-art-grammar/JAPANESE ART GRAMMAR FOR STUDIO.source.txt",
+    "machine_usable": "studio-data/reference/japanese-art-grammar/usable.source.json"
+  },
+  "reference_styles": [
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "title": "Japanese Art Grammar Master",
+      "movement_lineage": "Ukiyo-e -> Folklore -> Manga / Anime",
+      "description": "Curated grammar system for Japanese art direction and adaptation workflows."
+    }
+  ],
+  "reference_grammar_blocks": [
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "composition",
+      "label": "composition",
+      "content": "vertical narrative poster layout, dominant central hero, flattened perspective, symbolic tableau storytelling"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "linework",
+      "label": "linework",
+      "content": "carved ink outlines, medium-heavy contour weight, slight irregularity, minimal shadow"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "color_system",
+      "label": "color_system",
+      "content": "flat mineral pigments anchored by indigo, vermilion, ochre, moss green, parchment beige"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "material",
+      "label": "material",
+      "content": "washi paper grain, subtle fiber visibility, slight pigment bleed"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "motif",
+      "label": "motif",
+      "content": "folklore creatures, cloud swirls, wave patterns, mountain silhouettes, bamboo"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "character",
+      "label": "character",
+      "content": "restrained facial expression, kabuki theatrical stance, dramatic body angle"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "fashion",
+      "label": "fashion",
+      "content": "kimono layering, structured obi hierarchy, shimada bun and hair ornament language"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "decorative",
+      "label": "decorative",
+      "content": "red cartouche accents, cloud swirl framing, repeating textile and border ornaments"
+    },
+    {
+      "reference_style_id": "japanese_art_grammar_master",
+      "block_type": "adaptation",
+      "label": "adaptation",
+      "content": "bridge Edo grammar into manga/anime readability while preserving lineage and symbolic logic"
+    }
+  ],
+  "studio_presets": [
+    {
+      "preset_key": "edo_folklore_print",
+      "title": "Edo Folklore Print",
+      "reference_style_id": "japanese_art_grammar_master",
+      "subject_rule": "central heroic or spiritual figure interacting with symbolic folklore creatures",
+      "composition": "vertical narrative poster, flattened perspective, dominant central figure",
+      "linework": "carved ink outline, medium-heavy weight, slight irregularity",
+      "color_system": "indigo, vermilion, ochre, moss green, parchment beige",
+      "material": "visible washi texture with subtle fiber grain",
+      "motif": "folklore creature plus natural symbolic motif",
+      "character": "central heroic or spiritual figure",
+      "fashion": "traditional Japanese robe or period costume",
+      "decorative": "cloud swirl framing and patterned textiles",
+      "mood": "restrained, symbolic, mythic, ceremonial",
+      "negative_template": "photorealism, cinematic depth blur, glossy 3D rendering, western costume, neon cyberpunk lighting, excessive gradients, soft airbrush shading, modern typography",
+      "sampler": "dpmpp_2m",
+      "steps": 32,
+      "cfg": 6.5,
+      "aspect_ratio": "2:3"
+    },
+    {
+      "preset_key": "kabuki_actor_portrait",
+      "title": "Kabuki Actor Portrait",
+      "reference_style_id": "japanese_art_grammar_master",
+      "subject_rule": "single dominant character in theatrical kabuki pose",
+      "composition": "portrait-led vertical frame with dominant face and hands",
+      "linework": "bold ink contour and minimal shadow",
+      "color_system": "flat pigments with red, indigo, parchment, black accents",
+      "material": "paper print feel with textile pattern emphasis",
+      "motif": "minimal symbolic stage props",
+      "character": "single dominant theatrical performer",
+      "fashion": "kabuki costume styling with graphic patterning",
+      "decorative": "optional cartouche and patterned border",
+      "mood": "dramatic, ceremonial, iconic",
+      "negative_template": "realistic photography, soft western fashion portrait, cinematic bokeh, metallic sci-fi armor, glossy skin, painterly oil brushwork",
+      "sampler": "dpmpp_2m",
+      "steps": 32,
+      "cfg": 6.6,
+      "aspect_ratio": "3:4"
+    },
+    {
+      "preset_key": "bijin_ga_elegant_women",
+      "title": "Bijin-ga Elegant Women",
+      "reference_style_id": "japanese_art_grammar_master",
+      "subject_rule": "elongated elegant female figure with restrained grace",
+      "composition": "vertical portrait or half-body with balanced posture",
+      "linework": "strong black contour with clean simplification",
+      "color_system": "muted pigment palette with textile accents",
+      "material": "silk and paper feel with subtle rhythm",
+      "motif": "light decorative floral geometry",
+      "character": "elongated elegant female figure",
+      "fashion": "patterned kimono, shimada bun, hairpins",
+      "decorative": "ornamental pattern fields and calligraphic framing",
+      "mood": "refined, distant, graceful, poised",
+      "negative_template": "modern streetwear, glossy fashion editorial photography, hyperreal skin rendering, western hairstyle, excessive facial emotion, neon gradients, plastic textures",
+      "sampler": "dpmpp_2m",
+      "steps": 32,
+      "cfg": 6.4,
+      "aspect_ratio": "3:4"
+    },
+    {
+      "preset_key": "yokai_creature_scene",
+      "title": "Yokai Creature Scene",
+      "reference_style_id": "japanese_art_grammar_master",
+      "subject_rule": "supernatural yokai or symbolic creature as dominant subject or force",
+      "composition": "flattened story tableau with strong silhouette staging",
+      "linework": "bold carved outlines with graphic clarity",
+      "color_system": "high-contrast flat pigments with mythic atmosphere",
+      "material": "paper, ink, organic texture emphasis",
+      "motif": "cloud swirl, mountain, wave, spirit symbols",
+      "character": "supernatural yokai force as dominant subject",
+      "fashion": "optional period garments when human appears",
+      "decorative": "graphic framing with folklore symbols",
+      "mood": "uncanny, mythic, symbolic, ritualistic",
+      "negative_template": "3D monster rendering, cinematic horror realism, slime CGI, western fantasy armor, deep perspective realism, modern action poster typography",
+      "sampler": "dpmpp_2m",
+      "steps": 33,
+      "cfg": 6.7,
+      "aspect_ratio": "2:3"
+    },
+    {
+      "preset_key": "edo_manga_hybrid",
+      "title": "Edo Manga Hybrid",
+      "reference_style_id": "japanese_art_grammar_master",
+      "subject_rule": "anime or manga hero built on ukiyo-e composition and symbolism",
+      "composition": "central hero framing with preserved poster logic",
+      "linework": "clean digital ink inheriting carved contour logic",
+      "color_system": "saturated modern palette anchored by Edo core pigments",
+      "material": "paper-print influence mixed with clean illustration finish",
+      "motif": "animal spirit summons and cloud swirl graphics",
+      "character": "manga or anime hero built on ukiyo-e grammar",
+      "fashion": "hybrid traditional-modern Japanese costume language",
+      "decorative": "symbolic motifs with manga-era readability",
+      "mood": "mythic, stylish, dynamic, iconic",
+      "negative_template": "generic shonen screenshot, random sci-fi clutter, western superhero anatomy, 3D game render, photographic lighting, uncontrolled neon palette, empty background",
+      "sampler": "dpmpp_sde",
+      "steps": 34,
+      "cfg": 6.6,
+      "aspect_ratio": "3:4"
+    }
+  ],
+  "preset_variants": [
+    {
+      "variant_key": "canon_core",
+      "title": "Canon Core",
+      "positive_delta": "preserve historical print grammar, avoid excessive modern stylization",
+      "negative_delta": "anime facial exaggeration, glossy rendering, cinematic realism, modern fashion drift"
+    },
+    {
+      "variant_key": "luminous_fan_appeal",
+      "title": "Luminous Fan Appeal",
+      "positive_delta": "enhance hero appeal and silhouette attraction while preserving Edo symbolic structure",
+      "negative_delta": "cheap idol gloss, overexposed highlights, plastic skin, random modern glam"
+    },
+    {
+      "variant_key": "luxury_mystical_editorial",
+      "title": "Luxury Mystical Editorial",
+      "positive_delta": "premium visual hierarchy, refined ornamental elegance, mythic luxury atmosphere",
+      "negative_delta": "cheap fantasy clutter, oversaturated anime colors, gaudy gold overload, noisy background"
+    }
+  ],
+  "objective_overrides": [
+    {
+      "objective_key": "poster",
+      "override_text": "iconic poster readability, strong focal hierarchy, clean hero silhouette"
+    },
+    {
+      "objective_key": "character_sheet",
+      "override_text": "clear costume readability, front-facing design clarity, silhouette integrity"
+    },
+    {
+      "objective_key": "lore_scene",
+      "override_text": "denser symbolic motifs, mythic environment storytelling, narrative object placement"
+    },
+    {
+      "objective_key": "social_asset",
+      "override_text": "high visual clarity, compact symbolic framing, eye-catching central design"
+    },
+    {
+      "objective_key": "key_visual",
+      "override_text": "premium composition balance, striking hero presentation, refined decorative rhythm"
+    }
+  ],
+  "compiled_prompt_rules": [
+    {
+      "rule_key": "japanese_art_grammar_default_compiler",
+      "title": "Japanese Art Grammar Default Compiler",
+      "compile_order": [
+        "subject_rule",
+        "composition_rule",
+        "linework_rule",
+        "color_rule",
+        "material_rule",
+        "motif_rule",
+        "wardrobe_rule",
+        "mood_rule",
+        "decorative_rule",
+        "variant.delta_prompt_append",
+        "objective_override",
+        "subject_override_if_any"
+      ],
+      "positive_prompt_skeleton": "[subject_rule], [composition_rule], [linework_rule], [color_rule], [material_rule], [motif_rule], [wardrobe_rule], [mood_rule], [decorative_rule], [variant.delta_prompt_append], [objective_override], [subject_override_if_any]",
+      "negative_prompt_skeleton": "[preset.negative_prompt_template], [variant.delta_negative_append], [objective_specific_negatives_if_any]",
+      "rules": [
+        "if preset == bijin_ga_elegant_women, auto preserve hair and kimono elegance",
+        "if preset == edo_manga_hybrid, allow clean digital ink and modern readability",
+        "if objective == poster, force strong focal hierarchy",
+        "if objective == lore_scene, increase motif density",
+        "if variant == canon_core, reduce modern drift",
+        "if variant == luminous_fan_appeal, boost silhouette attraction without breaking Edo base",
+        "if variant == luxury_mystical_editorial, increase ornamental refinement and premium mood"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "pack_name": "mikage_negative_prompt_rules",
+  "version": "1.0.0-export",
+  "rules": {
+    "house_global_negative_prompt": [
+      "low quality",
+      "blurry",
+      "oversharpen",
+      "plastic skin",
+      "distorted anatomy",
+      "extra limbs",
+      "bad hands",
+      "messy background",
+      "cheap anime style",
+      "watermark",
+      "text artifacts",
+      "logo",
+      "jpeg artifacts"
+    ],
+    "mode_negative_prompts": {
+      "canon_core": [
+        "low quality",
+        "blurry",
+        "oversharpened",
+        "overprocessed skin",
+        "plastic skin texture",
+        "exaggerated anime style",
+        "childish proportions",
+        "distorted anatomy",
+        "extra limbs",
+        "bad hands",
+        "deformed fingers",
+        "clutter background",
+        "messy lighting",
+        "noisy shadows",
+        "cheap fantasy aesthetic",
+        "low resolution",
+        "jpeg artifacts",
+        "watermark",
+        "text artifacts",
+        "logo",
+        "duplicate face"
+      ],
+      "luminous_fan_appeal": [
+        "low quality",
+        "washed colors",
+        "flat lighting",
+        "overexposed glow",
+        "childish anime exaggeration",
+        "cartoon look",
+        "cheap idol aesthetic",
+        "heavy makeup distortion",
+        "clutter background",
+        "messy lighting",
+        "distorted anatomy",
+        "extra limbs",
+        "bad hands",
+        "watermark",
+        "logo",
+        "text artifacts",
+        "jpeg compression"
+      ],
+      "luxury_mystical_editorial": [
+        "low quality",
+        "muddy shadows",
+        "noisy image",
+        "fantasy cliché aesthetic",
+        "gothic caricature look",
+        "heavy visual effects",
+        "clutter scene",
+        "distorted anatomy",
+        "extra limbs",
+        "bad hands",
+        "cheap costume design",
+        "messy lighting",
+        "watermark",
+        "text artifacts",
+        "logo"
+      ]
+    },
+    "negative_profiles": [
+      {
+        "profile_id": "neg_childish_idol",
+        "status": "defined",
+        "negative_tokens": [
+          "anime idol",
+          "cute chibi style",
+          "childlike proportions",
+          "kawaii aesthetic"
+        ]
+      },
+      {
+        "profile_id": "neg_generic_neon",
+        "status": "defined",
+        "negative_tokens": [
+          "oversaturated neon chaos",
+          "cyberpunk nightclub vibe",
+          "colorful neon overload"
+        ]
+      },
+      {
+        "profile_id": "neg_fantasy_magic",
+        "status": "defined",
+        "negative_tokens": [
+          "fantasy magic aura",
+          "glowing runes",
+          "wizard spell effects"
+        ]
+      },
+      {
+        "profile_id": "neg_soft_glamour",
+        "status": "defined",
+        "negative_tokens": [
+          "soft pastel fashion",
+          "romantic beauty glamour",
+          "cute fashion editorial"
+        ]
+      },
+      {
+        "profile_id": "neg_pop_glamour_excess",
+        "status": "referenced_but_missing_definition_in_sources",
+        "negative_tokens": []
+      }
+    ],
+    "validator_and_drift_rules": {
+      "forbidden_drift_labels": [
+        "childish_anime_idol",
+        "generic_neon_overload",
+        "fantasy_magic_aesthetic",
+        "soft_glamour_pastel",
+        "pop_fashion_drift"
+      ],
+      "rule_triggers": {
+        "childish_anime_idol": {
+          "positive_hits": [
+            "cute",
+            "idol",
+            "school uniform",
+            "kawaii",
+            "smile pose"
+          ],
+          "negative_missing": [
+            "adult",
+            "severe",
+            "scarred elegance",
+            "industrial materiality"
+          ]
+        },
+        "generic_neon_overload": {
+          "positive_hits": [
+            "neon city",
+            "glowing signs",
+            "magenta blue",
+            "cyberpunk street",
+            "hologram overload"
+          ],
+          "negative_missing": [
+            "restrained palette",
+            "controlled highlights",
+            "limited crimson"
+          ]
+        },
+        "fantasy_magic_aesthetic": {
+          "positive_hits": [
+            "spell",
+            "magic",
+            "runes",
+            "enchanted",
+            "mystic aura",
+            "sorceress"
+          ],
+          "negative_missing": [
+            "hard sci-fi",
+            "traceable power",
+            "mechanical causality"
+          ]
+        }
+      },
+      "guard_cases": [
+        "neon may appear if palette remains constrained",
+        "fashion editorial may remain if porcelain/void/crimson discipline is preserved",
+        "light anime-like eye stylization alone is not idol drift",
+        "glow may remain if it has tech trace, energy system, and hard-sci-fi explanation"
+      ]
+    }
+  }
+}

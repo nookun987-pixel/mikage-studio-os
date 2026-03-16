@@ -1,0 +1,277 @@
+{
+  "visual_domains": {
+    "aesthetic_philosophy": {
+      "domain_id": "aesthetic_philosophy",
+      "title": "Japanese Aesthetic Philosophy",
+      "authority_level": 1,
+      "core_concepts": ["wabi_sabi", "ma", "notan", "ki_sho_ten_ketsu", "oku"],
+      "source_files": ["Japanese Visual Aesthetics AI Knowledge Packs.md", "01_aesthetic_philosophy/aesthetic_philosophy.library.json"]
+    },
+    "historical_grammar": {
+      "domain_id": "historical_grammar",
+      "title": "Edo/Medieval Visual Grammar",
+      "authority_level": 2,
+      "core_concepts": ["flat_perspective", "bold_outline", "color_blocks", "diagonal_composition", "poster_framing", "kabuki_pose", "dramatic_gesture", "stage_framing"],
+      "source_files": ["JAPANESE ART GRAMMAR FOR STUDIO.json", "02_edo_visual_grammar/ukiyoe_visual_grammar.library.json", "japanese-art-grammar.seed.json"]
+    },
+    "motif_system": {
+      "domain_id": "motif_system",
+      "title": "Japanese Motif Library",
+      "authority_level": 3,
+      "core_concepts": ["sakura", "koi", "crane", "dragon", "seigaiha_wave", "cloud", "maple_leaf", "bamboo", "kitsune", "oni"],
+      "source_files": ["03_motif_library/", "mikage_japanese_motif_tags.json"]
+    },
+    "color_system": {
+      "domain_id": "color_system",
+      "title": "Color Authority System",
+      "authority_level": 3,
+      "core_concepts": ["porcelain_canon", "neon_ma_editorial", "yokai_signal", "mineral_pigments", "traditional_colors"],
+      "source_files": ["04_color_system/", "mikage_color_modes.json", "JAPANESE_TRADITIONAL_VISUAL_REFERENCE.MASTER PACK.json"]
+    },
+    "line_system": {
+      "domain_id": "line_system",
+      "title": "Line & Calligraphy System",
+      "authority_level": 3,
+      "core_concepts": ["ink_confidence", "brush_pressure", "negative_space", "character_structure", "flow_energy"],
+      "source_files": ["05_calligraphy_line_system/"]
+    },
+    "folklore_symbolics": {
+      "domain_id": "folklore_symbolics",
+      "title": "Yokai & Folklore Symbolics",
+      "authority_level": 4,
+      "core_concepts": ["kitsune", "oni", "tengu", "kappa", "yurei"],
+      "source_files": ["06_folklore_yokai/"]
+    },
+    "modern_evolution": {
+      "domain_id": "modern_evolution",
+      "title": "Modern Visual Evolution",
+      "authority_level": 4,
+      "core_concepts": ["cel_shading", "character_archetypes", "moe_proportions", "action_dynamics", "emotional_coding"],
+      "source_files": ["07_modern_evolution/"]
+    },
+    "neo_tokyo_futurism": {
+      "domain_id": "neo_tokyo_futurism",
+      "title": "Neo Tokyo Futurism",
+      "authority_level": 5,
+      "core_concepts": ["metabolist_architecture", "techno_organic", "neon_reflection", "industrial_brutality", "cyber_shrine"],
+      "source_files": ["08_neo_tokyo_futurism/", "mikage_tokyo_future_preset_pack.json", "neo_tokyo_reference_index.json"]
+    },
+    "mikage_application": {
+      "domain_id": "mikage_application",
+      "title": "Mikage Application Layer",
+      "authority_level": 6,
+      "core_concepts": ["porcelain_purity", "void_black", "visceral_crimson", "fracture_aesthetics", "industrial_language"],
+      "source_files": ["09_mikage_application/", "02_Mikage_3_Mode_Visual_Briefs.txt", "prompt_modules.json"]
+    }
+  },
+  "motif_tags": {
+    "sakura": {
+      "meaning": "ephemeral beauty",
+      "intensity": "low",
+      "safe_modes": ["luminous_fan_appeal"],
+      "conflict_tags": ["high_risk_generic"],
+      "domain": "motif_system"
+    },
+    "koi": {
+      "meaning": "resilience in motion",
+      "intensity": "medium",
+      "safe_modes": ["canon_core", "luminous_fan_appeal"],
+      "conflict_tags": [],
+      "domain": "motif_system"
+    },
+    "crane": {
+      "meaning": "dignity and longevity",
+      "intensity": "low",
+      "safe_modes": ["canon_core"],
+      "conflict_tags": [],
+      "domain": "motif_system"
+    },
+    "dragon": {
+      "meaning": "mythic force",
+      "intensity": "high",
+      "safe_modes": ["luxury_mystical_editorial"],
+      "conflict_tags": ["high_risk_generic"],
+      "domain": "motif_system"
+    },
+    "seigaiha_wave": {
+      "meaning": "continuity and rhythm",
+      "intensity": "low",
+      "safe_modes": ["canon_core", "luminous_fan_appeal", "luxury_mystical_editorial"],
+      "conflict_tags": [],
+      "domain": "motif_system"
+    },
+    "cloud": {
+      "meaning": "threshold transition",
+      "intensity": "medium",
+      "safe_modes": ["luminous_fan_appeal", "luxury_mystical_editorial"],
+      "conflict_tags": [],
+      "domain": "motif_system"
+    },
+    "maple_leaf": {
+      "meaning": "seasonal transition",
+      "intensity": "low",
+      "safe_modes": ["luminous_fan_appeal"],
+      "conflict_tags": ["high_risk_generic"],
+      "domain": "motif_system"
+    },
+    "bamboo": {
+      "meaning": "resilient discipline",
+      "intensity": "medium",
+      "safe_modes": ["canon_core"],
+      "conflict_tags": [],
+      "domain": "motif_system"
+    },
+    "kitsune": {
+      "meaning": "liminal intelligence",
+      "intensity": "medium",
+      "safe_modes": ["canon_core", "luxury_mystical_editorial"],
+      "conflict_tags": ["high_risk_generic"],
+      "domain": "folklore_symbolics"
+    },
+    "oni": {
+      "meaning": "symbolic threat boundary",
+      "intensity": "high",
+      "safe_modes": ["luxury_mystical_editorial"],
+      "conflict_tags": ["high_risk_generic"],
+      "domain": "folklore_symbolics"
+    }
+  },
+  "color_modes": {
+    "mikage_canon_porcelain": {
+      "mode_id": "mikage_canon_porcelain",
+      "palette_name": "Porcelain Canon",
+      "hex_values": ["#F4F0E7", "#2A3359", "#C5482D", "#B6892E", "#1E2230"],
+      "emotion": "disciplined, premium, fractured",
+      "best_output_type": "canon_core",
+      "domain": "mikage_application"
+    },
+    "mikage_neon_ma": {
+      "mode_id": "mikage_neon_ma",
+      "palette_name": "Neon Ma Editorial",
+      "hex_values": ["#202844", "#1A1D27", "#55C7D8", "#C5482D", "#EDE3CF"],
+      "emotion": "silent, futuristic, editorial",
+      "best_output_type": "luminous_fan_appeal",
+      "domain": "mikage_application"
+    },
+    "mikage_yokai_signal": {
+      "mode_id": "mikage_yokai_signal",
+      "palette_name": "Yokai Signal Reinterpretation",
+      "hex_values": ["#1C1F2E", "#7A1F24", "#B6892E", "#6E7C49", "#E8DCC0"],
+      "emotion": "ritual, symbolic, controlled threat",
+      "best_output_type": "luxury_mystical_editorial",
+      "domain": "mikage_application"
+    }
+  },
+  "line_styles": {
+    "bold_outline": {
+      "style_id": "bold_outline",
+      "description": "Strong contour line establishes silhouette authority",
+      "visual_traits": ["high-contrast edges", "clear figure read", "ink confidence"],
+      "domain": "historical_grammar"
+    },
+    "ink_confidence": {
+      "style_id": "ink_confidence",
+      "description": "Bold, deliberate strokes with authority",
+      "visual_traits": ["deliberate strokes", "brush pressure", "negative space"],
+      "domain": "line_system"
+    },
+    "cel_shading": {
+      "style_id": "cel_shading",
+      "description": "Flat color with controlled line weight",
+      "visual_traits": ["flat color", "controlled lines", "modern anime"],
+      "domain": "modern_evolution"
+    }
+  },
+  "era_references": {
+    "edo": {
+      "era_id": "edo",
+      "period": "Edo Period (1603-1868)",
+      "visual_characteristics": ["ukiyo-e", "woodblock prints", "flat perspective", "bold outlines"],
+      "domain": "historical_grammar"
+    },
+    "medieval": {
+      "era_id": "medieval",
+      "period": "Japanese Medieval Period",
+      "visual_characteristics": ["ink painting", "calligraphy", "minimalist composition"],
+      "domain": "line_system"
+    },
+    "modern": {
+      "era_id": "modern",
+      "period": "Modern Japanese Visual Culture",
+      "visual_characteristics": ["anime", "manga", "cel shading", "character archetypes"],
+      "domain": "modern_evolution"
+    },
+    "future": {
+      "era_id": "future",
+      "period": "Neo Tokyo Futurism",
+      "visual_characteristics": ["metabolist architecture", "neon reflections", "techno-organic"],
+      "domain": "neo_tokyo_futurism"
+    }
+  },
+  "future_presets": {
+    "metabolist_architecture": {
+      "preset_id": "metabolist_architecture",
+      "description": "Modular growth, organism-like structures",
+      "visual_elements": ["modular capsules", "central trunk", "porthole windows"],
+      "domain": "neo_tokyo_futurism"
+    },
+    "techno_organic": {
+      "preset_id": "techno_organic",
+      "description": "Exposed systems with organic decay",
+      "visual_elements": ["cable overgrowth", "rust decay", "exposed systems"],
+      "domain": "neo_tokyo_futurism"
+    },
+    "neon_reflection": {
+      "preset_id": "neon_reflection",
+      "description": "Rain-slicked streets with vibrant neon",
+      "visual_elements": ["neon signage", "wet streets", "color bleed"],
+      "domain": "neo_tokyo_futurism"
+    }
+  },
+  "prompt_modules": {
+    "composition_ma": {
+      "module_id": "composition_ma",
+      "type": "composition",
+      "keywords": ["ma", "negative space", "visual silence", "minimal Japanese composition"],
+      "domain": "aesthetic_philosophy"
+    },
+    "wabi_sabi_texture": {
+      "module_id": "wabi_sabi_texture",
+      "type": "texture",
+      "keywords": ["wabi_sabi", "fractured elegance", "imperfect beauty", "weathered ceramic"],
+      "domain": "aesthetic_philosophy"
+    },
+    "ukiyoe_poster": {
+      "module_id": "ukiyoe_poster",
+      "type": "composition",
+      "keywords": ["poster framing", "hero-first composition", "clear hierarchy"],
+      "domain": "historical_grammar"
+    },
+    "mikage_core_colors": {
+      "module_id": "mikage_core_colors",
+      "type": "color",
+      "keywords": ["porcelain canon palette", "void black", "visceral crimson"],
+      "domain": "mikage_application"
+    }
+  },
+  "quality_rules": {
+    "canon_compliance": {
+      "rule_id": "canon_compliance",
+      "description": "Must follow Mikage canon color and visual rules",
+      "validation": "Check against porcelain, void, crimson palette",
+      "domain": "mikage_application"
+    },
+    "motif_safety": {
+      "rule_id": "motif_safety",
+      "description": "Motifs must match mode intensity requirements",
+      "validation": "Check motif intensity against selected mode",
+      "domain": "motif_system"
+    },
+    "aesthetic_integrity": {
+      "rule_id": "aesthetic_integrity",
+      "description": "Must maintain Japanese aesthetic principles",
+      "validation": "Check for ma, wabi-sabi, notan principles",
+      "domain": "aesthetic_philosophy"
+    }
+  }
+}

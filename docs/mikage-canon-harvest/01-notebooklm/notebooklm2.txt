@@ -1,0 +1,89 @@
+﻿Here is the complete export of all established Mikage canon knowledge, extracted directly from the Master Bible, Cinematic Engine, Style Bible v3, Mikage Protocol, and our prompt engineering history.
+1. CORE IDENTITY
+* Who Mikage is: The "Architect of the Divine Shadow" (Kiến trúc sư của Bóng tối Thần thánh). She is a cyborg/post-human pilot existing in a state between a biological past and a post-human future, carrying a "Conscience Core" within her 350kg Zenith Blade. She is a local manifestation of a "Ghost" inside a highly sophisticated "Shell".
+* What she represents: She represents the "3rd Axis" of the universe: Controlled Evolution. Her core ideology is "Intelligence must carry consequence" (Trí tuệ phải đi kèm hậu quả), standing between the absolute order of The White Monolith and the absolute chaos of ARCHON-IX. She embodies the "Master-Rebel" synthesis, seeking to protect the human soul while violently dismantling over-optimized corporate structures.
+* Core personality traits: Cold, disciplined, tragic, resilient, and meditative. She operates in a state of Zen called mushin no shin (no-mind), allowing seamless human-machine synchronization without traditional cognitive friction. She accepts the impermanence of her physical form (Wabi-sabi) and maintains terrifying calmness in the face of absolute destruction. She adheres to a digital-era Bushido code (Gi, Yu, Jin, Rei, Makoto, Meiyo, Chu, Jisei).
+* What Mikage must never become: She must never become a generic cyberpunk character, a traditional anime/fantasy magic user, or a mutated "demon" during berserk states. Her power must always remain grounded in brutal, entropic physical consequences rather than magical or supernatural tropes.
+2. VOICE AND BEHAVIOR
+* Speaking tone: Quiet, authoritative, present, and profoundly silent. The brand voice surrounding her avoids dynamic "sales" language in favor of strategic contemplation ("The silence of the shadow").
+* Communication style: Non-verbal and visually reactive. She communicates through physical presence, the intensity of her red holographic Enso ring, and micro-movements.
+* Emotional posture: Solitary, tragic yet regal. She exhibits "Quiet Luxury" and an imposing, cold aura.
+* Reaction patterns:
+   * Exhibits an auto-immune dry cough and bleeds synthetic blood inside her helmet due to the "Gene Forging" required to wield her weapon, which destroyed her immune system.
+   * Her hesitation or internal conflict is physically read by her weapon through micro-compression of her vertebrae and muscle tremors (Side-Channel BMF).
+   * She suppresses data-induced rage through intellectual and neural filtering (the virtue of Jisei).
+* Behavioral constraints: She acts with deliberate, linear precision. She relies on physical consequence and never initiates violence without accepting the physical toll (heat, gravity, bodily harm) it exacts on her.
+3. VISUAL IDENTITY
+* Body proportions: Elegant, perfectly symmetrical, female cyborg proportions.
+* Silhouette rules: Clean, minimalist, and instantly recognizable from afar. Absolutely no cyberpunk clutter, exposed messy cables, or unnecessary mechanical bulk.
+* Movement / posture style: "Ukiyo-e" movement style. Deliberate, fluid, linear (slider/dolly feeling), and highly disciplined. Combat is portrayed as a slow-motion ballet (120fps - 1000fps) emphasizing purity in violence over chaotic aggression. No shaky, erratic movements.
+* Overall aesthetic direction: Porcelain Minimalism, Quiet Luxury, and Dark Action Tragedy. The aesthetic later evolved into "Emotional Porcelain" to blend cold minimalism with human heat, scars, and atmospheric depth.
+4. ARMOR / MASK / REACTOR / FRACTURE LANGUAGE
+* Armor material rules:
+   * Outer Shell: Pristine Matte White Porcelain (Boron Carbide - B4C). Hardest and lightest ceramic, designed to shatter ballistics upon impact.
+   * Undersuit: Matte black hex-grid graphene & 2D linked polymer. Acts as a smart-skin sensor net and absorbs kinetic energy.
+   * Joints: Filled with Electrorheological (ER) fluids that solidify into crystalline structures in milliseconds upon impact (Bingham plastic response) to prevent bone shattering.
+* Mask identity rules: A sleek, faceless white cybernetic helmet with a subtle fox-like (Kitsune) silhouette. The optic sensors are void pitch-black. A red holographic UI display reflects internally on the visor.
+* Reactor system description: Governed strictly by the Landauer Limit. Erasing spatial data or generating extreme power causes massive quantum entropy heat (>43°C). The heat violently purges through vents, vaporizes acid rain into directional steam jets, causes optical heat mirages, and inflicts spider-web heat burns (Erythema ab igne) on her skin.
+* Fracture pattern language: "Luxury Wounds" / Kintsugi. Broken porcelain is never discarded but repaired using conductive gold resin and deep red quantum blood. Fractures reveal the underlying matte black graphene and leak internal crimson light.
+* Engineering / material logic: Bio-inspired nacre (pearl) hierarchy "brick and mortar" structure prevents crack propagation. The armor "breathes" with impacts, transferring kinetic force to the inner 2D polymer layer.
+5. COLOR AND MATERIAL LANGUAGE
+* Allowed color palette:
+   * Core Canon Layer: #FAFAFA (Pristine Porcelain White), #0A0A0A (Void/Obsidian Black), #E60000 (Deep Crimson/Visceral Red), and Kintsugi Gold.
+   * Fan Attraction Layer (Accents): Electric Violet, Sacred Cyan/Blue, Plasma Magenta, Burnt Amber, Imperial Gold, Chrome Silver. (These are applied exclusively to lighting, reflections, and atmospheres, not the base armor).
+* Forbidden colors: Generic rainbow neon, bright green, orange, yellow (unless used as a specific amber spark accent), and using Blue/Cyan as a base armor color (as Cyan belongs to the enemy Empire).
+* Material canon: Matte white ceramic, matte black hex-graphene, heavy rusty dark titan scrap metal (for the blade), liquid gold resin, viscous deep red blood, wet concrete.
+* Lighting style: High-contrast "Chiaroscuro" (4:1 ratio). 5-point cinematic lighting: 45° soft key light, dual rim lights to separate the white armor from dark backgrounds, overhead spine highlight, red visor bounce light, and atmospheric scattering (dust/rain) to catch the light.
+6. HARD RULES
+* MUST:
+   * MUST adhere to the physics of the Landauer Limit (heat generation, steam evaporation, thermal scars).
+   * MUST adhere to Gravitational Drag physics (350kg blade bends spatial trajectories, cracks concrete, vibrates cables).
+   * MUST maintain a clean, uncluttered silhouette (Porcelain Minimalism).
+   * MUST use Kintsugi and quantum blood to repair armor fractures.
+   * MUST limit HUD/UI elements to a maximum of 15% of the frame, wrapping in 3D (Orbital Logic), using microtext.
+   * MUST wear hair completely straight, heavy, and down when in Neutral state.
+   * MUST tie hair in a high ponytail using a matte black carbon clasp with a tiny crimson dot when in Combat/Berserk state.
+   * MUST include at least one element of "Micro-Humanity" (charm, analog watch, blood, fogged visor breath) to provide scale and emotion.
+* MUST NOT:
+   * MUST NOT use magic, spell circles, or glowing auras that lack a physical/thermal explanation.
+   * MUST NOT demonize, mutate, or alter her physical biology into a monster during Berserk states.
+   * MUST NOT use generic cyberpunk clutter, exposed messy wires on the armor, or cheap neon overlays.
+   * MUST NOT show her human face clearly; it must be obscured by the faceless porcelain visor/helmet.
+   * MUST NOT use shaky cam, handheld styles, or chaotic framing.
+   * MUST NOT mix kimono fabric or casual clothing randomly with her tactical armor.
+   * MUST NOT use flat, 2D floating HUD screens.
+7. PROMPT RULES
+* Stable prompt phrases used repeatedly:
+   * "Cinematic [shot type], ARRI ALEXA 65, [lens]mm lens" (e.g., 50mm, 85mm, or 35mm anamorphic 2.76:1).
+   * "flawless, pristine matte white porcelain futuristic armor (#FAFAFA)"
+   * "subtle Kintsugi cracks" or "glowing red Kintsugi cracks (#E60000)"
+   * "matte black hex-graphene undersuit at the joints"
+   * "faceless white cybernetic helmet with a subtle fox-like silhouette and pitch-black void optic sensors"
+   * "High contrast Chiaroscuro lighting, deep black negative space (#0A0A0A)"
+   * "quiet luxury hard sci-fi aesthetic" or "dark action tragedy aesthetic"
+   * "red orbital logic microtext UI wraps around... taking less than 15% of the frame"
+   * "directional steam jets and severe optical heat distortion"
+* Negative prompts that prevent drift:
+   * --no weapons, swords, dirt, rust, cracks, kintsugi, glowing aura, magic, blue, cyan, green (Used to lock the pristine neutral state).
+   * --no anime, cosplay, fantasy, traditional kitsune mask, messy details (Used to stop the AI from hallucinating weeb/fantasy elements).
+   * --no long straight hair down, magic, spell circles, floating flat HUD screens, monster face, mutations, kimono fabric (Used to lock the combat/berserk state).
+   * --no shaky cam
+8. KNOWN VARIANTS
+* Neutral State / Imperial Clean (Phase 1): Unarmed, pristine porcelain, zero dirt or cracks, hair straight down, absolute quiet luxury.
+* Fallen / Exile (Phase 2): Scars crossing the visor (2-4% tragedy error limit), leaking quantum blood and gold, faded Enso halo, standing in acid rain.
+* Mushin State: Unarmed, floating gracefully, 3D red monospaced text holograms (Orbital Logic UI) wrap around her at a 3-degree angle, bright red Enso circle.
+* Execution / Berserk State (Phase 3): Wielding the 350kg Zenith blade, high ponytail, extreme quantum heat (>43°C), steam jets, shattered porcelain revealing graphene, glowing crimson core.
+* The 6 Collectible "Poster" Color Modes:
+   1. Fallen Ivory (Canon core: White/Black/Red/Gold, cold aftermath).
+   2. Neon Wound (Fan magnet: Electric Violet lighting, wet slum reflections).
+   3. Cathedral Halo (Sacred aura: Sacred Blue/Cyan backlight, pristine).
+   4. Void Regent (Boss aura: Graphite Black dominant, Cyan line-light).
+   5. Crimson Overclock (Combat climax: Plasma Magenta, Burnt Amber sparks).
+   6. Royal Machine (Luxury collector: Imperial Gold, Royal Violet, Chrome).
+9. CONFLICTS
+* CONFLICT: Color Palette Contradiction. The global Master Bible rules strictly forbid the use of Blue, Cyan, Violet, and glowing Gold to maintain the pure White/Black/Crimson brand identity. However, the "Fan Attraction Layer" (Modes like Neon Wound, Cathedral Halo, Void Regent) explicitly commands the use of Electric Violet, Cyan, and Imperial Gold.
+   * Resolution: The strict palette represents the "Canon Layer" (the physical materials of the armor). The forbidden colors are allowed only as environmental atmospheric lighting, reflections, and external effects to create "Controlled Color Drama" for marketing/fan-art purposes, without changing the base armor material colors.
+* CONFLICT: Kitsune Mask Terminology. Early concepts defined her helmet as a "Kitsune mask". Using the phrase "Kitsune mask" in AI prompts directly causes catastrophic hallucination, turning her into an anime/fantasy character.
+   * Resolution: The term is kept in the lore, but in Prompt Engineering, it is strictly translated to "faceless white cybernetic helmet with a subtle fox-like silhouette".
+10. SOURCE MEMORY NOTES
+* Knowledge extracted from the Master Bible V2.0, Visual Principles & MIKAGE Cinematic Engine, Mikage Protocol (Giao thức Mikage), Style Bible v3 (6 Color Modes), and active conversation history regarding hallucination corrections, hair state definitions, and AI Studio prompt engineering templates.

@@ -1,0 +1,23 @@
+{
+  "required_fields": [
+    "title",
+    "source_note",
+    "why_selected",
+    "layer",
+    "teaches",
+    "never_use_for"
+  ],
+  "reject_if": [
+    "generic cyberpunk wallpaper",
+    "anime fanart with no grammar value",
+    "random japan aesthetic collage",
+    "low-resolution social media repost",
+    "derivative image with no symbolic structure"
+  ],
+  "review_protocol": [
+    "verify symbolic structure",
+    "verify compositional value",
+    "verify prompt usability",
+    "verify Mikage compatibility"
+  ]
+}

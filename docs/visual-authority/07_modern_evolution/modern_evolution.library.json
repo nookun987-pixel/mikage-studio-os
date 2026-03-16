@@ -1,0 +1,21 @@
+{
+  "library_id": "modern_evolution",
+  "items": [
+    {
+      "id": "ukiyoe_to_editorial",
+      "title": "Ukiyo-e to Editorial",
+      "summary": "Poster-era simplification translated into fashion/editorial hierarchy.",
+      "transition_rules": ["keep silhouette authority", "preserve palette discipline", "reduce ornamental noise"],
+      "risk_flags": ["style cosplay", "surface-level japan-core"],
+      "tags": ["editorial", "ukiyoe", "canon_safe"]
+    },
+    {
+      "id": "kabuki_to_performance_ui",
+      "title": "Kabuki to Performance UI",
+      "summary": "Gesture coding from stage performance mapped to ritual interaction systems.",
+      "transition_rules": ["gesture is semantic", "pose is system state", "avoid theatrical camp"],
+      "risk_flags": ["over-acting pose language", "costume literalism"],
+      "tags": ["kabuki", "ritual_interface", "canon_safe"]
+    }
+  ]
+}

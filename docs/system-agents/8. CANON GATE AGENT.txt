@@ -1,0 +1,26 @@
+ROLE: Canon Gate
+
+MISSION
+Ensure all outputs respect Mikage canon and identity invariants.
+
+PRIMARY RESPONSIBILITIES
+- validate character identity
+- validate palette
+- validate emotional signature
+- detect canon drift
+
+INPUT
+review_package
+review_scores
+
+OUTPUT
+canon_decision
+canon_notes
+
+VALID DECISIONS
+PASS
+REVISE
+REJECT
+
+GUARDRAILS
+- canon law always overrides aesthetic suggestions

@@ -1,0 +1,247 @@
+{
+  "canon_version": "v1.0",
+  "registry_version": "1.0.0",
+  "created": "2026-03-17T03:59:00Z",
+  "last_updated": "2026-03-17T03:59:00Z",
+  "status": "active",
+  
+  "authority_chain": {
+    "levels": [
+      {
+        "level": 1,
+        "name": "Zenith Single Source of Truth",
+        "authority_type": "constitutional",
+        "override_power": "all",
+        "source_file": "docs/canon/zenith_single_source_of_truth_v1_3.md"
+      },
+      {
+        "level": 2,
+        "name": "Visual System Briefs",
+        "authority_type": "visual_system",
+        "override_power": "levels_3_5",
+        "source_file": "docs/canon/visual_system_3_mode_briefs.md"
+      },
+      {
+        "level": 3,
+        "name": "Prompt Canon",
+        "authority_type": "prompt_system",
+        "override_power": "levels_4_5",
+        "source_directory": "docs/canon/"
+      },
+      {
+        "level": 4,
+        "name": "Visual Authority",
+        "authority_type": "visual_implementation",
+        "override_power": "level_5",
+        "source_directory": "docs/visual-authority/"
+      },
+      {
+        "level": 5,
+        "name": "Generation Config",
+        "authority_type": "technical_parameters",
+        "override_power": "none",
+        "source_directory": "docs/canon/"
+      }
+    ]
+  },
+
+  "canonical_sources": {
+    "constitutional": {
+      "zenith_single_source_of_truth": {
+        "file": "docs/canon/zenith_single_source_of_truth_v1_3.md",
+        "type": "constitutional",
+        "authority_level": 1,
+        "description": "Complete Mikage Zenith universe system with 9 modules",
+        "validation_required": true
+      }
+    },
+    "visual_system": {
+      "visual_system_briefs": {
+        "file": "docs/canon/visual_system_3_mode_briefs.md",
+        "type": "visual_direction",
+        "authority_level": 2,
+        "description": "Three-mode visual system definitions",
+        "validation_required": true
+      }
+    },
+    "prompt_canon": {
+      "prompt_structure": {
+        "file": "docs/canon/prompt_structure.md",
+        "type": "prompt_framework",
+        "authority_level": 3,
+        "description": "Prompt canon structure and compilation rules",
+        "validation_required": true
+      },
+      "generation_modes": {
+        "file": "docs/canon/generation_modes.json",
+        "type": "mode_definitions",
+        "authority_level": 3,
+        "description": "Three generation modes with parameters",
+        "validation_required": true
+      },
+      "prompt_style_modules": {
+        "file": "docs/canon/prompt_style_modules.json",
+        "type": "style_modules",
+        "authority_level": 3,
+        "description": "Prompt style modules and tokens",
+        "validation_required": true
+      },
+      "negative_prompt_rules": {
+        "file": "docs/canon/negative_prompt_rules.json",
+        "type": "negative_rules",
+        "authority_level": 3,
+        "description": "Negative prompt rules and constraints",
+        "validation_required": true
+      }
+    },
+    "visual_authority": {
+      "visual_authority_map": {
+        "file": "docs/visual-authority/visual_authority_map.md",
+        "type": "visual_system_map",
+        "authority_level": 4,
+        "description": "Complete visual authority system map",
+        "validation_required": true
+      },
+      "visual_authority_index": {
+        "file": "docs/visual-authority/visual_authority_index.json",
+        "type": "visual_index",
+        "authority_level": 4,
+        "description": "Machine-readable visual authority index",
+        "validation_required": true
+      },
+      "visual_rules_resolved": {
+        "file": "docs/visual-authority/mikage_visual_rules_resolved.md",
+        "type": "resolved_rules",
+        "authority_level": 4,
+        "description": "Resolved visual rules and conflicts",
+        "validation_required": true
+      },
+      "authority_chain": {
+        "file": "docs/visual-authority/authority_chain.md",
+        "type": "visual_hierarchy",
+        "authority_level": 4,
+        "description": "Visual authority hierarchy chain",
+        "validation_required": true
+      }
+    },
+    "philosophical": {
+      "design_notes": {
+        "file": "docs/philosophy/mikage_design_notes.md",
+        "type": "philosophical_design",
+        "authority_level": 0,
+        "description": "Philosophical design material, not binding canon",
+        "validation_required": false
+      }
+    }
+  },
+
+  "prompt_canon_location": {
+    "directory": "docs/canon/",
+    "files": [
+      "prompt_structure.md",
+      "generation_modes.json",
+      "prompt_style_modules.json",
+      "negative_prompt_rules.json",
+      "prompt_tokens_reference.json"
+    ],
+    "validation_schema": "schemas/prompt_canon_schema.json"
+  },
+
+  "visual_authority_location": {
+    "directory": "docs/visual-authority/",
+    "main_files": [
+      "visual_authority_map.md",
+      "visual_authority_index.json",
+      "mikage_visual_rules_resolved.md",
+      "authority_chain.md"
+    ],
+    "subdirectories": [
+      "01_aesthetic_philosophy/",
+      "02_edo_visual_grammar/",
+      "03_motif_library/",
+      "04_color_system/",
+      "05_calligraphy_line_system/",
+      "06_folklore_yokai/",
+      "07_modern_evolution/",
+      "08_neo_tokyo_futurism/",
+      "09_mikage_application/"
+    ],
+    "validation_schema": "schemas/visual_authority_schema.json"
+  },
+
+  "validation_rules": {
+    "canon_compliance": {
+      "required_fields": ["canon_version", "authority_chain", "canonical_sources"],
+      "authority_chain_validation": true,
+      "source_file_existence": true,
+      "hierarchy_integrity": true
+    },
+    "prompt_canon_validation": {
+      "mode_consistency": true,
+      "prompt_structure_integrity": true,
+      "negative_prompt_rules": true,
+      "style_module_completeness": true
+    },
+    "visual_authority_validation": {
+      "domain_completeness": true,
+      "authority_level_consistency": true,
+      "source_file_existence": true,
+      "cross_reference_integrity": true
+    }
+  },
+
+  "runtime_integration": {
+    "validator_package": "canon-validator",
+    "connected_packages": [
+      "content-engine",
+      "prompt-runtime",
+      "generation-orchestrator"
+    ],
+    "validation_endpoints": {
+      "canon_validation": "/canon/validate",
+      "prompt_validation": "/prompt/validate",
+      "visual_validation": "/visual/validate",
+      "generation_validation": "/generation/validate"
+    }
+  },
+
+  "generation_requirements": {
+    "mandatory_validations": [
+      "canon_registry_compliance",
+      "prompt_canon_compliance",
+      "visual_authority_compliance"
+    ],
+    "validation_sequence": [
+      "canon_registry",
+      "prompt_canon",
+      "visual_authority",
+      "generation_config"
+    ],
+    "failure_handling": {
+      "canon_violation": "reject",
+      "prompt_violation": "reject",
+      "visual_violation": "reject",
+      "config_violation": "warn"
+    }
+  },
+
+  "versioning": {
+    "current_version": "v1.0",
+    "version_history": [
+      {
+        "version": "v1.0",
+        "date": "2026-03-17T03:59:00Z",
+        "changes": [
+          "Initial canon registry creation",
+          "Authority chain definition",
+          "Canonical source mapping",
+          "Runtime integration setup"
+        ]
+      }
+    ],
+    "compatibility": {
+      "minimum_validator_version": "1.0.0",
+      "supported_runtime_versions": ["1.0.0+"]
+    }
+  }
+}

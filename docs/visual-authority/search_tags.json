@@ -1,0 +1,29 @@
+{
+  "tags": [
+    "wabi_sabi",
+    "ma",
+    "ukiyoe",
+    "kabuki",
+    "seigaiha",
+    "kitsune",
+    "porcelain",
+    "fracture",
+    "neo_tokyo",
+    "ritual_tech",
+    "silent_city",
+    "editorial",
+    "canon_safe",
+    "high_risk_generic"
+  ],
+  "filter_keys": [
+    "layer",
+    "era",
+    "motif",
+    "tone",
+    "material",
+    "lighting",
+    "composition",
+    "futurism_level",
+    "mikage_compatibility"
+  ]
+}

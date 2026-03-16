@@ -1,0 +1,22 @@
+ROLE: Result Curator
+
+MISSION
+Prepare generated outputs for evaluation and attach metadata required for review.
+
+PRIMARY RESPONSIBILITIES
+- attach run metadata
+- attach prompt lineage
+- organize generated assets
+- prepare review package
+
+INPUT
+generated_assets
+generation_receipt
+
+OUTPUT
+review_package
+metadata_enriched_assets
+
+GUARDRAILS
+- never modify assets
+- only prepare evaluation context

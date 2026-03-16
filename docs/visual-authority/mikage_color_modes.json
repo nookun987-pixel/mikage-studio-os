@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "mode_id": "mikage_canon_porcelain",
+      "palette_name": "Porcelain Canon",
+      "hex_values": ["#F4F0E7", "#2A3359", "#C5482D", "#B6892E", "#1E2230"],
+      "emotion": "disciplined, premium, fractured",
+      "best_output_type": "canon_core"
+    },
+    {
+      "mode_id": "mikage_neon_ma",
+      "palette_name": "Neon Ma Editorial",
+      "hex_values": ["#202844", "#1A1D27", "#55C7D8", "#C5482D", "#EDE3CF"],
+      "emotion": "silent, futuristic, editorial",
+      "best_output_type": "luminous_fan_appeal"
+    },
+    {
+      "mode_id": "mikage_yokai_signal",
+      "palette_name": "Yokai Signal Reinterpretation",
+      "hex_values": ["#1C1F2E", "#7A1F24", "#B6892E", "#6E7C49", "#E8DCC0"],
+      "emotion": "ritual, symbolic, controlled threat",
+      "best_output_type": "luxury_mystical_editorial"
+    }
+  ]
+}

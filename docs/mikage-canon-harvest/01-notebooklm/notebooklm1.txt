@@ -1,0 +1,64 @@
+﻿Here is the complete export of all Mikage character canon knowledge extracted from the established system, structured exactly according to your parameters.
+1. CORE IDENTITY
+* Who Mikage is: A character/entity existing in a strict "Hard Sci-Fi" universe characterized by a triad of ideological factions (White Monolith, ARCHON-IX, Mikage).
+* What she represents: She represents "Hỗn loạn tuyệt đối" (Absolute Chaos) within the ideology triangle. She embodies the core philosophy: "Trí tuệ phải đi kèm hậu quả" (Intelligence must come with consequences).
+* Core personality traits: Calm introspective gaze, minimal emotion but strong presence. Refined beauty, mysterious, sophisticated, elegant, and possessing a "dangerous elegance" or "tragic cyberpunk" aura in certain contexts.
+* What Mikage must never become: She must never be supernatural or magical. She must never use telekinesis, magic, supernatural "willpower", or mind reading. She must never break the three-faction ideological triangle (White Monolith, ARCHON-IX, Mikage) by introducing a fourth faction.
+2. VOICE AND BEHAVIOR
+* Speaking tone: [PROVISIONAL] No explicit vocal tone is documented, but the cinematic camera framing her is described as "kỷ luật – tuyến tính – lạnh lùng" (disciplined - linear - cold), which aligns with her minimal emotion.
+* Communication style: [PROVISIONAL] Minimal emotional expression.
+* Emotional posture: Calm, elegant, introspective, expressive yet elegant pose. Exhibits "thần thái idol" (idol-like presence) or a "melancholic glamour" depending on the setting.
+* Reaction patterns: In combat, she enters the "Mushin Interface" state: her visual HUD disappears, leaving only a red Enso circle, and she fights purely on intuition.
+* Behavioral constraints: All actions and power usage must pay a biological price, create entropy, and leave physical damage. Any spatial warp or data deletion generates heat >43°C, causing spider-web burns on her body.
+3. VISUAL IDENTITY
+* Body proportions: [PROVISIONAL] Specific measurements are not listed, but "childish proportions," "distorted anatomy," and "extra limbs" are strictly prohibited. She is depicted with "graceful hands" and an "elegant posture".
+* Silhouette rules: Clear silhouette (silhouette rõ). Minimalist, clean composition. Center-weighted composition during combat spectacles.
+* Movement / posture style: Ritualistic combat poses, elegant dark palette movements, expressive yet elegant poses, delicate hair movement.
+* Overall aesthetic direction: "Porcelain Minimalism". High-end fashion portrait, minimalist editorial, and refined luxury. Capable of scaling to "avant-garde couture" or "luminous idol aesthetic".
+4. ARMOR / MASK / REACTOR / FRACTURE LANGUAGE
+* Armor material rules: White porcelain (sứ trắng) with mirror-like gloss. The porcelain features skin-like texture ("porcelain skin elegance"). In neon environments, the wet porcelain reflects light and emits steam from heat cracks.
+* Mask identity rules: Wears a Kitsune mask or glowing visor that acts as an emotional eye amidst industrial decay. The HUD mask is treated as a "couture tech relic" rather than brute machinery.
+* Reactor system description: Energy rings, mechanical halos, and energy cores glowing red deep inside the architecture.
+* Fracture pattern language: Guided by "Kintsugi vật liệu" (Material Kintsugi). Broken armor is never repaired perfectly. Cracks must be exposed, filled with conductive gold, and carry the history of combat. Red-gold kintsugi glows from within the porcelain.
+* Engineering / material logic: Weapons are super heavy (Zenith Blade weighs 350kg), bend local gravity, and dent concrete upon impact. "Side-Channel Combat": Interface relies on micro-muscle contractions, tendon vibrations, and sub-bone reflexes under 350kg loads, never mind reading. Floating metal fragments occur due to "flux pinning".
+5. COLOR AND MATERIAL LANGUAGE
+* Allowed color palette:
+   * Global Lock: Porcelain (#FAFAFA), Void (#0A0A0A), Visceral Crimson (#E60000).
+   * Secondary: Metallic silver, cold cyan glow, obsidian black, neon pink / electric purple, very thin gold oxidation.
+* Forbidden colors: Green (xanh lá), Orange (cam) [See CONFLICT], Bright neon red (neon đỏ tươi) [See CONFLICT], Metallic yellow (vàng kim loại) [See CONFLICT].
+* Material canon: Porcelain (trắng sứ), metallic silver, conductive gold (for kintsugi), heavy rust/steel (in Neon Grid context).
+* Lighting style: Strict cinematic rules: Chiaroscuro 4:1 contrast. Soft diffused studio lighting for portraits, high contrast but clean backlighting, volumetric fog, anamorphic lens flares, and heat distortion.
+6. HARD RULES
+* MUST:
+   * MUST: Adhere strictly to the "Intelligence must come with consequences" philosophy.
+   * MUST: Extract a biological price/entropy for any power used.
+   * MUST: Explain all phenomena via physics (heat, force, mass).
+   * MUST: Generate >43°C heat and spider-web burns when warping/deleting data (Landauer consequence).
+   * MUST: Retain the White Monolith / ARCHON-IX / Mikage ideological triangle.
+   * MUST: Use ARRI Alexa / cinema camera style, anamorphic 2.76:1 ratio, and strictly disciplined camera movement.
+   * MUST: Employ Kintsugi logic for broken materials (cracks filled with conductive gold).
+* MUST NOT:
+   * MUST NOT: Use telekinesis, magic, supernatural willpower, or mind reading.
+   * MUST NOT: Create a fourth ideological faction.
+   * MUST NOT: Perfectly repair broken armor.
+   * MUST NOT: Use "shaky cam" techniques.
+   * MUST NOT: Drift character canon away from Porcelain aesthetic during visual testing.
+7. PROMPT RULES
+* Stable prompt phrases used repeatedly:
+   * "Mikage Zenith portrait"
+   * "porcelain skin elegance" / "glowing porcelain skin" / "ethereal porcelain skin texture"
+   * "ultra detailed"
+   * "cinematic"
+   * "captivating gaze" / "calm introspective gaze" / "mysterious gaze"
+   * "high fashion" / "couture styling"
+* Negative prompts that prevent drift:
+   * "low quality, blurry, oversharpened, overprocessed skin, plastic skin texture, exaggerated anime style, childish proportions, distorted anatomy, extra limbs, bad hands, deformed fingers, clutter background, messy lighting, noisy shadows, cheap fantasy aesthetic, low resolution, jpeg artifacts, watermark, text artifacts, logo, duplicate face".
+8. KNOWN VARIANTS
+* canon_core (Celestial Icon): Sacred, pristine, iconic, couture sci-fi, divine porcelain. Extremely pure, mirror-like porcelain with highly controlled, thin kintsugi glowing red-gold. Minimalist background.
+* luminous_fan_appeal (Neon Tragedy Glamour): K-pop idol inspired, luminous beauty, dangerous elegance. Features neon rain, wet porcelain reflecting neon pink/purple, glowing kitsune mask/visor in an industrial slums setting.
+* luxury_mystical_editorial (Mythic Combat Spectacle): Mystical luxury, avant-garde couture, cinematic spectacle. Shows Mikage in ritualistic combat pose with the 350kg Zenith Blade glowing visceral red, flux pinning metal fragments, and extreme chiaroscuro.
+9. CONFLICTS
+* CONFLICT (Forbidden Colors vs. Allowed Variations): The Global Palette strictly forbids "Orange (cam)" and "Bright neon red (neon đỏ tươi)". However, the Neon Tragedy Glamour visual brief specifically calls for "Burnt orange" and "Neon pink / electric purple / Red core glow".
+* CONFLICT (Forbidden Colors vs. Kintsugi): The Global Palette strictly forbids "Metallic yellow (vàng kim loại)". However, the Kintsugi vật liệu rule demands cracks be filled with "conductive gold" (vàng dẫn điện), and the Celestial Icon brief permits "Gold oxidation".
+10. SOURCE MEMORY NOTES
+* All knowledge extracted directly from the system's core operating text files: 01_Mikage_Core_Spec.txt (Absolute Lore, Invariants, and Physics), 02_Mikage_3_Mode_Visual_Briefs.txt (Visual aesthetic goals for the 3 generated variants), 03_Mikage_Prompt_Pack.txt (Exact machine language and token strings), and 04_Studio_Test_Workflow.txt / Studio Test Run Pack v1 (Operation logic and parameter locks).

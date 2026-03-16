@@ -33,6 +33,7 @@ import type {
   SceneBuilder,
   SceneContext
 } from "@mikage/scene-graph"
+import { CanonRegistryValidator } from "@mikage/canon-validator"
 
 const OBJECTIVE_MIME_MAP: Record<
   ProductionPackage["objective"],
@@ -131,6 +132,29 @@ async function generateWithProvider(
   provider: GenerationProvider
 ): Promise<void> {
   const prompt = pkg.promptPack.prompts.join(" ")
+  
+  // Canon validation before provider generation
+  const canonValidator = new CanonRegistryValidator();
+  const validationResult = await canonValidator.validateGenerationRequest({
+    prompt: {
+      mode: 'canon_core', // Default mode for content engine
+      positive_prompt: prompt,
+      parameters: {
+        sampler: 'DPM++ 2M Karras',
+        steps: 30,
+        cfg: 6.5
+      }
+    },
+    visual_config: {
+      authority_level: 4,
+      domain: 'mikage_application'
+    },
+    validations: ['canon_registry_compliance', 'prompt_canon_compliance', 'visual_authority_compliance']
+  });
+
+  if (!validationResult.valid) {
+    throw new Error(`Canon validation failed: ${validationResult.issues.map(i => i.message).join(', ')}`);
+  }
   
   switch (pkg.objective) {
     case "cinematic_frame":

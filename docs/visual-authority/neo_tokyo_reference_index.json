@@ -1,0 +1,53 @@
+{
+  "index": [
+    {
+      "id": "neo_tokyo_density",
+      "title": "Neo Tokyo Density",
+      "summary": "Layered vertical complexity with controlled hierarchy.",
+      "key_traits": ["vertical stacks", "readable density", "disciplined signage"],
+      "visual_tags": ["neo_tokyo", "vertical", "canon_safe"]
+    },
+    {
+      "id": "rain_neon_alley",
+      "title": "Rain Neon Alley",
+      "summary": "Reflective wet corridors with restrained color accents.",
+      "key_traits": ["wet reflections", "narrow corridor depth", "noisy-light restraint"],
+      "visual_tags": ["neo_tokyo", "editorial", "canon_safe"]
+    },
+    {
+      "id": "vertical_signage",
+      "title": "Vertical Signage",
+      "summary": "Typographic light columns as architectural hierarchy.",
+      "key_traits": ["vertical typography", "axis framing", "sparse glyph discipline"],
+      "visual_tags": ["neo_tokyo", "vertical", "canon_safe"]
+    },
+    {
+      "id": "cyber_shrine",
+      "title": "Cyber Shrine",
+      "summary": "Ritual thresholds translated into future sanctums.",
+      "key_traits": ["threshold frames", "ceremonial path", "focal pools"],
+      "visual_tags": ["ritual_tech", "neo_tokyo", "canon_safe"]
+    },
+    {
+      "id": "porcelain_tech",
+      "title": "Porcelain Tech",
+      "summary": "Fractured ceramic luxury as futuristic material identity.",
+      "key_traits": ["porcelain seams", "micro highlights", "gold inlays"],
+      "visual_tags": ["porcelain", "fracture", "canon_safe"]
+    },
+    {
+      "id": "ritual_interface",
+      "title": "Ritual Interface",
+      "summary": "Ceremonial human-machine interaction language.",
+      "key_traits": ["gesture semantics", "ringed zones", "interaction halo"],
+      "visual_tags": ["ritual_interface", "ritual_tech", "canon_safe"]
+    },
+    {
+      "id": "silent_megacity",
+      "title": "Silent Megacity",
+      "summary": "Massive urban stillness with sparse luminous cues.",
+      "key_traits": ["large voids", "slow framing", "low-noise atmosphere"],
+      "visual_tags": ["silent_city", "ma", "neo_tokyo", "canon_safe"]
+    }
+  ]
+}

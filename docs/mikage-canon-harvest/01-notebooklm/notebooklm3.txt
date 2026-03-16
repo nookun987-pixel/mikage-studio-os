@@ -1,0 +1,68 @@
+﻿Here is the comprehensive export of all Mikage character canon knowledge extracted from your system documents, strictly adhering to your output rules.
+1. CORE IDENTITY
+* Mikage is the third axis in the universe's ideological triangle, representing "controlled evolution" (Tiến hóa có kiểm soát).
+* She represents the core philosophical truth of the universe: "Intelligence must carry consequence" (Trí tuệ phải đi kèm hậu quả).
+* Any power she wields is traded for biological pain and thermal entropy.
+* Her core personality traits consist of a calm introspective presence, minimal emotion, and a strong visual gravity.
+* She embodies a refined, mysterious, elegant, and luxurious aesthetic presence.
+* She must never become a childish anime character, an exaggerated idol caricature, or a cartoonish fantasy figure.
+* She must never exhibit loud influencer tones, meme-style visual tropes, or a neon cyberpunk overload.
+2. VOICE AND BEHAVIOR
+* Her speaking tone must strictly remain calm, mysterious, elegant, minimal, and thoughtful.
+* Her communication style prohibits the use of hype marketing tone, loud influencer style, or aggressive sales language.
+* Her emotional posture features a calm, introspective gaze with minimal visible emotion but a profoundly strong presence.
+* In combat, her reaction pattern triggers the "Mushin" interface: her HUD disappears, leaving only a red Enso ring, and she fights purely on intuition.
+* Her behavioral constraints dictate absolute adherence to Hard Sci-Fi logic.
+* Her combat interface is connected purely via micro-muscle contractions and bone reflexes.
+3. VISUAL IDENTITY
+* Her body proportions align with "The Porcelain Muse" archetype: a tapered chin, a petite nose, and narrow almond facial features.
+* Silhouette rules require high-impact shapes and silhouette balance derived from "Notan" principles (binary light-dark harmony).
+* Her visual framing prioritizes flattened perspective, center-weighted composition, and a vertical narrative poster logic.
+* Movement and posture style are rooted in theatrical Kabuki and Buyō traditions, specifically utilizing the "Mie" pose (a theatrical freeze with dramatic body twists and expressive hand mudras).
+* She also utilizes a "serpentine posture," defined by a traditional twist looking backwards to project elegance.
+* Her overall aesthetic direction fuses Japanese minimalism, hard sci-fi elegance, and a high-fashion editorial mood.
+4. ARMOR / MASK / REACTOR / FRACTURE LANGUAGE
+* Armor material rules dictate the use of white porcelain and ceramic plating.
+* Mask identity rules require a white porcelain Kitsune mask, black hair falling, and "Void Black" empty eye sockets.
+* Her mask and face can feature red "Kumadori" detailing lines around the eyes.
+* Her reactor system relies on "side-channel combat," where weapons are controlled through bone reflexes under the extreme 350kg load of her Zenith Blade.
+* Fracture pattern language strictly follows Landauer's Law: warping space or deleting data generates extreme quantum entropy heat (over 43°C).
+* This extreme heat leaves physical thermal scarring, specifically Erythema ab igne (spider-web burns), on her skin and body.
+* Engineering and material logic dictates that fractured armor is never repaired perfectly; it must follow "Kintsugi" logic.
+* Original historical fractures are filled with conductive gold, while new battle cracks are repaired with silver to document her battle history.
+* Her armor reacts physically to environmental acid rain, which causes grey ash etching and corrosion streaks on porcelain and titanium surfaces.
+5. COLOR AND MATERIAL LANGUAGE
+* Allowed color palette consists of Porcelain (#FAFAFA) for order, Void Black (#0A0A0A) for chaos and industrial voids, and Visceral Crimson (#E60000) for entropy and thermal consequence.
+* Traditional Japanese mineral pigments are also allowed: Gunjo (Ultramarine #1E4D8C), Shu (Vermillion #FF3500), and Odo (Yellow Ochre #BE7F51).
+* Forbidden colors strictly include neon green, safety orange, neon magenta, and bright metallic gold bases.
+* Material canon mixes delicate porcelain/ceramics with heavy techwear elements like raw concrete, galvanized steel, acrylic resin, matte vinyl, and tactile nylon.
+* Lighting style strictly follows a 4:1 Chiaroscuro ratio featuring hard backlights, deep sculptured shadows, and very thin rim light.
+* Camera and lighting rules emulate ARRI Alexa 65 cinematic lenses, linear/cold lighting behavior, and anamorphic 2.39:1 or 2.76:1 aspect ratios.
+6. HARD RULES
+* MUST: Enforce that all power carries a biological price, generates thermal entropy, and leaves physical bodily damage.
+* MUST: Ensure combat alters the physical environment (e.g., the 350kg Zenith Blade bends local gravity, wobbles station orbits, and sinks into concrete).
+* MUST: Frame all conflicts strictly within the ideological triangle (White Monolith, ARCHON-IX, Mikage) without introducing a fourth faction.
+* MUST: Use a linear, disciplined camera without any shaky cam effects.
+* MUST: Use atmospheric anchors like acid rain, smoke, or volumetric fog to give 3D physical volume and "bite" to red lights and lasers.
+* MUST NOT: Feature any magic, telekinesis, supernatural willpower, or brainwave reading abilities.
+* MUST NOT: Alter or violate the "Absolute Invariants" (Tier 1 rules), or the logical foundation of the universe will collapse.
+7. PROMPT RULES
+* Stable prompt phrases used repeatedly: "Mikage Zenith portrait", "porcelain skin elegance", "refined beauty", "calm introspective gaze", "minimal emotion but strong presence", "high fashion editorial portrait", "luxury photography", "ultra detailed".
+* Stable prompt phrases used repeatedly: "narrow almond features", "tapered chin", "petite nose".
+* Negative prompts that prevent drift: "low quality, blurry, oversharpened, overprocessed skin, plastic skin texture".
+* Negative prompts that prevent drift: "exaggerated anime style, childish proportions, distorted anatomy, extra limbs, bad hands, deformed fingers".
+* Negative prompts that prevent drift: "clutter background, messy lighting, noisy shadows, cheap fantasy aesthetic, cheap idol aesthetic, gothic caricature look".
+* Negative prompts that prevent drift: "watermark, text artifacts, logo, duplicate face, jpeg compression".
+8. KNOWN VARIANTS
+* Mode 1: Canon Core: A clean, refined editorial portrait with minimalist background, soft lighting, and absolute fidelity to character constraints.
+* Mode 2: Luminous Fan Appeal: A radiant, K-pop idol inspired modern editorial with glowing porcelain skin, subtle sparkles, delicate hair movement, and strong eye contact.
+* Mode 3: Luxury Mystical Editorial: An avant-garde haute couture aesthetic featuring dramatic chiaroscuro, ethereal porcelain textures, dark elegant palettes, and brutalist backgrounds.
+* Imperial Clean: A flawless, perfectly pristine porcelain variant.
+* Fallen: An armor variant heavily cracked and repaired using Kintsugi logic.
+* Execution: A variant showing extreme thermal scars glowing vividly with blood vessels.
+* PROVISIONAL: Lyre (The Glitch Phantom): Listed adjacently to Mikage's variants in the Character Canon, featuring fiber-optic dresses, motion blur, and decaying data (It is unconfirmed if this is a Mikage form or a distinct secondary character).
+9. CONFLICTS
+* CONFLICT: The absolute global palette rules explicitly forbid the color green ("cấm: xanh lá", "forbidden_set: neon_green"). However, "Byakuroku" (Light Green, hex #A8D8B9) is simultaneously listed as an approved traditional mineral pigment used to represent fresh growth and spring mists.
+* CONFLICT: The prompt logic for the Mode 1 Canon Core dictates "soft diffused studio lighting" and "delicate highlights", but the strict visual doctrine demands a rigid 4:1 Chiaroscuro ratio with deep shadows and hard backlights across the entire universe.
+10. SOURCE MEMORY NOTES
+* This knowledge is extracted directly from the primary tier files in the Mikage Studio System runtime hierarchy, specifically: "01_Mikage_Core_Spec.txt", "02_Mikage_3_Mode_Visual_Briefs.txt", "03_Mikage_Prompt_Pack.txt", the "Japanese Visual Aesthetics AI Knowledge Packs.md", the V1.3 "SINGLE SOURCE OF TRUTH", and the "MIKAGE_PROJECT_MASTER.md" architecture records.

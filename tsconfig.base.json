@@ -76,7 +76,9 @@
       "@mikage/generation-evaluator": ["packages/generation-evaluator/src/index.ts"],
       "@mikage/asset-registry": ["packages/asset-registry/src/index.ts"],
       "@mikage/scene-graph": ["packages/scene-graph/src/index.ts"],
-      "@mikage/canon-versioning": ["packages/canon-versioning/src/index.ts"]
+      "@mikage/canon-versioning": ["packages/canon-versioning/src/index.ts"],
+      "@mikage/prompt-runtime": ["packages/prompt-runtime/src/index.ts"],
+      "@mikage/generation-orchestrator": ["packages/generation-orchestrator/src/index.ts"]
     }
   }
 }

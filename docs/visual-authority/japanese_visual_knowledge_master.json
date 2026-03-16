@@ -1,0 +1,39 @@
+{
+  "domain": "japan_reference",
+  "version": "v1",
+  "libraries": {
+    "aesthetic_philosophy": "01_aesthetic_philosophy/aesthetic_philosophy.library.json",
+    "ukiyoe_visual_grammar": "02_edo_visual_grammar/ukiyoe_visual_grammar.library.json",
+    "motif_library": "03_motif_library/motif_library.library.json",
+    "color_system": "04_color_system/color_system.library.json",
+    "folklore_yokai": "06_folklore_yokai/folklore_yokai.library.json",
+    "neo_tokyo_futurism": "08_neo_tokyo_futurism/neo_tokyo_futurism.library.json"
+  },
+  "application_layer": {
+    "mikage_core": "09_mikage_application/mikage_japanese_core.md",
+    "translation": "09_mikage_application/mikage_tokyo_future_translation.json",
+    "allowed_motifs": "09_mikage_application/mikage_allowed_motifs.json",
+    "forbidden_patterns": "09_mikage_application/mikage_forbidden_generic_patterns.json",
+    "color_modes": "09_mikage_application/mikage_color_modes.json"
+  },
+  "downstream_outputs": {
+    "visual_grammar_blocks": "visual_grammar_blocks.json",
+    "prompt_modules": "prompt_modules.json",
+    "motif_tags": "mikage_japanese_motif_tags.json",
+    "preset_seeds": "preset_seeds.json",
+    "color_modes": "mikage_color_modes.json"
+  },
+  "preset_families": "mikage_tokyo_future_preset_pack.json",
+  "filters": [
+    "layer",
+    "era",
+    "motif",
+    "tone",
+    "material",
+    "lighting",
+    "composition",
+    "futurism_level",
+    "mikage_compatibility"
+  ],
+  "quality_control": "quality_control_rules.json"
+}

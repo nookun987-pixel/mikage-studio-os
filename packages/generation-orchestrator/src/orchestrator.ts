@@ -18,29 +18,38 @@ export interface GenerationResult {
 export class GenerationOrchestrator {
   private stages: PipelineStage[] = []
 
-  registerStage(stage: PipelineStage): void {
-    if (!this.stages.includes(stage)) {
-      this.stages.push(stage)
-    }
+  addStage(stage: PipelineStage): void {
+    this.stages.push(stage)
   }
 
-  getStages(): PipelineStage[] {
-    return [...this.stages]
-  }
-
-  execute(task: GenerationTask): GenerationResult {
+  async execute(task: GenerationTask): Promise<GenerationResult> {
+  // TODO: MIGRATE to @mikage/canon-validator.validateGenerationTask() when monorepo TypeScript constraints allow
+  // Current limitation: contracts dependency causes rootDir conflicts in cross-package imports
+  if (!task.id || !task.prompt) {
     return {
       taskId: task.id,
       pipeline: this.stages,
-      completed: true
+      completed: false,
+      error: "Invalid task: missing id or prompt"
     }
   }
 
-  clearStages(): void {
-    this.stages.length = 0
-  }
+    try {
+      // Execute pipeline stages (simplified - will be enhanced when full pipeline system is implemented)
+      console.log(`Executing pipeline for task ${task.id} with stages: ${this.stages.join(', ')}`);
 
-  hasStage(stage: PipelineStage): boolean {
-    return this.stages.includes(stage)
+      return {
+        taskId: task.id,
+        pipeline: this.stages,
+        completed: true
+      }
+    } catch (error) {
+      return {
+        taskId: task.id,
+        pipeline: this.stages,
+        completed: false,
+        error: error instanceof Error ? error.message : String(error)
+      }
+    }
   }
 }

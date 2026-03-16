@@ -1,0 +1,14 @@
+{
+  "items": [
+    {"motif_tag":"sakura","meaning":"ephemeral beauty","intensity":"low","safe_modes":["luminous_fan_appeal"],"conflict_tags":["high_risk_generic"]},
+    {"motif_tag":"koi","meaning":"resilience in motion","intensity":"medium","safe_modes":["canon_core","luminous_fan_appeal"],"conflict_tags":[]},
+    {"motif_tag":"crane","meaning":"dignity and longevity","intensity":"low","safe_modes":["canon_core"],"conflict_tags":[]},
+    {"motif_tag":"dragon","meaning":"mythic force","intensity":"high","safe_modes":["luxury_mystical_editorial"],"conflict_tags":["high_risk_generic"]},
+    {"motif_tag":"seigaiha_wave","meaning":"continuity and rhythm","intensity":"low","safe_modes":["canon_core","luminous_fan_appeal","luxury_mystical_editorial"],"conflict_tags":[]},
+    {"motif_tag":"cloud","meaning":"threshold transition","intensity":"medium","safe_modes":["luminous_fan_appeal","luxury_mystical_editorial"],"conflict_tags":[]},
+    {"motif_tag":"maple_leaf","meaning":"seasonal transition","intensity":"low","safe_modes":["luminous_fan_appeal"],"conflict_tags":["high_risk_generic"]},
+    {"motif_tag":"bamboo","meaning":"resilient discipline","intensity":"medium","safe_modes":["canon_core"],"conflict_tags":[]},
+    {"motif_tag":"kitsune","meaning":"liminal intelligence","intensity":"medium","safe_modes":["canon_core","luxury_mystical_editorial"],"conflict_tags":["high_risk_generic"]},
+    {"motif_tag":"oni","meaning":"symbolic threat boundary","intensity":"high","safe_modes":["luxury_mystical_editorial"],"conflict_tags":["high_risk_generic"]}
+  ]
+}

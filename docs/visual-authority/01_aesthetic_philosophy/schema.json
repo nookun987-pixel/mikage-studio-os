@@ -1,0 +1,19 @@
+﻿{
+    "schema_id":  "01_aesthetic_philosophy_record_v1",
+    "supports":  {
+                     "markdown_notes":  true,
+                     "json_records":  true,
+                     "image_references":  true,
+                     "tag_metadata":  true
+                 },
+    "required_common_fields":  [
+                                   "id",
+                                   "title",
+                                   "layer",
+                                   "source_note",
+                                   "why_selected",
+                                   "teaches",
+                                   "never_use_for",
+                                   "tags"
+                               ]
+}
