@@ -10,6 +10,29 @@ import type {
   ImageGenerationRequest,
   VideoGenerationRequest
 } from "@mikage/provider-registry"
+import type {
+  ILineageService
+} from "@mikage/asset-lineage"
+import {
+  AssetLineageGraphImpl,
+  createLineageRecord,
+  createLineageEdge,
+  generateNodeId
+} from "@mikage/asset-lineage"
+import type {
+  EvaluationEngine,
+  EvaluationContext,
+  GenerationEvaluation
+} from "@mikage/generation-evaluator"
+import type {
+  AssetRegistry,
+  AssetRecord,
+  AssetMetadata
+} from "@mikage/asset-registry"
+import type {
+  SceneBuilder,
+  SceneContext
+} from "@mikage/scene-graph"
 
 const OBJECTIVE_MIME_MAP: Record<
   ProductionPackage["objective"],
@@ -135,10 +158,15 @@ async function generateWithProvider(
   }
 }
 
-export function generateAsset(
+export async function generateAsset(
   pkg: ProductionPackage,
-  providerRegistry: ProviderRegistry
-): GeneratedAsset {
+  providerRegistry: ProviderRegistry,
+  lineageService: ILineageService,
+  evaluationEngine: EvaluationEngine,
+  assetRegistry: AssetRegistry,
+  sceneBuilder?: SceneBuilder,
+  sceneContext?: SceneContext
+): Promise<GeneratedAsset> {
 
   assertPackageReady(pkg)
 
@@ -150,8 +178,145 @@ export function generateAsset(
   const lineageHash = deriveLineageHash(pkg, assetId)
 
   const now = new Date().toISOString()
-
   const generatedBy = resolveProviderForObjective(pkg.objective, providerRegistry)
+
+  const basePrompt = pkg.promptPack.prompts.join(" ")
+  const finalPrompt = sceneBuilder && sceneContext ? sceneBuilder.generateScenePrompt(sceneContext) : basePrompt
+  const sceneParameters = sceneBuilder && sceneContext ? sceneBuilder.extractGenerationParameters(sceneContext) : {}
+
+  // Create lineage graph and nodes for tracking
+  const lineageGraph = new AssetLineageGraphImpl()
+  
+  // Create prompt node
+  const promptNodeId = generateNodeId("prompt")
+  const promptNode = createLineageRecord({
+    nodeId: promptNodeId,
+    nodeType: "prompt",
+    data: {
+      text: finalPrompt,
+      source: pkg.promptPack.promptPackId
+    }
+  })
+  lineageService.registerNode(promptNode)
+
+  // Create asset node
+  const assetNodeId = generateNodeId("asset")
+  const assetNode = createLineageRecord({
+    nodeId: assetNodeId,
+    nodeType: "asset",
+    data: {
+      assetId,
+      assetType: pkg.objective,
+      providerId: generatedBy,
+      modelId: `${generatedBy}-v1.0`,
+      generationParams: {
+        width: dimensions.width,
+        height: dimensions.height,
+        format: mimeType === "video/mp4" ? "mp4" : "png",
+        ...sceneParameters
+      },
+      sourceProductionPackageId: pkg.production_package_id,
+      sourceCanonId: pkg.canonConstraints.requiredTags.join("-"),
+      sourceSceneId: sceneContext?.scene.sceneId,
+      outputMetadata: {
+        mimeType,
+        width: mimeType !== "video/mp4" ? dimensions.width : undefined,
+        height: mimeType !== "video/mp4" ? dimensions.height : undefined,
+        durationMs: mimeType === "video/mp4" ? 5000 : undefined,
+        format: mimeType === "video/mp4" ? "mp4" : "png"
+      }
+    }
+  })
+  lineageService.registerNode(assetNode)
+
+  // Link prompt to asset
+  const promptToAssetEdge = createLineageEdge({
+    from: promptNodeId,
+    to: assetNodeId,
+    relation: "generated_by",
+    metadata: {
+      timestamp: now,
+      seed: `seed_${assetId}`
+    }
+  })
+  lineageService.link(promptToAssetEdge)
+
+  // If scene context exists, link scene to prompt
+  if (sceneContext) {
+    const sceneNodeId = generateNodeId("scene")
+    const sceneNode = createLineageRecord({
+      nodeId: sceneNodeId,
+      nodeType: "scene",
+      data: {
+        sceneId: sceneContext.scene.sceneId,
+        metadata: sceneContext.scene.metadata
+      }
+    })
+    lineageService.registerNode(sceneNode)
+
+    const sceneToPromptEdge = createLineageEdge({
+      from: sceneNodeId,
+      to: promptNodeId,
+      relation: "used_in_scene",
+      metadata: {
+        timestamp: now
+      }
+    })
+    lineageService.link(sceneToPromptEdge)
+  }
+
+  const evaluationContext: EvaluationContext = {
+    assetId,
+    assetType: pkg.objective,
+    providerId: generatedBy,
+    modelId: `${generatedBy}-v1.0`,
+    prompt: finalPrompt,
+    generationParams: {
+      width: dimensions.width,
+      height: dimensions.height,
+      format: mimeType === "video/mp4" ? "mp4" : "png",
+      ...sceneParameters
+    },
+    referenceInputs: [],
+    canonConstraints: pkg.canonConstraints,
+    objective: pkg.objective
+  }
+
+  const evaluation: GenerationEvaluation = await evaluationEngine.evaluateGeneration(evaluationContext)
+
+  const assetMetadata: AssetMetadata = {
+    mimeType,
+    width: mimeType !== "video/mp4" ? dimensions.width : undefined,
+    height: mimeType !== "video/mp4" ? dimensions.height : undefined,
+    durationMs: mimeType === "video/mp4" ? 5000 : undefined,
+    storageUri,
+    format: mimeType === "video/mp4" ? "mp4" : "png",
+    evaluation: {
+      finalScore: evaluation.finalScore,
+      scores: evaluation.scores,
+      warnings: evaluation.warnings,
+      flags: evaluation.flags,
+      evaluatedAt: evaluation.evaluationTimestamp
+    },
+    tags: [pkg.objective, generatedBy],
+    categories: ["generated", pkg.objective]
+  }
+
+  const assetRecord: AssetRecord = {
+    assetId,
+    assetType: pkg.objective,
+    providerId: generatedBy,
+    modelId: `${generatedBy}-v1.0`,
+    sceneId: sceneContext?.scene.sceneId,
+    canonId: sceneContext?.scene.metadata.canonId || pkg.canonConstraints.requiredTags[0],
+    canonVersion: sceneContext?.scene.metadata.canonVersion,
+    canonVersionId: sceneContext?.scene.metadata.canonVersionId,
+    lineageId: assetId,
+    generationTimestamp: now,
+    metadata: assetMetadata
+  }
+
+  await assetRegistry.registerAsset(assetRecord)
 
   return {
     assetId,
@@ -166,7 +331,14 @@ export function generateAsset(
       generatedBy,
       width: mimeType !== "video/mp4" ? dimensions.width : undefined,
       height: mimeType !== "video/mp4" ? dimensions.height : undefined,
-      durationMs: mimeType === "video/mp4" ? 5000 : undefined
+      durationMs: mimeType === "video/mp4" ? 5000 : undefined,
+      evaluation: {
+        finalScore: evaluation.finalScore,
+        scores: evaluation.scores,
+        warnings: evaluation.warnings,
+        flags: evaluation.flags,
+        evaluatedAt: evaluation.evaluationTimestamp
+      }
     },
     generated_at: now
   }

@@ -1,0 +1,13 @@
+{
+  "asset_id": "kitsune_mask_canon_reference_v1",
+  "asset_type": "reference_image_set",
+  "character_id": "mikage",
+  "component_id": "kitsune_mask",
+  "category": "mask_reference",
+  "status": "canon_reference",
+  "views": [
+    "front",
+    "profile",
+    "three_quarter"
+  ]
+}

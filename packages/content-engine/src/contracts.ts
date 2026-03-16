@@ -73,6 +73,30 @@ export type GeneratedAsset = {
     width?: number
     height?: number
     durationMs?: number
+    evaluation?: {
+      finalScore: number
+      scores: Array<{
+        category: string
+        score: number
+        maxScore: number
+        weight: number
+        description: string
+      }>
+      warnings: Array<{
+        code: string
+        message: string
+        suggestion?: string
+        category: string
+      }>
+      flags: Array<{
+        type: "error" | "warning" | "info"
+        code: string
+        message: string
+        severity: number
+        category: string
+      }>
+      evaluatedAt: string
+    }
   }
 
   socialExport?: SocialExportBundle
@@ -82,6 +106,12 @@ export type GeneratedAsset = {
 export type ContentGenerationRequest = {
   productionPackage: ProductionPackage
   targetPlatforms?: SocialPlatform[]
+  sceneContext?: {
+    sceneId: string
+    sceneType: string
+    scenePrompt: string
+    sceneParameters: Record<string, unknown>
+  }
 }
 
 export type ContentGenerationResponse = {

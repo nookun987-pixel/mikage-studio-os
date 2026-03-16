@@ -1,0 +1,41 @@
+{
+  "asset_name": "mikage_combat_armor",
+  "version": "canon_reference_v1",
+  "type": "character_armor_reference",
+
+  "character": "mikage",
+
+  "materials": {
+    "outer_shell": "glossy white porcelain ceramic",
+    "internal_frame": "matte black carbon fiber",
+    "joints": "dark titanium alloy"
+  },
+
+  "energy_system": {
+    "core_location": "upper_chest",
+    "color": "restrained_crimson",
+    "leakage": "subtle_through_fracture_seams"
+  },
+
+  "mask": {
+    "type": "porcelain_kitsune_mask",
+    "surface": "smooth_white_porcelain",
+    "eye_slits": "long_narrow_black",
+    "ear_geometry": "integrated_fox_ear"
+  },
+
+  "silhouette_rules": {
+    "shoulders": "slightly_wider_than_hips",
+    "waist": "narrow",
+    "legs": "long_agile",
+    "thighs": "slim_tapered"
+  },
+
+  "style_rules": [
+    "industrial_hard_surface_sci_fi",
+    "no_anime_proportions",
+    "no_fashion_armor",
+    "no_cyberpunk_neon",
+    "no_fantasy_elements"
+  ]
+}

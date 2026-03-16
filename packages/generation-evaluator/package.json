@@ -1,5 +1,5 @@
 {
-  "name": "@mikage/content-engine",
+  "name": "@mikage/generation-evaluator",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -13,8 +13,6 @@
     "@mikage/contracts": "workspace:*",
     "@mikage/provider-registry": "workspace:*",
     "@mikage/asset-lineage": "workspace:*",
-    "@mikage/generation-evaluator": "workspace:*",
-    "@mikage/asset-registry": "workspace:*",
-    "@mikage/scene-graph": "workspace:*"
+    "zod": "^3.24.2"
   }
 }

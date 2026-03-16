@@ -1,5 +1,5 @@
 {
-  "name": "@mikage/content-engine",
+  "name": "@mikage/canon-versioning",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -15,6 +15,7 @@
     "@mikage/asset-lineage": "workspace:*",
     "@mikage/generation-evaluator": "workspace:*",
     "@mikage/asset-registry": "workspace:*",
-    "@mikage/scene-graph": "workspace:*"
+    "@mikage/scene-graph": "workspace:*",
+    "zod": "^3.24.2"
   }
 }
