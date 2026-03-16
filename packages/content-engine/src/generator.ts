@@ -3,6 +3,13 @@ import type {
   ProductionPackage,
   GeneratedAsset
 } from "./contracts.js"
+import type { 
+  ProviderRegistry, 
+  GenerationProvider,
+  TextGenerationRequest,
+  ImageGenerationRequest,
+  VideoGenerationRequest
+} from "@mikage/provider-registry"
 
 const OBJECTIVE_MIME_MAP: Record<
   ProductionPackage["objective"],
@@ -62,8 +69,75 @@ function assertPackageReady(pkg: ProductionPackage) {
   }
 }
 
+function resolveProviderForObjective(
+  objective: ProductionPackage["objective"],
+  providerRegistry: ProviderRegistry
+): GeneratedAsset["metadata"]["generatedBy"] {
+  const providers = providerRegistry.listProviders()
+  
+  const preferredProviders = {
+    cinematic_frame: ["gemini-image", "dalle-3"],
+    character_portrait: ["gemini-image", "dalle-3"], 
+    trailer_sequence: ["seedance-video", "runway"]
+  }
+
+  const preferred = preferredProviders[objective]
+  
+  for (const providerId of preferred) {
+    const provider = providers.find((p: GenerationProvider) => p.id === providerId)
+    if (provider) {
+      return providerId as GeneratedAsset["metadata"]["generatedBy"]
+    }
+  }
+
+  const fallbackProvider = providers.find((p: GenerationProvider) => 
+    objective === "trailer_sequence" 
+      ? p.capabilities.videoGeneration
+      : p.capabilities.imageGeneration
+  )
+
+  if (fallbackProvider) {
+    return fallbackProvider.id as GeneratedAsset["metadata"]["generatedBy"]
+  }
+
+  return "stub"
+}
+
+async function generateWithProvider(
+  pkg: ProductionPackage,
+  provider: GenerationProvider
+): Promise<void> {
+  const prompt = pkg.promptPack.prompts.join(" ")
+  
+  switch (pkg.objective) {
+    case "cinematic_frame":
+    case "character_portrait":
+      const imageRequest: ImageGenerationRequest = {
+        type: "image",
+        prompt,
+        width: pkg.objective === "character_portrait" ? 1024 : 1920,
+        height: pkg.objective === "character_portrait" ? 1024 : 1080,
+        format: "png"
+      }
+      await provider.generateImage(imageRequest)
+      break
+      
+    case "trailer_sequence":
+      const videoRequest: VideoGenerationRequest = {
+        type: "video",
+        prompt,
+        duration: 5000,
+        fps: 30,
+        format: "mp4"
+      }
+      await provider.generateAsset(videoRequest)
+      break
+  }
+}
+
 export function generateAsset(
-  pkg: ProductionPackage
+  pkg: ProductionPackage,
+  providerRegistry: ProviderRegistry
 ): GeneratedAsset {
 
   assertPackageReady(pkg)
@@ -77,6 +151,8 @@ export function generateAsset(
 
   const now = new Date().toISOString()
 
+  const generatedBy = resolveProviderForObjective(pkg.objective, providerRegistry)
+
   return {
     assetId,
     production_package_id: pkg.production_package_id,
@@ -87,7 +163,7 @@ export function generateAsset(
     metadata: {
       objective: pkg.objective,
       promptPackId: pkg.promptPack.promptPackId,
-      generatedBy: "stub",
+      generatedBy,
       width: mimeType !== "video/mp4" ? dimensions.width : undefined,
       height: mimeType !== "video/mp4" ? dimensions.height : undefined,
       durationMs: mimeType === "video/mp4" ? 5000 : undefined

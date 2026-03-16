@@ -69,7 +69,9 @@
       "@mikage/queue": ["packages/queue/src/index.ts"],
       "@mikage/storage": ["packages/storage/src/index.ts"],
       "@mikage/logging": ["packages/logging/src/index.ts"],
-      "@mikage/testing": ["packages/testing/src/index.ts"]
+      "@mikage/testing": ["packages/testing/src/index.ts"],
+      "@mikage/provider-registry": ["packages/provider-registry/src/index.ts"],
+      "@mikage/content-engine": ["packages/content-engine/src/index.ts"]
     }
   }
 }

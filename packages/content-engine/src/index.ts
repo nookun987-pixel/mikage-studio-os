@@ -8,14 +8,16 @@ import type {
   ContentGenerationRequest,
   ContentGenerationResponse
 } from "./contracts.js";
+import type { ProviderRegistry } from "@mikage/provider-registry";
 
 export async function runContentEngine(
-  req: ContentGenerationRequest
+  req: ContentGenerationRequest,
+  providerRegistry: ProviderRegistry
 ): Promise<ContentGenerationResponse> {
 
   const started = Date.now();
 
-  const asset = await generateAsset(req.productionPackage);
+  const asset = await generateAsset(req.productionPackage, providerRegistry);
 
   if (req.targetPlatforms) {
     asset.socialExport = buildSocialExport(asset, req.targetPlatforms);

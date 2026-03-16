@@ -1,5 +1,5 @@
 {
-  "name": "@mikage/content-engine",
+  "name": "@mikage/provider-registry",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -11,6 +11,6 @@
   },
   "dependencies": {
     "@mikage/contracts": "workspace:*",
-    "@mikage/provider-registry": "workspace:*"
+    "zod": "^3.24.2"
   }
 }
