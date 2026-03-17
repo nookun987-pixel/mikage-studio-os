@@ -156,7 +156,10 @@ export const validateCanon = (rawInput: CanonValidationInput): CanonValidationRe
     violations: ViolationItem[];
   }>;
 
-  const evaluations = PASS_ORDER.map((pass) => evaluationMap[pass]());
+  const evaluations = PASS_ORDER.map((pass) => {
+  const evaluator = evaluationMap[pass as keyof typeof evaluationMap];
+  return evaluator();
+});
   const passResults = evaluations.map((item) => item.passResult);
   const warnings = evaluations.flatMap((item) => item.warnings);
   const violations = evaluations.flatMap((item) => item.violations);
