@@ -1,0 +1,519 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mikage.os/schemas/content-engine/result.json",
+  "title": "Content Engine Result Schema",
+  "description": "Normalized result object for content generation with validation and routing information",
+  "type": "object",
+  "properties": {
+    "result_id": {
+      "type": "string",
+      "description": "Unique identifier for this generation result",
+      "pattern": "^result_[a-zA-Z0-9_]+_[0-9]+$"
+    },
+    "request_metadata": {
+      "type": "object",
+      "description": "Original request metadata",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "description": "Original request identifier"
+        },
+        "production_package_id": {
+          "type": "string",
+          "description": "Production package identifier"
+        },
+        "job_id": {
+          "type": "string",
+          "description": "Job identifier"
+        },
+        "objective": {
+          "type": "string",
+          "enum": ["cinematic_frame", "character_portrait", "trailer_sequence"],
+          "description": "Generation objective"
+        },
+        "generation_mode": {
+          "type": "string",
+          "description": "Generation mode used"
+        },
+        "requested_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the request was made"
+        },
+        "initiated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When processing started"
+        }
+      },
+      "required": ["request_id", "production_package_id", "job_id", "objective", "requested_at", "initiated_at"]
+    },
+    "validation_status": {
+      "type": "object",
+      "description": "Validation results from canon validator",
+      "properties": {
+        "pre_generation": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["pass", "warn", "fail", "block", "defer"],
+              "description": "Pre-generation validation status"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Validation confidence score"
+            },
+            "issues_found": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of issues found"
+            },
+            "blocking_issues": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of blocking issues"
+            },
+            "validation_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Time taken for pre-generation validation in milliseconds"
+            }
+          },
+          "required": ["status", "confidence", "issues_found", "blocking_issues", "validation_time_ms"]
+        },
+        "post_generation": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["pass", "warn", "fail", "block", "defer"],
+              "description": "Post-generation validation status"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Validation confidence score"
+            },
+            "issues_found": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of issues found"
+            },
+            "blocking_issues": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of blocking issues"
+            },
+            "validation_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Time taken for post-generation validation in milliseconds"
+            }
+          },
+          "required": ["status", "confidence", "issues_found", "blocking_issues", "validation_time_ms"]
+        },
+        "overall": {
+          "type": "object",
+          "properties": {
+            "status": {
+              "type": "string",
+              "enum": ["accepted", "rejected", "retry", "fallback"],
+              "description": "Overall validation decision"
+            },
+            "final_confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Final confidence score"
+            },
+            "total_validation_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Total time spent on validation in milliseconds"
+            }
+          },
+          "required": ["status", "final_confidence", "total_validation_time_ms"]
+        }
+      },
+      "required": ["pre_generation", "overall"]
+    },
+    "generation_status": {
+      "type": "object",
+      "description": "Generation execution status",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["pending", "in_progress", "completed", "failed", "cancelled"],
+          "description": "Generation execution status"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When generation started"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When generation completed"
+        },
+        "generation_time_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Time spent on generation in milliseconds"
+        },
+        "provider_used": {
+          "type": "string",
+          "description": "Generation provider that was used"
+        },
+        "generation_parameters": {
+          "type": "object",
+          "description": "Parameters used for generation",
+          "properties": {
+            "sampler": {
+              "type": "string",
+              "description": "Sampler used"
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 1,
+              "description": "Number of steps"
+            },
+            "cfg": {
+              "type": "number",
+              "minimum": 0,
+              "description": "CFG scale"
+            },
+            "seed": {
+              "type": "integer",
+              "description": "Seed used"
+            }
+          }
+        }
+      },
+      "required": ["status", "generation_time_ms"]
+    },
+    "retry_eligibility": {
+      "type": "object",
+      "description": "Retry and fallback eligibility information",
+      "properties": {
+        "retry_eligible": {
+          "type": "boolean",
+          "description": "Whether this result is eligible for retry"
+        },
+        "max_retries": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum number of retries allowed"
+        },
+        "current_attempt": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current retry attempt number"
+        },
+        "retry_reason": {
+          "type": "string",
+          "description": "Reason for retry recommendation"
+        },
+        "retry_strategy": {
+          "type": "string",
+          "enum": ["immediate", "delayed", "parameter_adjustment", "fallback"],
+          "description": "Recommended retry strategy"
+        },
+        "fallback_eligible": {
+          "type": "boolean",
+          "description": "Whether fallback options are available"
+        }
+      },
+      "required": ["retry_eligible", "max_retries", "current_attempt"]
+    },
+    "fallback_recommendation": {
+      "type": "object",
+      "description": "Fallback recommendation if applicable",
+      "properties": {
+        "fallback_required": {
+          "type": "boolean",
+          "description": "Whether fallback is required"
+        },
+        "fallback_strategy": {
+          "type": "string",
+          "enum": ["conservative_generation", "asset_substitution", "parameter_reduction", "style_adjustment"],
+          "description": "Recommended fallback strategy"
+        },
+        "fallback_config": {
+          "type": "object",
+          "description": "Configuration for fallback execution"
+        },
+        "expected_quality_impact": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Expected impact on quality"
+        },
+        "success_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Probability of success with fallback"
+        }
+      },
+      "required": ["fallback_required"]
+    },
+    "blocking_issues": {
+      "type": "array",
+      "description": "List of blocking issues that prevent generation",
+      "items": {
+        "type": "object",
+        "properties": {
+          "issue_id": {
+            "type": "string",
+            "description": "Unique issue identifier"
+          },
+          "issue_type": {
+            "type": "string",
+            "description": "Type of issue"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "high"],
+            "description": "Issue severity"
+          },
+          "description": {
+            "type": "string",
+            "description": "Issue description"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source of the issue (validation rule, provider, etc.)"
+          },
+          "blocks_generation": {
+            "type": "boolean",
+            "description": "Whether this issue blocks generation"
+          },
+          "requires_manual_intervention": {
+            "type": "boolean",
+            "description": "Whether manual intervention is required"
+          },
+          "resolution_path": {
+            "type": "object",
+            "properties": {
+              "immediate_action": {
+                "type": "string",
+                "description": "Immediate action to take"
+              },
+              "escalation_required": {
+                "type": "boolean",
+                "description": "Whether escalation is required"
+              }
+            }
+          }
+        },
+        "required": ["issue_id", "issue_type", "severity", "description", "blocks_generation"]
+      }
+    },
+    "warnings": {
+      "type": "array",
+      "description": "List of warnings that do not block generation",
+      "items": {
+        "type": "object",
+        "properties": {
+          "warning_id": {
+            "type": "string",
+            "description": "Unique warning identifier"
+          },
+          "warning_type": {
+            "type": "string",
+            "description": "Type of warning"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"],
+            "description": "Warning severity"
+          },
+          "message": {
+            "type": "string",
+            "description": "Warning message"
+          },
+          "source": {
+            "type": "string",
+            "description": "Source of the warning"
+          },
+          "recommendation": {
+            "type": "string",
+            "description": "Recommended action"
+          }
+        },
+        "required": ["warning_id", "warning_type", "severity", "message"]
+      }
+    },
+    "references_used": {
+      "type": "object",
+      "description": "References and assets used in generation",
+      "properties": {
+        "style_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "reference_id": {
+                "type": "string",
+                "description": "Reference identifier"
+              },
+              "reference_type": {
+                "type": "string",
+                "enum": ["style", "character", "location", "asset"],
+                "description": "Type of reference"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in reference match"
+              }
+            },
+            "required": ["reference_id", "reference_type", "confidence"]
+          }
+        },
+        "asset_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "asset_id": {
+                "type": "string",
+                "description": "Asset identifier"
+              },
+              "asset_type": {
+                "type": "string",
+                "description": "Asset type"
+              },
+              "usage": {
+                "type": "string",
+                "description": "How the asset was used"
+              }
+            },
+            "required": ["asset_id", "asset_type", "usage"]
+          }
+        },
+        "canon_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "canon_source": {
+                "type": "string",
+                "description": "Canon source document"
+              },
+              "canon_section": {
+                "type": "string",
+                "description": "Section within canon"
+              },
+              "compliance_level": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Compliance level with canon"
+              }
+            },
+            "required": ["canon_source", "compliance_level"]
+          }
+        }
+      }
+    },
+    "generated_asset": {
+      "type": "object",
+      "description": "Generated asset information",
+      "properties": {
+        "asset_id": {
+          "type": "string",
+          "description": "Generated asset identifier"
+        },
+        "mime_type": {
+          "type": "string",
+          "enum": ["image/png", "image/jpeg", "video/mp4", "text/plain"],
+          "description": "MIME type of generated asset"
+        },
+        "storage_uri": {
+          "type": "string",
+          "description": "Storage URI for the asset"
+        },
+        "lineage_hash": {
+          "type": "string",
+          "description": "Lineage hash for traceability"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Asset metadata"
+        }
+      },
+      "required": ["asset_id", "mime_type"]
+    },
+    "monitoring_data": {
+      "type": "object",
+      "description": "Monitoring and observability data",
+      "properties": {
+        "performance_metrics": {
+          "type": "object",
+          "properties": {
+            "total_processing_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Total processing time"
+            },
+            "validation_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Time spent in validation"
+            },
+            "generation_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Time spent in generation"
+            },
+            "post_processing_time_ms": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Time spent in post-processing"
+            }
+          }
+        },
+        "resource_usage": {
+          "type": "object",
+          "properties": {
+            "memory_peak_mb": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Peak memory usage in MB"
+            },
+            "cpu_usage_percent": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "CPU usage percentage"
+            }
+          }
+        },
+        "trace_id": {
+          "type": "string",
+          "description": "Trace identifier for distributed tracing"
+        }
+      }
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When the result was completed"
+    }
+  },
+  "required": [
+    "result_id",
+    "request_metadata",
+    "validation_status",
+    "generation_status",
+    "retry_eligibility",
+    "fallback_recommendation",
+    "completed_at"
+  ]
+}

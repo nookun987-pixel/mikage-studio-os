@@ -1,13 +1,19 @@
 export * from "./contracts.js";
 export * from "./generator.js";
 export * from "./social-export.js";
+export * from "./content_engine_adapter.js";
+export * from "./types.js";
+export * from "./pre_generation_hook.js";
+export * from "./post_generation_hook.js";
 
 import { generateAsset } from "./generator.js";
 import { buildSocialExport } from "./social-export.js";
+import { contentEngineAdapter } from "./content_engine_adapter.js";
 import type {
   ContentGenerationRequest,
   ContentGenerationResponse
 } from "./contracts.js";
+import type { GenerationRequest as AdapterGenerationRequest, ContentEngineResult } from "./types.js";
 import type { ProviderRegistry } from "@mikage/provider-registry";
 import type { ILineageService } from "@mikage/asset-lineage";
 import type { EvaluationEngine } from "@mikage/generation-evaluator";
@@ -64,4 +70,60 @@ export async function runContentEngine(
       runtime_ms: Date.now() - started
     }
   };
+}
+
+/**
+ * Enhanced content engine with adapter integration
+ * Connects to canon validator and provides comprehensive validation/routing
+ */
+export async function runEnhancedContentEngine(
+  request: AdapterGenerationRequest
+): Promise<ContentEngineResult> {
+  return await contentEngineAdapter.processGenerationRequest(request);
+}
+
+/**
+ * Convert legacy ContentGenerationRequest to adapter format
+ */
+export function convertToAdapterRequest(
+  legacyRequest: ContentGenerationRequest,
+  options: {
+    currentAttempt?: number;
+    maxRetries?: number;
+    validationMode?: 'strict' | 'lenient';
+    fallbackEnabled?: boolean;
+  } = {}
+): AdapterGenerationRequest {
+  return {
+    requestId: legacyRequest.productionPackage.jobId,
+    productionPackage: legacyRequest.productionPackage,
+    parameters: {
+      sampler: 'DPM++ 2M Karras',
+      steps: 30,
+      cfg: 6.5,
+      seed: Math.floor(Math.random() * 1000000),
+      ...options
+    },
+    requestedAt: new Date().toISOString(),
+    currentAttempt: options.currentAttempt || 0,
+    maxRetries: options.maxRetries || 3,
+    validationMode: options.validationMode || 'lenient',
+    fallbackEnabled: options.fallbackEnabled !== false
+  };
+}
+
+/**
+ * Run content engine with automatic adapter conversion
+ */
+export async function runContentEngineWithAdapter(
+  legacyRequest: ContentGenerationRequest,
+  adapterOptions: {
+    currentAttempt?: number;
+    maxRetries?: number;
+    validationMode?: 'strict' | 'lenient';
+    fallbackEnabled?: boolean;
+  } = {}
+): Promise<ContentEngineResult> {
+  const adapterRequest = convertToAdapterRequest(legacyRequest, adapterOptions);
+  return await runEnhancedContentEngine(adapterRequest);
 }

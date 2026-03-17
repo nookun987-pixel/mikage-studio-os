@@ -15,6 +15,8 @@
     "@mikage/asset-lineage": "workspace:*",
     "@mikage/generation-evaluator": "workspace:*",
     "@mikage/asset-registry": "workspace:*",
-    "@mikage/scene-graph": "workspace:*"
+    "@mikage/scene-graph": "workspace:*",
+    "@mikage/canon-validator": "workspace:*",
+    "zod": "^3.24.2"
   }
 }
