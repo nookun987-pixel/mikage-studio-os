@@ -1,0 +1,24 @@
+{
+  "review_loop": {
+    "review_stages": [
+      "first_pass_visual_check",
+      "canon_compliance_check",
+      "domain_integrity_check",
+      "revision_request_if_needed",
+      "approval_or_reject"
+    ],
+    "revision_triggers": [
+      "silhouette_drift",
+      "palette_drift",
+      "material_mismatch",
+      "environment_contamination",
+      "forbidden_element_detected"
+    ],
+    "approval_requirements": [
+      "canon_compliant",
+      "domain_clean",
+      "style_guardrails_respected",
+      "no forbidden elements"
+    ]
+  }
+}

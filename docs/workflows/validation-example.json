@@ -1,0 +1,21 @@
+{
+  "validation_example": {
+    "input_request_id": "req_example_001",
+    "validation_order": [
+      "character_identity_check",
+      "environment_domain_check",
+      "palette_check",
+      "material_check",
+      "forbidden_elements_check",
+      "cross_domain_contamination_check",
+      "final_canon_pass"
+    ],
+    "expected_result": "pass",
+    "hard_fail_if": [
+      "white_monolith_contains_neo_tokyo_clutter",
+      "imperial_scene_contains_rust_or_messy_cables",
+      "lyra_0_rendered_as_biological_entity",
+      "forbidden_environment_weather_present"
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "entity_id": "env_white_monolith_01",
+  "name": "The White Monolith",
+  "classification": [
+    "Primary Environment",
+    "Upper Imperial Zone"
+  ],
+  "lore_background": {
+    "ideology": "Absolute Order",
+    "core_philosophy": "Kiểm soát thiếu đạo đức sẽ trở thành bạo chúa.",
+    "origin": "Được xây dựng từ việc reverse-engineering công nghệ của thế giới cũ sau Thảm họa (The Great Fall)."
+  },
+  "architectural_aesthetics": {
+    "style": "Porcelain Minimalism",
+    "structural_rules": [
+      "Vô trùng, sạch sẽ và hoàn hảo tuyệt đối",
+      "Hình học đối xứng tuyệt đối, một điểm tụ",
+      "Tạo cảm giác áp bức và ngột ngạt thông qua sự hoàn hảo và tĩnh lặng"
+    ],
+    "surface_language": [
+      "porcelain white planes",
+      "cold gray shadow recesses",
+      "seamless engineered joints",
+      "clinical precision"
+    ]
+  },
+  "color_palette_locks": {
+    "dominant_color": "#FAFAFA",
+    "dominant_ratio": "90% porcelain white with cold gray shadows",
+    "accent_lighting": "Cold Cyan phát ra từ hệ thống máy chủ và kiến trúc"
+  },
+  "atmosphere_and_cinematography": {
+    "lighting_style": "Clinical lighting lạnh lẽo, rõ ràng, không có góc khuất",
+    "environmental_fx": [
+      "Cryogenic mist quét là là trên mặt sàn",
+      "Không gian tĩnh lặng với tiếng vo ve cơ khí vi mô"
+    ],
+    "camera_read": [
+      "symmetry-heavy compositions",
+      "single-vanishing-point framing",
+      "sterile monumental scale"
+    ]
+  },
+  "forbidden_elements_strict": [
+    "No rust",
+    "No messy cables",
+    "No dirt",
+    "No trash",
+    "No biological residue",
+    "No rain",
+    "No natural weathering"
+  ],
+  "generation_locks": {
+    "must_include": [
+      "sterile porcelain minimalism",
+      "absolute symmetry",
+      "cold cyan systems glow",
+      "clinical lighting",
+      "cryogenic floor mist"
+    ],
+    "must_avoid": [
+      "cyberpunk clutter",
+      "industrial grime",
+      "warm sunlight",
+      "organic overgrowth",
+      "slum debris"
+    ]
+  }
+}

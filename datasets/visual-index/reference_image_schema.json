@@ -1,0 +1,35 @@
+{
+  "reference_image_schema": {
+    "required_fields": [
+      "asset_id",
+      "title",
+      "category",
+      "subtype",
+      "source_path",
+      "authority_level",
+      "canon_status",
+      "visual_tags",
+      "material_tags",
+      "domain_tags",
+      "usage_scope"
+    ],
+    "authority_levels": [
+      "core_canon",
+      "supporting_canon",
+      "visual_authority",
+      "reference_only"
+    ],
+    "canon_status": [
+      "locked",
+      "provisional",
+      "reference_only"
+    ],
+    "usage_scope": [
+      "prompt_safe",
+      "design_only",
+      "environment_only",
+      "character_only",
+      "internal_reference"
+    ]
+  }
+}

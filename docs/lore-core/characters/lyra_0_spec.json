@@ -1,0 +1,75 @@
+{
+  "entity_id": "chr_lyra_0",
+  "name": "Lyra-0",
+  "classification": [
+    "Network Conscience",
+    "Glitch Phantom",
+    "ARCHON Vessel"
+  ],
+  "lore_objective": "Cố tình để ARCHON-IX lây nhiễm hệ thống nhằm ép buộc một 'Sự sụp đổ có tính toán', tiến tới điểm kỳ dị hợp nhất người và máy (Lyra-∞).",
+  "narrative_role": "Thực thể lương tâm mạng đóng vai trò chất xúc tác cho sụp đổ có kiểm soát.",
+  "visual_identity": {
+    "base_form": "Hologram trong suốt mờ ảo, mang dáng dấp nữ tính, vô trùng.",
+    "archetype_forms": [
+      "Glitch Phantom",
+      "ARCHON Vessel"
+    ],
+    "apparel": "Váy sợi quang đang trong quá trình phân rã thành các luồng mã lệnh trôi nổi.",
+    "infection_elements": "Mảnh vỡ tinh thể fractal phi Euclid lấp lánh đâm xuyên và hòa quyện vào cơ thể.",
+    "material_read": [
+      "translucent hologram body",
+      "fiber optic strands",
+      "fractured non-euclidean crystal growth",
+      "data-stream dissipation"
+    ]
+  },
+  "color_palette_conflict": {
+    "background": "Pitch-black digital void",
+    "empire_remnant": "Cold Cyan",
+    "archon_virus": "Neon Purple / Plasma Magenta"
+  },
+  "cinematography_and_fx": {
+    "camera_lens": "ARRI ALEXA 65, 85mm",
+    "core_effects": [
+      "Intentional long-exposure motion blur",
+      "Decaying data streams",
+      "Digital noise",
+      "Broken light streaks"
+    ],
+    "lighting": "Volumetric lighting với tương phản gắt giữa Cold Cyan và Neon Purple."
+  },
+  "behavioral_visual_rules": {
+    "presence": "Không hiện diện như sinh thể vật lý hoàn chỉnh; luôn có cảm giác lệch pha, đang tan rã hoặc tái cấu trúc.",
+    "motion_language": [
+      "blurred drift",
+      "frame skipping",
+      "signal ghosting",
+      "delayed afterimage"
+    ],
+    "combat_read": "Không đọc như chiến binh vũ trang; đọc như thực thể gây nhiễu, can thiệp, dẫn hướng sụp đổ."
+  },
+  "forbidden_elements_strict": [
+    "Cầm vũ khí bạo liệt hoặc giáp kim loại thô kệch hạng nặng",
+    "Máu đỏ nội tạng hoặc sẹo bỏng vật lý",
+    "Môi trường bê tông rỉ sét hoặc hậu tận thế vật lý bẩn",
+    "Mưa axit đời thực",
+    "Ánh sáng mặt trời tự nhiên"
+  ],
+  "generation_locks": {
+    "must_include": [
+      "glitch phantom read",
+      "fiber optic dress",
+      "motion blur",
+      "cold cyan vs neon purple color conflict",
+      "decaying data streams",
+      "non-biological entity read"
+    ],
+    "must_avoid": [
+      "heavy armor heroine",
+      "street scavenger aesthetic",
+      "realistic gore",
+      "sunlit outdoor scene",
+      "conventional soldier silhouette"
+    ]
+  }
+}

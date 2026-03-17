@@ -1,0 +1,185 @@
+{
+  "mikage_japanese_motif_tags": {
+    "nature_elements": {
+      "sakura_cherry_blossom": {
+        "tag": "sakura",
+        "cultural_significance": "transience, beauty, renewal, spring",
+        "visual_representation": "five-petaled pink flowers, falling petals",
+        "seasonal_context": "spring_early_to_mid",
+        "symbolic_meaning": "mono_no_aware, impermanence, gentle sadness",
+        "usage_guidelines": {
+          "appropriate_count": "scattered, not overwhelming",
+          "color_fidelity": "soft pink variations, not neon",
+          "placement_rules": "natural falling patterns, wind consideration",
+          "forbidden_contexts": ["commercial_advertising", "trivialized_usage"]
+        }
+      },
+      "bamboo_forest": {
+        "tag": "take_no_kayatsu",
+        "cultural_significance": "flexibility, strength, resilience, growth",
+        "visual_representation": "tall green stalks, segmented nodes, leaf clusters",
+        "seasonal_context": "year_round, peak_growth_summer",
+        "symbolic_meaning": "endurance, adaptability, upright character",
+        "usage_guidelines": {
+          "density_representation": "dense but breathable forest",
+          "color_authenticity": "natural greens, not artificial",
+          "growth_patterns": "natural segmentation, upward reaching",
+          "forbidden_contexts": ["deforestation_imagery", "industrial_bamboo"]
+        }
+      },
+      "mountain_fuji": {
+        "tag": "fuji_san",
+        "cultural_significance": "sacredness, permanence, national identity",
+        "visual_representation": "snow-capped peak, graceful slopes, distant majesty",
+        "seasonal_context": "winter_snow, summer_clarity, autumn_colors",
+        "symbolic_meaning": "aspiration, stability, spiritual connection",
+        "usage_guidelines": {
+          "respectful_distance": "not overly familiar or commercialized",
+          "seasonal_accuracy": "snow cover appropriate to season",
+          "cultural_sensitivity": "treated as sacred symbol",
+          "forbidden_contexts": ["tourist_commercialization", "disrespectful_modifications"]
+        }
+      },
+      "koi_pond": {
+        "tag": "nishikigoi",
+        "cultural_significance": "luck, prosperity, perseverance, transformation",
+        "visual_representation": "colorful fish swimming, ripples, water lilies",
+        "seasonal_context": "spring_summer_active",
+        "symbolic_meaning": "strength_through_adversity, beauty_in_struggle",
+        "usage_guidelines": {
+          "color_variety": "traditional koi colors, not neon varieties",
+          "water_clarity": "clear, reflective, natural movement",
+          "natural_behavior": "swimming patterns, not artificial poses",
+          "forbidden_contexts": ["cooked_fish_references", "unnatural_colors"]
+        }
+      },
+      "autumn_maple": {
+        "tag": "momiji",
+        "cultural_significance": "change, beauty, impermanence, cycle",
+        "visual_representation": "red_orange_leaves, falling gracefully, sunlight filtering",
+        "seasonal_context": "autumn_peak_transition",
+        "symbolic_meaning": "acceptance_of_change, fleeting_beauty",
+        "usage_guidelines": {
+          "color_progression": "natural color transition, not uniform artificial",
+          "falling_patterns": "natural wind movement, gravity consideration",
+          "light_interaction": "golden hour lighting, not flat illumination",
+          "forbidden_contexts": ["litter_imagery", "unnatural_colors"]
+        }
+      }
+    },
+    "cultural_symbols": {
+      "torii_gate": {
+        "tag": "torii",
+        "cultural_significance": "transition_sacred_profane, protection, blessing",
+        "visual_representation": "vermilion_red_gate, curved roof, sacred space",
+        "contextual_rules": {
+          "appropriate_settings": ["shrine_entrance", "temple_boundary", "sacred_path"],
+          "color_authenticity": "traditional vermilion, not modern paints",
+          "structural_integrity": "proper construction, weathered appearance",
+          "forbidden_contexts": ["commercial_entrances", "disrespectful_placement"]
+        }
+      },
+      "paper_lantern": {
+        "tag": "chouchin",
+        "cultural_significance": "guidance, protection, festival_light",
+        "visual_representation": "washi_paper_lamp, warm_glow, intricate patterns",
+        "contextual_rules": {
+          "lighting_behavior": "warm_soft_glow, not harsh electric",
+          "material_authenticity": "traditional washi, not modern paper",
+          "pattern_appropriateness": "cultural motifs, not random designs",
+          "forbidden_contexts": ["christmas_lights", "modern_decorative_styles"]
+        }
+      },
+      "shinto_shrine": {
+        "tag": "jinja",
+        "cultural_significance": "purity, worship, community_connection",
+        "visual_representation": "wooden_architecture, sacred_objects, natural_surroundings",
+        "contextual_rules": {
+          "architectural_authenticity": "traditional shrine construction",
+          "sacred_object_placement": "proper ritual items, not random decorations",
+          "natural_integration": "harmony with surrounding nature",
+          "forbidden_contexts": ["commercial_religion", "disrespectful_behavior", "modern_architecture"]
+        }
+      }
+    },
+    "artistic_techniques": {
+      "calligraphy": {
+        "tag": "shodo",
+        "cultural_significance": "discipline, beauty, communication, tradition",
+        "visual_representation": "brush_strokes, ink_flow, character_balance",
+        "usage_guidelines": {
+          "brush_technique": "traditional stroke order, proper pressure",
+          "ink_consistency": "sumi ink, not modern pens",
+          "paper_quality": "washi, appropriate absorbency",
+          "character_authenticity": "proper Japanese characters, not stylized versions"
+        }
+      },
+      "woodblock_print": {
+        "tag": "ukiyo_e",
+        "cultural_significance": "storytelling, accessibility, artistic_expression",
+        "visual_representation": "carved_wood, ink_application, layered_colors",
+        "usage_guidelines": {
+          "technique_authenticity": "traditional carving methods",
+          "color_application": "traditional pigments, not modern printing",
+          "paper_selection": "appropriate washi weight and texture",
+          "subject_appropriateness": "cultural themes, not inappropriate content"
+        }
+      },
+      "origami_folding": {
+        "tag": "origami",
+        "cultural_significance": "precision, patience, transformation, symbolism",
+        "visual_representation": "folded_paper, geometric_precision, clean_lines",
+        "usage_guidelines": {
+          "folding_technique": "traditional patterns, not arbitrary shapes",
+          "paper_quality": "appropriate weight, crisp folds",
+          "complexity_levels": "cultural appropriateness to difficulty",
+          "symbolic_meaning": "traditional symbols, not random abstracts"
+        }
+      }
+    },
+    "seasonal_contexts": {
+      "haru_spring": {
+        "dominant_themes": ["renewal", "growth", "new_beginnings", "sakura_blossoms"],
+        "color_palette": ["soft_pinks", "fresh_greens", "white_blossoms"],
+        "cultural_activities": ["hanami_cherry_viewing", "spring_festivals", "new_year_ceremonies"],
+        "motif_appropriateness": "emerging_life, gentle_transitions"
+      },
+      "natsu_summer": {
+        "dominant_themes": ["vibrancy", "energy", "festivals", "growth_peak"],
+        "color_palette": ["deep_greens", "rich_blues", "festival_reds"],
+        "cultural_activities": ["matsuri_festivals", "fireworks_display", "temple_visits"],
+        "motif_appropriateness": "full_life_expression, community_celebration"
+      },
+      "aki_autumn": {
+        "dominant_themes": ["change", "harvest", "transience", "reflection"],
+        "color_palette": ["warm_reds", "golden_yellows", "deep_oranges"],
+        "cultural_activities": ["momiji_leaf_viewing", "harvest_festivals", "moon_viewing"],
+        "motif_appropriateness": "accepting_change, natural_cycles"
+      },
+      "fuyu_winter": {
+        "dominant_themes": ["purity", "endurance", "quiet_strength", "preparation"],
+        "color_palette": ["pure_whites", "deep_charcoals", "soft_blues"],
+        "cultural_activities": ["hot_spring_bathing", "new_year_preparation", "snow_festivals"],
+        "motif_appropriateness": "inner_strength, quiet_beauty"
+      }
+    },
+    "usage_restrictions": {
+      "cultural_sensitivity": {
+        "requirement": "All motifs must respect Japanese cultural traditions and values",
+        "forbidden_usage": ["trivialization", "commercial_exploitation", "cultural_appropriation"],
+        "contextual_appropriateness": "Must match setting, season, and social context"
+      },
+      "symbolic_integrity": {
+        "requirement": "Traditional symbolic meanings must be preserved",
+        "forbidden_modifications": ["western_symbol_substitution", "meaning_alteration", "sacred_symbol_misuse"],
+        "educational_value": "Should convey authentic cultural understanding"
+      },
+      "aesthetic_harmony": {
+        "requirement": "Visual elements must follow traditional Japanese aesthetic principles",
+        "color_harmony": "Natural color relationships, not clashing modern palettes",
+        "composition_balance": "Traditional compositional rules, not arbitrary arrangements",
+        "wabi_sabi_adherence": "Embrace imperfection and transience appropriately"
+      }
+    }
+  }
+}

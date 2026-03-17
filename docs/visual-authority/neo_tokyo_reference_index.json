@@ -49,5 +49,180 @@
       "key_traits": ["large voids", "slow framing", "low-noise atmosphere"],
       "visual_tags": ["silent_city", "ma", "neo_tokyo", "canon_safe"]
     }
-  ]
+  ],
+  "visual_authority_domains": {
+    "neon_districts": {
+      "name": "Neon Districts",
+      "characteristics": [
+        "cybernetic_enhancement",
+        "holographic_advertisements",
+        "multi_level_urban_density",
+        "corporate_tower_presence",
+        "transportation_conduits",
+        "environmental_display_systems"
+      ],
+      "color_schemes": [
+        "electric_blue",
+        "neon_pink",
+        "cyber_yellow",
+        "digital_cyan",
+        "holographic_white",
+        "shadow_purple"
+      ],
+      "architectural_elements": [
+        "megastructure_towers",
+        "skybridges",
+        "vertical_farming",
+        "underground_infrastructure",
+        "environmental_controls",
+        "security_systems"
+      ],
+      "forbidden_in_imperial": [
+        "excessive_corporate_influence",
+        "western_technology_domination",
+        "cultural_erasure",
+        "environmental_degradation",
+        "social_stratification_visible"
+      ]
+    },
+    "imperial_preservation": {
+      "name": "Imperial Preservation Zones",
+      "characteristics": [
+        "traditional_architecture_maintained",
+        "cultural_sites_protected",
+        "natural_harmony_preserved",
+        "historical_continuity",
+        "ceremonial_spaces_intact"
+      ],
+      "color_schemes": [
+        "imperial_crimson",
+        "temple_wood_tones",
+        "natural_earth_colors",
+        "gold_leaf_accents",
+        "pure_white_elements",
+        "traditional_ink_blacks"
+      ],
+      "architectural_elements": [
+        "shrine_complexes",
+        "imperial_palace_grounds",
+        "temple_precincts",
+        "traditional_garden_spaces",
+        "historic_districts",
+        "ceremonial_pathways"
+      ],
+      "requirements": [
+        "cultural_sensitivity_mandatory",
+        "historical_accuracy_required",
+        "environmental_harmony_enforced",
+        "traditional_techniques_preserved",
+        "imperial_aesthetic_maintained"
+      ]
+    },
+    "transition_zones": {
+      "name": "Transition Zones",
+      "characteristics": [
+        "controlled_technology_integration",
+        "cultural_preservation_balance",
+        "gradual_aesthetic_evolution",
+        "community_consensus_required",
+        "sustainable_development"
+      ],
+      "color_schemes": [
+        "balanced_neutral_palettes",
+        "accented_traditional_colors",
+        "integrated_technology_hues",
+        "natural_material_tones",
+        "harmonious_blending"
+      ],
+      "architectural_elements": [
+        "adaptive_reuse",
+        "technology_integration",
+        "traditional_modern_fusion",
+        "community_spaces",
+        "green_infrastructure",
+        "cultural_centers"
+      ],
+      "governance_rules": [
+        "community_approval_required",
+        "cultural_impact_assessment",
+        "sustainability_standards",
+        "historical_preservation_compliance",
+        "equitable_development"
+      ]
+    }
+  },
+  "domain_rules": {
+    "imperial_environments": {
+      "white_monolith": {
+        "name": "White Monolith",
+        "description": "Porcelain-clean imperial preservation environment",
+        "restriction_level": "maximum",
+        "forbidden_elements": [
+          "neon_districts_characteristics",
+          "cybernetic_enhancements",
+          "corporate_tower_dominance",
+          "western_technology_integration",
+          "environmental_display_systems",
+          "social_stratification",
+          "cultural_erasure_elements"
+        ],
+        "required_elements": [
+          "pure_traditional_architecture",
+          "imperial_aesthetic_standards",
+          "cultural_site_preservation",
+          "natural_harmony_maintenance",
+          "historical_continuity",
+          "ceremonial_space_integrity"
+        ],
+        "override_protection": "neo_tokyo_reference_index.json must never auto-override porcelain-clean imperial environments such as White Monolith"
+      }
+    },
+    "neo_tokyo_environments": {
+      "standard_neo_tokyo": {
+        "name": "Standard Neo-Tokyo",
+        "description": "Balanced technology integration with cultural preservation",
+        "restriction_level": "moderate",
+        "allowed_elements": [
+          "controlled_technology_integration",
+          "cultural_preservation_balance",
+          "community_approved_development",
+          "sustainable_infrastructure"
+        ],
+        "monitoring_required": true,
+        "community_oversight": true
+      }
+    }
+  },
+  "visual_authority_enforcement": {
+    "imperial_contexts": {
+      "trigger_condition": "White Monolith or equivalent imperial environment detected",
+      "action": "Enforce maximum preservation restrictions",
+      "override_prevention": "Block any attempts to override imperial preservation rules"
+    },
+    "neo_tokyo_contexts": {
+      "trigger_condition": "Standard Neo-Tokyo or balanced development environment",
+      "action": "Apply balanced technology integration rules",
+      "community_review": "Require community consensus for major changes"
+    }
+  },
+  "compliance_monitoring": {
+    "automated_detection": {
+      "imperial_environment_detection": "Identify porcelain-clean imperial contexts",
+      "technology_level_assessment": "Evaluate appropriate technology integration levels",
+      "cultural_impact_monitoring": "Track cultural preservation compliance",
+      "community_sentiment_analysis": "Monitor community approval and concerns"
+    },
+    "manual_oversight": {
+      "imperial_council_review": "Imperial representatives must approve imperial environment changes",
+      "community_board_review": "Community representatives review Neo-Tokyo development proposals",
+      "cultural_heritage_committee": "Cultural heritage experts ensure preservation standards"
+    }
+  },
+  "reference_standards": {
+    "color_authority": "Traditional Japanese color systems and cultural significance",
+    "architectural_integrity": "Historical accuracy and cultural appropriateness",
+    "technology_integration": "Balanced progression respecting cultural values",
+    "community_consensus": "Democratic decision-making for major changes",
+    "sustainability_requirements": "Environmental harmony and long-term preservation"
+  }
 }

@@ -1,0 +1,43 @@
+{
+  "asset_taxonomy": {
+    "primary_categories": [
+      "character",
+      "armor",
+      "mask",
+      "weapon",
+      "environment",
+      "architecture",
+      "material",
+      "motif",
+      "lighting",
+      "cinematography",
+      "ui_symbol",
+      "reference_board"
+    ],
+    "environment_subtypes": [
+      "imperial",
+      "neo_tokyo",
+      "transition_zone",
+      "industrial_border",
+      "ritual_space",
+      "void_space"
+    ],
+    "material_subtypes": [
+      "porcelain",
+      "carbon_fiber",
+      "dark_titanium",
+      "fiber_optic",
+      "holographic",
+      "raw_concrete",
+      "galvanized_steel",
+      "acrylic_resin"
+    ],
+    "character_subtypes": [
+      "mikage",
+      "lyra_0",
+      "imperial_unit",
+      "archon_vessel",
+      "network_entity"
+    ]
+  }
+}

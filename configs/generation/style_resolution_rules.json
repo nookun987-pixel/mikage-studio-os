@@ -1,0 +1,33 @@
+{
+  "style_resolution_rules": {
+    "precedence_order": [
+      "scene_domain",
+      "environment_authority",
+      "character_identity",
+      "style_guardrails",
+      "visual_reference"
+    ],
+    "imperial_override": {
+      "environments": [
+        "white_monolith",
+        "imperial_upper_zone",
+        "porcelain_minimalism"
+      ],
+      "override_blocks": [
+        "neo_tokyo_density",
+        "rain_neon_alley",
+        "vertical_signage",
+        "urban_clutter",
+        "cyberpunk_street_noise"
+      ]
+    },
+    "color_authority": {
+      "mikage_palette_lock": true,
+      "forbidden_colors": [
+        "neon_green",
+        "safety_orange",
+        "gold_metallic_base"
+      ]
+    }
+  }
+}

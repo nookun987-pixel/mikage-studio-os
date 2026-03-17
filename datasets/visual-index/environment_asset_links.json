@@ -1,0 +1,94 @@
+{
+  "environment_asset_links": {
+    "env_white_monolith_01": {
+      "core_assets": [
+        "ref_white_monolith_001",
+        "env_white_monolith_001"
+      ],
+      "support_assets": [
+        "mat_porcelain_001"
+      ],
+      "material_boards": [
+        "mat_porcelain_001"
+      ],
+      "blocked_mismatch_tags": [
+        "neo_tokyo_density",
+        "rain_neon_alley",
+        "vertical_signage",
+        "urban_clutter",
+        "raw_concrete",
+        "galvanized_steel",
+        "messy_cables",
+        "rust",
+        "biological_gore",
+        "natural_sunlight",
+        "weather_effects",
+        "decay"
+      ]
+    },
+    "env_neo_tokyo_generic": {
+      "core_assets": [
+        "ref_neo_tokyo_001",
+        "env_neo_tokyo_alley_001"
+      ],
+      "support_assets": [
+        "ref_cyber_shrine_001",
+        "env_cyber_shrine_001",
+        "env_transition_zone_001"
+      ],
+      "material_boards": [
+        "mat_holographic_001"
+      ],
+      "blocked_mismatch_tags": [
+        "white_monolith",
+        "porcelain_minimalism",
+        "sterile_porcelain_imperial_dominance",
+        "mat_porcelain_001",
+        "over_clean_symmetry",
+        "imperial_perfection"
+      ]
+    },
+    "env_cyber_shrine": {
+      "core_assets": [
+        "ref_cyber_shrine_001",
+        "env_cyber_shrine_001"
+      ],
+      "support_assets": [
+        "env_transition_zone_001",
+        "mat_titanium_001",
+        "mat_holographic_001"
+      ],
+      "material_boards": [
+        "mat_titanium_001",
+        "mat_holographic_001"
+      ],
+      "blocked_mismatch_tags": [
+        "pure_imperial_dominance",
+        "pure_neo_tokyo_clutter",
+        "biological_gore",
+        "rust",
+        "messy_cables"
+      ]
+    },
+    "env_transition_zone_generic": {
+      "core_assets": [
+        "env_transition_zone_001",
+        "ref_cyber_shrine_001"
+      ],
+      "support_assets": [
+        "ref_neo_tokyo_001",
+        "mat_titanium_001",
+        "mat_holographic_001"
+      ],
+      "material_boards": [
+        "mat_titanium_001",
+        "mat_holographic_001"
+      ],
+      "blocked_mismatch_tags": [
+        "pure_domain_conflict",
+        "extreme_imperial_perfection",
+        "extreme_neo_tokyo_clutter"
+      ]
+    }
+  }
+}

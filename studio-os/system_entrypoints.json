@@ -1,0 +1,27 @@
+{
+  "system_entrypoints": {
+    "build_character_scene": {
+      "uses": [
+        "workflow_router",
+        "prompt_assembly_flow",
+        "canon_validation_flow",
+        "review_loop"
+      ]
+    },
+    "build_environment_scene": {
+      "uses": [
+        "workflow_router",
+        "prompt_assembly_flow",
+        "canon_validation_flow"
+      ]
+    },
+    "build_reference_sheet": {
+      "uses": [
+        "workflow_router",
+        "prompt_assembly_flow",
+        "canon_validation_flow",
+        "render_request_contract"
+      ]
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "agent_roles": {
+    "canon_architect": {
+      "responsibility": [
+        "resolve character canon",
+        "resolve environment canon",
+        "protect locked lore constraints"
+      ]
+    },
+    "style_guardrail_agent": {
+      "responsibility": [
+        "apply palette locks",
+        "apply motif constraints",
+        "apply morphology and composition guardrails"
+      ]
+    },
+    "visual_authority_agent": {
+      "responsibility": [
+        "load visual authority references",
+        "enforce domain boundaries",
+        "prevent cross-domain contamination"
+      ]
+    },
+    "prompt_builder": {
+      "responsibility": [
+        "assemble final generation prompt",
+        "merge scene, character, and environment layers",
+        "apply negative constraints"
+      ]
+    },
+    "canon_validator": {
+      "responsibility": [
+        "detect forbidden elements",
+        "check scene-domain compliance",
+        "reject non-canon prompt output"
+      ]
+    },
+    "review_agent": {
+      "responsibility": [
+        "compare output against canon",
+        "flag drift",
+        "route revision requests"
+      ]
+    }
+  }
+}

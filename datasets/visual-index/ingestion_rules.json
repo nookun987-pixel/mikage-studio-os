@@ -1,0 +1,21 @@
+{
+  "ingestion_rules": {
+    "indexing_policy": {
+      "deduplicate_near_identical_assets": true,
+      "preserve_highest_authority_version": true,
+      "reject_unclear_canon_assets": false,
+      "mark_uncertain_as_provisional": true
+    },
+    "tagging_policy": {
+      "minimum_tags_per_asset": 5,
+      "require_domain_tag": true,
+      "require_material_tag_if_visible": true,
+      "require_authority_level": true
+    },
+    "protection_rules": {
+      "imperial_scene_protection": true,
+      "white_monolith_clutter_block": true,
+      "neo_tokyo_reference_not_global_default": true
+    }
+  }
+}

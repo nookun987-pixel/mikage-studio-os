@@ -1,0 +1,54 @@
+{
+  "scene_asset_map": {
+    "white_monolith": {
+      "allowed_tags": [
+        "white_monolith",
+        "porcelain_minimalism",
+        "absolute_order_architecture",
+        "porcelain_white",
+        "cold_cyan_emission",
+        "clinical_lighting",
+        "no_rust",
+        "no_messy_cables"
+      ],
+      "blocked_tags": [
+        "neo_tokyo_density",
+        "rain_neon_alley",
+        "vertical_signage",
+        "raw_concrete",
+        "galvanized_steel",
+        "urban_clutter"
+      ]
+    },
+    "neo_tokyo": {
+      "allowed_tags": [
+        "neo_tokyo_density",
+        "rain_neon_alley",
+        "cyber_shrine",
+        "raw_concrete",
+        "galvanized_steel",
+        "volumetric_haze",
+        "anamorphic_2_76_1"
+      ],
+      "blocked_tags": [
+        "sterile_porcelain_imperial_dominance"
+      ]
+    },
+    "lyra_0_void_scene": {
+      "allowed_tags": [
+        "glitch_phantom",
+        "archon_vessel",
+        "fiber_optic_dress",
+        "motion_blur",
+        "holographic_decay",
+        "cold_cyan_emission",
+        "plasma_magenta"
+      ],
+      "blocked_tags": [
+        "heavy_armor",
+        "biological_gore",
+        "sunlit_exterior"
+      ]
+    }
+  }
+}

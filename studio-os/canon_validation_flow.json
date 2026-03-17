@@ -1,0 +1,25 @@
+{
+  "canon_validation_flow": {
+    "validation_order": [
+      "character_identity_check",
+      "environment_domain_check",
+      "palette_check",
+      "material_check",
+      "forbidden_elements_check",
+      "cross_domain_contamination_check",
+      "final_canon_pass"
+    ],
+    "hard_fail_conditions": [
+      "white_monolith_contains_neo_tokyo_clutter",
+      "imperial_scene_contains_rust_or_messy_cables",
+      "lyra_0_rendered_as_biological_gore_entity",
+      "mikage_palette_lock_broken",
+      "forbidden_environment_weather_present"
+    ],
+    "result_states": [
+      "pass",
+      "revise",
+      "reject"
+    ]
+  }
+}

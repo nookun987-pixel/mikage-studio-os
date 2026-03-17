@@ -1,0 +1,100 @@
+{
+  "domain_asset_registry": {
+    "imperial": {
+      "preferred_assets": [
+        "ref_white_monolith_001",
+        "ref_mikage_armor_001",
+        "ref_mikage_mask_001",
+        "env_white_monolith_001"
+      ],
+      "allowed_support_assets": [
+        "ref_mikage_weapon_001",
+        "mat_porcelain_001",
+        "mat_carbon_fiber_001",
+        "mat_titanium_001"
+      ],
+      "blocked_assets_or_tags": [
+        "ref_neo_tokyo_001",
+        "env_neo_tokyo_alley_001",
+        "neo_tokyo_density",
+        "rain_neon_alley",
+        "vertical_signage",
+        "urban_clutter",
+        "raw_concrete",
+        "galvanized_steel"
+      ]
+    },
+    "neo_tokyo": {
+      "preferred_assets": [
+        "ref_neo_tokyo_001",
+        "env_neo_tokyo_alley_001",
+        "ref_cyber_shrine_001"
+      ],
+      "allowed_support_assets": [
+        "env_cyber_shrine_001",
+        "mat_holographic_001",
+        "env_transition_zone_001"
+      ],
+      "blocked_assets_or_tags": [
+        "ref_white_monolith_001",
+        "env_white_monolith_001",
+        "white_monolith",
+        "porcelain_minimalism",
+        "sterile_porcelain_imperial_dominance",
+        "mat_porcelain_001"
+      ]
+    },
+    "transition_zone": {
+      "preferred_assets": [
+        "ref_cyber_shrine_001",
+        "env_cyber_shrine_001",
+        "env_transition_zone_001"
+      ],
+      "allowed_support_assets": [
+        "mat_titanium_001",
+        "mat_holographic_001",
+        "ref_neo_tokyo_001"
+      ],
+      "blocked_assets_or_tags": [
+        "pure_imperial_dominance",
+        "pure_neo_tokyo_clutter"
+      ]
+    },
+    "character_only": {
+      "preferred_assets": [
+        "ref_mikage_armor_001",
+        "ref_mikage_mask_001",
+        "ref_lyra_0_001",
+        "ref_board_001"
+      ],
+      "allowed_support_assets": [
+        "mat_porcelain_001",
+        "mat_carbon_fiber_001",
+        "mat_titanium_001",
+        "mat_fiber_optic_001",
+        "ref_mikage_weapon_001"
+      ],
+      "blocked_assets_or_tags": [
+        "environment_specific_assets",
+        "weather_effects",
+        "urban_context"
+      ]
+    },
+    "material_board": {
+      "preferred_assets": [
+        "mat_porcelain_001",
+        "mat_carbon_fiber_001",
+        "mat_titanium_001",
+        "mat_fiber_optic_001",
+        "mat_holographic_001"
+      ],
+      "allowed_support_assets": [
+        "ref_board_001"
+      ],
+      "blocked_assets_or_tags": [
+        "environmental_context",
+        "cinematic_lighting"
+      ]
+    }
+  }
+}

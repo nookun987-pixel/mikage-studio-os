@@ -1,0 +1,147 @@
+{
+  "mikage_color_modes": {
+    "edo_period_palette": {
+      "name": "Edo Period Traditional",
+      "base_colors": [
+        {
+          "name": "sumi_ink",
+          "hex": "#2C2C2C",
+          "rgb": [44, 44, 44],
+          "cultural_significance": "traditional ink, stability, formality"
+        },
+        {
+          "name": "washi_white",
+          "hex": "#F8F8F0",
+          "rgb": [248, 248, 240],
+          "cultural_significance": "handmade paper, purity, natural fibers"
+        },
+        {
+          "name": "bamboo_green",
+          "hex": "#8B9A7A",
+          "rgb": [139, 154, 122],
+          "cultural_significance": "nature, growth, flexibility"
+        },
+        {
+          "name": "sakura_pink",
+          "hex": "#FDBCB4",
+          "rgb": [253, 188, 180],
+          "cultural_significance": "transience, beauty, spring renewal"
+        },
+        {
+          "name": "indigo_dye",
+          "hex": "#4B0082",
+          "rgb": [75, 0, 130],
+          "cultural_significance": "noble color, traditional textiles, status"
+        }
+      ],
+      "secondary_accents": [
+        {
+          "name": "crimson_lacquer",
+          "hex": "#8B1A1A",
+          "rgb": [139, 26, 26],
+          "cultural_significance": "protection, strength, formal occasions"
+        },
+        {
+          "name": "gold_leaf",
+          "hex": "#D4AF37",
+          "rgb": [212, 175, 55],
+          "cultural_significance": "prosperity, imperial connection, sacredness"
+        },
+        {
+          "name": "deep_charcoal",
+          "hex": "#36454F",
+          "rgb": [54, 69, 79],
+          "cultural_significance": "grounding, stability, shadow work"
+        }
+      ],
+      "usage_rules": {
+        "dominant_ratio": "base_colors should comprise 60-70% of visual space",
+        "accent_limited": "secondary accents limited to 20-30% total",
+        "cultural_context": "colors must match historical period and cultural setting",
+        "seasonal_harmony": "color combinations should reflect seasonal themes",
+        "symbolic_appropriateness": "color usage must respect cultural symbolism"
+      }
+    },
+    "natural_fibers_palette": {
+      "name": "Natural Fibers & Textiles",
+      "base_colors": [
+        {
+          "name": "hemp_natural",
+          "hex": "#8B7355",
+          "rgb": [139, 115, 85],
+          "material_source": "hemp fibers, traditional paper making"
+        },
+        {
+          "name": "cotton_unbleached",
+          "hex": "#F4E4C1",
+          "rgb": [244, 228, 193],
+          "material_source": "organic cotton, traditional weaving"
+        },
+        {
+          "name": "silk_dawn",
+          "hex": "#E8DCC4",
+          "rgb": [232, 220, 196],
+          "material_source": "silk cultivation, luxury textiles"
+        },
+        {
+          "name": "wood_ash",
+          "hex": "#6B5D54",
+          "rgb": [107, 93, 84],
+          "material_source": "natural wood ash, pigments"
+        }
+      ],
+      "texture_guidelines": {
+        "fiber_visibility": "natural fiber texture should be subtly visible",
+        "handmade_quality": "imperfections should suggest handcrafting",
+        "organic_variation": "color variation should appear natural, not uniform",
+        "aging_simulation": "subtle aging and wear patterns appropriate"
+      }
+    },
+    "seasonal_variations": {
+      "spring_harmony": {
+        "dominant_theme": "renewal, growth, new beginnings",
+        "color_shifts": "increased sakura pink, bamboo green, light wash effects",
+        "symbolic_elements": "cherry blossoms, new bamboo shoots, melting snow"
+      },
+      "summer_intensity": {
+        "dominant_theme": "vibrancy, full growth, energy peak",
+        "color_shifts": "deepened greens, rich indigos, strong contrast",
+        "symbolic_elements": "lush foliage, festival colors, intense shadows"
+      },
+      "autumn_transience": {
+        "dominant_theme": "impermanence, harvest, melancholy beauty",
+        "color_shifts": "warm reds, golden yellows, fading light",
+        "symbolic_elements": "falling maple, harvest moon, changing leaves"
+      },
+      "winter_serenity": {
+        "dominant_theme": "purity, endurance, quiet strength",
+        "color_shifts": "cool whites, deep charcoals, subtle blues",
+        "symbolic_elements": "snow covered bamboo, bare branches, warm light"
+      }
+    },
+    "cultural_restrictions": {
+      "forbidden_combinations": [
+        "neon_colors_with_traditional_subjects",
+        "western_holiday_schemes",
+        "modern_corporate_brands",
+        "sports_team_colorways",
+        "military_camouflage_patterns",
+        "political_party_color_schemes"
+      ],
+      "sensitive_contexts": [
+        "religious_ceremonies",
+        "formal_occasions",
+        "historical_events",
+        "cultural_performances",
+        "traditional_rituals"
+      ]
+    },
+    "technical_specifications": {
+      "color_depth": "limited to traditional pigment ranges",
+      "saturation_levels": "moderate saturation reflecting natural pigments",
+      "lighting_interaction": "colors must respond naturally to traditional lighting",
+      "material_simulation": "should reflect traditional material properties",
+      "aging_effects": "natural aging and weathering patterns"
+    }
+  }
+}

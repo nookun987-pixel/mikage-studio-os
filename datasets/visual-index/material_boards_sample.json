@@ -1,0 +1,69 @@
+{
+  "material_boards": [
+    {
+      "asset_id": "mat_porcelain_001",
+      "title": "Porcelain White Armor",
+      "category": "material",
+      "subtype": "porcelain",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "visual_tags": ["porcelain_white", "micro_fractures", "clean_surface"],
+      "material_tags": ["porcelain"],
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "notes": "White porcelain with controlled fracture patterns"
+    },
+    {
+      "asset_id": "mat_carbon_fiber_001",
+      "title": "Matte Black Carbon Fiber",
+      "category": "material",
+      "subtype": "carbon_fiber",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "visual_tags": ["matte_black_carbon_fiber", "textured_surface", "no_reflection"],
+      "material_tags": ["carbon_fiber"],
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "notes": "Matte black carbon fiber understructure"
+    },
+    {
+      "asset_id": "mat_titanium_001",
+      "title": "Dark Titanium Joints",
+      "category": "material",
+      "subtype": "dark_titanium",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "visual_tags": ["dark_titanium", "mechanical_precision", "joint_detail"],
+      "material_tags": ["titanium"],
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "notes": "Dark titanium mechanical joints"
+    },
+    {
+      "asset_id": "mat_fiber_optic_001",
+      "title": "Fiber Optic Dress",
+      "category": "material",
+      "subtype": "fiber_optic",
+      "authority_level": "supporting_canon",
+      "canon_status": "provisional",
+      "visual_tags": ["fiber_optic_dress", "light_emission", "holographic_decay"],
+      "material_tags": ["fiber_optic"],
+      "domain_tags": ["void_space", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "notes": "Fiber optic material with light emission"
+    },
+    {
+      "asset_id": "mat_holographic_001",
+      "title": "Holographic Decay",
+      "category": "material",
+      "subtype": "holographic",
+      "authority_level": "visual_authority",
+      "canon_status": "provisional",
+      "visual_tags": ["holographic_decay", "digital_artifacts", "glitch_effects"],
+      "material_tags": ["holographic"],
+      "domain_tags": ["void_space", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "notes": "Holographic material with decay effects"
+    }
+  ]
+}

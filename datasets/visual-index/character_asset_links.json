@@ -1,0 +1,53 @@
+{
+  "character_asset_links": {
+    "chr_mikage_zenith": {
+      "core_assets": [
+        "ref_mikage_armor_001",
+        "ref_mikage_mask_001",
+        "ref_mikage_weapon_001"
+      ],
+      "support_assets": [
+        "ref_board_001"
+      ],
+      "material_boards": [
+        "mat_porcelain_001",
+        "mat_carbon_fiber_001",
+        "mat_titanium_001"
+      ],
+      "blocked_mismatch_tags": [
+        "neon_green",
+        "safety_orange",
+        "gold_metallic_base",
+        "biological_gore",
+        "rust",
+        "messy_cables",
+        "natural_sunlight",
+        "neo_tokyo_density",
+        "rain_neon_alley"
+      ]
+    },
+    "chr_lyra_0": {
+      "core_assets": [
+        "ref_lyra_0_001"
+      ],
+      "support_assets": [
+        "ref_board_001"
+      ],
+      "material_boards": [
+        "mat_fiber_optic_001",
+        "mat_holographic_001"
+      ],
+      "blocked_mismatch_tags": [
+        "biological_gore",
+        "organic_anatomy",
+        "wounds",
+        "blood",
+        "flesh",
+        "natural_materials",
+        "rust",
+        "decay",
+        "weather_effects"
+      ]
+    }
+  }
+}

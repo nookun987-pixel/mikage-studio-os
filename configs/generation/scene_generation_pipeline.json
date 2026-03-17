@@ -1,0 +1,13 @@
+{
+  "scene_generation_pipeline": [
+    "detect_scene_domain",
+    "apply_domain_classifier",
+    "load_visual_authority",
+    "apply_style_guardrails",
+    "apply_character_spec",
+    "apply_color_modes",
+    "apply_composition_grammar",
+    "validate_forbidden_elements",
+    "final_render_prompt"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "visual_tag_registry": {
+    "character_tags": [
+      "glitch_phantom",
+      "archon_vessel",
+      "porcelain_combat_armor",
+      "kitsune_mask",
+      "fiber_optic_dress",
+      "agile_hunter_silhouette"
+    ],
+    "environment_tags": [
+      "white_monolith",
+      "porcelain_minimalism",
+      "absolute_order_architecture",
+      "neo_tokyo_density",
+      "rain_neon_alley",
+      "cyber_shrine",
+      "silent_megacity"
+    ],
+    "material_tags": [
+      "porcelain_white",
+      "matte_black_carbon_fiber",
+      "dark_titanium",
+      "cold_cyan_emission",
+      "plasma_magenta",
+      "visceral_crimson",
+      "holographic_decay"
+    ],
+    "cinematography_tags": [
+      "alexa_65",
+      "85mm",
+      "anamorphic_2_76_1",
+      "clinical_lighting",
+      "volumetric_haze",
+      "motion_blur",
+      "high_contrast_chiaroscuro"
+    ],
+    "restriction_tags": [
+      "no_rust",
+      "no_messy_cables",
+      "no_biological_gore",
+      "no_natural_sunlight",
+      "no_urban_clutter_in_imperial"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "retrieval_recipes": {
+    "mikage_character_sheet": {
+      "request_type": "reference_sheet",
+      "primary_lookup": ["chr_mikage_zenith"],
+      "secondary_lookup": ["ref_board_001"],
+      "material_lookup": ["mat_porcelain_001", "mat_carbon_fiber_001", "mat_titanium_001"],
+      "domain_constraints": ["character_only"],
+      "validation_focus": ["material_accuracy", "silhouette_integrity", "cultural_authenticity"]
+    },
+    "lyra0_white_monolith_scene": {
+      "request_type": "character_scene",
+      "primary_lookup": ["chr_lyra_0", "env_white_monolith_01"],
+      "secondary_lookup": ["ref_lyra_0_001", "ref_white_monolith_001"],
+      "material_lookup": ["mat_fiber_optic_001", "mat_holographic_001", "mat_porcelain_001"],
+      "domain_constraints": ["imperial"],
+      "validation_focus": ["domain_separation", "non_biological_identity", "imperial_protection"]
+    },
+    "neo_tokyo_environment_scene": {
+      "request_type": "environment_only",
+      "primary_lookup": ["env_neo_tokyo_generic"],
+      "secondary_lookup": ["ref_neo_tokyo_001", "env_neo_tokyo_alley_001"],
+      "material_lookup": ["mat_holographic_001"],
+      "domain_constraints": ["neo_tokyo"],
+      "validation_focus": ["urban_density", "neo_tokyo_authenticity", "imperial_contamination_block"]
+    }
+  }
+}

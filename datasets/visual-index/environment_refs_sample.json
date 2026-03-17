@@ -1,0 +1,56 @@
+{
+  "environment_references": [
+    {
+      "asset_id": "env_white_monolith_001",
+      "title": "White Monolith Imperial Zone",
+      "category": "environment",
+      "subtype": "imperial",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "visual_tags": ["white_monolith", "porcelain_minimalism", "absolute_order_architecture"],
+      "material_tags": ["porcelain", "clean_surfaces"],
+      "domain_tags": ["imperial", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "notes": "Sterile porcelain imperial environment with maximum protection"
+    },
+    {
+      "asset_id": "env_neo_tokyo_alley_001",
+      "title": "Rain Neon Alley",
+      "category": "environment",
+      "subtype": "neo_tokyo",
+      "authority_level": "visual_authority",
+      "canon_status": "locked",
+      "visual_tags": ["rain_neon_alley", "wet_reflections", "narrow_corridor_depth"],
+      "material_tags": ["raw_concrete", "galvanized_steel"],
+      "domain_tags": ["neo_tokyo", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "notes": "Neo-Tokyo alley with restrained neon and wet surfaces"
+    },
+    {
+      "asset_id": "env_cyber_shrine_001",
+      "title": "Cyber Shrine Interior",
+      "category": "environment",
+      "subtype": "ritual_space",
+      "authority_level": "visual_authority",
+      "canon_status": "provisional",
+      "visual_tags": ["cyber_shrine", "threshold_frames", "ceremonial_path"],
+      "material_tags": ["dark_titanium", "holographic"],
+      "domain_tags": ["transition_zone", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "notes": "Ritual space with technology integration"
+    },
+    {
+      "asset_id": "env_transition_zone_001",
+      "title": "Industrial Border Zone",
+      "category": "environment",
+      "subtype": "transition_zone",
+      "authority_level": "reference_only",
+      "canon_status": "provisional",
+      "visual_tags": ["industrial_border", "controlled_technology_integration"],
+      "material_tags": ["raw_concrete", "galvanized_steel", "dark_titanium"],
+      "domain_tags": ["transition_zone", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "notes": "Transition zone between imperial and Neo-Tokyo domains"
+    }
+  ]
+}

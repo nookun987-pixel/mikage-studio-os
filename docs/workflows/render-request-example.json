@@ -1,0 +1,18 @@
+{
+  "request_id": "req_example_001",
+  "request_type": "character_scene",
+  "subject_id": "chr_lyra_0",
+  "scene_domain": "imperial",
+  "environment_id": "env_white_monolith_01",
+  "authority_level": "supporting_canon",
+  "output_mode": "prompt_plus_validation",
+  "camera_profile": "ARRI_ALEXA_65_85mm",
+  "mood_profile": "clinical_tension",
+  "reference_assets": [
+    "white_monolith",
+    "glitch_phantom",
+    "fiber_optic_dress"
+  ],
+  "variation_mode": "locked_canon",
+  "notes": "Lyra-0 intrusion event inside White Monolith. Preserve imperial sterility. No Neo-Tokyo clutter bleed."
+}

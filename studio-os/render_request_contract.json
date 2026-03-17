@@ -1,0 +1,34 @@
+{
+  "render_request_contract": {
+    "required_fields": [
+      "request_id",
+      "request_type",
+      "subject_id",
+      "scene_domain",
+      "environment_id",
+      "authority_level",
+      "output_mode"
+    ],
+    "optional_fields": [
+      "camera_profile",
+      "mood_profile",
+      "reference_assets",
+      "variation_mode",
+      "notes"
+    ],
+    "allowed_request_types": [
+      "character_scene",
+      "character_only",
+      "environment_only",
+      "weapon_sheet",
+      "reference_sheet",
+      "poster_frame"
+    ],
+    "allowed_output_modes": [
+      "prompt_only",
+      "prompt_plus_validation",
+      "sheet_spec",
+      "cinematic_render_spec"
+    ]
+  }
+}

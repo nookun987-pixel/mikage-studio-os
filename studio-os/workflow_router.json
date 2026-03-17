@@ -1,0 +1,27 @@
+{
+  "workflow_router": {
+    "entry_conditions": {
+      "character_scene_request": [
+        "load_character_spec",
+        "load_environment_spec",
+        "detect_scene_domain"
+      ],
+      "character_only_request": [
+        "load_character_spec",
+        "load_style_guardrails",
+        "build_character_prompt"
+      ],
+      "environment_only_request": [
+        "load_environment_spec",
+        "load_visual_authority",
+        "build_environment_prompt"
+      ]
+    },
+    "routing_priority": [
+      "canon_first",
+      "environment_domain_resolution",
+      "style_guardrails",
+      "visual_reference_support"
+    ]
+  }
+}

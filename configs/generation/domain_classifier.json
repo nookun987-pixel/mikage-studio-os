@@ -1,0 +1,26 @@
+{
+  "domain_classifier": {
+    "imperial_domains": [
+      "white_monolith",
+      "imperial_core",
+      "porcelain_minimalism",
+      "absolute_order_architecture"
+    ],
+    "neo_tokyo_domains": [
+      "neon_district",
+      "rain_neon_alley",
+      "urban_capsule_architecture",
+      "cyber_shrine"
+    ],
+    "transition_domains": [
+      "outer_city",
+      "industrial_border",
+      "imperial_ruins"
+    ],
+    "priority": {
+      "imperial": 3,
+      "transition": 2,
+      "neo_tokyo": 1
+    }
+  }
+}

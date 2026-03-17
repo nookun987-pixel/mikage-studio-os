@@ -1,0 +1,43 @@
+{
+  "preset_id": "scene_lyra0_white_monolith",
+  "character_ref": "docs/lore-core/characters/lyra_0_spec.json",
+  "environment_ref": "docs/lore-core/environments/white_monolith_spec.json",
+  "scene_intent": "Lyra-0 xuất hiện như một Glitch Phantom bên trong The White Monolith, nhấn mạnh xung đột giữa Trật tự Tuyệt đối và sự lây nhiễm ARCHON.",
+  "composition_rules": {
+    "framing": [
+      "single-vanishing-point symmetry",
+      "monumental sterile space",
+      "subject reads as intruding signal inside ordered architecture"
+    ],
+    "character_scale": "medium-small against oversized imperial architecture",
+    "camera": "ARRI ALEXA 65, 85mm",
+    "lighting": "Clinical Cold Cyan base with invasive Neon Purple / Plasma Magenta corruption bloom",
+    "effects": [
+      "intentional motion blur",
+      "decaying data streams",
+      "digital dust",
+      "fractured holographic streaking"
+    ]
+  },
+  "hard_locks": {
+    "character_must_read_as": [
+      "non-biological",
+      "glitch phantom",
+      "fiber optic dress",
+      "archon vessel"
+    ],
+    "environment_must_read_as": [
+      "porcelain minimalism",
+      "sterile empire",
+      "absolute order",
+      "no grime"
+    ]
+  },
+  "negative_rules": [
+    "no heavy combat armor",
+    "no physical gore",
+    "no rusty industrial set",
+    "no natural daylight",
+    "no messy cyberpunk street clutter"
+  ]
+}

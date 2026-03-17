@@ -1,0 +1,191 @@
+{
+  "asset_manifest": [
+    {
+      "asset_id": "ref_mikage_armor_001",
+      "title": "Mikage Zenith Combat Armor",
+      "category": "armor",
+      "subtype": "porcelain_combat_armor",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_mikage_mask_001",
+      "title": "Mikage Kitsune Mask",
+      "category": "mask",
+      "subtype": "kitsune_mask",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_mikage_weapon_001",
+      "title": "Mikage Energy Blade",
+      "category": "weapon",
+      "subtype": "energy_weapon",
+      "authority_level": "supporting_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_lyra_0_001",
+      "title": "Lyra-0 Glitch Phantom",
+      "category": "character",
+      "subtype": "archon_vessel",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["void_space", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_white_monolith_001",
+      "title": "White Monolith Interior",
+      "category": "environment",
+      "subtype": "imperial",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_neo_tokyo_001",
+      "title": "Neo-Tokyo Density Scene",
+      "category": "environment",
+      "subtype": "neo_tokyo",
+      "authority_level": "visual_authority",
+      "canon_status": "locked",
+      "domain_tags": ["neo_tokyo", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_cyber_shrine_001",
+      "title": "Cyber Shrine Threshold",
+      "category": "environment",
+      "subtype": "ritual_space",
+      "authority_level": "visual_authority",
+      "canon_status": "provisional",
+      "domain_tags": ["transition_zone", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "ref_board_001",
+      "title": "Character Reference Board",
+      "category": "reference_board",
+      "subtype": "technical_sheet",
+      "authority_level": "reference_only",
+      "canon_status": "reference_only",
+      "domain_tags": ["character"],
+      "usage_scope": ["internal_reference", "design_only"],
+      "source_file": "reference_assets_sample.json"
+    },
+    {
+      "asset_id": "mat_porcelain_001",
+      "title": "Porcelain White Armor",
+      "category": "material",
+      "subtype": "porcelain",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "material_boards_sample.json"
+    },
+    {
+      "asset_id": "mat_carbon_fiber_001",
+      "title": "Matte Black Carbon Fiber",
+      "category": "material",
+      "subtype": "carbon_fiber",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "material_boards_sample.json"
+    },
+    {
+      "asset_id": "mat_titanium_001",
+      "title": "Dark Titanium Joints",
+      "category": "material",
+      "subtype": "dark_titanium",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "material_boards_sample.json"
+    },
+    {
+      "asset_id": "mat_fiber_optic_001",
+      "title": "Fiber Optic Dress",
+      "category": "material",
+      "subtype": "fiber_optic",
+      "authority_level": "supporting_canon",
+      "canon_status": "provisional",
+      "domain_tags": ["void_space", "character"],
+      "usage_scope": ["prompt_safe", "character_only"],
+      "source_file": "material_boards_sample.json"
+    },
+    {
+      "asset_id": "mat_holographic_001",
+      "title": "Holographic Decay",
+      "category": "material",
+      "subtype": "holographic",
+      "authority_level": "visual_authority",
+      "canon_status": "provisional",
+      "domain_tags": ["void_space", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "material_boards_sample.json"
+    },
+    {
+      "asset_id": "env_white_monolith_001",
+      "title": "White Monolith Imperial Zone",
+      "category": "environment",
+      "subtype": "imperial",
+      "authority_level": "core_canon",
+      "canon_status": "locked",
+      "domain_tags": ["imperial", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "environment_refs_sample.json"
+    },
+    {
+      "asset_id": "env_neo_tokyo_alley_001",
+      "title": "Rain Neon Alley",
+      "category": "environment",
+      "subtype": "neo_tokyo",
+      "authority_level": "visual_authority",
+      "canon_status": "locked",
+      "domain_tags": ["neo_tokyo", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "environment_refs_sample.json"
+    },
+    {
+      "asset_id": "env_cyber_shrine_001",
+      "title": "Cyber Shrine Interior",
+      "category": "environment",
+      "subtype": "ritual_space",
+      "authority_level": "visual_authority",
+      "canon_status": "provisional",
+      "domain_tags": ["transition_zone", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "environment_refs_sample.json"
+    },
+    {
+      "asset_id": "env_transition_zone_001",
+      "title": "Industrial Border Zone",
+      "category": "environment",
+      "subtype": "transition_zone",
+      "authority_level": "reference_only",
+      "canon_status": "provisional",
+      "domain_tags": ["transition_zone", "environment"],
+      "usage_scope": ["prompt_safe", "environment_only"],
+      "source_file": "environment_refs_sample.json"
+    }
+  ]
+}

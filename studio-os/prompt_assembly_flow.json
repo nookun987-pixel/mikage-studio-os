@@ -1,0 +1,31 @@
+{
+  "prompt_assembly_flow": {
+    "stages": [
+      "resolve_request_type",
+      "load_canon_sources",
+      "classify_scene_domain",
+      "apply_environment_precedence",
+      "apply_character_identity",
+      "apply_style_guardrails",
+      "apply_visual_authority",
+      "apply_material_and_color_locks",
+      "append_forbidden_elements",
+      "compile_final_prompt"
+    ],
+    "output_contract": {
+      "must_include": [
+        "subject block",
+        "material block",
+        "environment block",
+        "cinematography block",
+        "lighting block",
+        "restriction block"
+      ],
+      "must_exclude": [
+        "contradictory domain tags",
+        "unapproved palette drift",
+        "forbidden lore additions"
+      ]
+    }
+  }
+}
