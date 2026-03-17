@@ -1,0 +1,384 @@
+{
+  "asset_review_matrix": {
+    "version": "1.0.0",
+    "schema_type": "review_matrix",
+    "description": "Structured review schema for Mikage asset validation",
+    "review_dimensions": {
+      "silhouette_accuracy": {
+        "weight": 0.25,
+        "description": "Accuracy of character/object silhouette against canon",
+        "criteria": {
+          "excellent": {
+            "score_range": "90-100",
+            "description": "Perfect silhouette recognition, immediate identification",
+            "indicators": [
+              "Kitsune mask immediately recognizable",
+              "Armor proportions exactly canonical",
+              "Weapon silhouette matches technical specifications",
+              "Character posture and build accurate"
+            ]
+          },
+          "good": {
+            "score_range": "80-89",
+            "description": "Strong silhouette accuracy with minor deviations",
+            "indicators": [
+              "Mask clearly identifiable with slight variations",
+              "Armor proportions very close to canonical",
+              "Weapon silhouette generally correct",
+              "Minor proportional deviations"
+            ]
+          },
+          "acceptable": {
+            "score_range": "70-79",
+            "description": "Adequate silhouette with noticeable deviations",
+            "indicators": [
+              "Mask recognizable but with clear differences",
+              "Armor proportions acceptable but not ideal",
+              "Weapon silhouette mostly correct",
+              "Noticeable but not critical proportional issues"
+            ]
+          },
+          "poor": {
+            "score_range": "0-69",
+            "description": "Significant silhouette problems affecting recognition",
+            "indicators": [
+              "Mask difficult to identify as Mikage",
+              "Armor proportions significantly wrong",
+              "Weapon silhouette incorrect",
+              "Major proportional or structural problems"
+            ]
+          }
+        }
+      },
+      "material_accuracy": {
+        "weight": 0.20,
+        "description": "Authenticity of material representation",
+        "criteria": {
+          "excellent": {
+            "score_range": "90-100",
+            "description": "Perfect material rendering with authentic properties",
+            "indicators": [
+              "Porcelain shows correct matte texture and craquelure",
+              "Carbon fiber displays proper weave patterns",
+              "Dark titanium appears industrial and functional",
+              "Kintsugi follows story logic (gold original, silver new)"
+            ]
+          },
+          "good": {
+            "score_range": "80-89",
+            "description": "Strong material accuracy with minor imperfections",
+            "indicators": [
+              "Porcelain texture mostly correct",
+              "Carbon fiber pattern visible but not perfect",
+              "Titanium appears mostly industrial",
+              "Kintsugi generally follows logic"
+            ]
+          },
+          "acceptable": {
+            "score_range": "70-79",
+            "description": "Adequate material representation with clear issues",
+            "indicators": [
+              "Porcelain texture recognizable but imperfect",
+              "Carbon fiber pattern somewhat visible",
+              "Titanium has some industrial appearance",
+              "Kintsugi present but logic unclear"
+            ]
+          },
+          "poor": {
+            "score_range": "0-69",
+            "description": "Material representation incorrect or confusing",
+            "indicators": [
+              "Porcelain looks like plastic, marble, or stone",
+              "Carbon fiber appears as generic texture",
+              "Titanium looks decorative or ornate",
+              "Kintsugi patterns random or decorative"
+            ]
+          }
+        }
+      },
+      "canon_alignment": {
+        "weight": 0.25,
+        "description": "Adherence to Mikage canon and visual rules",
+        "criteria": {
+          "excellent": {
+            "score_range": "90-100",
+            "description": "Perfect canon compliance with no violations",
+            "indicators": [
+              "Color palette strictly porcelain, void, crimson",
+              "No forbidden aesthetics (neon, fantasy, anime)",
+              "Japanese art grammar properly applied",
+              "Physics laws (Landauer, gravity) respected"
+            ]
+          },
+          "good": {
+            "score_range": "80-89",
+            "description": "Strong canon compliance with minor deviations",
+            "indicators": [
+              "Color palette mostly correct with minimal deviation",
+              "No major forbidden aesthetic elements",
+              "Japanese influence clearly present",
+              "Physics generally respected"
+            ]
+          },
+          "acceptable": {
+            "score_range": "70-79",
+            "description": "Adequate canon compliance with noticeable issues",
+            "indicators": [
+              "Color palette mostly correct but with some deviation",
+              "Minor forbidden aesthetic elements",
+              "Japanese influence present but inconsistent",
+              "Some physics violations"
+            ]
+          },
+          "poor": {
+            "score_range": "0-69",
+            "description": "Significant canon violations",
+            "indicators": [
+              "Major color palette violations (green, bright yellow)",
+              "Clear forbidden aesthetic presence",
+              "No Japanese art grammar influence",
+              "Major physics or logic violations"
+            ]
+          }
+        }
+      },
+      "mask_integrity": {
+        "weight": 0.15,
+        "description": "Quality and accuracy of mask representation (if present)",
+        "criteria": {
+          "excellent": {
+            "score_range": "90-100",
+            "description": "Perfect mask geometry and surface treatment",
+            "indicators": [
+              "Ear geometry exactly canonical",
+              "Muzzle proportions correct",
+              "Symmetry perfect",
+              "Porcelain surface authentic"
+            ]
+          },
+          "good": {
+            "score_range": "80-89",
+            "description": "Strong mask accuracy with minor issues",
+            "indicators": [
+              "Ear geometry very close to canonical",
+              "Muzzle proportions nearly correct",
+              "Symmetry maintained with minor deviations",
+              "Porcelain surface mostly authentic"
+            ]
+          },
+          "acceptable": {
+            "score_range": "70-79",
+            "description": "Adequate mask representation with clear problems",
+            "indicators": [
+              "Ear geometry recognizable but incorrect",
+              "Muzzle proportions acceptable but not ideal",
+              "Some symmetry issues",
+              "Porcelain surface recognizable but imperfect"
+            ]
+          },
+          "poor": {
+            "score_range": "0-69",
+            "description": "Mask representation fails basic requirements",
+            "indicators": [
+              "Ear geometry wrong or unrecognizable",
+              "Muzzle proportions incorrect",
+              "Major symmetry problems",
+              "Surface treatment incorrect"
+            ]
+          }
+        }
+      },
+      "weapon_integrity": {
+        "weight": 0.10,
+        "description": "Quality and accuracy of weapon representation (if present)",
+        "criteria": {
+          "excellent": {
+            "score_range": "90-100",
+            "description": "Perfect weapon design and technical accuracy",
+            "indicators": [
+              "Weapon design technically plausible",
+              "Energy systems properly contained",
+              "Scale reflects gravitational effects",
+              "Materials appropriate to function"
+            ]
+          },
+          "good": {
+            "score_range": "80-89",
+            "description": "Strong weapon accuracy with minor issues",
+            "indicators": [
+              "Weapon design mostly plausible",
+              "Energy systems generally contained",
+              "Scale approximately correct",
+              "Materials mostly appropriate"
+            ]
+          },
+          "acceptable": {
+            "score_range": "70-79",
+            "description": "Adequate weapon representation with problems",
+            "indicators": [
+              "Weapon design somewhat plausible",
+              "Energy systems partially contained",
+              "Scale somewhat correct",
+              "Materials somewhat appropriate"
+            ]
+          },
+          "poor": {
+            "score_range": "0-69",
+            "description": "Weapon representation fails technical requirements",
+            "indicators": [
+              "Weapon design implausible or fantastical",
+              "Energy systems uncontained or magical",
+              "Scale incorrect or inconsistent",
+              "Materials inappropriate to function"
+            ]
+          }
+        }
+      },
+      "environment_relevance": {
+        "weight": 0.05,
+        "description": "Appropriateness and quality of environmental context",
+        "criteria": {
+          "excellent": {
+            "score_range": "90-100",
+            "description": "Perfect environmental context and atmosphere",
+            "indicators": [
+              "Environment matches character domain",
+              "Atmospheric elements present and appropriate",
+              "Lighting diegetic and controlled",
+              "Scale consistent with character"
+            ]
+          },
+          "good": {
+            "score_range": "80-89",
+            "description": "Strong environmental context with minor issues",
+            "indicators": [
+              "Environment generally appropriate",
+              "Atmospheric elements present",
+              "Lighting mostly diegetic",
+              "Scale mostly consistent"
+            ]
+          },
+          "acceptable": {
+            "score_range": "70-79",
+            "description": "Adequate environmental context",
+            "indicators": [
+              "Environment somewhat appropriate",
+              "Some atmospheric elements",
+              "Lighting partially diegetic",
+              "Scale somewhat consistent"
+            ]
+          },
+          "poor": {
+            "score_range": "0-69",
+            "description": "Environmental context inappropriate or missing",
+            "indicators": [
+              "Environment inappropriate to character",
+              "No atmospheric elements",
+              "Lighting non-diegetic or random",
+              "Scale inconsistent"
+            ]
+          }
+        }
+      }
+    },
+    "scoring_system": {
+      "overall_score_calculation": "weighted_average_of_dimensions",
+      "approval_threshold": 80.0,
+      "reject_threshold": 60.0,
+      "conditional_range": "60-79",
+      "excellence_threshold": 90.0
+    },
+    "review_workflow": {
+      "required_reviewers": {
+        "minimum": 1,
+        "preferred": 2,
+        "senior_review_required_for": "canonical_promotion"
+      },
+      "review_steps": [
+        "initial_assessment",
+        "detailed_scoring",
+        "cross_reference_check",
+        "final_validation"
+      ],
+      "escalation_triggers": [
+        "score_below_70",
+        "critical_dimension_failure",
+        "canon_violation_detected",
+        "reviewer_disagreement"
+      ]
+    },
+    "quality_assurance": {
+      "inter_rater_reliability_target": 0.85,
+      "calibration_frequency": "monthly",
+      "review_audit_sample": "10_percent",
+      "continuous_improvement": true
+    },
+    "asset_type_specific_weights": {
+      "character": {
+        "silhouette_accuracy": 0.30,
+        "material_accuracy": 0.20,
+        "canon_alignment": 0.25,
+        "mask_integrity": 0.20,
+        "weapon_integrity": 0.05
+      },
+      "armor": {
+        "silhouette_accuracy": 0.25,
+        "material_accuracy": 0.30,
+        "canon_alignment": 0.25,
+        "mask_integrity": 0.10,
+        "weapon_integrity": 0.10
+      },
+      "mask": {
+        "silhouette_accuracy": 0.20,
+        "material_accuracy": 0.25,
+        "canon_alignment": 0.20,
+        "mask_integrity": 0.35,
+        "weapon_integrity": 0.00
+      },
+      "weapon": {
+        "silhouette_accuracy": 0.20,
+        "material_accuracy": 0.20,
+        "canon_alignment": 0.20,
+        "mask_integrity": 0.00,
+        "weapon_integrity": 0.40
+      },
+      "environment": {
+        "silhouette_accuracy": 0.10,
+        "material_accuracy": 0.20,
+        "canon_alignment": 0.25,
+        "mask_integrity": 0.00,
+        "weapon_integrity": 0.05,
+        "environment_relevance": 0.40
+      }
+    },
+    "required_followup": {
+      "conditional_approval": {
+        "score_range": "70-79",
+        "actions": [
+          "document_specific_issues",
+          "define_usage_limitations",
+          "schedule_re_review",
+          "provide_improvement_guidance"
+        ]
+      },
+      "rejection": {
+        "score_range": "0-69",
+        "actions": [
+          "document_rejection_reasons",
+          "provide_specific_feedback",
+          "identify_improvement_potential",
+          "consider_appeal_process"
+        ]
+      },
+      "excellence": {
+        "score_range": "90-100",
+        "actions": [
+          "consider_canonical_promotion",
+          "document_best_practices",
+          "use_as_reference_standard",
+          "recognize_contributor"
+        ]
+      }
+    }
+  }
+}
