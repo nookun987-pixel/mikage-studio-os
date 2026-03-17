@@ -1,0 +1,143 @@
+{
+  "mode_registry": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-17T00:00:00Z",
+    "supported_modes": [
+      {
+        "mode_id": "canon_core",
+        "description": "Baseline character representation with clean editorial simplicity",
+        "intended_use": ["lore_illustration", "reference_images", "character_portrait"],
+        "allowed_asset_classes": ["canonical", "approved"],
+        "allowed_prompt_depth": "shallow",
+        "required_references": ["character_core"],
+        "forbidden_drift_types": ["childish_anime_idol", "generic_neon_overload", "fantasy_magic_aesthetic"],
+        "output_expectations": {
+          "style": "porcelain_elegance",
+          "lighting": "soft_diffused",
+          "composition": "minimal_editorial",
+          "quality_threshold": 85
+        },
+        "validator_hooks": ["canon_registry", "style_guardrails", "asset_system"],
+        "canon_state": "hard_canon_locked"
+      },
+      {
+        "mode_id": "luminous_fan_appeal",
+        "description": "Fan attraction and social appeal with radiant lighting",
+        "intended_use": ["posters", "social_media_visuals", "fan_content"],
+        "allowed_asset_classes": ["canonical", "approved", "reference"],
+        "allowed_prompt_depth": "moderate",
+        "required_references": ["character_core"],
+        "forbidden_drift_types": ["childish_anime_idol", "pop_fashion_drift", "fantasy_magic_aesthetic"],
+        "output_expectations": {
+          "style": "luminous_idol_aesthetic",
+          "lighting": "radiant_glowing",
+          "composition": "dynamic_fan_appeal",
+          "quality_threshold": 80
+        },
+        "validator_hooks": ["canon_registry", "style_guardrails", "asset_system", "drift_prevention"],
+        "canon_state": "validated_soft"
+      },
+      {
+        "mode_id": "luxury_mystical_editorial",
+        "description": "High-fashion campaign visuals with dramatic lighting",
+        "intended_use": ["campaign_visuals", "editorial_spreads", "high_fashion_content"],
+        "allowed_asset_classes": ["canonical", "approved", "reference"],
+        "allowed_prompt_depth": "deep",
+        "required_references": ["character_core", "environment_context"],
+        "forbidden_drift_types": ["childish_anime_idol", "soft_glamour_pastel", "fantasy_magic_aesthetic"],
+        "output_expectations": {
+          "style": "mystical_luxury",
+          "lighting": "dramatic_chiaroscuro",
+          "composition": "avant_garde_editorial",
+          "quality_threshold": 90
+        },
+        "validator_hooks": ["canon_registry", "style_guardrails", "asset_system", "visual_authority"],
+        "canon_state": "validated_soft"
+      }
+    ],
+    "mode_constraints": {
+      "required_modes_per_generation": 3,
+      "mode_execution_order": ["canon_core", "luminous_fan_appeal", "luxury_mystical_editorial"],
+      "seed_dependencies": {
+        "luminous_fan_appeal": "reuse_from_canon_core",
+        "luxury_mystical_editorial": "independent"
+      },
+      "cross_mode_validation": true
+    },
+    "asset_class_permissions": {
+      "canonical": {
+        "canon_core": true,
+        "luminous_fan_appeal": true,
+        "luxury_mystical_editorial": true
+      },
+      "approved": {
+        "canon_core": true,
+        "luminous_fan_appeal": true,
+        "luxury_mystical_editorial": true
+      },
+      "reference": {
+        "canon_core": false,
+        "luminous_fan_appeal": true,
+        "luxury_mystical_editorial": true
+      },
+      "candidate": {
+        "canon_core": false,
+        "luminous_fan_appeal": false,
+        "luxury_mystical_editorial": false
+      }
+    },
+    "prompt_depth_definitions": {
+      "shallow": {
+        "max_blocks": 4,
+        "required_blocks": ["subject_identity", "material_language"],
+        "optional_blocks": ["lighting_language", "camera_language"]
+      },
+      "moderate": {
+        "max_blocks": 6,
+        "required_blocks": ["subject_identity", "material_language", "environment_language"],
+        "optional_blocks": ["lighting_language", "camera_language", "pose_language"]
+      },
+      "deep": {
+        "max_blocks": 8,
+        "required_blocks": ["subject_identity", "material_language", "environment_language", "lighting_language"],
+        "optional_blocks": ["camera_language", "pose_language", "atmospheric_effects", "composition_grammar"]
+      }
+    },
+    "drift_prevention_rules": {
+      "childish_anime_idol": {
+        "triggers": ["cute", "idol", "school_uniform", "kawaii", "smile_pose"],
+        "preventive_actions": ["add_adult_markers", "enforce_severe_aesthetic", "require_industrial_materiality"]
+      },
+      "generic_neon_overload": {
+        "triggers": ["neon_city", "glowing_signs", "magenta_blue", "cyberpunk_street"],
+        "preventive_actions": ["enforce_restrained_palette", "require_crimson_discipline", "limit_highlights"]
+      },
+      "fantasy_magic_aesthetic": {
+        "triggers": ["spell", "magic", "runes", "enchanted", "mystic_aura"],
+        "preventive_actions": ["require_hard_scifi", "enforce_traceable_power", "demand_mechanical_causality"]
+      },
+      "soft_glamour_pastel": {
+        "triggers": ["soft_pastel", "romantic_beauty", "cute_fashion"],
+        "preventive_actions": ["enforce_porcelain_discipline", "require_void_aesthetic", "limit_color_palette"]
+      },
+      "pop_fashion_drift": {
+        "triggers": ["pop_glamour", "fashion_excess", "commercial_aesthetic"],
+        "preventive_actions": ["enforce_editorial_standards", "require_luxury_positioning", "limit_commercial_elements"]
+      }
+    },
+    "validation_requirements": {
+      "pre_generation": [
+        "mode_existence_check",
+        "asset_class_permission_check",
+        "required_references_check",
+        "drift_prevention_check"
+      ],
+      "post_generation": [
+        "output_quality_check",
+        "canon_compliance_check",
+        "style_consistency_check",
+        "drift_detection_check"
+      ]
+    }
+  }
+}

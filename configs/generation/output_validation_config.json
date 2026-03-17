@@ -1,0 +1,307 @@
+{
+  "output_validation_config": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-17T00:00:00Z",
+    "validation_stages": [
+      {
+        "stage_id": "immediate_post_generation",
+        "description": "Validation immediately after generation completion",
+        "execution_timing": "immediate",
+        "required_checks": [
+          "file_integrity_check",
+          "basic_quality_assessment",
+          "format_compliance_check",
+          "metadata_completeness_check"
+        ],
+        "pass_threshold": 100,
+        "warn_threshold": 80,
+        "fail_threshold": 0
+      },
+      {
+        "stage_id": "canon_compliance_validation",
+        "description": "Deep validation against canon requirements",
+        "execution_timing": "within_5_minutes",
+        "required_checks": [
+          "canon_registry_compliance",
+          "style_guardrails_validation",
+          "visual_authority_alignment",
+          "asset_system_integration"
+        ],
+        "pass_threshold": 90,
+        "warn_threshold": 70,
+        "fail_threshold": 50
+      },
+      {
+        "stage_id": "quality_assessment",
+        "description": "Comprehensive quality evaluation",
+        "execution_timing": "within_10_minutes",
+        "required_checks": [
+          "technical_quality_metrics",
+          "aesthetic_quality_scoring",
+          "composition_analysis",
+          "color_accuracy_check"
+        ],
+        "pass_threshold": 85,
+        "warn_threshold": 70,
+        "fail_threshold": 60
+      },
+      {
+        "stage_id": "drift_detection",
+        "description": "Detection of style and canon drift",
+        "execution_timing": "within_15_minutes",
+        "required_checks": [
+          "style_drift_analysis",
+          "canon_drift_detection",
+          "quality_trend_analysis",
+          "cumulative_drift_monitoring"
+        ],
+        "pass_threshold": 80,
+        "warn_threshold": 65,
+        "fail_threshold": 50
+      },
+      {
+        "stage_id": "final_approval",
+        "description": "Final validation before asset acceptance",
+        "execution_timing": "within_30_minutes",
+        "required_checks": [
+          "comprehensive_review",
+          "cross_reference_validation",
+          "usage_eligibility_check",
+          "archive_readiness_assessment"
+        ],
+        "pass_threshold": 90,
+        "warn_threshold": 75,
+        "fail_threshold": 60
+      }
+    ],
+    "validation_checks": {
+      "file_integrity_check": {
+        "description": "Verify file is not corrupted and accessible",
+        "validation_method": "file_hash_verification",
+        "pass_criteria": "file_accessible_and_readable",
+        "fail_actions": ["regenerate_asset", "log_integrity_failure"]
+      },
+      "basic_quality_assessment": {
+        "description": "Basic quality metrics check",
+        "validation_method": "automated_quality_scoring",
+        "pass_criteria": "quality_score >= 60",
+        "fail_actions": ["flag_for_review", "document_quality_issues"]
+      },
+      "canon_registry_compliance": {
+        "description": "Check against canon registry requirements",
+        "validation_method": "canon_validator_integration",
+        "pass_criteria": "all_canon_rules_passed",
+        "fail_actions": ["reject_asset", "log_canon_violation", "escalate_to_canon_guard"]
+      },
+      "style_guardrails_validation": {
+        "description": "Validate against style guardrails",
+        "validation_method": "style_guardrails_check",
+        "pass_criteria": "no_style_violations_detected",
+        "fail_actions": ["flag_style_violation", "require_style_correction", "document_drift_risk"]
+      },
+      "visual_authority_alignment": {
+        "description": "Ensure alignment with visual authority",
+        "validation_method": "visual_authority_comparison",
+        "pass_criteria": "visual_alignment_score >= 80",
+        "fail_actions": ["request_visual_adjustment", "document_authority_mismatch"]
+      },
+      "asset_system_integration": {
+        "description": "Validate asset system compatibility",
+        "validation_method": "asset_system_validator",
+        "pass_criteria": "asset_meets_system_requirements",
+        "fail_actions": ["reject_for_system_issues", "document_integration_failure"]
+      },
+      "technical_quality_metrics": {
+        "description": "Comprehensive technical quality evaluation",
+        "validation_method": "technical_analysis_suite",
+        "pass_criteria": "technical_score >= 85",
+        "fail_actions": ["flag_technical_issues", "suggest_technical_improvements"]
+      },
+      "aesthetic_quality_scoring": {
+        "description": "Aesthetic quality evaluation",
+        "validation_method": "aesthetic_scoring_algorithm",
+        "pass_criteria": "aesthetic_score >= 80",
+        "fail_actions": ["flag_aesthetic_issues", "suggest_aesthetic_improvements"]
+      },
+      "style_drift_analysis": {
+        "description": "Analyze for style drift from canon",
+        "validation_method": "style_drift_detector",
+        "pass_criteria": "drift_score <= 20",
+        "fail_actions": ["flag_drift_concern", "document_drift_metrics", "consider_rejection"]
+      },
+      "canon_drift_detection": {
+        "description": "Detect canon compliance drift",
+        "validation_method": "canon_drift_analysis",
+        "pass_criteria": "canon_drift_score <= 10",
+        "fail_actions": ["reject_for_canon_drift", "escalate_to_canon_guard", "document_drift_pattern"]
+      }
+    },
+    "threshold_definitions": {
+      "pass_threshold": {
+        "description": "Asset meets all requirements and can be accepted",
+        "actions": ["accept_asset", "archive_to_production", "update_success_metrics"]
+      },
+      "warn_threshold": {
+        "description": "Asset acceptable but with noted concerns",
+        "actions": ["accept_with_warnings", "document_concerns", "monitor_future_outputs", "flag_for_review"]
+      },
+      "fail_threshold": {
+        "description": "Asset does not meet requirements",
+        "actions": ["reject_asset", "document_failure_reasons", "log_for_analysis", "consider_retry"]
+      }
+    },
+    "integration_points": {
+      "style_guardrails_integration": {
+        "endpoint": "style-guardrails/validate",
+        "required_data": ["asset_url", "generation_metadata", "mode_id"],
+        "response_format": {
+          "validation_score": "number",
+          "violations": "array",
+          "recommendations": "array"
+        }
+      },
+      "asset_system_integration": {
+        "endpoint": "asset-system/validate",
+        "required_data": ["asset_metadata", "quality_metrics", "canon_compliance"],
+        "response_format": {
+          "system_compatibility": "boolean",
+          "asset_class_eligibility": "string",
+          "integration_issues": "array"
+        }
+      },
+      "canon_registry_integration": {
+        "endpoint": "canon-registry/validate",
+        "required_data": ["generation_mode", "prompt_hash", "output_metadata"],
+        "response_format": {
+          "canon_compliance": "boolean",
+          "violations": "array",
+          "authority_level": "number"
+        }
+      }
+    },
+    "failure_routing": {
+      "canon_violation": {
+        "severity": "critical",
+        "routing": "immediate_rejection",
+        "escalation": "canon_guard",
+        "retry_eligibility": false,
+        "documentation_required": true
+      },
+      "style_violation": {
+        "severity": "high",
+        "routing": "flag_for_correction",
+        "escalation": "style_guardrails",
+        "retry_eligibility": true,
+        "max_retries": 2,
+        "documentation_required": true
+      },
+      "quality_failure": {
+        "severity": "medium",
+        "routing": "flag_for_improvement",
+        "escalation": "quality_review",
+        "retry_eligibility": true,
+        "max_retries": 3,
+        "documentation_required": false
+      },
+      "technical_failure": {
+        "severity": "medium",
+        "routing": "technical_review",
+        "escalation": "technical_support",
+        "retry_eligibility": true,
+        "max_retries": 2,
+        "documentation_required": false
+      },
+      "system_integration_failure": {
+        "severity": "low",
+        "routing": "log_and_monitor",
+        "escalation": "system_admin",
+        "retry_eligibility": true,
+        "max_retries": 1,
+        "documentation_required": false
+      }
+    },
+    "retry_eligibility": {
+      "retry_conditions": [
+        "quality_score_below_threshold",
+        "minor_style_violations",
+        "technical_generation_issues",
+        "transient_system_failures"
+      ],
+      "non_retry_conditions": [
+        "canon_violation",
+        "major_style_violations",
+        "persistent_technical_failures",
+        "system_integration_rejection"
+      ],
+      "retry_strategy": {
+        "max_total_retries": 3,
+        "retry_delay": "exponential_backoff",
+        "base_delay": 30,
+        "max_delay": 300,
+        "retry_with_different_seed": true,
+        "retry_with_adjusted_parameters": true
+      }
+    },
+    "rejection_conditions": {
+      "automatic_rejection": [
+        "canon_registry_violation",
+        "file_corruption_or_inaccessibility",
+        "quality_score_below_50",
+        "major_style_violations",
+        "exceeds_max_retry_attempts"
+      ],
+      "manual_review_required": [
+        "borderline_quality_scores",
+        "minor_style_concerns",
+        "questionable_canon_compliance",
+        "novel_output_patterns"
+      ],
+      "escalation_triggers": [
+        "repeated_canon_violations",
+        "systematic_quality_degradation",
+        "new_drift_patterns",
+        "integration_failures"
+      ]
+    },
+    "validation_metrics": {
+      "success_metrics": [
+        "validation_pass_rate",
+        "average_validation_time",
+        "false_positive_rate",
+        "false_negative_rate"
+      ],
+      "quality_metrics": [
+        "average_quality_score",
+        "quality_distribution",
+        "quality_trend_analysis",
+        "quality_improvement_rate"
+      ],
+      "efficiency_metrics": [
+        "validation_processing_time",
+        "resource_utilization",
+        "cache_hit_rates",
+        "system_responsiveness"
+      ],
+      "compliance_metrics": [
+        "canon_compliance_rate",
+        "style_violation_frequency",
+        "drift_detection_accuracy",
+        "guardrails_effectiveness"
+      ]
+    },
+    "monitoring_and_alerting": {
+      "alert_conditions": [
+        "validation_failure_rate_above_20_percent",
+        "average_quality_score_decline",
+        "canon_violation_spike",
+        "system_integration_failures"
+      ],
+      "monitoring_intervals": {
+        "real_time": ["critical_failures", "system_errors"],
+        "hourly": ["quality_metrics", "validation_rates"],
+        "daily": ["compliance_trends", "drift_analysis"],
+        "weekly": ["system_performance", "rule_effectiveness"]
+      }
+    }
+  }
+}

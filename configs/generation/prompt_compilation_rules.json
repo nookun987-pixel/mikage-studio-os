@@ -1,0 +1,378 @@
+{
+  "prompt_compilation_rules": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-17T00:00:00Z",
+    "block_order": {
+      "positive_prompt": [
+        {
+          "order": 1,
+          "block": "identity_anchor",
+          "required": true,
+          "description": "Core character identity and mode specification"
+        },
+        {
+          "order": 2,
+          "block": "silhouette_pose_cue",
+          "required": false,
+          "description": "Character pose and silhouette guidance"
+        },
+        {
+          "order": 3,
+          "block": "material_language",
+          "required": true,
+          "description": "Material treatment and surface properties"
+        },
+        {
+          "order": 4,
+          "block": "environment_language",
+          "required": false,
+          "description": "Environmental context and setting"
+        },
+        {
+          "order": 5,
+          "block": "lighting_language",
+          "required": false,
+          "description": "Lighting specification and atmosphere"
+        },
+        {
+          "order": 6,
+          "block": "camera_language",
+          "required": false,
+          "description": "Camera and composition specifications"
+        },
+        {
+          "order": 7,
+          "block": "objective_emphasis_cue",
+          "required": false,
+          "description": "Generation objective and emphasis"
+        },
+        {
+          "order": 8,
+          "block": "reference_style_cue",
+          "required": true,
+          "description": "Reference style binding"
+        },
+        {
+          "order": 9,
+          "block": "append_positive_override",
+          "required": false,
+          "description": "User-specified positive additions"
+        }
+      ],
+      "negative_prompt": [
+        {
+          "order": 1,
+          "block": "preset_negative_profiles",
+          "required": true,
+          "description": "Mode-specific negative profiles"
+        },
+        {
+          "order": 2,
+          "block": "mode_level_negative_prompt",
+          "required": true,
+          "description": "Mode-level negative prompts from prompt pack"
+        },
+        {
+          "order": 3,
+          "block": "house_global_negative_prompt",
+          "required": true,
+          "description": "Global house negative prompts"
+        },
+        {
+          "order": 4,
+          "block": "validator_drift_safety_negatives",
+          "required": true,
+          "description": "Validator and drift-derived safety negatives"
+        },
+        {
+          "order": 5,
+          "block": "append_negative_override",
+          "required": false,
+          "description": "User-specified negative additions"
+        }
+      ]
+    },
+    "required_blocks": {
+      "canon_core": {
+        "positive": ["identity_anchor", "material_language", "reference_style_cue"],
+        "negative": ["preset_negative_profiles", "mode_level_negative_prompt", "house_global_negative_prompt", "validator_drift_safety_negatives"]
+      },
+      "luminous_fan_appeal": {
+        "positive": ["identity_anchor", "material_language", "reference_style_cue"],
+        "negative": ["preset_negative_profiles", "mode_level_negative_prompt", "house_global_negative_prompt", "validator_drift_safety_negatives"]
+      },
+      "luxury_mystical_editorial": {
+        "positive": ["identity_anchor", "material_language", "reference_style_cue"],
+        "negative": ["preset_negative_profiles", "mode_level_negative_prompt", "house_global_negative_prompt", "validator_drift_safety_negatives"]
+      }
+    },
+    "optional_blocks": {
+      "canon_core": {
+        "positive": ["silhouette_pose_cue", "environment_language", "lighting_language", "camera_language", "objective_emphasis_cue", "append_positive_override"],
+        "negative": ["append_negative_override"]
+      },
+      "luminous_fan_appeal": {
+        "positive": ["silhouette_pose_cue", "environment_language", "lighting_language", "camera_language", "objective_emphasis_cue", "append_positive_override"],
+        "negative": ["append_negative_override"]
+      },
+      "luxury_mystical_editorial": {
+        "positive": ["silhouette_pose_cue", "environment_language", "lighting_language", "camera_language", "objective_emphasis_cue", "append_positive_override"],
+        "negative": ["append_negative_override"]
+      }
+    },
+    "assembly_rules": {
+      "short_form_assembly": {
+        "description": "Compact prompt assembly for simple generations",
+        "applicable_modes": ["canon_core"],
+        "max_blocks": 4,
+        "required_blocks": ["identity_anchor", "material_language", "reference_style_cue"],
+        "optional_blocks": ["lighting_language"],
+        "assembly_strategy": "minimal_required_plus_one_optional"
+      },
+      "full_form_assembly": {
+        "description": "Complete prompt assembly for complex generations",
+        "applicable_modes": ["luminous_fan_appeal", "luxury_mystical_editorial"],
+        "max_blocks": 9,
+        "required_blocks": ["identity_anchor", "material_language", "reference_style_cue"],
+        "optional_blocks": ["silhouette_pose_cue", "environment_language", "lighting_language", "camera_language", "objective_emphasis_cue", "append_positive_override"],
+        "assembly_strategy": "all_available_blocks"
+      },
+      "depth_based_assembly": {
+        "description": "Assembly based on prompt depth configuration",
+        "depth_mapping": {
+          "shallow": {
+            "max_positive_blocks": 4,
+            "required_positive_blocks": ["identity_anchor", "material_language"],
+            "optional_positive_blocks": ["lighting_language", "camera_language"]
+          },
+          "moderate": {
+            "max_positive_blocks": 6,
+            "required_positive_blocks": ["identity_anchor", "material_language", "environment_language"],
+            "optional_positive_blocks": ["lighting_language", "camera_language", "pose_language"]
+          },
+          "deep": {
+            "max_positive_blocks": 8,
+            "required_positive_blocks": ["identity_anchor", "material_language", "environment_language", "lighting_language"],
+            "optional_positive_blocks": ["camera_language", "pose_language", "atmospheric_effects", "composition_grammar"]
+          }
+        }
+      }
+    },
+    "negative_prompt_injection_rules": {
+      "profile_injection": {
+        "description": "Inject negative profiles based on mode and requirements",
+        "injection_order": ["preset_negative_profiles", "mode_level_negative_prompt"],
+        "deduplication": true,
+        "priority_override": "preset_profiles_take_priority"
+      },
+      "safety_injection": {
+        "description": "Inject safety and drift prevention negatives",
+        "injection_order": ["house_global_negative_prompt", "validator_drift_safety_negatives"],
+        "deduplication": true,
+        "priority_override": "safety_negatives_take_priority"
+      },
+      "user_override_injection": {
+        "description": "Inject user-specified negative additions",
+        "injection_order": ["append_negative_override"],
+        "deduplication": false,
+        "priority_override": "user_overrides_take_priority"
+      }
+    },
+    "style_enforcement_hooks": {
+      "porcelain_elegance_enforcement": {
+        "applicable_modes": ["canon_core"],
+        "enforcement_rules": [
+          "require_porcelain_skin_texture",
+          "enforce_minimal_composition",
+          "ensure_soft_lighting_language",
+          "prevent_clutter_elements"
+        ],
+        "trigger_conditions": ["mode_is_canon_core", "style_reference_is_porcelain_void"]
+      },
+      "luminous_aesthetic_enforcement": {
+        "applicable_modes": ["luminous_fan_appeal"],
+        "enforcement_rules": [
+          "require_radiant_lighting",
+          "ensure_captivating_gaze_language",
+          "enforce_vivid_but_restrained_colors",
+          "prevent_childish_exaggeration"
+        ],
+        "trigger_conditions": ["mode_is_luminous_fan_appeal", "style_reference_is_porcelain_void"]
+      },
+      "mystical_luxury_enforcement": {
+        "applicable_modes": ["luxury_mystical_editorial"],
+        "enforcement_rules": [
+          "require_dramatic_chiaroscuro",
+          "ensure_mysterious_gaze_language",
+          "enforce_elegant_dark_palette",
+          "prevent_fantasy_cliches"
+        ],
+        "trigger_conditions": ["mode_is_luxury_mystical_editorial", "style_reference_is_luxury_editorial_restrain"]
+      }
+    },
+    "asset_informed_prompt_augmentation": {
+      "character_asset_augmentation": {
+        "description": "Augment prompts based on selected character assets",
+        "augmentation_rules": [
+          "add_mask_specific_descriptors",
+          "include_armor_material_details",
+          "incorporate_silhouette_characteristics",
+          "reference_weapon_properties"
+        ],
+        "asset_types": ["mask", "armor", "silhouette", "weapon"]
+      },
+      "environment_asset_augmentation": {
+        "description": "Augment prompts based on selected environment assets",
+        "augmentation_rules": [
+          "add_location_specific_atmosphere",
+          "include_architectural_details",
+          "incorporate_environmental_lighting",
+          "reference_scale_relationships"
+        ],
+        "asset_types": ["environment", "architecture", "atmosphere"]
+      },
+      "material_asset_augmentation": {
+        "description": "Augment prompts based on selected material assets",
+        "augmentation_rules": [
+          "add_material_texture_descriptors",
+          "include_surface_properties",
+          "incorporate_material_lighting_responses",
+          "reference_material_interactions"
+        ],
+        "asset_types": ["material", "texture", "surface"]
+      }
+    },
+    "mode_specific_adjustments": {
+      "canon_core_adjustments": {
+        "prompt_strength": "conservative",
+        "detail_level": "minimal",
+        "artistic_license": "low",
+        "experimental_elements": "forbidden",
+        "adjustments": [
+          "simplify_complex_descriptions",
+          "focus_on_core_identity",
+          "maintain_editorial_cleanliness",
+          "prioritize_canon_accuracy"
+        ]
+      },
+      "luminous_fan_appeal_adjustments": {
+        "prompt_strength": "moderate",
+        "detail_level": "enhanced",
+        "artistic_license": "medium",
+        "experimental_elements": "limited",
+        "adjustments": [
+          "add_radiance_descriptors",
+          "enhance_eye_contact_language",
+          "include_friendly_appeal_elements",
+          "maintain_canon_compliance"
+        ]
+      },
+      "luxury_mystical_editorial_adjustments": {
+        "prompt_strength": "strong",
+        "detail_level": "high",
+        "artistic_license": "high",
+        "experimental_elements": "allowed_within_canon",
+        "adjustments": [
+          "add_dramatic_lighting_language",
+          "enhance_mysterious_atmosphere",
+          "include_luxury_fashion_elements",
+          "maintain_sophisticated_tone"
+        ]
+      }
+    },
+    "compilation_constraints": {
+      "prompt_length_limits": {
+        "canon_core": {
+          "min_positive_length": 50,
+          "max_positive_length": 300,
+          "min_negative_length": 100,
+          "max_negative_length": 500
+        },
+        "luminous_fan_appeal": {
+          "min_positive_length": 75,
+          "max_positive_length": 400,
+          "min_negative_length": 120,
+          "max_negative_length": 600
+        },
+        "luxury_mystical_editorial": {
+          "min_positive_length": 100,
+          "max_positive_length": 500,
+          "min_negative_length": 150,
+          "max_negative_length": 700
+        }
+      },
+      "token_constraints": {
+        "max_positive_tokens": 75,
+        "max_negative_tokens": 150,
+        "token_overlap_prevention": true,
+        "redundancy_removal": true
+      },
+      "semantic_constraints": {
+        "contradiction_prevention": true,
+        "consistency_enforcement": true,
+        "canon_alignment_required": true,
+        "drift_prevention_active": true
+      }
+    },
+    "validation_rules": {
+      "pre_compilation_validation": [
+        "verify_mode_exists",
+        "check_reference_style_validity",
+        "validate_required_blocks_available",
+        "confirm_asset_references_valid"
+      ],
+      "post_compilation_validation": [
+        "check_prompt_length_compliance",
+        "verify_token_limits",
+        "validate_semantic_consistency",
+        "confirm_canon_alignment"
+      ],
+      "runtime_validation": [
+        "monitor_generation_success",
+        "track_output_quality",
+        "detect_compilation_issues",
+        "measure_effectiveness"
+      ]
+    },
+    "error_handling": {
+      "missing_required_block": {
+        "action": "use_default_block_content",
+        "log_level": "warning",
+        "fallback_available": true
+      },
+      "invalid_reference_style": {
+        "action": "reject_compilation",
+        "log_level": "error",
+        "fallback_available": false
+      },
+      "prompt_length_exceeded": {
+        "action": "truncate_non_essential_blocks",
+        "log_level": "warning",
+        "fallback_available": true
+      },
+      "asset_reference_failure": {
+        "action": "proceed_without_asset_augmentation",
+        "log_level": "warning",
+        "fallback_available": true
+      }
+    },
+    "optimization_settings": {
+      "caching": {
+        "enable_compilation_cache": true,
+        "cache_ttl": 3600,
+        "cache_key_components": ["mode_id", "reference_style_id", "asset_hash"]
+      },
+      "parallel_processing": {
+        "enable_parallel_block_compilation": true,
+        "max_parallel_blocks": 4,
+        "block_dependencies_respected": true
+      },
+      "performance_monitoring": {
+        "track_compilation_time": true,
+        "monitor_cache_hit_rate": true,
+        "log_slow_compilations": true,
+        "compilation_time_threshold": 5000
+      }
+    }
+  }
+}

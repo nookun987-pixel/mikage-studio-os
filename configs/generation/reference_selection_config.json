@@ -1,0 +1,345 @@
+{
+  "reference_selection_config": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-17T00:00:00Z",
+    "priority_order": {
+      "asset_authority": [
+        {
+          "level": 1,
+          "type": "canonical",
+          "prefix": "can_",
+          "weight": 1.0,
+          "description": "Highest priority, core references"
+        },
+        {
+          "level": 2,
+          "type": "approved",
+          "prefix": "app_",
+          "weight": 0.8,
+          "description": "High priority, validated for use"
+        },
+        {
+          "level": 3,
+          "type": "reference",
+          "prefix": "ref_",
+          "weight": 0.6,
+          "description": "Medium priority, standard references"
+        },
+        {
+          "level": 4,
+          "type": "candidate",
+          "prefix": "cand_",
+          "weight": 0.3,
+          "description": "Low priority, under evaluation"
+        }
+      ],
+      "domain_priority": [
+        {
+          "domain": "core_canon",
+          "weight": 1.0,
+          "description": "Essential character elements"
+        },
+        {
+          "domain": "supporting_canon",
+          "weight": 0.8,
+          "description": "Important world elements"
+        },
+        {
+          "domain": "contextual_canon",
+          "weight": 0.6,
+          "description": "Scene-specific elements"
+        },
+        {
+          "domain": "reference_material",
+          "weight": 0.4,
+          "description": "Technical and artistic references"
+        }
+      ]
+    },
+    "category_priority": {
+      "mask": [
+        "canonical_pristine_mask",
+        "canonical_damaged_mask",
+        "approved_mask_variants",
+        "reference_mask_details"
+      ],
+      "armor": [
+        "canonical_combat_armor",
+        "canonical_ceremonial_armor",
+        "approved_armor_variants",
+        "reference_armor_details"
+      ],
+      "silhouette": [
+        "canonical_core_silhouette",
+        "approved_pose_variants",
+        "reference_composition_guides",
+        "reference_anatomy_references"
+      ],
+      "weapon": [
+        "canonical_signature_weapon",
+        "approved_weapon_variants",
+        "reference_weapon_details",
+        "reference_weapon_effects"
+      ],
+      "material": [
+        "canonical_porcelain_material",
+        "canonical_technical_materials",
+        "approved_material_variations",
+        "reference_material_samples"
+      ],
+      "environment": [
+        "canonical_key_locations",
+        "approved_environmental_elements",
+        "reference_environmental_assets",
+        "reference_architectural_elements"
+      ]
+    },
+    "single_reference_rules": {
+      "use_cases": [
+        "core_character_elements",
+        "high_confidence_canonical_assets",
+        "simple_generation_requests",
+        "consistency_critical_outputs"
+      ],
+      "selection_criteria": {
+        "minimum_authority": "canonical",
+        "minimum_quality_score": 80,
+        "max_conflicting_alternatives": 0,
+        "require_canonical_compliance": true
+      },
+      "applicable_categories": ["mask", "core_armor", "signature_weapon"]
+    },
+    "multi_reference_rules": {
+      "use_cases": [
+        "complex_scenes_with_multiple_elements",
+        "novel_combinations_or_variations",
+        "quality_improvement_through_blending",
+        "creative_exploration_within_canon"
+      ],
+      "selection_criteria": {
+        "primary_reference_weight": 0.5,
+        "max_total_references": 5,
+        "min_authority_level": "approved",
+        "require_style_consistency": true
+      },
+      "reference_structure": {
+        "primary": {
+          "weight_range": [0.5, 1.0],
+          "description": "Dominant reference"
+        },
+        "secondary": {
+          "weight_range": [0.2, 0.4],
+          "description": "Supporting elements"
+        },
+        "tertiary": {
+          "weight_range": [0.1, 0.2],
+          "description": "Contextual elements"
+        }
+      }
+    },
+    "conflict_resolution": {
+      "style_conflicts": {
+        "detection": "different_aesthetic_approaches",
+        "resolution_strategy": "prefer_dominant_reference_style",
+        "actions": [
+          "reject_conflicting_secondary_references",
+          "seek_alternative_compatible_references",
+          "document_conflict_for_future_reference"
+        ]
+      },
+      "material_conflicts": {
+        "detection": "different_material_treatments",
+        "resolution_strategy": "prioritize_canonical_material_treatment",
+        "actions": [
+          "reject_non_canonical_material_references",
+          "use_material_specific_reference_boards",
+          "document_material_discrepancies"
+        ]
+      },
+      "scale_conflicts": {
+        "detection": "inconsistent_scale_relationships",
+        "resolution_strategy": "use_canonical_scale_references",
+        "actions": [
+          "apply_scale_correction_factors",
+          "reject_scale_inconsistent_references",
+          "document_scale_assumptions"
+        ]
+      },
+      "quality_conflicts": {
+        "detection": "high_quality_vs_accuracy_tradeoff",
+        "resolution_strategy": "prioritize_accuracy_for_core_elements",
+        "actions": [
+          "use_high_quality_for_non_critical_elements",
+          "consider_manual_review_for_critical_decisions",
+          "document_quality_vs_accuracy_tradeoffs"
+        ]
+      }
+    },
+    "fallback_behavior": {
+      "no_canonical_asset": {
+        "condition": "no canonical asset found for required element",
+        "actions": [
+          "search_approved_assets",
+          "use_highest_quality_reference",
+          "flag_for_manual_review",
+          "document_missing_canonical_gap"
+        ],
+        "escalation_threshold": 3
+      },
+      "insufficient_quality": {
+        "condition": "all available assets below quality threshold",
+        "actions": [
+          "lower_quality_threshold_incrementally",
+          "use_multiple_reference_blending",
+          "flag_for_asset_creation",
+          "document_quality_gap"
+        ],
+        "max_threshold_reduction": 20
+      },
+      "reference_unavailability": {
+        "condition": "selected reference not accessible",
+        "actions": [
+          "select_next_best_reference",
+          "clear_reference_cache",
+          "verify_asset_integrity",
+          "document_unavailability"
+        ]
+      }
+    },
+    "drift_prevention_constraints": {
+      "style_drift": {
+        "prevention_measures": [
+          "enforce_strict_style_alignment_scoring",
+          "reject_references_with_style_inconsistencies",
+          "use_style_guardrails_validation",
+          "monitor_cumulative_style_changes"
+        ],
+        "thresholds": {
+          "min_style_alignment_score": 80,
+          "max_style_variance_per_generation": 10,
+          "cumulative_drift_monitoring": true
+        }
+      },
+      "canon_drift": {
+        "prevention_measures": [
+          "canonical_reference_priority_enforcement",
+          "canon_compliance_validation_for_all_references",
+          "authority_level_verification",
+          "regular_canon_alignment_reviews"
+        ],
+        "thresholds": {
+          "min_canon_compliance_score": 90,
+          "max_non_canonical_elements": 0,
+          "min_authority_level": "approved"
+        }
+      },
+      "quality_drift": {
+        "prevention_measures": [
+          "minimum_quality_score_enforcement",
+          "quality_trend_monitoring",
+          "automatic_quality_degradation_alerts",
+          "regular_quality_calibration"
+        ],
+        "thresholds": {
+          "min_individual_quality_score": 70,
+          "max_quality_variance": 20,
+          "quality_trend_requirement": "stable_or_improving"
+        }
+      }
+    },
+    "selection_algorithms": {
+      "greedy_selection": {
+        "use_case": "fast_straightforward_selections",
+        "steps": [
+          "filter_by_basic_criteria",
+          "sort_by_weighted_score",
+          "select_top_ranked_asset",
+          "validate_against_constraints"
+        ],
+        "advantages": ["fast", "predictable", "consistent"],
+        "disadvantages": ["may_miss_optimal_combinations"]
+      },
+      "weighted_random_selection": {
+        "use_case": "creative_exploration_within_constraints",
+        "steps": [
+          "filter_by_basic_criteria",
+          "calculate_selection_weights",
+          "random_selection_based_on_weights",
+          "validate_against_constraints"
+        ],
+        "advantages": ["introduces_variety", "explores_options"],
+        "disadvantages": ["less_predictable", "potential_inconsistency"]
+      },
+      "multi_objective_optimization": {
+        "use_case": "complex_multi_reference_selections",
+        "steps": [
+          "define_multiple_objectives",
+          "generate_candidate_combinations",
+          "score_combinations_across_all_objectives",
+          "select_pareto_optimal_solutions"
+        ],
+        "advantages": ["balanced_selections", "considers_multiple_factors"],
+        "disadvantages": ["complex", "computationally_intensive"]
+      },
+      "constraint_based_selection": {
+        "use_case": "strict_requirement_compliance",
+        "steps": [
+          "define_hard_constraints",
+          "filter_assets_by_constraints",
+          "apply_optimization_within_feasible_set",
+          "select_optimal_feasible_solution"
+        ],
+        "advantages": ["guaranteed_constraint_compliance"],
+        "disadvantages": ["may_have_limited_options"]
+      }
+    },
+    "weight_calculation": {
+      "base_weight_formula": "base_weight = (authority_weight * 0.4) + (quality_weight * 0.3) + (relevance_weight * 0.2) + (freshness_weight * 0.1)",
+      "authority_weights": {
+        "canonical": 1.0,
+        "approved": 0.8,
+        "reference": 0.6,
+        "candidate": 0.3
+      },
+      "quality_weights": {
+        "90-100": 1.0,
+        "80-89": 0.8,
+        "70-79": 0.6,
+        "60-69": 0.4,
+        "below_60": 0.2
+      },
+      "relevance_weights": {
+        "exact_match": 1.0,
+        "close_match": 0.8,
+        "related": 0.6,
+        "general": 0.4
+      },
+      "freshness_weights": {
+        "recent_0_6_months": 1.0,
+        "current_6_12_months": 0.8,
+        "mature_1_2_years": 0.6,
+        "legacy_2_plus_years": 0.4
+      }
+    },
+    "validation_stages": {
+      "pre_selection": [
+        "asset_availability_verification",
+        "authority_level_confirmation",
+        "quality_score_verification",
+        "canon_compliance_check"
+      ],
+      "post_selection": [
+        "combination_compatibility_check",
+        "style_consistency_verification",
+        "conflict_resolution_validation",
+        "final_quality_assessment"
+      ],
+      "runtime": [
+        "generation_result_monitoring",
+        "drift_detection_and_alerting",
+        "performance_metric_tracking",
+        "selection_effectiveness_analysis"
+      ]
+    }
+  }
+}
