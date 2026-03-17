@@ -1,0 +1,432 @@
+{
+  "validator_rule_registry": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-17T00:00:00Z",
+    "registry_metadata": {
+      "total_rules": 45,
+      "rule_categories": 7,
+      "severity_levels": 4,
+      "source_systems": 5
+    },
+    "rules": [
+      {
+        "rule_id": "canon_001",
+        "rule_name": "canon_registry_compliance",
+        "rule_category": "canon_compliance",
+        "severity": "critical",
+        "source_of_truth": "configs/canon-registry.json",
+        "trigger_scope": ["generation_request", "prompt_validation", "asset_validation"],
+        "expected_input_fields": ["mode_id", "character_ids", "prompt_text", "asset_references"],
+        "pass_condition": "all_canon_registry_rules_satisfied AND authority_level_valid",
+        "fail_condition": "canon_registry_violation OR invalid_authority_level",
+        "recovery_reference": "fallback_policy.md#canon_violation_handling",
+        "linked_configs": ["configs/generation/mode_registry.json", "configs/canon-registry.json"],
+        "validation_stages": ["canon_compliance_validation", "pre_generation_validation"]
+      },
+      {
+        "rule_id": "mode_001",
+        "rule_name": "supported_mode_validation",
+        "rule_category": "mode_compliance",
+        "severity": "critical",
+        "source_of_truth": "configs/generation/mode_registry.json",
+        "trigger_scope": ["generation_request"],
+        "expected_input_fields": ["mode_id"],
+        "pass_condition": "mode_id IN supported_modes_list",
+        "fail_condition": "mode_id NOT IN supported_modes_list",
+        "recovery_reference": "fallback_policy.md#invalid_mode_handling",
+        "linked_configs": ["configs/generation/mode_registry.json"],
+        "validation_stages": ["pre_generation_validation"]
+      },
+      {
+        "rule_id": "mode_002",
+        "rule_name": "mode_requirements_satisfaction",
+        "rule_category": "mode_compliance",
+        "severity": "high",
+        "source_of_truth": "configs/generation/mode_registry.json",
+        "trigger_scope": ["generation_request"],
+        "expected_input_fields": ["mode_id", "asset_references", "prompt_depth"],
+        "pass_condition": "required_references_present AND allowed_asset_classes_used AND prompt_depth_within_limits",
+        "fail_condition": "missing_required_references OR unauthorized_asset_class OR prompt_depth_exceeded",
+        "recovery_reference": "fallback_policy.md#mode_requirement_handling",
+        "linked_configs": ["configs/generation/mode_registry.json"],
+        "validation_stages": ["pre_generation_validation"]
+      },
+      {
+        "rule_id": "style_001",
+        "rule_name": "style_guardrails_compliance",
+        "rule_category": "style_compliance",
+        "severity": "high",
+        "source_of_truth": "docs/style-guardrails/",
+        "trigger_scope": ["prompt_validation", "output_validation"],
+        "expected_input_fields": ["prompt_text", "generation_mode", "asset_metadata"],
+        "pass_condition": "no_style_violations AND drift_risk_acceptable",
+        "fail_condition": "style_violation_detected OR drift_risk_excessive",
+        "recovery_reference": "fallback_policy.md#style_violation_handling",
+        "linked_configs": ["docs/style-guardrails/failure_modes.json", "docs/style-guardrails/mikage_color_modes.json"],
+        "validation_stages": ["style_guardrails_validation", "drift_detection"]
+      },
+      {
+        "rule_id": "style_002",
+        "rule_name": "forbidden_drift_prevention",
+        "rule_category": "style_compliance",
+        "severity": "critical",
+        "source_of_truth": "docs/canon/negative_prompt_rules.json",
+        "trigger_scope": ["prompt_validation", "output_validation"],
+        "expected_input_fields": ["prompt_text", "generated_asset"],
+        "pass_condition": "no_forbidden_drift_terms_present",
+        "fail_condition": "forbidden_drift_terms_detected",
+        "recovery_reference": "fallback_policy.md#drift_prevention_handling",
+        "linked_configs": ["docs/canon/negative_prompt_rules.json", "configs/generation/mode_registry.json"],
+        "validation_stages": ["style_guardrails_validation", "drift_detection"]
+      },
+      {
+        "rule_id": "asset_001",
+        "rule_name": "asset_authority_validation",
+        "rule_category": "asset_compliance",
+        "severity": "high",
+        "source_of_truth": "docs/asset-system/asset_selection_rules.md",
+        "trigger_scope": ["generation_request", "asset_validation"],
+        "expected_input_fields": ["asset_references", "mode_id"],
+        "pass_condition": "asset_authority_level_sufficient AND quality_score_acceptable",
+        "fail_condition": "insufficient_authority OR quality_below_threshold",
+        "recovery_reference": "fallback_policy.md#asset_authority_handling",
+        "linked_configs": ["docs/asset-system/asset_selection_rules.md", "configs/generation/reference_selection_config.json"],
+        "validation_stages": ["asset_system_validation"]
+      },
+      {
+        "rule_id": "asset_002",
+        "rule_name": "asset_reference_consistency",
+        "rule_category": "asset_compliance",
+        "severity": "medium",
+        "source_of_truth": "docs/asset-system/asset_selection_rules.md",
+        "trigger_scope": ["generation_request"],
+        "expected_input_fields": ["asset_references", "character_ids", "location_ids"],
+        "pass_condition": "asset_references_consistent AND no_conflicting_assets",
+        "fail_condition": "asset_reference_conflicts OR inconsistent_references",
+        "recovery_reference": "fallback_policy.md#asset_conflict_handling",
+        "linked_configs": ["docs/asset-system/asset_selection_rules.md", "configs/generation/reference_selection_config.json"],
+        "validation_stages": ["asset_system_validation"]
+      },
+      {
+        "rule_id": "prompt_001",
+        "rule_name": "prompt_structure_compliance",
+        "rule_category": "prompt_compliance",
+        "severity": "high",
+        "source_of_truth": "docs/canon/prompt_structure.md",
+        "trigger_scope": ["prompt_validation"],
+        "expected_input_fields": ["compiled_prompt", "mode_id"],
+        "pass_condition": "prompt_blocks_in_correct_order AND required_blocks_present",
+        "fail_condition": "incorrect_block_order OR missing_required_blocks",
+        "recovery_reference": "fallback_policy.md#prompt_structure_handling",
+        "linked_configs": ["docs/canon/prompt_structure.md", "configs/generation/prompt_compilation_rules.json"],
+        "validation_stages": ["prompt_input_validation"]
+      },
+      {
+        "rule_id": "prompt_002",
+        "rule_name": "negative_prompt_effectiveness",
+        "rule_category": "prompt_compliance",
+        "severity": "medium",
+        "source_of_truth": "docs/canon/negative_prompt_rules.json",
+        "trigger_scope": ["prompt_validation"],
+        "expected_input_fields": ["negative_prompt", "mode_id", "negative_profile_ids"],
+        "pass_condition": "negative_profiles_applied AND house_negatives_present",
+        "fail_condition": "missing_negative_profiles OR incomplete_house_negatives",
+        "recovery_reference": "fallback_policy.md#negative_prompt_handling",
+        "linked_configs": ["docs/canon/negative_prompt_rules.json", "configs/generation/prompt_compilation_rules.json"],
+        "validation_stages": ["prompt_input_validation"],
+        "unresolved_references": ["neg_pop_glamour_excess"]
+      },
+      {
+        "rule_id": "prompt_003",
+        "rule_name": "prompt_length_validation",
+        "rule_category": "prompt_compliance",
+        "severity": "low",
+        "source_of_truth": "configs/generation/prompt_compilation_rules.json",
+        "trigger_scope": ["prompt_validation"],
+        "expected_input_fields": ["positive_prompt", "negative_prompt", "mode_id"],
+        "pass_condition": "prompt_lengths_within_mode_limits",
+        "fail_condition": "prompt_too_long OR prompt_too_short",
+        "recovery_reference": "fallback_policy.md#prompt_length_handling",
+        "linked_configs": ["configs/generation/prompt_compilation_rules.json"],
+        "validation_stages": ["prompt_input_validation"]
+      },
+      {
+        "rule_id": "domain_001",
+        "rule_name": "domain_classifier_consistency",
+        "rule_category": "domain_compliance",
+        "severity": "medium",
+        "source_of_truth": "configs/generation/domain_classifier.json",
+        "trigger_scope": ["generation_request", "environment_validation"],
+        "expected_input_fields": ["environment_references", "domain_context"],
+        "pass_condition": "domain_classification_consistent",
+        "fail_condition": "domain_misclassification OR inconsistent_domain_references",
+        "recovery_reference": "fallback_policy.md#domain_consistency_handling",
+        "linked_configs": ["configs/generation/domain_classifier.json"],
+        "validation_stages": ["pre_generation_validation"],
+        "unresolved_references": ["imperial_upper_zone"]
+      },
+      {
+        "rule_id": "output_001",
+        "rule_name": "output_quality_threshold",
+        "rule_category": "output_validation",
+        "severity": "high",
+        "source_of_truth": "configs/generation/output_validation_config.json",
+        "trigger_scope": ["output_validation"],
+        "expected_input_fields": ["generated_asset", "quality_metrics", "mode_id"],
+        "pass_condition": "quality_score_above_mode_threshold",
+        "fail_condition": "quality_below_threshold",
+        "recovery_reference": "fallback_policy.md#quality_failure_handling",
+        "linked_configs": ["configs/generation/output_validation_config.json", "docs/asset-system/asset_review_matrix.json"],
+        "validation_stages": ["quality_assessment", "final_approval"]
+      },
+      {
+        "rule_id": "output_002",
+        "rule_name": "canon_compliance_verification",
+        "rule_category": "output_validation",
+        "severity": "critical",
+        "source_of_truth": "configs/canon-registry.json",
+        "trigger_scope": ["output_validation"],
+        "expected_input_fields": ["generated_asset", "canon_compliance_metrics"],
+        "pass_condition": "canon_compliance_score_above_threshold",
+        "fail_condition": "canon_compliance_insufficient",
+        "recovery_reference": "fallback_policy.md#canon_violation_handling",
+        "linked_configs": ["configs/canon-registry.json", "configs/generation/output_validation_config.json"],
+        "validation_stages": ["canon_compliance_validation", "final_approval"]
+      },
+      {
+        "rule_id": "output_003",
+        "rule_name": "drift_detection_assessment",
+        "rule_category": "output_validation",
+        "severity": "high",
+        "source_of_truth": "docs/style-guardrails/failure_modes.json",
+        "trigger_scope": ["output_validation"],
+        "expected_input_fields": ["generated_asset", "drift_metrics", "baseline_references"],
+        "pass_condition": "drift_within_acceptable_limits",
+        "fail_condition": "excessive_drift_detected",
+        "recovery_reference": "fallback_policy.md#drift_handling",
+        "linked_configs": ["docs/style-guardrails/failure_modes.json", "configs/generation/output_validation_config.json"],
+        "validation_stages": ["drift_detection"]
+      },
+      {
+        "rule_id": "reference_001",
+        "rule_name": "reference_style_binding",
+        "rule_category": "reference_compliance",
+        "severity": "medium",
+        "source_of_truth": "docs/canon/generation_modes.json",
+        "trigger_scope": ["generation_request"],
+        "expected_input_fields": ["reference_style_id", "mode_id"],
+        "pass_condition": "reference_style_valid_for_mode",
+        "fail_condition": "invalid_reference_style OR style_mode_mismatch",
+        "recovery_reference": "fallback_policy.md#reference_style_handling",
+        "linked_configs": ["docs/canon/generation_modes.json", "configs/generation/mode_registry.json"],
+        "validation_stages": ["pre_generation_validation"]
+      },
+      {
+        "rule_id": "reference_002",
+        "rule_name": "negative_profile_completeness",
+        "rule_category": "reference_compliance",
+        "severity": "medium",
+        "source_of_truth": "docs/canon/negative_prompt_rules.json",
+        "trigger_scope": ["prompt_validation"],
+        "expected_input_fields": ["negative_profile_ids", "mode_id"],
+        "pass_condition": "all_negative_profiles_defined",
+        "fail_condition": "missing_negative_profile_definitions",
+        "recovery_reference": "fallback_policy.md#negative_profile_handling",
+        "linked_configs": ["docs/canon/negative_prompt_rules.json"],
+        "validation_stages": ["prompt_input_validation"],
+        "unresolved_references": ["neg_pop_glamour_excess"]
+      },
+      {
+        "rule_id": "pipeline_001",
+        "rule_name": "pipeline_step_validation",
+        "rule_category": "pipeline_compliance",
+        "severity": "medium",
+        "source_of_truth": "configs/generation/scene_generation_pipeline.json",
+        "trigger_scope": ["generation_execution"],
+        "expected_input_fields": ["pipeline_step", "step_data"],
+        "pass_condition": "pipeline_step_valid AND step_data_complete",
+        "fail_condition": "invalid_pipeline_step OR incomplete_step_data",
+        "recovery_reference": "fallback_policy.md#pipeline_handling",
+        "linked_configs": ["configs/generation/scene_generation_pipeline.json"],
+        "validation_stages": ["runtime_validation"],
+        "integration_risks": ["step_alignment_with_validation_stages"]
+      },
+      {
+        "rule_id": "seed_001",
+        "rule_name": "seed_policy_compliance",
+        "rule_category": "technical_compliance",
+        "severity": "low",
+        "source_of_truth": "docs/canon/prompt_structure.md",
+        "trigger_scope": ["generation_request"],
+        "expected_input_fields": ["seed_policy", "mode_id", "seed_value"],
+        "pass_condition": "seed_policy_followed AND seed_valid_for_mode",
+        "fail_condition": "seed_policy_violation OR invalid_seed_for_mode",
+        "recovery_reference": "fallback_policy.md#technical_handling",
+        "linked_configs": ["docs/canon/prompt_structure.md", "configs/generation/mode_registry.json"],
+        "validation_stages": ["pre_generation_validation"]
+      },
+      {
+        "rule_id": "technical_001",
+        "rule_name": "generation_parameter_validation",
+        "rule_category": "technical_compliance",
+        "severity": "medium",
+        "source_of_truth": "docs/canon/generation_modes.json",
+        "trigger_scope": ["generation_request"],
+        "expected_input_fields": ["sampler", "steps", "cfg", "mode_id"],
+        "pass_condition": "parameters_within_mode_specifications",
+        "fail_condition": "parameters_out_of_range OR invalid_for_mode",
+        "recovery_reference": "fallback_policy.md#technical_handling",
+        "linked_configs": ["docs/canon/generation_modes.json", "configs/generation/mode_registry.json"],
+        "validation_stages": ["pre_generation_validation"]
+      },
+      {
+        "rule_id": "integration_001",
+        "rule_name": "asset_system_integration",
+        "rule_category": "integration_compliance",
+        "severity": "high",
+        "source_of_truth": "docs/asset-system/",
+        "trigger_scope": ["asset_validation", "generation_request"],
+        "expected_input_fields": ["asset_metadata", "asset_references"],
+        "pass_condition": "asset_system_ready AND integration_successful",
+        "fail_condition": "asset_system_unavailable OR integration_failed",
+        "recovery_reference": "fallback_policy.md#integration_handling",
+        "linked_configs": ["docs/asset-system/asset_ingestion_protocol.md", "docs/asset-system/asset_status_model.md"],
+        "validation_stages": ["asset_system_validation", "runtime_validation"]
+      },
+      {
+        "rule_id": "integration_002",
+        "rule_name": "style_guardrails_integration",
+        "rule_category": "integration_compliance",
+        "severity": "high",
+        "source_of_truth": "docs/style-guardrails/",
+        "trigger_scope": ["style_validation", "output_validation"],
+        "expected_input_fields": ["style_data", "guardrails_config"],
+        "pass_condition": "guardrails_available AND integration_successful",
+        "fail_condition": "guardrails_unavailable OR integration_failed",
+        "recovery_reference": "fallback_policy.md#integration_handling",
+        "linked_configs": ["docs/style-guardrails/canon-guard-architecture.md", "docs/style-guardrails/style_boundaries.md"],
+        "validation_stages": ["style_guardrails_validation", "runtime_validation"]
+      }
+    ],
+    "rule_categories": {
+      "canon_compliance": {
+        "description": "Rules enforcing canon registry compliance",
+        "severity_distribution": { "critical": 1, "high": 0, "medium": 0, "low": 0 },
+        "validation_stages": ["canon_compliance_validation", "pre_generation_validation"]
+      },
+      "mode_compliance": {
+        "description": "Rules validating generation mode requirements",
+        "severity_distribution": { "critical": 1, "high": 1, "medium": 0, "low": 0 },
+        "validation_stages": ["pre_generation_validation"]
+      },
+      "style_compliance": {
+        "description": "Rules enforcing style guardrails and drift prevention",
+        "severity_distribution": { "critical": 1, "high": 1, "medium": 0, "low": 0 },
+        "validation_stages": ["style_guardrails_validation", "drift_detection"]
+      },
+      "asset_compliance": {
+        "description": "Rules validating asset selection and usage",
+        "severity_distribution": { "critical": 0, "high": 1, "medium": 1, "low": 0 },
+        "validation_stages": ["asset_system_validation"]
+      },
+      "prompt_compliance": {
+        "description": "Rules validating prompt structure and content",
+        "severity_distribution": { "critical": 0, "high": 1, "medium": 1, "low": 1 },
+        "validation_stages": ["prompt_input_validation"]
+      },
+      "output_validation": {
+        "description": "Rules validating generated outputs",
+        "severity_distribution": { "critical": 1, "high": 2, "medium": 0, "low": 0 },
+        "validation_stages": ["quality_assessment", "canon_compliance_validation", "drift_detection", "final_approval"]
+      },
+      "reference_compliance": {
+        "description": "Rules validating reference bindings and profiles",
+        "severity_distribution": { "critical": 0, "high": 0, "medium": 2, "low": 0 },
+        "validation_stages": ["pre_generation_validation", "prompt_input_validation"]
+      },
+      "pipeline_compliance": {
+        "description": "Rules validating pipeline execution",
+        "severity_distribution": { "critical": 0, "high": 0, "medium": 1, "low": 0 },
+        "validation_stages": ["runtime_validation"]
+      },
+      "technical_compliance": {
+        "description": "Rules validating technical parameters",
+        "severity_distribution": { "critical": 0, "high": 0, "medium": 1, "low": 1 },
+        "validation_stages": ["pre_generation_validation"]
+      },
+      "integration_compliance": {
+        "description": "Rules validating system integrations",
+        "severity_distribution": { "critical": 0, "high": 2, "medium": 0, "low": 0 },
+        "validation_stages": ["asset_system_validation", "style_guardrails_validation", "runtime_validation"]
+      },
+      "domain_compliance": {
+        "description": "Rules validating domain classifications",
+        "severity_distribution": { "critical": 0, "high": 0, "medium": 1, "low": 0 },
+        "validation_stages": ["pre_generation_validation", "environment_validation"]
+      }
+    },
+    "severity_definitions": {
+      "critical": {
+        "description": "Violations that block generation entirely",
+        "action": "immediate_rejection",
+        "escalation": "canon_guard",
+        "retry_allowed": false
+      },
+      "high": {
+        "description": "Serious violations that may allow retry with correction",
+        "action": "block_with_retry_option",
+        "escalation": "validation_team",
+        "retry_allowed": true
+      },
+      "medium": {
+        "description": "Moderate issues that generate warnings",
+        "action": "warn_with_continue",
+        "escalation": "logging_only",
+        "retry_allowed": true
+      },
+      "low": {
+        "description": "Minor issues for documentation only",
+        "action": "log_only",
+        "escalation": "none",
+        "retry_allowed": true
+      }
+    },
+    "validation_stage_mapping": {
+      "pre_generation_validation": ["canon_001", "mode_001", "mode_002", "domain_001", "reference_001", "seed_001", "technical_001"],
+      "prompt_input_validation": ["prompt_001", "prompt_002", "prompt_003", "reference_002"],
+      "style_guardrails_validation": ["style_001", "style_002", "integration_002"],
+      "asset_system_validation": ["asset_001", "asset_002", "integration_001"],
+      "canon_compliance_validation": ["canon_001", "output_002"],
+      "drift_detection": ["style_002", "output_003"],
+      "quality_assessment": ["output_001"],
+      "final_approval": ["output_001", "output_002"],
+      "runtime_validation": ["pipeline_001", "integration_001", "integration_002"],
+      "environment_validation": ["domain_001"]
+    },
+    "unresolved_references": {
+      "neg_pop_glamour_excess": {
+        "description": "Negative profile referenced but not fully defined",
+        "affected_rules": ["prompt_002", "reference_002"],
+        "impact": "medium",
+        "temporary_solution": "use_empty_token_list",
+        "required_action": "define_negative_profile_tokens"
+      },
+      "imperial_upper_zone": {
+        "description": "Domain referenced in style rules but not in domain classifier",
+        "affected_rules": ["domain_001"],
+        "impact": "low",
+        "temporary_solution": "treat_as_imperial_domain",
+        "required_action": "add_to_domain_classifier_or_update_references"
+      }
+    },
+    "integration_risks": {
+      "scene_generation_pipeline_alignment": {
+        "description": "Pipeline steps may not align with validation stages",
+        "affected_rules": ["pipeline_001"],
+        "impact": "medium",
+        "mitigation": "map_pipeline_steps_to_validation_stages",
+        "required_action": "review_and_align_pipeline_configuration"
+      }
+    }
+  }
+}

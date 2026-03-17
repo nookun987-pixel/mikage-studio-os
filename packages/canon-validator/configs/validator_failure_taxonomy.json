@@ -1,0 +1,857 @@
+{
+  "validator_failure_taxonomy": {
+    "version": "1.0.0",
+    "last_updated": "2026-03-17T00:00:00Z",
+    "taxonomy_metadata": {
+      "total_failure_families": 7,
+      "total_failure_types": 28,
+      "retryable_failures": 18,
+      "non_retryable_failures": 10
+    },
+    "failure_families": {
+      "style_drift_failures": {
+        "description": "Failures related to style drift from canon specifications",
+        "severity_distribution": {
+          "critical": 2,
+          "high": 3,
+          "medium": 4,
+          "low": 2
+        },
+        "failure_types": [
+          {
+            "type_id": "sdf_001",
+            "type_name": "forbidden_drift_detection",
+            "description": "Detection of forbidden drift terms in prompts or outputs",
+            "symptoms": ["forbidden_drift_terms_present", "canon_violation_detected"],
+            "severity": "critical",
+            "retryable": false,
+            "detection_rules": ["style_002"],
+            "recovery_strategy": "immediate_rejection",
+            "escalation_level": "canon_guard",
+            "prevention_measures": ["enhanced_negative_prompting", "stricter_input_validation"]
+          },
+          {
+            "type_id": "sdf_002",
+            "type_name": "excessive_style_drift",
+            "description": "Style drift exceeds acceptable thresholds",
+            "symptoms": ["drift_score_above_threshold", "style_alignment_low"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["style_001", "output_003"],
+            "recovery_strategy": "adjust_style_parameters",
+            "escalation_level": "style_review",
+            "prevention_measures": ["drift_monitoring", "periodic_style_calibration"]
+          },
+          {
+            "type_id": "sdf_003",
+            "type_name": "childish_anime_idol_drift",
+            "description": "Drift toward childish anime idol aesthetic",
+            "symptoms": ["cute_elements", "idol_aesthetic", "childlike_proportions"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["style_002"],
+            "recovery_strategy": "strengthen_adult_markers",
+            "escalation_level": "style_review",
+            "prevention_measures": ["adult_aesthetic_enforcement", "proportion_validation"]
+          },
+          {
+            "type_id": "sdf_004",
+            "type_name": "generic_neon_overload",
+            "description": "Excessive generic neon elements without restraint",
+            "symptoms": ["neon_chaos", "cyberpunk_club_vibe", "uncontrolled_color"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 3,
+            "detection_rules": ["style_002"],
+            "recovery_strategy": "apply_color_restraints",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["palette_constraints", "color_limit_validation"]
+          },
+          {
+            "type_id": "sdf_005",
+            "type_name": "fantasy_magic_aesthetic",
+            "description": "Introduction of fantasy magic elements",
+            "symptoms": ["magical_effects", "fantasy_elements", "non_technical_power"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["style_002"],
+            "recovery_strategy": "enforce_hard_scifi",
+            "escalation_level": "canon_guard",
+            "prevention_measures": ["technical_validation", "power_system_constraints"]
+          },
+          {
+            "type_id": "sdf_006",
+            "type_name": "soft_glamour_pastel_drift",
+            "description": "Drift toward soft glamour and pastel aesthetics",
+            "symptoms": ["pastel_colors", "soft_glamour", "romantic_aesthetic"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["style_002"],
+            "recovery_strategy": "reinforce_porcelain_aesthetic",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["porcelain_enforcement", "color_palette_validation"]
+          },
+          {
+            "type_id": "sdf_007",
+            "type_name": "cumulative_drift_accumulation",
+            "description": "Small drifts accumulating over multiple generations",
+            "symptoms": ["gradual_style_change", "incremental_drift", "baseline_shift"],
+            "severity": "medium",
+            "retryable": false,
+            "detection_rules": ["output_003"],
+            "recovery_strategy": "baseline_reset",
+            "escalation_level": "drift_analysis",
+            "prevention_measures": ["cumulative_monitoring", "periodic_baseline_validation"]
+          },
+          {
+            "type_id": "sdf_008",
+            "type_name": "reference_style_mismatch",
+            "description": "Generated output doesn't match reference style",
+            "symptoms": ["style_inconsistency", "reference_deviation", "aesthetic_mismatch"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["reference_001"],
+            "recovery_strategy": "adjust_style_weighting",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["style_weight_validation", "reference_consistency_checks"]
+          },
+          {
+            "type_id": "sdf_009",
+            "type_name": "japanese_grammar_corruption",
+            "description": "Corruption of Japanese visual grammar elements",
+            "symptoms": ["incorrect_motif_usage", "grammar_violations", "cultural_inaccuracy"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["style_001"],
+            "recovery_strategy": "grammar_correction",
+            "escalation_level": "style_review",
+            "prevention_measures": ["grammar_validation", "cultural_accuracy_checks"]
+          }
+        ]
+      },
+      "canon_drift_failures": {
+        "description": "Failures related to canon compliance and authority violations",
+        "severity_distribution": {
+          "critical": 4,
+          "high": 2,
+          "medium": 1,
+          "low": 0
+        },
+        "failure_types": [
+          {
+            "type_id": "cdf_001",
+            "type_name": "canon_registry_violation",
+            "description": "Direct violation of canon registry rules",
+            "symptoms": ["canon_rule_breach", "authority_violation", "registry_non_compliance"],
+            "severity": "critical",
+            "retryable": false,
+            "detection_rules": ["canon_001"],
+            "recovery_strategy": "immediate_rejection",
+            "escalation_level": "canon_guard",
+            "prevention_measures": ["pre_validation_checks", "canon_education"]
+          },
+          {
+            "type_id": "cdf_002",
+            "type_name": "authority_level_breach",
+            "description": "Exceeding permitted authority level",
+            "symptoms": ["unauthorized_access", "level_exceeded", "privilege_violation"],
+            "severity": "critical",
+            "retryable": false,
+            "detection_rules": ["canon_001"],
+            "recovery_strategy": "access_denial",
+            "escalation_level": "security_team",
+            "prevention_measures": ["authority_validation", "access_control_enforcement"]
+          },
+          {
+            "type_id": "cdf_003",
+            "type_name": "canon_contradiction",
+            "description": "Internal contradictions within canon compliance",
+            "symptoms": ["conflicting_rules", "canon_paradox", "contradictory_requirements"],
+            "severity": "high",
+            "retryable": false,
+            "detection_rules": ["canon_001"],
+            "recovery_strategy": "canon_clarification_required",
+            "escalation_level": "canon_council",
+            "prevention_measures": ["canon_consistency_validation", "rule_conflict_detection"]
+          },
+          {
+            "type_id": "cdf_004",
+            "type_name": "missing_canonical_reference",
+            "description": "Required canonical reference not found or unavailable",
+            "symptoms": ["reference_missing", "canonical_gap", "unavailable_canon_asset"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["canon_001"],
+            "recovery_strategy": "use_approved_alternative",
+            "escalation_level": "asset_management",
+            "prevention_measures": ["canon_asset_inventory", "reference_availability_monitoring"]
+          },
+          {
+            "type_id": "cdf_005",
+            "type_name": "canon_interpretation_drift",
+            "description": "Gradual shift in canon interpretation over time",
+            "symptoms": ["interpretation_change", "canon_evolution", "understanding_drift"],
+            "severity": "medium",
+            "retryable": false,
+            "detection_rules": ["output_002"],
+            "recovery_strategy": "canon_realignment",
+            "escalation_level": "canon_council",
+            "prevention_measures": ["periodic_canon_review", "interpretation_standardization"]
+          },
+          {
+            "type_id": "cdf_006",
+            "type_name": "unauthorized_canon_modification",
+            "description": "Attempt to modify canon without proper authority",
+            "symptoms": ["unauthorized_changes", "canon_tampering", "illegal_modifications"],
+            "severity": "critical",
+            "retryable": false,
+            "detection_rules": ["canon_001"],
+            "recovery_strategy": "security_lockdown",
+            "escalation_level": "security_incident",
+            "prevention_measures": ["change_authorization", "audit_logging", "canon_integrity_checks"]
+          },
+          {
+            "type_id": "cdf_007",
+            "type_name": "canon_version_mismatch",
+            "description": "Using incorrect or outdated canon version",
+            "symptoms": ["version_incompatibility", "outdated_rules", "version_conflict"],
+            "severity": "critical",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["canon_001"],
+            "recovery_strategy": "version_update_required",
+            "escalation_level": "system_administration",
+            "prevention_measures": ["version_validation", "automatic_updates", "version_compatibility_checks"]
+          }
+        ]
+      },
+      "asset_mismatch_failures": {
+        "description": "Failures related to asset selection, compatibility, and integration",
+        "severity_distribution": {
+          "critical": 1,
+          "high": 2,
+          "medium": 3,
+          "low": 2
+        },
+        "failure_types": [
+          {
+            "type_id": "amf_001",
+            "type_name": "asset_authority_insufficient",
+            "description": "Asset authority level too low for intended use",
+            "symptoms": ["low_authority_asset", "insufficient_permissions", "asset_class_mismatch"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["asset_001"],
+            "recovery_strategy": "select_higher_authority_asset",
+            "escalation_level": "asset_management",
+            "prevention_measures": ["authority_validation", "asset_class_verification"]
+          },
+          {
+            "type_id": "amf_002",
+            "type_name": "asset_reference_conflict",
+            "description": "Conflicting asset references in generation request",
+            "symptoms": ["conflicting_assets", "reference_collision", "asset_inconsistency"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["asset_002"],
+            "recovery_strategy": "conflict_resolution",
+            "escalation_level": "asset_review",
+            "prevention_measures": ["reference_validation", "conflict_detection_prevention"]
+          },
+          {
+            "type_id": "amf_003",
+            "type_name": "asset_quality_below_threshold",
+            "description": "Asset quality score below minimum requirements",
+            "symptoms": ["low_quality_score", "poor_asset_quality", "quality_threshold_breach"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 3,
+            "detection_rules": ["asset_001"],
+            "recovery_strategy": "quality_improvement_or_alternative",
+            "escalation_level": "quality_review",
+            "prevention_measures": ["quality_threshold_validation", "pre_selection_quality_checks"]
+          },
+          {
+            "type_id": "amf_004",
+            "type_name": "asset_integration_failure",
+            "description": "Failure to integrate asset with generation system",
+            "symptoms": ["integration_error", "asset_unavailable", "system_incompatibility"],
+            "severity": "critical",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["integration_001"],
+            "recovery_strategy": "integration_troubleshooting",
+            "escalation_level": "technical_support",
+            "prevention_measures": ["integration_testing", "asset_availability_checks"]
+          },
+          {
+            "type_id": "amf_005",
+            "type_name": "provisional_asset_overuse",
+            "description": "Excessive use of provisional assets",
+            "symptoms": ["too_many_provisional", "provisional_dependency", "canon_gap_overreliance"],
+            "severity": "medium",
+            "retryable": false,
+            "detection_rules": ["asset_001"],
+            "recovery_strategy": "canon_asset_creation_priority",
+            "escalation_level": "asset_planning",
+            "prevention_measures": ["provisional_usage_limits", "canon_gap_monitoring"]
+          },
+          {
+            "type_id": "amf_006",
+            "type_name": "asset_scale_inconsistency",
+            "description": "Scale inconsistencies between referenced assets",
+            "symptoms": ["scale_mismatch", "proportion_errors", "size_inconsistency"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["asset_002"],
+            "recovery_strategy": "scale_normalization",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["scale_validation", "proportion_consistency_checks"]
+          },
+          {
+            "type_id": "amf_007",
+            "type_name": "asset_material_conflict",
+            "description": "Conflicting material specifications between assets",
+            "symptoms": ["material_inconsistency", "surface_conflict", "texture_mismatch"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["asset_002"],
+            "recovery_strategy": "material_harmonization",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["material_validation", "surface_consistency_checks"]
+          },
+          {
+            "type_id": "amf_008",
+            "type_name": "missing_required_asset",
+            "description": "Required asset not available for generation",
+            "symptoms": ["missing_asset", "incomplete_references", "asset_gap"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["mode_002"],
+            "recovery_strategy": "alternative_asset_selection",
+            "escalation_level": "asset_management",
+            "prevention_measures": ["asset_inventory", "requirement_validation"]
+          }
+        ]
+      },
+      "prompt_structure_failures": {
+        "description": "Failures related to prompt structure, compilation, and content",
+        "severity_distribution": {
+          "critical": 0,
+          "high": 2,
+          "medium": 3,
+          "low": 2
+        },
+        "failure_types": [
+          {
+            "type_id": "psf_001",
+            "type_name": "incorrect_block_order",
+            "description": "Prompt blocks not in correct assembly order",
+            "symptoms": ["block_order_error", "sequence_violation", "assembly_mistake"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["prompt_001"],
+            "recovery_strategy": "block_reordering",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["assembly_validation", "order_enforcement"]
+          },
+          {
+            "type_id": "psf_002",
+            "type_name": "missing_required_blocks",
+            "description": "Required prompt blocks missing from compilation",
+            "symptoms": ["missing_blocks", "incomplete_prompt", "block_absence"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["prompt_001"],
+            "recovery_strategy": "block_addition",
+            "escalation_level": "prompt_review",
+            "prevention_measures": ["requirement_validation", "block_presence_checks"]
+          },
+          {
+            "type_id": "psf_003",
+            "type_name": "negative_profile_incomplete",
+            "description": "Negative profile definitions incomplete or missing",
+            "symptoms": ["incomplete_negatives", "missing_profile", "profile_gap"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["prompt_002", "reference_002"],
+            "recovery_strategy": "profile_completion",
+            "escalation_level": "prompt_review",
+            "prevention_measures": ["profile_validation", "negative_prompt_completeness_checks"],
+            "unresolved_references": ["neg_pop_glamour_excess"]
+          },
+          {
+            "type_id": "psf_004",
+            "type_name": "prompt_length_violation",
+            "description": "Prompt length exceeds mode-specific limits",
+            "symptoms": ["prompt_too_long", "length_exceeded", "token_limit_breach"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["prompt_003"],
+            "recovery_strategy": "prompt_truncation",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["length_validation", "token_count_monitoring"]
+          },
+          {
+            "type_id": "psf_005",
+            "type_name": "prompt_semantic_conflict",
+            "description": "Semantic conflicts within prompt content",
+            "symptoms": ["contradictory_terms", "semantic_conflict", "meaning_collision"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["prompt_001"],
+            "recovery_strategy": "conflict_resolution",
+            "escalation_level": "prompt_review",
+            "prevention_measures": ["semantic_validation", "conflict_detection"]
+          },
+          {
+            "type_id": "psf_006",
+            "type_name": "house_negatives_missing",
+            "description": "House global negative prompts not applied",
+            "symptoms": ["missing_house_negatives", "incomplete_negatives", "global_negative_absence"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["prompt_002"],
+            "recovery_strategy": "house_negative_addition",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["house_negative_validation", "global_negative_enforcement"]
+          },
+          {
+            "type_id": "psf_007",
+            "type_name": "prompt_token_overflow",
+            "description": "Prompt exceeds token limits for model",
+            "symptoms": ["token_overflow", "model_limit_exceeded", "processing_failure"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["prompt_003"],
+            "recovery_strategy": "token_optimization",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["token_count_validation", "model_limit_awareness"]
+          }
+        ]
+      },
+      "reference_conflict_failures": {
+        "description": "Failures related to reference style bindings and profile conflicts",
+        "severity_distribution": {
+          "critical": 0,
+          "high": 1,
+          "medium": 2,
+          "low": 1
+        },
+        "failure_types": [
+          {
+            "type_id": "rcf_001",
+            "type_name": "invalid_reference_style",
+            "description": "Reference style not valid for generation mode",
+            "symptoms": ["invalid_style", "mode_mismatch", "style_incompatibility"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["reference_001"],
+            "recovery_strategy": "style_reselection",
+            "escalation_level": "prompt_review",
+            "prevention_measures": ["style_validation", "mode_compatibility_checks"]
+          },
+          {
+            "type_id": "rcf_002",
+            "type_name": "reference_style_unavailable",
+            "description": "Requested reference style not available",
+            "symptoms": ["style_unavailable", "reference_missing", "style_access_error"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["reference_001"],
+            "recovery_strategy": "alternative_style_selection",
+            "escalation_level": "asset_management",
+            "prevention_measures": ["style_availability_validation", "reference_access_checks"]
+          },
+          {
+            "type_id": "rcf_003",
+            "type_name": "negative_profile_missing",
+            "description": "Referenced negative profile not defined",
+            "symptoms": ["missing_profile", "reference_error", "profile_undefined"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["reference_002"],
+            "recovery_strategy": "profile_creation_or_replacement",
+            "escalation_level": "prompt_review",
+            "prevention_measures": ["profile_existence_validation", "reference_completeness_checks"],
+            "unresolved_references": ["neg_pop_glamour_excess"]
+          },
+          {
+            "type_id": "rcf_004",
+            "type_name": "reference_weight_imbalance",
+            "description": "Improper weighting between multiple references",
+            "symptoms": ["weight_imbalance", "reference_dominance", "improper_weighting"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["reference_001"],
+            "recovery_strategy": "weight_rebalancing",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["weight_validation", "balance_optimization"]
+          }
+        ]
+      },
+      "output_validation_failures": {
+        "description": "Failures related to output quality, validation, and post-generation checks",
+        "severity_distribution": {
+          "critical": 2,
+          "high": 3,
+          "medium": 2,
+          "low": 1
+        },
+        "failure_types": [
+          {
+            "type_id": "ovf_001",
+            "type_name": "quality_below_threshold",
+            "description": "Generated output quality below minimum threshold",
+            "symptoms": ["low_quality", "poor_output", "quality_failure"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 3,
+            "detection_rules": ["output_001"],
+            "recovery_strategy": "quality_improvement_retry",
+            "escalation_level": "quality_review",
+            "prevention_measures": ["quality_threshold_validation", "pre_generation_quality_checks"]
+          },
+          {
+            "type_id": "ovf_002",
+            "type_name": "canon_compliance_failure",
+            "description": "Output fails canon compliance validation",
+            "symptoms": ["canon_non_compliance", "compliance_failure", "canon_breach"],
+            "severity": "critical",
+            "retryable": false,
+            "detection_rules": ["output_002"],
+            "recovery_strategy": "immediate_rejection",
+            "escalation_level": "canon_guard",
+            "prevention_measures": ["canon_compliance_validation", "pre_generation_canon_checks"]
+          },
+          {
+            "type_id": "ovf_003",
+            "type_name": "excessive_drift_detected",
+            "description": "Excessive drift detected in generated output",
+            "symptoms": ["drift_excessive", "baseline_deviation", "style_drift_severe"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["output_003"],
+            "recovery_strategy": "drift_correction_retry",
+            "escalation_level": "drift_analysis",
+            "prevention_measures": ["drift_monitoring", "baseline_validation"]
+          },
+          {
+            "type_id": "ovf_004",
+            "type_name": "file_corruption_or_error",
+            "description": "Generated file corrupted or contains errors",
+            "symptoms": ["file_corruption", "generation_error", "output_corrupted"],
+            "severity": "critical",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["output_001"],
+            "recovery_strategy": "regeneration_attempt",
+            "escalation_level": "technical_support",
+            "prevention_measures": ["file_integrity_checks", "generation_monitoring"]
+          },
+          {
+            "type_id": "ovf_005",
+            "type_name": "metadata_incomplete",
+            "description": "Required metadata missing from output",
+            "symptoms": ["missing_metadata", "incomplete_data", "metadata_gap"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["output_001"],
+            "recovery_strategy": "metadata_completion",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["metadata_validation", "completeness_checks"]
+          },
+          {
+            "type_id": "ovf_006",
+            "type_name": "dimension_mismatch",
+            "description": "Output dimensions don't match specifications",
+            "symptoms": ["wrong_dimensions", "size_mismatch", "resolution_error"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["output_001"],
+            "recovery_strategy": "dimension_correction",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["dimension_validation", "specification_compliance"]
+          },
+          {
+            "type_id": "ovf_007",
+            "type_name": "format_incompatibility",
+            "description": "Output format incompatible with system requirements",
+            "symptoms": ["format_error", "incompatible_output", "format_mismatch"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["output_001"],
+            "recovery_strategy": "format_conversion",
+            "escalation_level": "technical_support",
+            "prevention_measures": ["format_validation", "compatibility_checks"]
+          },
+          {
+            "type_id": "ovf_008",
+            "type_name": "validation_stage_timeout",
+            "description": "Output validation stage exceeds time limits",
+            "symptoms": ["validation_timeout", "processing_delay", "time_exceeded"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["output_001"],
+            "recovery_strategy": "timeout_handling",
+            "escalation_level": "performance_monitoring",
+            "prevention_measures": ["performance_optimization", "timeout_validation"]
+          }
+        ]
+      },
+      "system_integration_failures": {
+        "description": "Failures related to system integration, pipeline, and technical issues",
+        "severity_distribution": {
+          "critical": 2,
+          "high": 2,
+          "medium": 2,
+          "low": 2
+        },
+        "failure_types": [
+          {
+            "type_id": "sif_001",
+            "type_name": "pipeline_step_failure",
+            "description": "Failure in pipeline step execution",
+            "symptoms": ["pipeline_error", "step_failure", "process_break"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["pipeline_001"],
+            "recovery_strategy": "step_retry_or_skip",
+            "escalation_level": "pipeline_administration",
+            "prevention_measures": ["pipeline_testing", "step_validation"],
+            "integration_risks": ["step_alignment_with_validation_stages"]
+          },
+          {
+            "type_id": "sif_002",
+            "type_name": "asset_system_unavailable",
+            "description": "Asset system unavailable or unreachable",
+            "symptoms": ["asset_system_down", "connection_failed", "service_unavailable"],
+            "severity": "critical",
+            "retryable": true,
+            "max_retries": 3,
+            "detection_rules": ["integration_001"],
+            "recovery_strategy": "system_recovery_or_fallback",
+            "escalation_level": "system_administration",
+            "prevention_measures": ["availability_monitoring", "redundancy_systems"]
+          },
+          {
+            "type_id": "sif_003",
+            "type_name": "style_guardrails_unavailable",
+            "description": "Style guardrails system unavailable",
+            "symptoms": ["guardrails_down", "style_validation_failed", "service_unavailable"],
+            "severity": "high",
+            "retryable": true,
+            "max_retries": 2,
+            "detection_rules": ["integration_002"],
+            "recovery_strategy": "guardrails_recovery_or_degraded_mode",
+            "escalation_level": "style_system_administration",
+            "prevention_measures": ["guardrails_monitoring", "fallback_validation"]
+          },
+          {
+            "type_id": "sif_004",
+            "type_name": "parameter_validation_failure",
+            "description": "Technical parameters fail validation",
+            "symptoms": ["invalid_parameters", "parameter_error", "validation_failed"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["technical_001"],
+            "recovery_strategy": "parameter_correction",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["parameter_validation", "range_checking"]
+          },
+          {
+            "type_id": "sif_005",
+            "type_name": "seed_policy_violation",
+            "description": "Seed policy not followed correctly",
+            "symptoms": ["seed_error", "policy_violation", "seed_incorrect"],
+            "severity": "low",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["seed_001"],
+            "recovery_strategy": "seed_correction",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["seed_policy_validation", "seed_verification"]
+          },
+          {
+            "type_id": "sif_006",
+            "type_name": "domain_classification_error",
+            "description": "Error in domain classification or mapping",
+            "symptoms": ["domain_error", "classification_failure", "mapping_incorrect"],
+            "severity": "medium",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["domain_001"],
+            "recovery_strategy": "domain_reclassification",
+            "escalation_level": "logging_only",
+            "prevention_measures": ["domain_validation", "classification_testing"],
+            "unresolved_references": ["imperial_upper_zone"]
+          },
+          {
+            "type_id": "sif_007",
+            "type_name": "resource_exhaustion",
+            "description": "System resources exhausted during generation",
+            "symptoms": ["resource_exhausted", "memory_full", "cpu_overload"],
+            "severity": "critical",
+            "retryable": true,
+            "max_retries": 1,
+            "detection_rules": ["pipeline_001"],
+            "recovery_strategy": "resource_reallocation",
+            "escalation_level": "system_administration",
+            "prevention_measures": ["resource_monitoring", "load_balancing"]
+          },
+          {
+            "type_id": "sif_008",
+            "type_name": "configuration_inconsistency",
+            "description": "Inconsistencies between system configurations",
+            "symptoms": ["config_conflict", "inconsistent_settings", "configuration_error"],
+            "severity": "low",
+            "retryable": false,
+            "detection_rules": ["pipeline_001"],
+            "recovery_strategy": "configuration_synchronization",
+            "escalation_level": "configuration_management",
+            "prevention_measures": ["configuration_validation", "consistency_checks"]
+          }
+        ]
+      }
+    },
+    "retry_classification": {
+      "retryable_failures": {
+        "description": "Failures that can be retried with potential success",
+        "count": 18,
+        "common_strategies": ["parameter_adjustment", "alternative_selection", "resource_recovery", "correction_retry"],
+        "max_retry_limits": {
+          "critical": 1,
+          "high": 3,
+          "medium": 3,
+          "low": 1
+        }
+      },
+      "non_retryable_failures": {
+        "description": "Failures that should not be retried without intervention",
+        "count": 10,
+        "common_reasons": ["canon_violations", "security_issues", "authority_breaches", "system_design_errors"],
+        "required_actions": ["manual_review", "system_intervention", "canon_council_review", "security_incident_response"]
+      }
+    },
+    "escalation_mapping": {
+      "canon_guard": {
+        "description": "Highest level canon protection and enforcement",
+        "trigger_failures": ["canon_violations", "forbidden_drift", "authority_breaches"],
+        "response_time": "immediate",
+        "authority_level": 5
+      },
+      "security_incident": {
+        "description": "Security-related failures requiring immediate response",
+        "trigger_failures": ["unauthorized_access", "system_tampering", "security_breaches"],
+        "response_time": "immediate",
+        "authority_level": 5
+      },
+      "canon_council": {
+        "description": "Canon interpretation and contradiction resolution",
+        "trigger_failures": ["canon_contradictions", "interpretation_drift", "canon_evolution"],
+        "response_time": "within_24_hours",
+        "authority_level": 4
+      },
+      "system_administration": {
+        "description": "System-level technical issues and infrastructure",
+        "trigger_failures": ["system_unavailability", "resource_exhaustion", "infrastructure_failures"],
+        "response_time": "within_1_hour",
+        "authority_level": 4
+      },
+      "drift_analysis": {
+        "description": "Drift pattern analysis and prevention strategy",
+        "trigger_failures": ["cumulative_drift", "excessive_drift", "drift_patterns"],
+        "response_time": "within_4_hours",
+        "authority_level": 3
+      },
+      "style_review": {
+        "description": "Style-related issues and aesthetic validation",
+        "trigger_failures": ["style_drift", "aesthetic_issues", "style_violations"],
+        "response_time": "within_2_hours",
+        "authority_level": 3
+      },
+      "asset_management": {
+        "description": "Asset-related issues and inventory management",
+        "trigger_failures": ["asset_issues", "reference_problems", "canon_gaps"],
+        "response_time": "within_2_hours",
+        "authority_level": 3
+      },
+      "quality_review": {
+        "description": "Quality assessment and improvement strategies",
+        "trigger_failures": ["quality_issues", "output_problems", "quality_threshold_failures"],
+        "response_time": "within_4_hours",
+        "authority_level": 2
+      },
+      "technical_support": {
+        "description": "Technical troubleshooting and support",
+        "trigger_failures": ["technical_errors", "integration_issues", "format_problems"],
+        "response_time": "within_2_hours",
+        "authority_level": 2
+      },
+      "logging_only": {
+        "description": "Issues logged for monitoring and analysis",
+        "trigger_failures": ["minor_issues", "warnings", "informational_events"],
+        "response_time": "logged_only",
+        "authority_level": 1
+      }
+    },
+    "unresolved_references": {
+      "neg_pop_glamour_excess": {
+        "description": "Negative profile referenced in generation modes but not fully defined",
+        "affected_failure_types": ["psf_003", "rcf_003"],
+        "impact_assessment": "medium",
+        "temporary_solution": "use_empty_token_list_with_warning",
+        "required_resolution": "define_negative_profile_tokens_or_update_references",
+        "resolution_priority": "medium"
+      },
+      "imperial_upper_zone": {
+        "description": "Domain referenced in style rules but not defined in domain classifier",
+        "affected_failure_types": ["sif_006"],
+        "impact_assessment": "low",
+        "temporary_solution": "treat_as_imperial_domain_with_warning",
+        "required_resolution": "add_to_domain_classifier_or_update_style_references",
+        "resolution_priority": "low"
+      }
+    },
+    "integration_risks": {
+      "scene_generation_pipeline_alignment": {
+        "description": "Pipeline steps may not align with validation stages",
+        "affected_failure_types": ["sif_001"],
+        "impact_assessment": "medium",
+        "mitigation_strategy": "map_pipeline_steps_to_validation_stages",
+        "required_action": "review_and_align_pipeline_configuration",
+        "resolution_priority": "medium"
+      }
+    }
+  }
+}

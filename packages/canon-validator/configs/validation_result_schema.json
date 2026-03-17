@@ -1,0 +1,821 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mikage-studio-os/schemas/validation-result-schema.json",
+  "title": "Mikage Validation Result Schema",
+  "description": "Schema for validation results from the Mikage Studio OS validator system",
+  "version": "1.0.0",
+  "type": "object",
+  "properties": {
+    "validation_result": {
+      "type": "object",
+      "description": "Root validation result object",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "description": "Unique identifier for the validation request",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "session_id": {
+          "type": "string",
+          "description": "Session identifier for grouping related validations",
+          "pattern": "^[a-zA-Z0-9_-]+$"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when validation was completed"
+        },
+        "validation_duration": {
+          "type": "number",
+          "description": "Total validation duration in milliseconds",
+          "minimum": 0
+        },
+        "decision": {
+          "$ref": "#/definitions/decision_object"
+        },
+        "validation_results": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/validation_result_item"
+          },
+          "description": "Array of individual validation results"
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/validation_action"
+          },
+          "description": "Recommended actions based on validation results"
+        },
+        "retry_decision": {
+          "$ref": "#/definitions/retry_decision",
+          "description": "Retry decision and configuration"
+        },
+        "fallback_recommendation": {
+          "$ref": "#/definitions/fallback_recommendation",
+          "description": "Fallback strategy recommendation"
+        },
+        "metadata": {
+          "$ref": "#/definitions/validation_metadata"
+        }
+      },
+      "required": [
+        "request_id",
+        "session_id",
+        "timestamp",
+        "validation_duration",
+        "decision",
+        "validation_results",
+        "metadata"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": ["validation_result"],
+  "definitions": {
+    "decision_object": {
+      "type": "object",
+      "description": "Overall validation decision",
+      "properties": {
+        "overall_state": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail", "block", "defer"],
+          "description": "Overall validation state"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence score for the decision"
+        },
+        "reasoning": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Array of reasoning strings explaining the decision"
+        },
+        "recommendation": {
+          "type": "string",
+          "description": "Primary recommendation based on validation results"
+        }
+      },
+      "required": ["overall_state", "confidence", "reasoning"]
+    },
+    "validation_result_item": {
+      "type": "object",
+      "description": "Individual validation result for a specific rule",
+      "properties": {
+        "rule_id": {
+          "type": "string",
+          "description": "Unique identifier for the validation rule"
+        },
+        "rule_name": {
+          "type": "string",
+          "description": "Human-readable name of the validation rule"
+        },
+        "rule_category": {
+          "type": "string",
+          "enum": [
+            "canon_compliance",
+            "mode_compliance",
+            "style_compliance",
+            "asset_compliance",
+            "prompt_compliance",
+            "output_validation",
+            "reference_compliance",
+            "pipeline_compliance",
+            "technical_compliance",
+            "integration_compliance",
+            "domain_compliance"
+          ],
+          "description": "Category of the validation rule"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"],
+          "description": "Severity level of the validation rule"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pass", "warn", "fail"],
+          "description": "Status of the validation rule execution"
+        },
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Score for this validation rule (0-1)"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in the validation result"
+        },
+        "findings": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/validation_finding"
+          },
+          "description": "Detailed findings from this validation rule"
+        },
+        "execution_metadata": {
+          "$ref": "#/definitions/execution_metadata"
+        },
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Recommendations based on this validation result"
+        },
+        "blocking_issues": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/blocking_issue"
+          },
+          "description": "Blocking issues that prevent generation"
+        }
+      },
+      "required": [
+        "rule_id",
+        "rule_name",
+        "rule_category",
+        "severity",
+        "status",
+        "score",
+        "confidence",
+        "findings",
+        "execution_metadata"
+      ]
+    },
+    "validation_finding": {
+      "type": "object",
+      "description": "Individual finding within a validation result",
+      "properties": {
+        "finding_id": {
+          "type": "string",
+          "description": "Unique identifier for this finding"
+        },
+        "type": {
+          "type": "string",
+          "enum": ["violation", "warning", "information"],
+          "description": "Type of finding"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "high", "medium", "low"],
+          "description": "Severity level of this finding"
+        },
+        "message": {
+          "type": "string",
+          "description": "Concise message describing the finding"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of the finding"
+        },
+        "location": {
+          "type": "string",
+          "description": "Location where the finding was detected"
+        },
+        "context": {
+          "$ref": "#/definitions/finding_context"
+        },
+        "impact": {
+          "$ref": "#/definitions/finding_impact"
+        },
+        "resolution": {
+          "$ref": "#/definitions/finding_resolution"
+        }
+      },
+      "required": [
+        "finding_id",
+        "type",
+        "severity",
+        "message",
+        "description",
+        "location",
+        "context",
+        "impact",
+        "resolution"
+      ]
+    },
+    "finding_context": {
+      "type": "object",
+      "description": "Context information for a finding",
+      "properties": {
+        "trigger_condition": {
+          "type": "string",
+          "description": "Condition that triggered this finding"
+        },
+        "detected_value": {
+          "description": "Value that was detected"
+        },
+        "expected_value": {
+          "description": "Value that was expected"
+        },
+        "threshold": {
+          "type": "number",
+          "description": "Threshold that was crossed"
+        },
+        "additional_context": {
+          "type": "object",
+          "description": "Additional context information",
+          "additionalProperties": true
+        }
+      },
+      "required": ["trigger_condition"]
+    },
+    "finding_impact": {
+      "type": "object",
+      "description": "Impact assessment for a finding",
+      "properties": {
+        "on_generation": {
+          "type": "string",
+          "enum": ["blocking", "degrading", "cosmetic"],
+          "description": "Impact on generation process"
+        },
+        "on_canon_compliance": {
+          "type": "string",
+          "enum": ["violation", "drift", "acceptable"],
+          "description": "Impact on canon compliance"
+        },
+        "on_quality": {
+          "type": "string",
+          "enum": ["severe", "moderate", "minor"],
+          "description": "Impact on output quality"
+        }
+      },
+      "required": ["on_generation", "on_canon_compliance", "on_quality"]
+    },
+    "finding_resolution": {
+      "type": "object",
+      "description": "Resolution information for a finding",
+      "properties": {
+        "auto_correctable": {
+          "type": "boolean",
+          "description": "Whether this finding can be automatically corrected"
+        },
+        "retry_eligible": {
+          "type": "boolean",
+          "description": "Whether retry is eligible for this finding"
+        },
+        "manual_review_required": {
+          "type": "boolean",
+          "description": "Whether manual review is required"
+        },
+        "escalation_level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Escalation level (1-6)"
+        }
+      },
+      "required": [
+        "auto_correctable",
+        "retry_eligible",
+        "manual_review_required",
+        "escalation_level"
+      ]
+    },
+    "blocking_issue": {
+      "type": "object",
+      "description": "Blocking issue that prevents generation",
+      "properties": {
+        "issue_id": {
+          "type": "string",
+          "description": "Unique identifier for the blocking issue"
+        },
+        "issue_type": {
+          "type": "string",
+          "description": "Type of blocking issue"
+        },
+        "severity": {
+          "type": "string",
+          "enum": ["critical", "high"],
+          "description": "Severity level of the blocking issue"
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the blocking issue"
+        },
+        "symptoms": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Symptoms of the blocking issue"
+        },
+        "likely_causes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Likely causes of the blocking issue"
+        },
+        "blocks_generation": {
+          "type": "boolean",
+          "description": "Whether this issue blocks generation"
+        },
+        "blocks_retry": {
+          "type": "boolean",
+          "description": "Whether this issue blocks retry attempts"
+        },
+        "requires_manual_intervention": {
+          "type": "boolean",
+          "description": "Whether manual intervention is required"
+        },
+        "resolution_path": {
+          "$ref": "#/definitions/resolution_path"
+        }
+      },
+      "required": [
+        "issue_id",
+        "issue_type",
+        "severity",
+        "description",
+        "symptoms",
+        "blocks_generation",
+        "blocks_retry",
+        "requires_manual_intervention",
+        "resolution_path"
+      ]
+    },
+    "resolution_path": {
+      "type": "object",
+      "description": "Resolution path for a blocking issue",
+      "properties": {
+        "immediate_action": {
+          "type": "string",
+          "description": "Immediate action to take"
+        },
+        "escalation_required": {
+          "type": "boolean",
+          "description": "Whether escalation is required"
+        },
+        "escalation_level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "description": "Escalation level required"
+        },
+        "estimated_resolution_time": {
+          "type": "string",
+          "description": "Estimated time to resolution"
+        }
+      },
+      "required": [
+        "immediate_action",
+        "escalation_required",
+        "escalation_level"
+      ]
+    },
+    "execution_metadata": {
+      "type": "object",
+      "description": "Metadata about rule execution",
+      "properties": {
+        "stage": {
+          "type": "string",
+          "description": "Validation stage where this rule was executed"
+        },
+        "execution_time": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Execution time in milliseconds"
+        },
+        "input_fields_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Input fields used for this validation"
+        },
+        "source_of_truth": {
+          "type": "string",
+          "description": "Source of truth used for validation"
+        },
+        "rule_version": {
+          "type": "string",
+          "description": "Version of the rule that was executed"
+        }
+      },
+      "required": [
+        "stage",
+        "execution_time",
+        "input_fields_used",
+        "source_of_truth"
+      ]
+    },
+    "validation_action": {
+      "type": "object",
+      "description": "Recommended action based on validation results",
+      "properties": {
+        "action_id": {
+          "type": "string",
+          "description": "Unique identifier for the action"
+        },
+        "action_type": {
+          "type": "string",
+          "enum": ["correction", "retry", "escalation", "monitoring", "documentation"],
+          "description": "Type of action recommended"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["immediate", "high", "medium", "low"],
+          "description": "Priority of the action"
+        },
+        "specification": {
+          "$ref": "#/definitions/action_specification"
+        },
+        "execution": {
+          "$ref": "#/definitions/action_execution"
+        },
+        "success_criteria": {
+          "$ref": "#/definitions/action_success_criteria"
+        }
+      },
+      "required": [
+        "action_id",
+        "action_type",
+        "priority",
+        "specification",
+        "execution",
+        "success_criteria"
+      ]
+    },
+    "action_specification": {
+      "type": "object",
+      "description": "Specification of the action to take",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the action"
+        },
+        "target_component": {
+          "type": "string",
+          "description": "Target component for the action"
+        },
+        "parameters": {
+          "type": "object",
+          "description": "Parameters for the action",
+          "additionalProperties": true
+        },
+        "expected_outcome": {
+          "type": "string",
+          "description": "Expected outcome of the action"
+        }
+      },
+      "required": ["description", "target_component", "expected_outcome"]
+    },
+    "action_execution": {
+      "type": "object",
+      "description": "Execution requirements for the action",
+      "properties": {
+        "automatic": {
+          "type": "boolean",
+          "description": "Whether the action can be executed automatically"
+        },
+        "manual_approval_required": {
+          "type": "boolean",
+          "description": "Whether manual approval is required"
+        },
+        "estimated_duration": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Estimated duration in milliseconds"
+        },
+        "resource_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Resource requirements for the action"
+        }
+      },
+      "required": [
+        "automatic",
+        "manual_approval_required",
+        "estimated_duration"
+      ]
+    },
+    "action_success_criteria": {
+      "type": "object",
+      "description": "Success criteria for the action",
+      "properties": {
+        "validation_passed": {
+          "type": "boolean",
+          "description": "Whether validation should pass after action"
+        },
+        "quality_improved": {
+          "type": "boolean",
+          "description": "Whether quality should improve after action"
+        },
+        "canon_compliance_maintained": {
+          "type": "boolean",
+          "description": "Whether canon compliance should be maintained"
+        }
+      },
+      "required": [
+        "validation_passed",
+        "quality_improved",
+        "canon_compliance_maintained"
+      ]
+    },
+    "retry_decision": {
+      "type": "object",
+      "description": "Retry decision and configuration",
+      "properties": {
+        "should_retry": {
+          "type": "boolean",
+          "description": "Whether retry should be attempted"
+        },
+        "max_retries": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Maximum number of retries allowed"
+        },
+        "current_attempt": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current retry attempt number"
+        },
+        "backoff_strategy": {
+          "type": "string",
+          "enum": ["exponential", "linear", "fixed"],
+          "description": "Backoff strategy for retries"
+        },
+        "retry_delay": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Delay before next retry in milliseconds"
+        },
+        "parameter_adjustments": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/parameter_adjustment"
+          },
+          "description": "Parameter adjustments for retry"
+        },
+        "success_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Estimated probability of success on retry"
+        }
+      },
+      "required": [
+        "should_retry",
+        "max_retries",
+        "current_attempt",
+        "backoff_strategy"
+      ]
+    },
+    "parameter_adjustment": {
+      "type": "object",
+      "description": "Parameter adjustment for retry",
+      "properties": {
+        "parameter_name": {
+          "type": "string",
+          "description": "Name of the parameter to adjust"
+        },
+        "current_value": {
+          "description": "Current value of the parameter"
+        },
+        "recommended_value": {
+          "description": "Recommended value for the parameter"
+        },
+        "adjustment_reason": {
+          "type": "string",
+          "description": "Reason for the adjustment"
+        }
+      },
+      "required": [
+        "parameter_name",
+        "current_value",
+        "recommended_value",
+        "adjustment_reason"
+      ]
+    },
+    "fallback_recommendation": {
+      "type": "object",
+      "description": "Fallback strategy recommendation",
+      "properties": {
+        "fallback_required": {
+          "type": "boolean",
+          "description": "Whether fallback is required"
+        },
+        "fallback_strategy": {
+          "type": "string",
+          "description": "Recommended fallback strategy"
+        },
+        "fallback_config": {
+          "type": "object",
+          "description": "Configuration for fallback strategy",
+          "additionalProperties": true
+        },
+        "expected_quality_impact": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Expected impact on quality"
+        },
+        "monitoring_required": {
+          "type": "boolean",
+          "description": "Whether monitoring is required during fallback"
+        },
+        "estimated_success_rate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Estimated success rate with fallback"
+        }
+      },
+      "required": [
+        "fallback_required",
+        "fallback_strategy",
+        "expected_quality_impact",
+        "monitoring_required"
+      ]
+    },
+    "validation_metadata": {
+      "type": "object",
+      "description": "Metadata for the validation process",
+      "properties": {
+        "validator_version": {
+          "type": "string",
+          "description": "Version of the validator that performed the validation"
+        },
+        "canon_version": {
+          "type": "string",
+          "description": "Version of canon used for validation"
+        },
+        "validation_stages_completed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of validation stages that were completed"
+        },
+        "total_rules_evaluated": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of rules evaluated"
+        },
+        "rules_passed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of rules that passed"
+        },
+        "rules_failed": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of rules that failed"
+        },
+        "rules_warned": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Number of rules that generated warnings"
+        },
+        "performance_metrics": {
+          "$ref": "#/definitions/performance_metrics"
+        },
+        "compliance_metrics": {
+          "$ref": "#/definitions/compliance_metrics"
+        },
+        "unresolved_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of unresolved references encountered"
+        }
+      },
+      "required": [
+        "validator_version",
+        "canon_version",
+        "validation_stages_completed",
+        "total_rules_evaluated",
+        "rules_passed",
+        "rules_failed",
+        "rules_warned"
+      ]
+    },
+    "performance_metrics": {
+      "type": "object",
+      "description": "Performance metrics for the validation",
+      "properties": {
+        "total_validation_time": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total validation time in milliseconds"
+        },
+        "stage_execution_times": {
+          "type": "object",
+          "description": "Execution times for each validation stage",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "rule_evaluation_times": {
+          "type": "object",
+          "description": "Evaluation times for each rule",
+          "additionalProperties": {
+            "type": "number",
+            "minimum": 0
+          }
+        },
+        "memory_usage": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Memory usage in bytes"
+        },
+        "cpu_usage": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "CPU usage percentage"
+        }
+      },
+      "required": ["total_validation_time"]
+    },
+    "compliance_metrics": {
+      "type": "object",
+      "description": "Compliance metrics for the validation",
+      "properties": {
+        "canon_compliance_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall canon compliance score"
+        },
+        "style_alignment_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Style alignment score"
+        },
+        "asset_quality_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Asset quality score"
+        },
+        "drift_risk_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Drift risk score (lower is better)"
+        }
+      },
+      "required": [
+        "canon_compliance_score",
+        "style_alignment_score",
+        "asset_quality_score",
+        "drift_risk_score"
+      ]
+    }
+  }
+}
