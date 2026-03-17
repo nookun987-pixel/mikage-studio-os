@@ -1,0 +1,395 @@
+{
+  "failure_modes_registry": {
+    "version": "1.0.0",
+    "last_updated": "2025-03-17",
+    "failure_modes": [
+      {
+        "id": "fm_wrong_silhouette",
+        "description": "Mask or armor silhouette deviates from canonical Mikage shapes",
+        "visual_symptoms": [
+          "Kitsune mask ears distorted or wrong proportions",
+          "Armor bulk exceeds functional requirements",
+          "Weapon silhouette becomes fantasy-prop-like",
+          "Body proportions exaggerated or unrealistic"
+        ],
+        "likely_causes": [
+          "Insufficient negative prompting for silhouette control",
+          "Reference images with wrong proportions",
+          "Over-weighting of style over structure",
+          "Missing silhouette-specific negative tokens"
+        ],
+        "severity": "critical",
+        "correction_rules": [
+          "Add silhouette-specific negative prompts",
+          "Include canonical reference images",
+          "Reduce style token weight",
+          "Add structural reinforcement prompts"
+        ],
+        "prompt_patch": "negative_prompt: 'distorted silhouette, exaggerated proportions, fantasy armor shape, wrong mask geometry, bulk design, non-functional armor'",
+        "validation_hint": "Check mask ear geometry and armor functionality"
+      },
+      {
+        "id": "fm_thigh_inflation",
+        "description": "Thighs become disproportionately large or exaggerated",
+        "visual_symptoms": [
+          "Thighs wider than torso",
+          "Unnatural thigh muscle definition",
+          "Leg proportions out of balance",
+          "Lower body emphasis over upper body"
+        ],
+        "likely_causes": [
+          "Anime influence in training data",
+          "Insufficient body proportion controls",
+          "Overemphasis on lower body styling",
+          "Missing realistic anatomy prompts"
+        ],
+        "severity": "high",
+        "correction_rules": [
+          "Add realistic anatomy negative prompts",
+          "Include full-body proportion references",
+          "Reduce lower body style weight",
+          "Add anatomical accuracy prompts"
+        ],
+        "prompt_patch": "negative_prompt: 'thigh inflation, exaggerated legs, disproportionate lower body, anime proportions, unrealistic anatomy, leg emphasis'",
+        "validation_hint": "Verify natural body proportions from shoulders to feet"
+      },
+      {
+        "id": "fm_exaggerated_breasts_hips",
+        "description": "Breasts or hips become unnaturally large or exaggerated",
+        "visual_symptoms": [
+          "Breasts disproportionate to frame",
+          "Hip width exceeds anatomical norms",
+          "Hourglass exaggeration",
+          "Unnatural body curvature"
+        ],
+        "likely_causes": [
+          "Glamour/idol influence in model",
+          "Oversexualization training data bias",
+          "Missing body proportion controls",
+          "Insufficient negative prompting"
+        ],
+        "severity": "critical",
+        "correction_rules": [
+          "Add anti-glamour negative prompts",
+          "Include realistic anatomy references",
+          "Reduce body style emphasis",
+          "Add proportion control tokens"
+        ],
+        "prompt_patch": "negative_prompt: 'exaggerated breasts, hip inflation, hourglass figure, unrealistic body proportions, glamour styling, anime body'",
+        "validation_hint": "Check natural anatomical proportions"
+      },
+      {
+        "id": "fm_overexposed_reactor_glow",
+        "description": "Energy systems glow too brightly without containment",
+        "visual_symptoms": [
+          "Energy glow without visible source",
+          "Overbright lighting washing out details",
+          "No containment vessel visible",
+          "Glow appears magical rather than technical"
+        ],
+        "likely_causes": [
+          "Missing technical containment prompts",
+          "Overemphasis on energy effects",
+          "Insufficient technical reference",
+          "Missing heat dissipation elements"
+        ],
+        "severity": "high",
+        "correction_rules": [
+          "Add technical containment requirements",
+          "Include energy system references",
+          "Reduce glow intensity in prompts",
+          "Add heat dissipation details"
+        ],
+        "prompt_patch": "negative_prompt: 'overexposed glow, magical energy, uncontained light, excessive brightness, magical aura, energy without source'",
+        "validation_hint": "Verify energy has visible containment and heat signature"
+      },
+      {
+        "id": "fm_too_much_red_energy",
+        "description": "Red energy leakage exceeds controlled limits",
+        "visual_symptoms": [
+          "Red energy flooding the scene",
+          "Uncontrolled red light bleeding",
+          "Red particles without source",
+          "Over-saturation of crimson elements"
+        ],
+        "likely_causes": [
+          "Over-weighting crimson color tokens",
+          "Missing energy control prompts",
+          "Insufficient atmospheric constraints",
+          "Color balance issues in generation"
+        ],
+        "severity": "medium",
+        "correction_rules": [
+          "Reduce crimson token weight",
+          "Add energy control negative prompts",
+          "Increase atmospheric particle density",
+          "Balance color palette in prompts"
+        ],
+        "prompt_patch": "negative_prompt: 'red energy flood, excessive crimson, uncontrolled red light, color bleeding, over-saturated red, red particles without source'",
+        "validation_hint": "Check red energy is contained and purposeful"
+      },
+      {
+        "id": "fm_neon_cyberpunk_lighting",
+        "description": "Lighting drifts to neon cyberpunk aesthetic",
+        "visual_symptoms": [
+          "Random neon signs or lighting",
+          "Cyberpunk color palette intrusion",
+          "Holographic or digital effects",
+          "Club or city neon atmosphere"
+        ],
+        "likely_causes": [
+          "Insufficient lighting discipline prompts",
+          "Cyberpunk influence in training data",
+          "Missing diegetic lighting requirements",
+          "Color palette drift"
+        ],
+        "severity": "critical",
+        "correction_rules": [
+          "Add diegetic lighting requirements",
+          "Include cyberpunk negative prompts",
+          "Reinforce color palette discipline",
+          "Add atmospheric particle requirements"
+        ],
+        "prompt_patch": "negative_prompt: 'neon lighting, cyberpunk aesthetic, holographic effects, club lighting, random neon signs, futuristic city glow'",
+        "validation_hint": "Verify all light has identifiable physical source"
+      },
+      {
+        "id": "fm_anime_face_drift",
+        "description": "Facial features drift toward anime exaggeration",
+        "visual_symptoms": [
+          "Oversized eyes",
+          "Exaggerated facial expressions",
+          "Unnatural jawline or face shape",
+          "Anime-style hair or features"
+        ],
+        "likely_causes": [
+          "Anime training data influence",
+          "Insufficient facial control prompts",
+          "Over-stylization in generation",
+          "Missing realistic face references"
+        ],
+        "severity": "high",
+        "correction_rules": [
+          "Add anime-specific negative prompts",
+          "Include realistic face references",
+          "Reduce facial stylization weight",
+          "Add subtlety requirements"
+        ],
+        "prompt_patch": "negative_prompt: 'anime face, exaggerated eyes, cartoon expression, stylized features, anime proportions, unrealistic face'",
+        "validation_hint": "Check for subtle, realistic facial features"
+      },
+      {
+        "id": "fm_fantasy_armor_drift",
+        "description": "Armor becomes decorative fantasy rather than functional",
+        "visual_symptoms": [
+          "Ornate decorative elements",
+          "Fantasy symbols or runes",
+          "Impractical armor design",
+          "Medieval European influence"
+        ],
+        "likely_causes": [
+          "Fantasy training data influence",
+          "Missing functional requirements",
+          "Overemphasis on decorative styling",
+          "Insufficient technical references"
+        ],
+        "severity": "high",
+        "correction_rules": [
+          "Add fantasy-specific negative prompts",
+          "Include functional armor references",
+          "Reinforce technical requirements",
+          "Add material discipline prompts"
+        ],
+        "prompt_patch": "negative_prompt: 'fantasy armor, decorative elements, medieval design, impractical armor, ornate styling, fantasy symbols'",
+        "validation_hint": "Verify armor is functional and technical"
+      },
+      {
+        "id": "fm_overdesigned_mechanical_clutter",
+        "description": "Excessive mechanical detail without purpose",
+        "visual_symptoms": [
+          "Random mechanical parts",
+          "Over-detailed surfaces",
+          "Cluttered technical elements",
+          "Non-functional decoration"
+        ],
+        "likely_causes": [
+          "Over-weighting detail prompts",
+          "Missing functional design requirements",
+          "Insufficient minimalism discipline",
+          "Detail for detail's sake"
+        ],
+        "severity": "medium",
+        "correction_rules": [
+          "Add clutter control negative prompts",
+          "Include minimalism references",
+          "Reduce detail token weight",
+          "Add functional design requirements"
+        ],
+        "prompt_patch": "negative_prompt: 'mechanical clutter, over-detailed, excessive decoration, random parts, non-functional elements, visual noise'",
+        "validation_hint": "Check that every detail serves a purpose"
+      },
+      {
+        "id": "fm_porcelain_material_drift",
+        "description": "Porcelain becomes marble, stone, or plastic",
+        "visual_symptoms": [
+          "Marble veining in porcelain",
+          "Stone texture on mask",
+          "Plastic shine or reflection",
+          "Loss of porcelain matte quality"
+        ],
+        "likely_causes": [
+          "Material confusion in training data",
+          "Insufficient material specificity",
+          "Overemphasis on surface effects",
+          "Missing porcelain references"
+        ],
+        "severity": "high",
+        "correction_rules": [
+          "Add material-specific negative prompts",
+          "Include porcelain texture references",
+          "Reinforce material discipline",
+          "Add surface quality requirements"
+        ],
+        "prompt_patch": "negative_prompt: 'marble texture, stone surface, plastic material, shiny finish, wrong material, non-porcelain surface'",
+        "validation_hint": "Verify authentic porcelain matte texture"
+      },
+      {
+        "id": "fm_mask_shape_corruption",
+        "description": "Kitsune mask loses canonical geometry",
+        "visual_symptoms": [
+          "Ear shape distortion",
+          "Wrong muzzle proportions",
+          "Mask symmetry broken",
+          "Loss of recognizable silhouette"
+        ],
+        "likely_causes": [
+          "Insufficient mask control prompts",
+          "Missing canonical mask references",
+          "Over-stylization of features",
+          "Symmetry control failure"
+        ],
+        "severity": "critical",
+        "correction_rules": [
+          "Add mask-specific negative prompts",
+          "Include canonical mask references",
+          "Reinforce symmetry requirements",
+          "Add silhouette control tokens"
+        ],
+        "prompt_patch": "negative_prompt: 'wrong mask shape, distorted ears, broken symmetry, non-canonical mask, corrupted geometry, wrong silhouette'",
+        "validation_hint": "Verify kitsune mask is immediately recognizable"
+      },
+      {
+        "id": "fm_fox_ear_corruption",
+        "description": "Fox ear geometry becomes incorrect",
+        "visual_symptoms": [
+          "Ear proportion wrong",
+          "Ear angle incorrect",
+          "Ear shape too rounded or pointed",
+          "Ear size disproportionate"
+        ],
+        "likely_causes": [
+          "Missing ear-specific controls",
+          "Insufficient anatomical reference",
+          "Over-stylization of features",
+          "Lack of precision prompts"
+        ],
+        "severity": "high",
+        "correction_rules": [
+          "Add ear geometry negative prompts",
+          "Include canonical ear references",
+          "Add precision requirements",
+          "Control feature proportions"
+        ],
+        "prompt_patch": "negative_prompt: 'wrong ear shape, bad ear proportions, incorrect ear angle, distorted fox ears, non-canonical ear geometry'",
+        "validation_hint": "Check ear geometry against canonical references"
+      },
+      {
+        "id": "fm_uncontrolled_fracture_patterns",
+        "description": "Kintsugi fractures become random or decorative",
+        "visual_symptoms": [
+          "Random crack patterns",
+          "Decorative fracture lines",
+          "Unrealistic damage patterns",
+          "Fractures without story logic"
+        ],
+        "likely_causes": [
+          "Missing damage logic prompts",
+          "Overemphasis on decorative cracks",
+          "Insufficient injury narrative",
+          "Random pattern generation"
+        ],
+        "severity": "medium",
+        "correction_rules": [
+          "Add fracture control negative prompts",
+          "Include logical damage references",
+          "Reinforce injury narrative",
+          "Add pattern discipline"
+        ],
+        "prompt_patch": "negative_prompt: 'random cracks, decorative fractures, unrealistic damage, pattern without logic, random kintsugi, non-story damage'",
+        "validation_hint": "Verify fractures follow combat or damage logic"
+      },
+      {
+        "id": "fm_glamour_idol_drift",
+        "description": "Style drifts toward glamour or idol aesthetic",
+        "visual_symptoms": [
+          "Soft pastel colors",
+          "Beauty pageant posing",
+          "Idol-style expressions",
+          "Fashion magazine styling"
+        ],
+        "likely_causes": [
+          "Idol training data influence",
+          "Missing anti-glamour controls",
+          "Overemphasis on beauty",
+          "Insufficient ceremonial tone"
+        ],
+        "severity": "critical",
+        "correction_rules": [
+          "Add glamour-specific negative prompts",
+          "Include ceremonial references",
+          "Reinforce serious tone requirements",
+          "Add idol aesthetic controls"
+        ],
+        "prompt_patch": "negative_prompt: 'glamour style, idol aesthetic, beauty pageant, fashion posing, soft pastel, cute expression, fanservice'",
+        "validation_hint": "Verify ceremonial, restrained presentation"
+      }
+    ]
+  },
+  "detection_system": {
+    "automated_checks": [
+      "silhouette_verification",
+      "color_palette_analysis",
+      "material_consistency_check",
+      "proportion_analysis",
+      "lighting_source_verification"
+    ],
+    "human_review_priority": [
+      "fm_wrong_silhouette",
+      "fm_exaggerated_breasts_hips",
+      "fm_mask_shape_corruption",
+      "fm_neon_cyberpunk_lighting",
+      "fm_glamour_idol_drift"
+    ],
+    "escalation_triggers": [
+      "critical severity failures",
+      "repeated failure modes",
+      "new failure pattern emergence",
+      "systematic drift detection"
+    ]
+  },
+  "resolution_tracking": {
+    "status_codes": {
+      "detected": "Failure mode identified in output",
+      "analyzed": "Root cause determined",
+      "patched": "Prompt correction applied",
+      "resolved": "Failure mode eliminated",
+      "monitored": "Watching for recurrence"
+    },
+    "success_metrics": {
+      "detection_rate": "Percentage of failures caught",
+      "resolution_time": "Average time to fix failure",
+      "recurrence_rate": "Percentage of failures that return",
+      "prevention_rate": "Percentage of new failures prevented"
+    }
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "archetype_registry": {
+    "mikage_archetypes": {
+      "shrine_maiden": {
+        "name": "Shrine Maiden",
+        "cultural_origin": "Shinto religious traditions",
+        "visual_characteristics": [
+          "traditional_red_hakama",
+          "white_kosode_robes",
+          "purified_aesthetic",
+          "serene_expression",
+          "ritual_purpose",
+          "spiritual_connection"
+        ],
+        "color_palette": ["crimson_red", "pure_white", "sakura_pink"],
+        "forbidden_modifications": [
+          "modern_clothing_styles",
+          "western_accessories",
+          "excessive_jewelry",
+          "provocative_posing",
+          "secular_decorations"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["shrine", "temple", "ceremonial_space"],
+          "forbidden_actions": ["casual_behavior", "modern_technology_use", "secular_activities"],
+          "required_demeanor": ["graceful", "reverent", "focused", "pure"]
+        }
+      },
+      "samurai_warrior": {
+        "name": "Samurai Warrior",
+        "cultural_origin": "Edo period military class",
+        "visual_characteristics": [
+          "traditional_armor_elements",
+          "katana_wakizashi_pair",
+          "disciplined_posture",
+          "battle_ready_appearance",
+          "honor_code_visualization"
+        ],
+        "color_palette": ["deep_charcoal", "steel_gray", "blood_red", "gold_accent"],
+        "forbidden_modifications": [
+          "modern_firearms",
+          "western_military_gear",
+          "anachronistic_technology",
+          "dishonorable_damage",
+          "excessive_decoration"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["battlefield", "dojo", "castle", "formal_duel"],
+          "forbidden_actions": ["cowardice", "dishonor", "unnecessary_violence"],
+          "required_demeanor": ["stoic", "disciplined", "honorable", "focused"]
+        }
+      },
+      "geisha_artist": {
+        "name": "Geisha Artist",
+        "cultural_origin": "Edo period entertainment and arts",
+        "visual_characteristics": [
+          "elaborate_kimono_patterns",
+          "traditional_makeup_styles",
+          "ornate_hair_accessories",
+          "graceful_movement",
+          "artistic_skill_display"
+        ],
+        "color_palette": ["ivory_base", "crimson_accents", "gold_highlights", "black_outlines"],
+        "forbidden_modifications": [
+          "western_fashion_elements",
+          "modern_cosmetic_styles",
+          "provocative_posing",
+          "inappropriate_entertainment",
+          "cultural_misrepresentation"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["ochaya", "performance_stage", "formal_gathering", "artistic_space"],
+          "forbidden_actions": ["vulgar_behavior", "unartistic_commercialization", "cultural_insensitivity"],
+          "required_demeanor": ["elegant", "artistic", "culturally_aware", "professional"]
+        }
+      },
+      "ronin_wanderer": {
+        "name": "Ronin Wanderer",
+        "cultural_origin": "Masterless samurai class",
+        "visual_characteristics": [
+          "weathered_travel_gear",
+          "minimal_belongings",
+          "battle_worn_equipment",
+          "somber_expression",
+          "self_reliant_demeanor"
+        ],
+        "color_palette": ["faded_brown", "gray_wash", "deep_blue", "earth_tones"],
+        "forbidden_modifications": [
+          "luxurious_display",
+          "clan_symbols",
+          "formal_ceremonial_gear",
+          "excessive_weaponry",
+          "comfort_over_utility"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["rural_path", "mountain_pass", "temple_grounds", "travel_inn"],
+          "forbidden_actions": ["dishonorable_employment", "criminal_activity", "luxury_lifestyle"],
+          "required_demeanor": ["humble", "vigilant", "self_disciplined", "purpose_driven"]
+        }
+      },
+      "ninja_stealth": {
+        "name": "Ninja Stealth",
+        "cultural_origin": "Covert warfare and espionage traditions",
+        "visual_characteristics": [
+          "dark_blending_clothing",
+          "minimal_equipment_profile",
+          "silent_movement_capability",
+          "concealed_weaponry",
+          "environment_adaptation"
+        ],
+        "color_palette": ["shadow_black", "midnight_blue", "forest_green", "gray_muted"],
+        "forbidden_modifications": [
+          "bright_reflective_surfaces",
+          "noisy_equipment",
+          "bulky_armor",
+          "distinctive_markings",
+          "modern_tactical_gear"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["night_mission", "forest_ambush", "castle_infiltration", "rural_surveillance"],
+          "forbidden_actions": ["unnecessary_combat", "attention_seeking", "loud_behavior"],
+          "required_demeanor": ["silent", "patient", "observant", "adaptable", "mission_focused"]
+        }
+      },
+      "merchant_trader": {
+        "name": "Merchant Trader",
+        "cultural_origin": "Edo period commerce class",
+        "visual_characteristics": [
+          "quality_merchandise_display",
+          "traditional_accounting_tools",
+          "travel_ready_equipment",
+          "prosperous_appearance",
+          "trustworthy_demeanor"
+        ],
+        "color_palette": ["rich_browns", "gold_accents", "deep_reds", "quality_blues"],
+        "forbidden_modifications": [
+          "poor_quality_goods",
+          "deceptive_practices",
+          "excessive_display",
+          "western_business_attire",
+          "unethical_competition"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["marketplace", "trade_route", "inn_common_room", "merchant_guild"],
+          "forbidden_actions": ["cheating_customers", "smuggling_goods", "price_gouging", "dishonest_measures"],
+          "required_demeanor": ["honest", "fair", "knowledgeable", "respectful", "prosperity_focused"]
+        }
+      },
+      "artisan_craftsman": {
+        "name": "Artisan Craftsman",
+        "cultural_origin": "Traditional guild and workshop traditions",
+        "visual_characteristics": [
+          "master_craft_quality",
+          "traditional_tool_usage",
+          "workshop_appropriate_attire",
+          "skill_demonstration",
+          "guild_membership_symbols"
+        ],
+        "color_palette": ["natural_woods", "earth_tones", "tool_steel_grays", "craft_browns"],
+        "forbidden_modifications": [
+          "mass_production_methods",
+          "modern_synthetic_materials",
+          "shortcut_techniques",
+          "quality_compromise",
+          "guild_rule_violations"
+        ],
+        "contextual_rules": {
+          "appropriate_settings": ["workshop", "guild_hall", "craft_market", "master_apprentice_space"],
+          "forbidden_actions": ["poor_craftsmanship", "guild_disloyalty", "knowledge_hoarding", "unfair_competition"],
+          "required_demeanor": ["masterful", "dedicated", "traditional", "quality_focused", "teaching_willing"]
+        }
+      }
+    },
+    "archetype_rules": {
+      "cultural_authenticity": {
+        "requirement": "All archetypes must reflect historically accurate Edo period Japanese culture",
+        "forbidden_elements": [
+          "anachronistic_technology",
+          "western_cultural_symbols",
+          "modern_fashion_trends",
+          "inappropriate_cultural_mixing"
+        ]
+      },
+      "visual_consistency": {
+        "requirement": "Each archetype must maintain consistent visual language within its cultural context",
+        "color_harmony": "Colors must follow traditional Japanese aesthetic principles",
+        "material_appropriateness": "Materials and textures must match historical period and social class"
+      },
+      "behavioral_integrity": {
+        "requirement": "Archetype behavior must align with traditional Japanese values and social roles",
+        "forbidden_actions": [
+          "cultural_insensitivity",
+          "historical_inaccuracy",
+          "modern_value_conflicts",
+          "inappropriate_social_behavior"
+        ]
+      }
+    },
+    "usage_guidelines": {
+      "selection_criteria": "Choose archetype based on narrative purpose, cultural context, and visual storytelling needs",
+      "combination_rules": "Multiple archetypes can be combined if historically and culturally plausible",
+      "adaptation_permissions": "Minor adaptations allowed for specific narrative contexts while maintaining cultural integrity",
+      "forbidden_subversions": "Do not subvert or parody traditional cultural elements"
+    }
+  }
+}
