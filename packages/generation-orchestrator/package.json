@@ -7,9 +7,20 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "dry-run": "node dist/local_runner.js dry-run sample_character_request.json",
+    "validation-run": "node dist/local_runner.js validation-run sample_character_request.json",
+    "compile-run": "node dist/local_runner.js compile-run sample_character_request.json",
+    "demo": "node dist/local_runner.js demo",
+    "create-samples": "node dist/local_runner.js create-samples",
+    "test-standalone": "node dist/standalone_test.js",
+    "test-simple": "node dist/simple_test.js",
+    "test-isolated": "node dist/isolated_test.js",
+    "build-isolated": "npx tsc src/isolated_runtime.ts --outDir dist --target ES2022 --module NodeNext --moduleResolution NodeNext && npx tsc src/isolated_test.ts --outDir dist --target ES2022 --module NodeNext --moduleResolution NodeNext"
   },
   "dependencies": {
+    "@mikage/content-engine": "workspace:*",
+    "@mikage/canon-validator": "workspace:*",
     "zod": "^3.24.2"
   }
 }

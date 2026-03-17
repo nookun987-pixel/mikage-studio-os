@@ -1,0 +1,276 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mikage.os/schemas/generation/pipeline-request.json",
+  "title": "Pipeline Generation Request Schema",
+  "description": "Schema for local pipeline generation requests",
+  "type": "object",
+  "properties": {
+    "request_id": {
+      "type": "string",
+      "description": "Unique identifier for this request",
+      "pattern": "^req_[a-zA-Z0-9_]+_[0-9]+$"
+    },
+    "mode": {
+      "type": "string",
+      "description": "Generation mode",
+      "enum": ["canon_core", "luminous_fan_appeal", "imperial_majesty", "cinematic_drama", "reference_sheet"]
+    },
+    "prompt_intent": {
+      "type": "object",
+      "description": "Prompt intent and content",
+      "properties": {
+        "primary_intent": {
+          "type": "string",
+          "description": "Primary generation intent",
+          "enum": ["character_portrait", "environment_scene", "reference_sheet", "cinematic_frame"]
+        },
+        "description": {
+          "type": "string",
+          "description": "Natural language description of desired output"
+        },
+        "key_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key elements that must be included"
+        },
+        "style_notes": {
+          "type": "string",
+          "description": "Style and aesthetic notes"
+        }
+      },
+      "required": ["primary_intent", "description"]
+    },
+    "references": {
+      "type": "object",
+      "description": "Reference assets and style guides",
+      "properties": {
+        "character_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character identifier from canon"
+              },
+              "reference_type": {
+                "type": "string",
+                "enum": ["appearance", "personality", "abilities", "relationships"]
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in reference accuracy"
+              }
+            },
+            "required": ["character_id", "reference_type"]
+          }
+        },
+        "environment_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "environment_id": {
+                "type": "string",
+                "description": "Environment identifier from canon"
+              },
+              "domain": {
+                "type": "string",
+                "enum": ["white_monolith", "neo_tokyo_underlevels", "imperial_palace", "void_station"]
+              },
+              "time_period": {
+                "type": "string",
+                "description": "Time period context"
+              }
+            },
+            "required": ["environment_id", "domain"]
+          }
+        },
+        "style_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "style_id": {
+                "type": "string",
+                "description": "Style identifier"
+              },
+              "style_category": {
+                "type": "string",
+                "enum": ["mikage_palette", "lighting", "composition", "material"]
+              },
+              "weight": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Weight of this style reference"
+              }
+            },
+            "required": ["style_id", "style_category"]
+          }
+        }
+      }
+    },
+    "asset_hints": {
+      "type": "object",
+      "description": "Asset generation hints and constraints",
+      "properties": {
+        "resolution": {
+          "type": "object",
+          "properties": {
+            "width": {
+              "type": "integer",
+              "minimum": 256,
+              "maximum": 4096
+            },
+            "height": {
+              "type": "integer",
+              "minimum": 256,
+              "maximum": 4096
+            },
+            "aspect_ratio": {
+              "type": "string",
+              "enum": ["1:1", "16:9", "9:16", "4:3", "3:4", "21:9"]
+            }
+          }
+        },
+        "quality_level": {
+          "type": "string",
+          "enum": ["draft", "standard", "high", "ultra"],
+          "description": "Target quality level"
+        },
+        "generation_parameters": {
+          "type": "object",
+          "properties": {
+            "sampler": {
+              "type": "string",
+              "enum": ["DPM++ 2M Karras", "Euler a", "DDIM", "LCM"]
+            },
+            "steps": {
+              "type": "integer",
+              "minimum": 10,
+              "maximum": 100
+            },
+            "cfg_scale": {
+              "type": "number",
+              "minimum": 1,
+              "maximum": 20
+            },
+            "seed": {
+              "type": "integer",
+              "description": "Seed for generation (omit for random)"
+            }
+          }
+        }
+      }
+    },
+    "validation_options": {
+      "type": "object",
+      "description": "Validation and compliance options",
+      "properties": {
+        "strict_mode": {
+          "type": "boolean",
+          "description": "Enable strict canon validation"
+        },
+        "validation_level": {
+          "type": "string",
+          "enum": ["minimal", "standard", "comprehensive"],
+          "description": "Level of validation to perform"
+        },
+        "forbidden_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Additional forbidden elements beyond canon defaults"
+        },
+        "required_elements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Elements that must be present"
+        }
+      }
+    },
+    "output_expectations": {
+      "type": "object",
+      "description": "Expected output specifications",
+      "properties": {
+        "output_format": {
+          "type": "string",
+          "enum": ["image/png", "image/jpeg", "video/mp4", "text/plain"],
+          "description": "Desired output format"
+        },
+        "metadata_requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Required metadata fields"
+        },
+        "delivery_options": {
+          "type": "object",
+          "properties": {
+            "include_references": {
+              "type": "boolean",
+              "description": "Include reference information in output"
+            },
+            "include_validation_report": {
+              "type": "boolean",
+              "description": "Include detailed validation report"
+            },
+            "include_generation_log": {
+              "type": "boolean",
+              "description": "Include generation process log"
+            }
+          }
+        }
+      }
+    },
+    "request_metadata": {
+      "type": "object",
+      "description": "Request metadata and tracking",
+      "properties": {
+        "requested_by": {
+          "type": "string",
+          "description": "User or system making the request"
+        },
+        "project_id": {
+          "type": "string",
+          "description": "Project identifier"
+        },
+        "session_id": {
+          "type": "string",
+          "description": "Session identifier"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["low", "normal", "high", "urgent"],
+          "description": "Request priority"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Request deadline"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Request tags for categorization"
+        }
+      }
+    }
+  },
+  "required": [
+    "request_id",
+    "mode",
+    "prompt_intent"
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "files": [
+    "packages/contracts/src/index.ts",
+    "packages/canon-validator/src/index.ts",
+    "packages/content-engine/src/index.ts",
+    "packages/generation-orchestrator/src/index.ts"
+  ],
+  "references": [
+    {
+      "path": "./packages/contracts"
+    },
+    {
+      "path": "./packages/provider-registry"
+    },
+    {
+      "path": "./packages/asset-lineage"
+    },
+    {
+      "path": "./packages/generation-evaluator"
+    },
+    {
+      "path": "./packages/asset-registry"
+    },
+    {
+      "path": "./packages/scene-graph"
+    },
+    {
+      "path": "./packages/canon-validator"
+    },
+    {
+      "path": "./packages/content-engine"
+    },
+    {
+      "path": "./packages/generation-orchestrator"
+    }
+  ],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022"],
+    "strict": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "types": ["node"]
+  }
+}

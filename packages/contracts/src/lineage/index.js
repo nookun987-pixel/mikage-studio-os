@@ -1,6 +1,5 @@
 import { z } from 'zod';
 import { boundaryMetadataSchema, boundaryStatusSchema, packetRefSchema } from '../core/index.js';
-import { ingestionResultSchema } from '../ingestion/index.js';
 export const lineageNodeShellSchema = z.object({
     nodeCode: z.string().min(1),
     nodeKind: z.enum([
@@ -51,7 +50,44 @@ export const persistenceSummaryShellSchema = z.object({
 });
 export const persistenceInputSchema = z.object({
     requestCode: z.string().min(1),
-    ingestion: ingestionResultSchema,
+    ingestion: z.object({
+        requestCode: z.string().min(1),
+        ingestionCode: z.string().min(1),
+        status: boundaryStatusSchema,
+        processingStatus: z.enum(['received', 'extracted', 'persisted']),
+        sources: z.array(z.object({
+            sourceCode: z.string().min(1),
+            sourceKind: z.enum(['production_package', 'benchmark_audit']),
+            packetRef: packetRefSchema,
+            metadata: boundaryMetadataSchema
+        })).length(2),
+        assets: z.array(z.object({
+            assetCode: z.string().min(1),
+            assetKind: z.enum([
+                'compiled_prompt',
+                'negative_prompt',
+                'validation_summary',
+                'benchmark_audit_summary',
+                'lineage_manifest'
+            ]),
+            contentType: z.enum(['text/plain', 'application/json']),
+            checksum: z.string().min(1),
+            metadata: boundaryMetadataSchema
+        })).min(1),
+        artifacts: z.array(z.object({
+            artifactCode: z.string().min(1),
+            assetCode: z.string().min(1),
+            artifactKind: z.enum([
+                'prompt_bundle',
+                'validation_report',
+                'benchmark_report',
+                'lineage_manifest'
+            ]),
+            packetRef: packetRefSchema,
+            metadata: boundaryMetadataSchema
+        })).min(1),
+        metadata: boundaryMetadataSchema
+    }),
     metadata: boundaryMetadataSchema
 });
 export const persistenceRequestSchema = z.object({

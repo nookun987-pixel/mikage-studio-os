@@ -7,13 +7,13 @@ export declare const studioPanelShellSchema: z.ZodObject<{
     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
 }, "strip", z.ZodTypeAny, {
     metadata: Record<string, unknown>;
-    title: string;
     panelCode: string;
     panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+    title: string;
 }, {
-    title: string;
     panelCode: string;
     panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+    title: string;
     metadata?: Record<string, unknown> | undefined;
 }>;
 export declare const studioViewShellSchema: z.ZodObject<{
@@ -114,11 +114,11 @@ export declare const studioFilterShellSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     metadata: Record<string, unknown>;
     filterCode: string;
-    scope: "validation" | "lineage" | "package" | "queue";
+    scope: "validation" | "package" | "lineage" | "queue";
     terms: string[];
 }, {
     filterCode: string;
-    scope: "validation" | "lineage" | "package" | "queue";
+    scope: "validation" | "package" | "lineage" | "queue";
     metadata?: Record<string, unknown> | undefined;
     terms?: string[] | undefined;
 }>;
@@ -129,11 +129,11 @@ export declare const studioSelectionShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>;
@@ -143,7 +143,7 @@ export declare const studioSelectionShellSchema: z.ZodObject<{
     metadata: Record<string, unknown>;
     selectionCode: string;
     selectedPacketRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     };
@@ -151,7 +151,7 @@ export declare const studioSelectionShellSchema: z.ZodObject<{
 }, {
     selectionCode: string;
     selectedPacketRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     };
@@ -164,11 +164,11 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>;
@@ -187,17 +187,17 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
             metadata: Record<string, unknown>;
+            jobCode: string;
+            projectSlug: string;
             presetCode: string;
             variantCode: string;
-            projectSlug: string;
-            jobCode: string;
             providerCode: string;
             outputCount: number;
         }, {
+            jobCode: string;
+            projectSlug: string;
             presetCode: string;
             variantCode: string;
-            projectSlug: string;
-            jobCode: string;
             providerCode: string;
             outputCount: number;
             metadata?: Record<string, unknown> | undefined;
@@ -208,11 +208,11 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -252,11 +252,11 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>, "many">>;
@@ -267,7 +267,7 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     presetCode: string;
                     variantCode: string;
                     packetRefs: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }[];
@@ -277,7 +277,7 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     variantCode: string;
                     metadata?: Record<string, unknown> | undefined;
                     packetRefs?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }[] | undefined;
@@ -286,107 +286,107 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     valid: z.ZodBoolean;
                     issues: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
                 }, "strip", z.ZodTypeAny, {
-                    issues: string[];
                     valid: boolean;
+                    issues: string[];
                 }, {
                     valid: boolean;
                     issues?: string[] | undefined;
                 }>;
             }, "strip", z.ZodTypeAny, {
                 validation: {
-                    issues: string[];
                     valid: boolean;
+                    issues: string[];
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses: string[];
-                    rendered: string;
-                };
                 lineage: {
                     metadata: Record<string, unknown>;
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     packetRefs: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }[];
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses: string[];
+                    rendered: string;
+                };
             }, {
                 validation: {
                     valid: boolean;
                     issues?: string[] | undefined;
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses?: string[] | undefined;
-                    rendered?: string | undefined;
-                };
                 lineage: {
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     metadata?: Record<string, unknown> | undefined;
                     packetRefs?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }[] | undefined;
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses?: string[] | undefined;
+                    rendered?: string | undefined;
+                };
             }>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             compiledPrompt: {
                 validation: {
-                    issues: string[];
                     valid: boolean;
+                    issues: string[];
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses: string[];
-                    rendered: string;
-                };
                 lineage: {
                     metadata: Record<string, unknown>;
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     packetRefs: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }[];
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses: string[];
+                    rendered: string;
+                };
             };
         }, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -396,28 +396,28 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     issues?: string[] | undefined;
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses?: string[] | undefined;
-                    rendered?: string | undefined;
-                };
                 lineage: {
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     metadata?: Record<string, unknown> | undefined;
                     packetRefs?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }[] | undefined;
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses?: string[] | undefined;
+                    rendered?: string | undefined;
+                };
             };
         }>;
         validationReference: z.ZodObject<{
@@ -426,11 +426,11 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -507,16 +507,16 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }>;
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -537,15 +537,15 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     severity: "warning" | "blocker";
                 }[];
             }, {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -569,16 +569,16 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
             }>;
         }, "strip", z.ZodTypeAny, {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -600,21 +600,21 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }[];
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
         }, {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -637,7 +637,7 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }[] | undefined;
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -659,21 +659,21 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 content: string;
             }>, "many">;
         }, "strip", z.ZodTypeAny, {
-            negativePrompt: string;
             sections: {
                 title: string;
                 key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                 content: string;
             }[];
             compiledPrompt: string;
+            negativePrompt: string;
         }, {
-            negativePrompt: string;
             sections: {
                 title: string;
                 key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                 content: string;
             }[];
             compiledPrompt: string;
+            negativePrompt: string;
         }>;
         benchmarkAudit: z.ZodObject<{
             auditCode: z.ZodString;
@@ -708,16 +708,16 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 metadata?: Record<string, unknown> | undefined;
             }>, "many">>;
         }, "strip", z.ZodTypeAny, {
-            accepted: boolean;
             decision: "accepted" | "rejected";
+            accepted: boolean;
             rejectionReasons: {
                 code: string;
                 message: string;
                 metadata: Record<string, unknown>;
             }[];
         }, {
-            accepted: boolean;
             decision: "accepted" | "rejected";
+            accepted: boolean;
             rejectionReasons?: {
                 code: string;
                 message: string;
@@ -731,95 +731,96 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
             benchmarkAuditStatus: z.ZodEnum<["pending", "not_requested"]>;
             outputCount: z.ZodNumber;
         }, "strip", z.ZodTypeAny, {
-            outputCount: number;
             packageCode: string;
+            outputCount: number;
             sectionCount: number;
             validationDecision: "accepted" | "rejected";
             benchmarkAuditStatus: "pending" | "not_requested";
         }, {
-            outputCount: number;
             packageCode: string;
+            outputCount: number;
             sectionCount: number;
             validationDecision: "accepted" | "rejected";
             benchmarkAuditStatus: "pending" | "not_requested";
         }>;
     }, "strip", z.ZodTypeAny, {
-        status: "accepted" | "validated" | "rejected";
-        summary: {
-            outputCount: number;
-            packageCode: string;
-            sectionCount: number;
-            validationDecision: "accepted" | "rejected";
-            benchmarkAuditStatus: "pending" | "not_requested";
-        };
+        status: "accepted" | "rejected" | "validated";
         decision: {
-            accepted: boolean;
             decision: "accepted" | "rejected";
+            accepted: boolean;
             rejectionReasons: {
                 code: string;
                 message: string;
                 metadata: Record<string, unknown>;
             }[];
         };
+        summary: {
+            packageCode: string;
+            outputCount: number;
+            sectionCount: number;
+            validationDecision: "accepted" | "rejected";
+            benchmarkAuditStatus: "pending" | "not_requested";
+        };
         packageCode: string;
         packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+        packageMetadata: Record<string, unknown>;
         job: {
             metadata: Record<string, unknown>;
+            jobCode: string;
+            projectSlug: string;
             presetCode: string;
             variantCode: string;
-            projectSlug: string;
-            jobCode: string;
             providerCode: string;
             outputCount: number;
         };
         compileReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             compiledPrompt: {
                 validation: {
-                    issues: string[];
                     valid: boolean;
+                    issues: string[];
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses: string[];
-                    rendered: string;
-                };
                 lineage: {
                     metadata: Record<string, unknown>;
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     packetRefs: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }[];
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses: string[];
+                    rendered: string;
+                };
             };
         };
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -841,10 +842,19 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }[];
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
+        };
+        promptBundle: {
+            sections: {
+                title: string;
+                key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                content: string;
+            }[];
+            compiledPrompt: string;
+            negativePrompt: string;
         };
         benchmarkAudit: {
             status: "pending" | "not_requested";
@@ -852,48 +862,38 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
             auditCode: string;
             notes: string[];
         };
-        packageMetadata: Record<string, unknown>;
-        promptBundle: {
-            negativePrompt: string;
-            sections: {
-                title: string;
-                key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                content: string;
-            }[];
-            compiledPrompt: string;
-        };
     }, {
-        status: "accepted" | "validated" | "rejected";
-        summary: {
-            outputCount: number;
-            packageCode: string;
-            sectionCount: number;
-            validationDecision: "accepted" | "rejected";
-            benchmarkAuditStatus: "pending" | "not_requested";
-        };
+        status: "accepted" | "rejected" | "validated";
         decision: {
-            accepted: boolean;
             decision: "accepted" | "rejected";
+            accepted: boolean;
             rejectionReasons?: {
                 code: string;
                 message: string;
                 metadata?: Record<string, unknown> | undefined;
             }[] | undefined;
         };
+        summary: {
+            packageCode: string;
+            outputCount: number;
+            sectionCount: number;
+            validationDecision: "accepted" | "rejected";
+            benchmarkAuditStatus: "pending" | "not_requested";
+        };
         packageCode: string;
         packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
         job: {
+            jobCode: string;
+            projectSlug: string;
             presetCode: string;
             variantCode: string;
-            projectSlug: string;
-            jobCode: string;
             providerCode: string;
             outputCount: number;
             metadata?: Record<string, unknown> | undefined;
         };
         compileReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -903,41 +903,41 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     issues?: string[] | undefined;
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses?: string[] | undefined;
-                    rendered?: string | undefined;
-                };
                 lineage: {
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     metadata?: Record<string, unknown> | undefined;
                     packetRefs?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }[] | undefined;
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses?: string[] | undefined;
+                    rendered?: string | undefined;
+                };
             };
         };
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -960,111 +960,112 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }[] | undefined;
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
         };
-        benchmarkAudit: {
-            auditCode: string;
-            status?: "pending" | "not_requested" | undefined;
-            metadata?: Record<string, unknown> | undefined;
-            notes?: string[] | undefined;
-        };
         promptBundle: {
-            negativePrompt: string;
             sections: {
                 title: string;
                 key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                 content: string;
             }[];
             compiledPrompt: string;
+            negativePrompt: string;
+        };
+        benchmarkAudit: {
+            auditCode: string;
+            status?: "pending" | "not_requested" | undefined;
+            metadata?: Record<string, unknown> | undefined;
+            notes?: string[] | undefined;
         };
         packageMetadata?: Record<string, unknown> | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     packetRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     };
     productionPackage: {
-        status: "accepted" | "validated" | "rejected";
-        summary: {
-            outputCount: number;
-            packageCode: string;
-            sectionCount: number;
-            validationDecision: "accepted" | "rejected";
-            benchmarkAuditStatus: "pending" | "not_requested";
-        };
+        status: "accepted" | "rejected" | "validated";
         decision: {
-            accepted: boolean;
             decision: "accepted" | "rejected";
+            accepted: boolean;
             rejectionReasons: {
                 code: string;
                 message: string;
                 metadata: Record<string, unknown>;
             }[];
         };
+        summary: {
+            packageCode: string;
+            outputCount: number;
+            sectionCount: number;
+            validationDecision: "accepted" | "rejected";
+            benchmarkAuditStatus: "pending" | "not_requested";
+        };
         packageCode: string;
         packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+        packageMetadata: Record<string, unknown>;
         job: {
             metadata: Record<string, unknown>;
+            jobCode: string;
+            projectSlug: string;
             presetCode: string;
             variantCode: string;
-            projectSlug: string;
-            jobCode: string;
             providerCode: string;
             outputCount: number;
         };
         compileReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             compiledPrompt: {
                 validation: {
-                    issues: string[];
                     valid: boolean;
+                    issues: string[];
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses: string[];
-                    rendered: string;
-                };
                 lineage: {
                     metadata: Record<string, unknown>;
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     packetRefs: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }[];
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses: string[];
+                    rendered: string;
+                };
             };
         };
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -1086,10 +1087,19 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }[];
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
+        };
+        promptBundle: {
+            sections: {
+                title: string;
+                key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                content: string;
+            }[];
+            compiledPrompt: string;
+            negativePrompt: string;
         };
         benchmarkAudit: {
             status: "pending" | "not_requested";
@@ -1097,55 +1107,45 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
             auditCode: string;
             notes: string[];
         };
-        packageMetadata: Record<string, unknown>;
-        promptBundle: {
-            negativePrompt: string;
-            sections: {
-                title: string;
-                key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                content: string;
-            }[];
-            compiledPrompt: string;
-        };
     };
 }, {
     packetRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     };
     productionPackage: {
-        status: "accepted" | "validated" | "rejected";
-        summary: {
-            outputCount: number;
-            packageCode: string;
-            sectionCount: number;
-            validationDecision: "accepted" | "rejected";
-            benchmarkAuditStatus: "pending" | "not_requested";
-        };
+        status: "accepted" | "rejected" | "validated";
         decision: {
-            accepted: boolean;
             decision: "accepted" | "rejected";
+            accepted: boolean;
             rejectionReasons?: {
                 code: string;
                 message: string;
                 metadata?: Record<string, unknown> | undefined;
             }[] | undefined;
         };
+        summary: {
+            packageCode: string;
+            outputCount: number;
+            sectionCount: number;
+            validationDecision: "accepted" | "rejected";
+            benchmarkAuditStatus: "pending" | "not_requested";
+        };
         packageCode: string;
         packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
         job: {
+            jobCode: string;
+            projectSlug: string;
             presetCode: string;
             variantCode: string;
-            projectSlug: string;
-            jobCode: string;
             providerCode: string;
             outputCount: number;
             metadata?: Record<string, unknown> | undefined;
         };
         compileReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -1155,41 +1155,41 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                     issues?: string[] | undefined;
                 };
                 requestCode: string;
-                compileMode: "scene_preview" | "script_support" | "production_prompt";
-                negativePrompt: {
-                    clauses?: string[] | undefined;
-                    rendered?: string | undefined;
-                };
                 lineage: {
                     requestCode: string;
                     presetCode: string;
                     variantCode: string;
                     metadata?: Record<string, unknown> | undefined;
                     packetRefs?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }[] | undefined;
                 };
+                compileMode: "scene_preview" | "script_support" | "production_prompt";
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: {
+                    clauses?: string[] | undefined;
+                    rendered?: string | undefined;
+                };
             };
         };
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -1212,25 +1212,25 @@ export declare const studioArtifactReferenceShellSchema: z.ZodObject<{
                 }[] | undefined;
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
         };
-        benchmarkAudit: {
-            auditCode: string;
-            status?: "pending" | "not_requested" | undefined;
-            metadata?: Record<string, unknown> | undefined;
-            notes?: string[] | undefined;
-        };
         promptBundle: {
-            negativePrompt: string;
             sections: {
                 title: string;
                 key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                 content: string;
             }[];
             compiledPrompt: string;
+            negativePrompt: string;
+        };
+        benchmarkAudit: {
+            auditCode: string;
+            status?: "pending" | "not_requested" | undefined;
+            metadata?: Record<string, unknown> | undefined;
+            notes?: string[] | undefined;
         };
         packageMetadata?: Record<string, unknown> | undefined;
     };
@@ -1241,11 +1241,11 @@ export declare const studioValidationReferenceShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>;
@@ -1322,16 +1322,16 @@ export declare const studioValidationReferenceShellSchema: z.ZodObject<{
         }>;
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        status: "accepted" | "validated" | "rejected";
+        status: "accepted" | "rejected" | "validated";
+        metadata: Record<string, unknown>;
+        decision: "accepted" | "rejected";
+        requestCode: string;
         summary: {
             totalPasses: number;
             passedChecks: number;
             warningCount: number;
             violationCount: number;
         };
-        metadata: Record<string, unknown>;
-        requestCode: string;
-        decision: "accepted" | "rejected";
         passResults: {
             metadata: Record<string, unknown>;
             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -1352,15 +1352,15 @@ export declare const studioValidationReferenceShellSchema: z.ZodObject<{
             severity: "warning" | "blocker";
         }[];
     }, {
-        status: "accepted" | "validated" | "rejected";
+        status: "accepted" | "rejected" | "validated";
+        decision: "accepted" | "rejected";
+        requestCode: string;
         summary: {
             totalPasses: number;
             passedChecks: number;
             warningCount: number;
             violationCount: number;
         };
-        requestCode: string;
-        decision: "accepted" | "rejected";
         passResults: {
             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
             passed: boolean;
@@ -1384,16 +1384,16 @@ export declare const studioValidationReferenceShellSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     validation: {
-        status: "accepted" | "validated" | "rejected";
+        status: "accepted" | "rejected" | "validated";
+        metadata: Record<string, unknown>;
+        decision: "accepted" | "rejected";
+        requestCode: string;
         summary: {
             totalPasses: number;
             passedChecks: number;
             warningCount: number;
             violationCount: number;
         };
-        metadata: Record<string, unknown>;
-        requestCode: string;
-        decision: "accepted" | "rejected";
         passResults: {
             metadata: Record<string, unknown>;
             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -1415,21 +1415,21 @@ export declare const studioValidationReferenceShellSchema: z.ZodObject<{
         }[];
     };
     packetRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     };
 }, {
     validation: {
-        status: "accepted" | "validated" | "rejected";
+        status: "accepted" | "rejected" | "validated";
+        decision: "accepted" | "rejected";
+        requestCode: string;
         summary: {
             totalPasses: number;
             passedChecks: number;
             warningCount: number;
             violationCount: number;
         };
-        requestCode: string;
-        decision: "accepted" | "rejected";
         passResults: {
             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
             passed: boolean;
@@ -1452,7 +1452,7 @@ export declare const studioValidationReferenceShellSchema: z.ZodObject<{
         }[] | undefined;
     };
     packetRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     };
@@ -1463,11 +1463,11 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>;
@@ -1481,11 +1481,11 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -1496,11 +1496,11 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -1513,31 +1513,31 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>>;
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
+                    nodeCode: string;
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                     label: string;
                     metadata: Record<string, unknown>;
-                    nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     } | undefined;
                 }, {
-                    label: string;
                     nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                    label: string;
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     } | undefined;
@@ -1565,19 +1565,19 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 lineageCode: string;
                 nodes: {
+                    nodeCode: string;
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                     label: string;
                     metadata: Record<string, unknown>;
-                    nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     } | undefined;
@@ -1591,17 +1591,17 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 }[];
             }, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageCode: string;
                 nodes: {
-                    label: string;
                     nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                    label: string;
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     } | undefined;
@@ -1618,25 +1618,25 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
             }>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             lineageRecord: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 lineageCode: string;
                 nodes: {
+                    nodeCode: string;
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                     label: string;
                     metadata: Record<string, unknown>;
-                    nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     } | undefined;
@@ -1651,23 +1651,23 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
             };
         }, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             lineageRecord: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageCode: string;
                 nodes: {
-                    label: string;
                     nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                    label: string;
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     } | undefined;
@@ -1689,8 +1689,8 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
             reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
         }, "strip", z.ZodTypeAny, {
             decision: "accepted" | "rejected";
-            reasons: string[];
             persisted: boolean;
+            reasons: string[];
         }, {
             decision: "accepted" | "rejected";
             persisted: boolean;
@@ -1703,51 +1703,50 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
             artifactCount: z.ZodNumber;
             decision: z.ZodEnum<["accepted", "rejected"]>;
         }, "strip", z.ZodTypeAny, {
-            requestCode: string;
             decision: "accepted" | "rejected";
+            requestCode: string;
             nodeCount: number;
             edgeCount: number;
             artifactCount: number;
         }, {
-            requestCode: string;
             decision: "accepted" | "rejected";
+            requestCode: string;
             nodeCount: number;
             edgeCount: number;
             artifactCount: number;
         }>;
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        status: "accepted" | "validated" | "rejected";
-        summary: {
-            requestCode: string;
-            decision: "accepted" | "rejected";
-            nodeCount: number;
-            edgeCount: number;
-            artifactCount: number;
-        };
+        status: "accepted" | "rejected" | "validated";
         metadata: Record<string, unknown>;
+        decision: {
+            decision: "accepted" | "rejected";
+            persisted: boolean;
+            reasons: string[];
+        };
         requestCode: string;
+        persistenceCode: string;
         lineage: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             lineageRecord: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 lineageCode: string;
                 nodes: {
+                    nodeCode: string;
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                     label: string;
                     metadata: Record<string, unknown>;
-                    nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     } | undefined;
@@ -1761,41 +1760,41 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 }[];
             };
         };
-        decision: {
-            decision: "accepted" | "rejected";
-            reasons: string[];
-            persisted: boolean;
-        };
-        persistenceCode: string;
-    }, {
-        status: "accepted" | "validated" | "rejected";
         summary: {
-            requestCode: string;
             decision: "accepted" | "rejected";
+            requestCode: string;
             nodeCount: number;
             edgeCount: number;
             artifactCount: number;
         };
+    }, {
+        status: "accepted" | "rejected" | "validated";
+        decision: {
+            decision: "accepted" | "rejected";
+            persisted: boolean;
+            reasons?: string[] | undefined;
+        };
         requestCode: string;
+        persistenceCode: string;
         lineage: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             lineageRecord: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageCode: string;
                 nodes: {
-                    label: string;
                     nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                    label: string;
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     } | undefined;
@@ -1811,52 +1810,52 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 metadata?: Record<string, unknown> | undefined;
             };
         };
-        decision: {
+        summary: {
             decision: "accepted" | "rejected";
-            persisted: boolean;
-            reasons?: string[] | undefined;
+            requestCode: string;
+            nodeCount: number;
+            edgeCount: number;
+            artifactCount: number;
         };
-        persistenceCode: string;
         metadata?: Record<string, unknown> | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
     packetRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     };
     persistence: {
-        status: "accepted" | "validated" | "rejected";
-        summary: {
-            requestCode: string;
-            decision: "accepted" | "rejected";
-            nodeCount: number;
-            edgeCount: number;
-            artifactCount: number;
-        };
+        status: "accepted" | "rejected" | "validated";
         metadata: Record<string, unknown>;
+        decision: {
+            decision: "accepted" | "rejected";
+            persisted: boolean;
+            reasons: string[];
+        };
         requestCode: string;
+        persistenceCode: string;
         lineage: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             lineageRecord: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 lineageCode: string;
                 nodes: {
+                    nodeCode: string;
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                     label: string;
                     metadata: Record<string, unknown>;
-                    nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     } | undefined;
@@ -1870,48 +1869,48 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 }[];
             };
         };
-        decision: {
-            decision: "accepted" | "rejected";
-            reasons: string[];
-            persisted: boolean;
-        };
-        persistenceCode: string;
-    };
-}, {
-    packetRef: {
-        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-        packetCode: string;
-        packetVersion?: number | undefined;
-    };
-    persistence: {
-        status: "accepted" | "validated" | "rejected";
         summary: {
-            requestCode: string;
             decision: "accepted" | "rejected";
+            requestCode: string;
             nodeCount: number;
             edgeCount: number;
             artifactCount: number;
         };
+    };
+}, {
+    packetRef: {
+        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetCode: string;
+        packetVersion?: number | undefined;
+    };
+    persistence: {
+        status: "accepted" | "rejected" | "validated";
+        decision: {
+            decision: "accepted" | "rejected";
+            persisted: boolean;
+            reasons?: string[] | undefined;
+        };
         requestCode: string;
+        persistenceCode: string;
         lineage: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             lineageRecord: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageCode: string;
                 nodes: {
-                    label: string;
                     nodeCode: string;
-                    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                    label: string;
                     packetRef?: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     } | undefined;
@@ -1927,12 +1926,13 @@ export declare const studioLineageReferenceShellSchema: z.ZodObject<{
                 metadata?: Record<string, unknown> | undefined;
             };
         };
-        decision: {
+        summary: {
             decision: "accepted" | "rejected";
-            persisted: boolean;
-            reasons?: string[] | undefined;
+            requestCode: string;
+            nodeCount: number;
+            edgeCount: number;
+            artifactCount: number;
         };
-        persistenceCode: string;
         metadata?: Record<string, unknown> | undefined;
     };
 }>;
@@ -1946,13 +1946,13 @@ export declare const studioActionInputSchema: z.ZodObject<{
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
         metadata: Record<string, unknown>;
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
     }, {
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
         metadata?: Record<string, unknown> | undefined;
     }>;
     view: z.ZodObject<{
@@ -1979,11 +1979,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         metadata: Record<string, unknown>;
         filterCode: string;
-        scope: "validation" | "lineage" | "package" | "queue";
+        scope: "validation" | "package" | "lineage" | "queue";
         terms: string[];
     }, {
         filterCode: string;
-        scope: "validation" | "lineage" | "package" | "queue";
+        scope: "validation" | "package" | "lineage" | "queue";
         metadata?: Record<string, unknown> | undefined;
         terms?: string[] | undefined;
     }>;
@@ -1994,11 +1994,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -2008,7 +2008,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
         metadata: Record<string, unknown>;
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
@@ -2016,7 +2016,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
     }, {
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
@@ -2029,11 +2029,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -2052,17 +2052,17 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             }, {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
@@ -2073,11 +2073,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -2117,11 +2117,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
                             packetCode: z.ZodString;
                             packetVersion: z.ZodDefault<z.ZodNumber>;
                         }, "strip", z.ZodTypeAny, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }>, "many">>;
@@ -2132,7 +2132,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
@@ -2142,7 +2142,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
@@ -2151,107 +2151,107 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         valid: z.ZodBoolean;
                         issues: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
                     }, "strip", z.ZodTypeAny, {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     }, {
                         valid: boolean;
                         issues?: string[] | undefined;
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 }, {
                     validation: {
                         valid: boolean;
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 }>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             }, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -2261,28 +2261,28 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             }>;
             validationReference: z.ZodObject<{
@@ -2291,11 +2291,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -2372,16 +2372,16 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }>;
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -2402,15 +2402,15 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         severity: "warning" | "blocker";
                     }[];
                 }, {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -2434,16 +2434,16 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 }>;
             }, "strip", z.ZodTypeAny, {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -2465,21 +2465,21 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
             }, {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -2502,7 +2502,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -2524,21 +2524,21 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     content: string;
                 }>, "many">;
             }, "strip", z.ZodTypeAny, {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
             }, {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
             }>;
             benchmarkAudit: z.ZodObject<{
                 auditCode: z.ZodString;
@@ -2573,16 +2573,16 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                 }>, "many">>;
             }, "strip", z.ZodTypeAny, {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             }, {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
@@ -2596,95 +2596,96 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 benchmarkAuditStatus: z.ZodEnum<["pending", "not_requested"]>;
                 outputCount: z.ZodNumber;
             }, "strip", z.ZodTypeAny, {
-                outputCount: number;
                 packageCode: string;
+                outputCount: number;
                 sectionCount: number;
                 validationDecision: "accepted" | "rejected";
                 benchmarkAuditStatus: "pending" | "not_requested";
             }, {
-                outputCount: number;
                 packageCode: string;
+                outputCount: number;
                 sectionCount: number;
                 validationDecision: "accepted" | "rejected";
                 benchmarkAuditStatus: "pending" | "not_requested";
             }>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+            packageMetadata: Record<string, unknown>;
             job: {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -2706,10 +2707,19 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 status: "pending" | "not_requested";
@@ -2717,48 +2727,38 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 auditCode: string;
                 notes: string[];
             };
-            packageMetadata: Record<string, unknown>;
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
-            };
         }, {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
                     metadata?: Record<string, unknown> | undefined;
                 }[] | undefined;
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
             job: {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -2768,41 +2768,41 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -2825,111 +2825,112 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
             };
-            benchmarkAudit: {
-                auditCode: string;
-                status?: "pending" | "not_requested" | undefined;
-                metadata?: Record<string, unknown> | undefined;
-                notes?: string[] | undefined;
-            };
             promptBundle: {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
+            };
+            benchmarkAudit: {
+                auditCode: string;
+                status?: "pending" | "not_requested" | undefined;
+                metadata?: Record<string, unknown> | undefined;
+                notes?: string[] | undefined;
             };
             packageMetadata?: Record<string, unknown> | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+            packageMetadata: Record<string, unknown>;
             job: {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -2951,10 +2952,19 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 status: "pending" | "not_requested";
@@ -2962,55 +2972,45 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 auditCode: string;
                 notes: string[];
             };
-            packageMetadata: Record<string, unknown>;
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
-            };
         };
     }, {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
                     metadata?: Record<string, unknown> | undefined;
                 }[] | undefined;
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
             job: {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -3020,41 +3020,41 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -3077,25 +3077,25 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
             };
-            benchmarkAudit: {
-                auditCode: string;
-                status?: "pending" | "not_requested" | undefined;
-                metadata?: Record<string, unknown> | undefined;
-                notes?: string[] | undefined;
-            };
             promptBundle: {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
+            };
+            benchmarkAudit: {
+                auditCode: string;
+                status?: "pending" | "not_requested" | undefined;
+                metadata?: Record<string, unknown> | undefined;
+                notes?: string[] | undefined;
             };
             packageMetadata?: Record<string, unknown> | undefined;
         };
@@ -3106,11 +3106,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -3187,16 +3187,16 @@ export declare const studioActionInputSchema: z.ZodObject<{
             }>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 metadata: Record<string, unknown>;
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -3217,15 +3217,15 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 severity: "warning" | "blocker";
             }[];
         }, {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                 passed: boolean;
@@ -3249,16 +3249,16 @@ export declare const studioActionInputSchema: z.ZodObject<{
         }>;
     }, "strip", z.ZodTypeAny, {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 metadata: Record<string, unknown>;
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -3280,21 +3280,21 @@ export declare const studioActionInputSchema: z.ZodObject<{
             }[];
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
     }, {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                 passed: boolean;
@@ -3317,7 +3317,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
             }[] | undefined;
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
@@ -3328,11 +3328,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -3346,11 +3346,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -3361,11 +3361,11 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>;
@@ -3378,31 +3378,31 @@ export declare const studioActionInputSchema: z.ZodObject<{
                             packetCode: z.ZodString;
                             packetVersion: z.ZodDefault<z.ZodNumber>;
                         }, "strip", z.ZodTypeAny, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }>>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
                     }, {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -3430,19 +3430,19 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -3456,17 +3456,17 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 }, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -3483,25 +3483,25 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 }>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -3516,23 +3516,23 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 };
             }, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -3554,8 +3554,8 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             }, "strip", z.ZodTypeAny, {
                 decision: "accepted" | "rejected";
-                reasons: string[];
                 persisted: boolean;
+                reasons: string[];
             }, {
                 decision: "accepted" | "rejected";
                 persisted: boolean;
@@ -3568,51 +3568,50 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 artifactCount: z.ZodNumber;
                 decision: z.ZodEnum<["accepted", "rejected"]>;
             }, "strip", z.ZodTypeAny, {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             }, {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             }>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
+            status: "accepted" | "rejected" | "validated";
             metadata: Record<string, unknown>;
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons: string[];
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -3626,41 +3625,41 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 };
             };
-            decision: {
-                decision: "accepted" | "rejected";
-                reasons: string[];
-                persisted: boolean;
-            };
-            persistenceCode: string;
-        }, {
-            status: "accepted" | "validated" | "rejected";
             summary: {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             };
+        }, {
+            status: "accepted" | "rejected" | "validated";
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons?: string[] | undefined;
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -3676,52 +3675,52 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                 };
             };
-            decision: {
+            summary: {
                 decision: "accepted" | "rejected";
-                persisted: boolean;
-                reasons?: string[] | undefined;
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
             };
-            persistenceCode: string;
             metadata?: Record<string, unknown> | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         persistence: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
+            status: "accepted" | "rejected" | "validated";
             metadata: Record<string, unknown>;
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons: string[];
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -3735,48 +3734,48 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 };
             };
-            decision: {
-                decision: "accepted" | "rejected";
-                reasons: string[];
-                persisted: boolean;
-            };
-            persistenceCode: string;
-        };
-    }, {
-        packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-            packetCode: string;
-            packetVersion?: number | undefined;
-        };
-        persistence: {
-            status: "accepted" | "validated" | "rejected";
             summary: {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             };
+        };
+    }, {
+        packetRef: {
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetCode: string;
+            packetVersion?: number | undefined;
+        };
+        persistence: {
+            status: "accepted" | "rejected" | "validated";
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons?: string[] | undefined;
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -3792,12 +3791,13 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                 };
             };
-            decision: {
+            summary: {
                 decision: "accepted" | "rejected";
-                persisted: boolean;
-                reasons?: string[] | undefined;
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
             };
-            persistenceCode: string;
             metadata?: Record<string, unknown> | undefined;
         };
     }>;
@@ -3806,23 +3806,23 @@ export declare const studioActionInputSchema: z.ZodObject<{
     filter: {
         metadata: Record<string, unknown>;
         filterCode: string;
-        scope: "validation" | "lineage" | "package" | "queue";
+        scope: "validation" | "package" | "lineage" | "queue";
         terms: string[];
     };
     metadata: Record<string, unknown>;
     requestCode: string;
     validationReference: {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 metadata: Record<string, unknown>;
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -3844,76 +3844,17 @@ export declare const studioActionInputSchema: z.ZodObject<{
             }[];
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
-        };
-    };
-    lineageReference: {
-        packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-            packetCode: string;
-            packetVersion: number;
-        };
-        persistence: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            lineage: {
-                packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                    packetCode: string;
-                    packetVersion: number;
-                };
-                lineageRecord: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion: number;
-                    };
-                    metadata: Record<string, unknown>;
-                    lineageCode: string;
-                    nodes: {
-                        label: string;
-                        metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                        packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion: number;
-                        } | undefined;
-                    }[];
-                    edges: {
-                        metadata: Record<string, unknown>;
-                        edgeCode: string;
-                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                        fromNodeCode: string;
-                        toNodeCode: string;
-                    }[];
-                };
-            };
-            decision: {
-                decision: "accepted" | "rejected";
-                reasons: string[];
-                persisted: boolean;
-            };
-            persistenceCode: string;
         };
     };
     actionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";
     panel: {
         metadata: Record<string, unknown>;
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
     };
     view: {
         metadata: Record<string, unknown>;
@@ -3925,7 +3866,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
         metadata: Record<string, unknown>;
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
@@ -3933,87 +3874,88 @@ export declare const studioActionInputSchema: z.ZodObject<{
     };
     artifactReference: {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+            packageMetadata: Record<string, unknown>;
             job: {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -4035,10 +3977,19 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 status: "pending" | "not_requested";
@@ -4046,37 +3997,86 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 auditCode: string;
                 notes: string[];
             };
-            packageMetadata: Record<string, unknown>;
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
+        };
+    };
+    lineageReference: {
+        packetRef: {
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetCode: string;
+            packetVersion: number;
+        };
+        persistence: {
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons: string[];
+            };
+            requestCode: string;
+            persistenceCode: string;
+            lineage: {
+                packetRef: {
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetCode: string;
+                    packetVersion: number;
+                };
+                lineageRecord: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion: number;
+                    };
+                    metadata: Record<string, unknown>;
+                    lineageCode: string;
+                    nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
+                        metadata: Record<string, unknown>;
+                        packetRef?: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion: number;
+                        } | undefined;
+                    }[];
+                    edges: {
+                        metadata: Record<string, unknown>;
+                        edgeCode: string;
+                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                        fromNodeCode: string;
+                        toNodeCode: string;
+                    }[];
+                };
+            };
+            summary: {
+                decision: "accepted" | "rejected";
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
             };
         };
     };
 }, {
     filter: {
         filterCode: string;
-        scope: "validation" | "lineage" | "package" | "queue";
+        scope: "validation" | "package" | "lineage" | "queue";
         metadata?: Record<string, unknown> | undefined;
         terms?: string[] | undefined;
     };
     requestCode: string;
     validationReference: {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                 passed: boolean;
@@ -4099,75 +4099,16 @@ export declare const studioActionInputSchema: z.ZodObject<{
             }[] | undefined;
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
-        };
-    };
-    lineageReference: {
-        packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-            packetCode: string;
-            packetVersion?: number | undefined;
-        };
-        persistence: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
-            requestCode: string;
-            lineage: {
-                packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                    packetCode: string;
-                    packetVersion?: number | undefined;
-                };
-                lineageRecord: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion?: number | undefined;
-                    };
-                    lineageCode: string;
-                    nodes: {
-                        label: string;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                        packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion?: number | undefined;
-                        } | undefined;
-                        metadata?: Record<string, unknown> | undefined;
-                    }[];
-                    edges: {
-                        edgeCode: string;
-                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                        fromNodeCode: string;
-                        toNodeCode: string;
-                        metadata?: Record<string, unknown> | undefined;
-                    }[];
-                    metadata?: Record<string, unknown> | undefined;
-                };
-            };
-            decision: {
-                decision: "accepted" | "rejected";
-                persisted: boolean;
-                reasons?: string[] | undefined;
-            };
-            persistenceCode: string;
-            metadata?: Record<string, unknown> | undefined;
         };
     };
     actionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";
     panel: {
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
         metadata?: Record<string, unknown> | undefined;
     };
     view: {
@@ -4179,7 +4120,7 @@ export declare const studioActionInputSchema: z.ZodObject<{
     selection: {
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
@@ -4188,42 +4129,42 @@ export declare const studioActionInputSchema: z.ZodObject<{
     };
     artifactReference: {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
                     metadata?: Record<string, unknown> | undefined;
                 }[] | undefined;
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
             job: {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -4233,41 +4174,41 @@ export declare const studioActionInputSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -4290,10 +4231,19 @@ export declare const studioActionInputSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 auditCode: string;
@@ -4301,16 +4251,66 @@ export declare const studioActionInputSchema: z.ZodObject<{
                 metadata?: Record<string, unknown> | undefined;
                 notes?: string[] | undefined;
             };
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
-            };
             packageMetadata?: Record<string, unknown> | undefined;
+        };
+    };
+    lineageReference: {
+        packetRef: {
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetCode: string;
+            packetVersion?: number | undefined;
+        };
+        persistence: {
+            status: "accepted" | "rejected" | "validated";
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons?: string[] | undefined;
+            };
+            requestCode: string;
+            persistenceCode: string;
+            lineage: {
+                packetRef: {
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetCode: string;
+                    packetVersion?: number | undefined;
+                };
+                lineageRecord: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion?: number | undefined;
+                    };
+                    lineageCode: string;
+                    nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
+                        packetRef?: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion?: number | undefined;
+                        } | undefined;
+                        metadata?: Record<string, unknown> | undefined;
+                    }[];
+                    edges: {
+                        edgeCode: string;
+                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                        fromNodeCode: string;
+                        toNodeCode: string;
+                        metadata?: Record<string, unknown> | undefined;
+                    }[];
+                    metadata?: Record<string, unknown> | undefined;
+                };
+            };
+            summary: {
+                decision: "accepted" | "rejected";
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
+            };
+            metadata?: Record<string, unknown> | undefined;
         };
     };
     metadata?: Record<string, unknown> | undefined;
@@ -4327,13 +4327,13 @@ export declare const studioActionRequestSchema: z.ZodObject<{
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
             metadata: Record<string, unknown>;
-            title: string;
             panelCode: string;
             panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+            title: string;
         }, {
-            title: string;
             panelCode: string;
             panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+            title: string;
             metadata?: Record<string, unknown> | undefined;
         }>;
         view: z.ZodObject<{
@@ -4360,11 +4360,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         }, "strip", z.ZodTypeAny, {
             metadata: Record<string, unknown>;
             filterCode: string;
-            scope: "validation" | "lineage" | "package" | "queue";
+            scope: "validation" | "package" | "lineage" | "queue";
             terms: string[];
         }, {
             filterCode: string;
-            scope: "validation" | "lineage" | "package" | "queue";
+            scope: "validation" | "package" | "lineage" | "queue";
             metadata?: Record<string, unknown> | undefined;
             terms?: string[] | undefined;
         }>;
@@ -4375,11 +4375,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -4389,7 +4389,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
             metadata: Record<string, unknown>;
             selectionCode: string;
             selectedPacketRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
@@ -4397,7 +4397,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         }, {
             selectionCode: string;
             selectedPacketRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -4410,11 +4410,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -4433,17 +4433,17 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
                     metadata: Record<string, unknown>;
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                 }, {
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                     metadata?: Record<string, unknown> | undefined;
@@ -4454,11 +4454,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>;
@@ -4498,11 +4498,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                                 packetCode: z.ZodString;
                                 packetVersion: z.ZodDefault<z.ZodNumber>;
                             }, "strip", z.ZodTypeAny, {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }, {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }>, "many">>;
@@ -4513,7 +4513,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
@@ -4523,7 +4523,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
@@ -4532,107 +4532,107 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             valid: z.ZodBoolean;
                             issues: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
                         }, "strip", z.ZodTypeAny, {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         }, {
                             valid: boolean;
                             issues?: string[] | undefined;
                         }>;
                     }, "strip", z.ZodTypeAny, {
                         validation: {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses: string[];
-                            rendered: string;
-                        };
                         lineage: {
                             metadata: Record<string, unknown>;
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses: string[];
+                            rendered: string;
+                        };
                     }, {
                         validation: {
                             valid: boolean;
                             issues?: string[] | undefined;
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses?: string[] | undefined;
-                            rendered?: string | undefined;
-                        };
                         lineage: {
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses?: string[] | undefined;
+                            rendered?: string | undefined;
+                        };
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     compiledPrompt: {
                         validation: {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses: string[];
-                            rendered: string;
-                        };
                         lineage: {
                             metadata: Record<string, unknown>;
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses: string[];
+                            rendered: string;
+                        };
                     };
                 }, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
@@ -4642,28 +4642,28 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             issues?: string[] | undefined;
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses?: string[] | undefined;
-                            rendered?: string | undefined;
-                        };
                         lineage: {
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses?: string[] | undefined;
+                            rendered?: string | undefined;
+                        };
                     };
                 }>;
                 validationReference: z.ZodObject<{
@@ -4672,11 +4672,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>;
@@ -4753,16 +4753,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        metadata: Record<string, unknown>;
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        metadata: Record<string, unknown>;
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             metadata: Record<string, unknown>;
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -4783,15 +4783,15 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             severity: "warning" | "blocker";
                         }[];
                     }, {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             passed: boolean;
@@ -4815,16 +4815,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        metadata: Record<string, unknown>;
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        metadata: Record<string, unknown>;
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             metadata: Record<string, unknown>;
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -4846,21 +4846,21 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                 }, {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             passed: boolean;
@@ -4883,7 +4883,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[] | undefined;
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
@@ -4905,21 +4905,21 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         content: string;
                     }>, "many">;
                 }, "strip", z.ZodTypeAny, {
-                    negativePrompt: string;
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: string;
                 }, {
-                    negativePrompt: string;
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: string;
                 }>;
                 benchmarkAudit: z.ZodObject<{
                     auditCode: z.ZodString;
@@ -4954,16 +4954,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         metadata?: Record<string, unknown> | undefined;
                     }>, "many">>;
                 }, "strip", z.ZodTypeAny, {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
                     }[];
                 }, {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons?: {
                         code: string;
                         message: string;
@@ -4977,95 +4977,96 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     benchmarkAuditStatus: z.ZodEnum<["pending", "not_requested"]>;
                     outputCount: z.ZodNumber;
                 }, "strip", z.ZodTypeAny, {
-                    outputCount: number;
                     packageCode: string;
+                    outputCount: number;
                     sectionCount: number;
                     validationDecision: "accepted" | "rejected";
                     benchmarkAuditStatus: "pending" | "not_requested";
                 }, {
-                    outputCount: number;
                     packageCode: string;
+                    outputCount: number;
                     sectionCount: number;
                     validationDecision: "accepted" | "rejected";
                     benchmarkAuditStatus: "pending" | "not_requested";
                 }>;
             }, "strip", z.ZodTypeAny, {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
                     }[];
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+                packageMetadata: Record<string, unknown>;
                 job: {
                     metadata: Record<string, unknown>;
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     compiledPrompt: {
                         validation: {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses: string[];
-                            rendered: string;
-                        };
                         lineage: {
                             metadata: Record<string, unknown>;
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses: string[];
+                            rendered: string;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        metadata: Record<string, unknown>;
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        metadata: Record<string, unknown>;
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             metadata: Record<string, unknown>;
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -5087,10 +5088,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
+                };
+                promptBundle: {
+                    sections: {
+                        title: string;
+                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                        content: string;
+                    }[];
+                    compiledPrompt: string;
+                    negativePrompt: string;
                 };
                 benchmarkAudit: {
                     status: "pending" | "not_requested";
@@ -5098,48 +5108,38 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     auditCode: string;
                     notes: string[];
                 };
-                packageMetadata: Record<string, unknown>;
-                promptBundle: {
-                    negativePrompt: string;
-                    sections: {
-                        title: string;
-                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                        content: string;
-                    }[];
-                    compiledPrompt: string;
-                };
             }, {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons?: {
                         code: string;
                         message: string;
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
                 job: {
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                     metadata?: Record<string, unknown> | undefined;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
@@ -5149,41 +5149,41 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             issues?: string[] | undefined;
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses?: string[] | undefined;
-                            rendered?: string | undefined;
-                        };
                         lineage: {
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses?: string[] | undefined;
+                            rendered?: string | undefined;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             passed: boolean;
@@ -5206,111 +5206,112 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[] | undefined;
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                 };
-                benchmarkAudit: {
-                    auditCode: string;
-                    status?: "pending" | "not_requested" | undefined;
-                    metadata?: Record<string, unknown> | undefined;
-                    notes?: string[] | undefined;
-                };
                 promptBundle: {
-                    negativePrompt: string;
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: string;
+                };
+                benchmarkAudit: {
+                    auditCode: string;
+                    status?: "pending" | "not_requested" | undefined;
+                    metadata?: Record<string, unknown> | undefined;
+                    notes?: string[] | undefined;
                 };
                 packageMetadata?: Record<string, unknown> | undefined;
             }>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             productionPackage: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
                     }[];
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+                packageMetadata: Record<string, unknown>;
                 job: {
                     metadata: Record<string, unknown>;
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     compiledPrompt: {
                         validation: {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses: string[];
-                            rendered: string;
-                        };
                         lineage: {
                             metadata: Record<string, unknown>;
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses: string[];
+                            rendered: string;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        metadata: Record<string, unknown>;
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        metadata: Record<string, unknown>;
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             metadata: Record<string, unknown>;
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -5332,10 +5333,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
+                };
+                promptBundle: {
+                    sections: {
+                        title: string;
+                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                        content: string;
+                    }[];
+                    compiledPrompt: string;
+                    negativePrompt: string;
                 };
                 benchmarkAudit: {
                     status: "pending" | "not_requested";
@@ -5343,55 +5353,45 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     auditCode: string;
                     notes: string[];
                 };
-                packageMetadata: Record<string, unknown>;
-                promptBundle: {
-                    negativePrompt: string;
-                    sections: {
-                        title: string;
-                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                        content: string;
-                    }[];
-                    compiledPrompt: string;
-                };
             };
         }, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             productionPackage: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons?: {
                         code: string;
                         message: string;
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
                 job: {
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                     metadata?: Record<string, unknown> | undefined;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
@@ -5401,41 +5401,41 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             issues?: string[] | undefined;
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses?: string[] | undefined;
-                            rendered?: string | undefined;
-                        };
                         lineage: {
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses?: string[] | undefined;
+                            rendered?: string | undefined;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             passed: boolean;
@@ -5458,25 +5458,25 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[] | undefined;
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                 };
-                benchmarkAudit: {
-                    auditCode: string;
-                    status?: "pending" | "not_requested" | undefined;
-                    metadata?: Record<string, unknown> | undefined;
-                    notes?: string[] | undefined;
-                };
                 promptBundle: {
-                    negativePrompt: string;
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: string;
+                };
+                benchmarkAudit: {
+                    auditCode: string;
+                    status?: "pending" | "not_requested" | undefined;
+                    metadata?: Record<string, unknown> | undefined;
+                    notes?: string[] | undefined;
                 };
                 packageMetadata?: Record<string, unknown> | undefined;
             };
@@ -5487,11 +5487,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -5568,16 +5568,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }>;
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -5598,15 +5598,15 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     severity: "warning" | "blocker";
                 }[];
             }, {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -5630,16 +5630,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
             }>;
         }, "strip", z.ZodTypeAny, {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -5661,21 +5661,21 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }[];
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
         }, {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -5698,7 +5698,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }[] | undefined;
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -5709,11 +5709,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -5727,11 +5727,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>;
@@ -5742,11 +5742,11 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             packetCode: z.ZodString;
                             packetVersion: z.ZodDefault<z.ZodNumber>;
                         }, "strip", z.ZodTypeAny, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }>;
@@ -5759,31 +5759,31 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                                 packetCode: z.ZodString;
                                 packetVersion: z.ZodDefault<z.ZodNumber>;
                             }, "strip", z.ZodTypeAny, {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }, {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }>>;
                             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                         }, "strip", z.ZodTypeAny, {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                             label: string;
                             metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             } | undefined;
                         }, {
-                            label: string;
                             nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             } | undefined;
@@ -5811,19 +5811,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         };
                         metadata: Record<string, unknown>;
                         lineageCode: string;
                         nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                             label: string;
                             metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             } | undefined;
@@ -5837,17 +5837,17 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     }, {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         };
                         lineageCode: string;
                         nodes: {
-                            label: string;
                             nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             } | undefined;
@@ -5864,25 +5864,25 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     lineageRecord: {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         };
                         metadata: Record<string, unknown>;
                         lineageCode: string;
                         nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                             label: string;
                             metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             } | undefined;
@@ -5897,23 +5897,23 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     };
                 }, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageRecord: {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         };
                         lineageCode: string;
                         nodes: {
-                            label: string;
                             nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             } | undefined;
@@ -5935,8 +5935,8 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
                 }, "strip", z.ZodTypeAny, {
                     decision: "accepted" | "rejected";
-                    reasons: string[];
                     persisted: boolean;
+                    reasons: string[];
                 }, {
                     decision: "accepted" | "rejected";
                     persisted: boolean;
@@ -5949,51 +5949,50 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     artifactCount: z.ZodNumber;
                     decision: z.ZodEnum<["accepted", "rejected"]>;
                 }, "strip", z.ZodTypeAny, {
-                    requestCode: string;
                     decision: "accepted" | "rejected";
+                    requestCode: string;
                     nodeCount: number;
                     edgeCount: number;
                     artifactCount: number;
                 }, {
-                    requestCode: string;
                     decision: "accepted" | "rejected";
+                    requestCode: string;
                     nodeCount: number;
                     edgeCount: number;
                     artifactCount: number;
                 }>;
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
-                    nodeCount: number;
-                    edgeCount: number;
-                    artifactCount: number;
-                };
+                status: "accepted" | "rejected" | "validated";
                 metadata: Record<string, unknown>;
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons: string[];
+                };
                 requestCode: string;
+                persistenceCode: string;
                 lineage: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     lineageRecord: {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         };
                         metadata: Record<string, unknown>;
                         lineageCode: string;
                         nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                             label: string;
                             metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             } | undefined;
@@ -6007,41 +6006,41 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                 };
-                decision: {
-                    decision: "accepted" | "rejected";
-                    reasons: string[];
-                    persisted: boolean;
-                };
-                persistenceCode: string;
-            }, {
-                status: "accepted" | "validated" | "rejected";
                 summary: {
-                    requestCode: string;
                     decision: "accepted" | "rejected";
+                    requestCode: string;
                     nodeCount: number;
                     edgeCount: number;
                     artifactCount: number;
                 };
+            }, {
+                status: "accepted" | "rejected" | "validated";
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons?: string[] | undefined;
+                };
                 requestCode: string;
+                persistenceCode: string;
                 lineage: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageRecord: {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         };
                         lineageCode: string;
                         nodes: {
-                            label: string;
                             nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             } | undefined;
@@ -6057,52 +6056,52 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         metadata?: Record<string, unknown> | undefined;
                     };
                 };
-                decision: {
+                summary: {
                     decision: "accepted" | "rejected";
-                    persisted: boolean;
-                    reasons?: string[] | undefined;
+                    requestCode: string;
+                    nodeCount: number;
+                    edgeCount: number;
+                    artifactCount: number;
                 };
-                persistenceCode: string;
                 metadata?: Record<string, unknown> | undefined;
             }>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             persistence: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
-                    nodeCount: number;
-                    edgeCount: number;
-                    artifactCount: number;
-                };
+                status: "accepted" | "rejected" | "validated";
                 metadata: Record<string, unknown>;
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons: string[];
+                };
                 requestCode: string;
+                persistenceCode: string;
                 lineage: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     lineageRecord: {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         };
                         metadata: Record<string, unknown>;
                         lineageCode: string;
                         nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                             label: string;
                             metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             } | undefined;
@@ -6116,48 +6115,48 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                 };
-                decision: {
-                    decision: "accepted" | "rejected";
-                    reasons: string[];
-                    persisted: boolean;
-                };
-                persistenceCode: string;
-            };
-        }, {
-            packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                packetCode: string;
-                packetVersion?: number | undefined;
-            };
-            persistence: {
-                status: "accepted" | "validated" | "rejected";
                 summary: {
-                    requestCode: string;
                     decision: "accepted" | "rejected";
+                    requestCode: string;
                     nodeCount: number;
                     edgeCount: number;
                     artifactCount: number;
                 };
+            };
+        }, {
+            packetRef: {
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetCode: string;
+                packetVersion?: number | undefined;
+            };
+            persistence: {
+                status: "accepted" | "rejected" | "validated";
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons?: string[] | undefined;
+                };
                 requestCode: string;
+                persistenceCode: string;
                 lineage: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageRecord: {
                         packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         };
                         lineageCode: string;
                         nodes: {
-                            label: string;
                             nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
                             packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             } | undefined;
@@ -6173,12 +6172,13 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         metadata?: Record<string, unknown> | undefined;
                     };
                 };
-                decision: {
+                summary: {
                     decision: "accepted" | "rejected";
-                    persisted: boolean;
-                    reasons?: string[] | undefined;
+                    requestCode: string;
+                    nodeCount: number;
+                    edgeCount: number;
+                    artifactCount: number;
                 };
-                persistenceCode: string;
                 metadata?: Record<string, unknown> | undefined;
             };
         }>;
@@ -6187,23 +6187,23 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         filter: {
             metadata: Record<string, unknown>;
             filterCode: string;
-            scope: "validation" | "lineage" | "package" | "queue";
+            scope: "validation" | "package" | "lineage" | "queue";
             terms: string[];
         };
         metadata: Record<string, unknown>;
         requestCode: string;
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -6225,76 +6225,17 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }[];
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
-            };
-        };
-        lineageReference: {
-            packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                packetCode: string;
-                packetVersion: number;
-            };
-            persistence: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
-                    nodeCount: number;
-                    edgeCount: number;
-                    artifactCount: number;
-                };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                lineage: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion: number;
-                    };
-                    lineageRecord: {
-                        packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion: number;
-                        };
-                        metadata: Record<string, unknown>;
-                        lineageCode: string;
-                        nodes: {
-                            label: string;
-                            metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                            packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                                packetCode: string;
-                                packetVersion: number;
-                            } | undefined;
-                        }[];
-                        edges: {
-                            metadata: Record<string, unknown>;
-                            edgeCode: string;
-                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                            fromNodeCode: string;
-                            toNodeCode: string;
-                        }[];
-                    };
-                };
-                decision: {
-                    decision: "accepted" | "rejected";
-                    reasons: string[];
-                    persisted: boolean;
-                };
-                persistenceCode: string;
             };
         };
         actionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";
         panel: {
             metadata: Record<string, unknown>;
-            title: string;
             panelCode: string;
             panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+            title: string;
         };
         view: {
             metadata: Record<string, unknown>;
@@ -6306,7 +6247,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
             metadata: Record<string, unknown>;
             selectionCode: string;
             selectedPacketRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
@@ -6314,87 +6255,88 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         };
         artifactReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             productionPackage: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
                     }[];
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+                packageMetadata: Record<string, unknown>;
                 job: {
                     metadata: Record<string, unknown>;
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     compiledPrompt: {
                         validation: {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses: string[];
-                            rendered: string;
-                        };
                         lineage: {
                             metadata: Record<string, unknown>;
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses: string[];
+                            rendered: string;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        metadata: Record<string, unknown>;
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        metadata: Record<string, unknown>;
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             metadata: Record<string, unknown>;
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -6416,10 +6358,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
+                };
+                promptBundle: {
+                    sections: {
+                        title: string;
+                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                        content: string;
+                    }[];
+                    compiledPrompt: string;
+                    negativePrompt: string;
                 };
                 benchmarkAudit: {
                     status: "pending" | "not_requested";
@@ -6427,37 +6378,86 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     auditCode: string;
                     notes: string[];
                 };
-                packageMetadata: Record<string, unknown>;
-                promptBundle: {
-                    negativePrompt: string;
-                    sections: {
-                        title: string;
-                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                        content: string;
-                    }[];
-                    compiledPrompt: string;
+            };
+        };
+        lineageReference: {
+            packetRef: {
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetCode: string;
+                packetVersion: number;
+            };
+            persistence: {
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons: string[];
+                };
+                requestCode: string;
+                persistenceCode: string;
+                lineage: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion: number;
+                    };
+                    lineageRecord: {
+                        packetRef: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion: number;
+                        };
+                        metadata: Record<string, unknown>;
+                        lineageCode: string;
+                        nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
+                            metadata: Record<string, unknown>;
+                            packetRef?: {
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                                packetCode: string;
+                                packetVersion: number;
+                            } | undefined;
+                        }[];
+                        edges: {
+                            metadata: Record<string, unknown>;
+                            edgeCode: string;
+                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                            fromNodeCode: string;
+                            toNodeCode: string;
+                        }[];
+                    };
+                };
+                summary: {
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
+                    nodeCount: number;
+                    edgeCount: number;
+                    artifactCount: number;
                 };
             };
         };
     }, {
         filter: {
             filterCode: string;
-            scope: "validation" | "lineage" | "package" | "queue";
+            scope: "validation" | "package" | "lineage" | "queue";
             metadata?: Record<string, unknown> | undefined;
             terms?: string[] | undefined;
         };
         requestCode: string;
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -6480,75 +6480,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }[] | undefined;
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
-            };
-        };
-        lineageReference: {
-            packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                packetCode: string;
-                packetVersion?: number | undefined;
-            };
-            persistence: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
-                    nodeCount: number;
-                    edgeCount: number;
-                    artifactCount: number;
-                };
-                requestCode: string;
-                lineage: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion?: number | undefined;
-                    };
-                    lineageRecord: {
-                        packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion?: number | undefined;
-                        };
-                        lineageCode: string;
-                        nodes: {
-                            label: string;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                            packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                                packetCode: string;
-                                packetVersion?: number | undefined;
-                            } | undefined;
-                            metadata?: Record<string, unknown> | undefined;
-                        }[];
-                        edges: {
-                            edgeCode: string;
-                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                            fromNodeCode: string;
-                            toNodeCode: string;
-                            metadata?: Record<string, unknown> | undefined;
-                        }[];
-                        metadata?: Record<string, unknown> | undefined;
-                    };
-                };
-                decision: {
-                    decision: "accepted" | "rejected";
-                    persisted: boolean;
-                    reasons?: string[] | undefined;
-                };
-                persistenceCode: string;
-                metadata?: Record<string, unknown> | undefined;
             };
         };
         actionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";
         panel: {
-            title: string;
             panelCode: string;
             panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+            title: string;
             metadata?: Record<string, unknown> | undefined;
         };
         view: {
@@ -6560,7 +6501,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         selection: {
             selectionCode: string;
             selectedPacketRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -6569,42 +6510,42 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         };
         artifactReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             productionPackage: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons?: {
                         code: string;
                         message: string;
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
                 job: {
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                     metadata?: Record<string, unknown> | undefined;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
@@ -6614,41 +6555,41 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             issues?: string[] | undefined;
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses?: string[] | undefined;
-                            rendered?: string | undefined;
-                        };
                         lineage: {
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses?: string[] | undefined;
+                            rendered?: string | undefined;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             passed: boolean;
@@ -6671,10 +6612,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[] | undefined;
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
+                };
+                promptBundle: {
+                    sections: {
+                        title: string;
+                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                        content: string;
+                    }[];
+                    compiledPrompt: string;
+                    negativePrompt: string;
                 };
                 benchmarkAudit: {
                     auditCode: string;
@@ -6682,16 +6632,66 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                     notes?: string[] | undefined;
                 };
-                promptBundle: {
-                    negativePrompt: string;
-                    sections: {
-                        title: string;
-                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                        content: string;
-                    }[];
-                    compiledPrompt: string;
-                };
                 packageMetadata?: Record<string, unknown> | undefined;
+            };
+        };
+        lineageReference: {
+            packetRef: {
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetCode: string;
+                packetVersion?: number | undefined;
+            };
+            persistence: {
+                status: "accepted" | "rejected" | "validated";
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons?: string[] | undefined;
+                };
+                requestCode: string;
+                persistenceCode: string;
+                lineage: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion?: number | undefined;
+                    };
+                    lineageRecord: {
+                        packetRef: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion?: number | undefined;
+                        };
+                        lineageCode: string;
+                        nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
+                            packetRef?: {
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                                packetCode: string;
+                                packetVersion?: number | undefined;
+                            } | undefined;
+                            metadata?: Record<string, unknown> | undefined;
+                        }[];
+                        edges: {
+                            edgeCode: string;
+                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                            fromNodeCode: string;
+                            toNodeCode: string;
+                            metadata?: Record<string, unknown> | undefined;
+                        }[];
+                        metadata?: Record<string, unknown> | undefined;
+                    };
+                };
+                summary: {
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
+                    nodeCount: number;
+                    edgeCount: number;
+                    artifactCount: number;
+                };
+                metadata?: Record<string, unknown> | undefined;
             };
         };
         metadata?: Record<string, unknown> | undefined;
@@ -6702,23 +6702,23 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         filter: {
             metadata: Record<string, unknown>;
             filterCode: string;
-            scope: "validation" | "lineage" | "package" | "queue";
+            scope: "validation" | "package" | "lineage" | "queue";
             terms: string[];
         };
         metadata: Record<string, unknown>;
         requestCode: string;
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     metadata: Record<string, unknown>;
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -6740,76 +6740,17 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }[];
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
-            };
-        };
-        lineageReference: {
-            packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                packetCode: string;
-                packetVersion: number;
-            };
-            persistence: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
-                    nodeCount: number;
-                    edgeCount: number;
-                    artifactCount: number;
-                };
-                metadata: Record<string, unknown>;
-                requestCode: string;
-                lineage: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion: number;
-                    };
-                    lineageRecord: {
-                        packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion: number;
-                        };
-                        metadata: Record<string, unknown>;
-                        lineageCode: string;
-                        nodes: {
-                            label: string;
-                            metadata: Record<string, unknown>;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                            packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                                packetCode: string;
-                                packetVersion: number;
-                            } | undefined;
-                        }[];
-                        edges: {
-                            metadata: Record<string, unknown>;
-                            edgeCode: string;
-                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                            fromNodeCode: string;
-                            toNodeCode: string;
-                        }[];
-                    };
-                };
-                decision: {
-                    decision: "accepted" | "rejected";
-                    reasons: string[];
-                    persisted: boolean;
-                };
-                persistenceCode: string;
             };
         };
         actionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";
         panel: {
             metadata: Record<string, unknown>;
-            title: string;
             panelCode: string;
             panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+            title: string;
         };
         view: {
             metadata: Record<string, unknown>;
@@ -6821,7 +6762,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
             metadata: Record<string, unknown>;
             selectionCode: string;
             selectedPacketRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
@@ -6829,87 +6770,88 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         };
         artifactReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             productionPackage: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
                     }[];
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+                packageMetadata: Record<string, unknown>;
                 job: {
                     metadata: Record<string, unknown>;
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     compiledPrompt: {
                         validation: {
-                            issues: string[];
                             valid: boolean;
+                            issues: string[];
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses: string[];
-                            rendered: string;
-                        };
                         lineage: {
                             metadata: Record<string, unknown>;
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             packetRefs: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion: number;
                             }[];
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses: string[];
+                            rendered: string;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        metadata: Record<string, unknown>;
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        metadata: Record<string, unknown>;
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             metadata: Record<string, unknown>;
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -6931,10 +6873,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[];
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
+                };
+                promptBundle: {
+                    sections: {
+                        title: string;
+                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                        content: string;
+                    }[];
+                    compiledPrompt: string;
+                    negativePrompt: string;
                 };
                 benchmarkAudit: {
                     status: "pending" | "not_requested";
@@ -6942,15 +6893,64 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     auditCode: string;
                     notes: string[];
                 };
-                packageMetadata: Record<string, unknown>;
-                promptBundle: {
-                    negativePrompt: string;
-                    sections: {
-                        title: string;
-                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                        content: string;
-                    }[];
-                    compiledPrompt: string;
+            };
+        };
+        lineageReference: {
+            packetRef: {
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetCode: string;
+                packetVersion: number;
+            };
+            persistence: {
+                status: "accepted" | "rejected" | "validated";
+                metadata: Record<string, unknown>;
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons: string[];
+                };
+                requestCode: string;
+                persistenceCode: string;
+                lineage: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion: number;
+                    };
+                    lineageRecord: {
+                        packetRef: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion: number;
+                        };
+                        metadata: Record<string, unknown>;
+                        lineageCode: string;
+                        nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
+                            metadata: Record<string, unknown>;
+                            packetRef?: {
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                                packetCode: string;
+                                packetVersion: number;
+                            } | undefined;
+                        }[];
+                        edges: {
+                            metadata: Record<string, unknown>;
+                            edgeCode: string;
+                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                            fromNodeCode: string;
+                            toNodeCode: string;
+                        }[];
+                    };
+                };
+                summary: {
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
+                    nodeCount: number;
+                    edgeCount: number;
+                    artifactCount: number;
                 };
             };
         };
@@ -6960,22 +6960,22 @@ export declare const studioActionRequestSchema: z.ZodObject<{
     input: {
         filter: {
             filterCode: string;
-            scope: "validation" | "lineage" | "package" | "queue";
+            scope: "validation" | "package" | "lineage" | "queue";
             metadata?: Record<string, unknown> | undefined;
             terms?: string[] | undefined;
         };
         requestCode: string;
         validationReference: {
             validation: {
-                status: "accepted" | "validated" | "rejected";
+                status: "accepted" | "rejected" | "validated";
+                decision: "accepted" | "rejected";
+                requestCode: string;
                 summary: {
                     totalPasses: number;
                     passedChecks: number;
                     warningCount: number;
                     violationCount: number;
                 };
-                requestCode: string;
-                decision: "accepted" | "rejected";
                 passResults: {
                     pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     passed: boolean;
@@ -6998,75 +6998,16 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                 }[] | undefined;
             };
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
-            };
-        };
-        lineageReference: {
-            packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                packetCode: string;
-                packetVersion?: number | undefined;
-            };
-            persistence: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
-                    nodeCount: number;
-                    edgeCount: number;
-                    artifactCount: number;
-                };
-                requestCode: string;
-                lineage: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion?: number | undefined;
-                    };
-                    lineageRecord: {
-                        packetRef: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion?: number | undefined;
-                        };
-                        lineageCode: string;
-                        nodes: {
-                            label: string;
-                            nodeCode: string;
-                            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                            packetRef?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                                packetCode: string;
-                                packetVersion?: number | undefined;
-                            } | undefined;
-                            metadata?: Record<string, unknown> | undefined;
-                        }[];
-                        edges: {
-                            edgeCode: string;
-                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                            fromNodeCode: string;
-                            toNodeCode: string;
-                            metadata?: Record<string, unknown> | undefined;
-                        }[];
-                        metadata?: Record<string, unknown> | undefined;
-                    };
-                };
-                decision: {
-                    decision: "accepted" | "rejected";
-                    persisted: boolean;
-                    reasons?: string[] | undefined;
-                };
-                persistenceCode: string;
-                metadata?: Record<string, unknown> | undefined;
             };
         };
         actionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";
         panel: {
-            title: string;
             panelCode: string;
             panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+            title: string;
             metadata?: Record<string, unknown> | undefined;
         };
         view: {
@@ -7078,7 +7019,7 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         selection: {
             selectionCode: string;
             selectedPacketRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
@@ -7087,42 +7028,42 @@ export declare const studioActionRequestSchema: z.ZodObject<{
         };
         artifactReference: {
             packetRef: {
-                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             productionPackage: {
-                status: "accepted" | "validated" | "rejected";
-                summary: {
-                    outputCount: number;
-                    packageCode: string;
-                    sectionCount: number;
-                    validationDecision: "accepted" | "rejected";
-                    benchmarkAuditStatus: "pending" | "not_requested";
-                };
+                status: "accepted" | "rejected" | "validated";
                 decision: {
-                    accepted: boolean;
                     decision: "accepted" | "rejected";
+                    accepted: boolean;
                     rejectionReasons?: {
                         code: string;
                         message: string;
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
                 };
+                summary: {
+                    packageCode: string;
+                    outputCount: number;
+                    sectionCount: number;
+                    validationDecision: "accepted" | "rejected";
+                    benchmarkAuditStatus: "pending" | "not_requested";
+                };
                 packageCode: string;
                 packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
                 job: {
+                    jobCode: string;
+                    projectSlug: string;
                     presetCode: string;
                     variantCode: string;
-                    projectSlug: string;
-                    jobCode: string;
                     providerCode: string;
                     outputCount: number;
                     metadata?: Record<string, unknown> | undefined;
                 };
                 compileReference: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
@@ -7132,41 +7073,41 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                             issues?: string[] | undefined;
                         };
                         requestCode: string;
-                        compileMode: "scene_preview" | "script_support" | "production_prompt";
-                        negativePrompt: {
-                            clauses?: string[] | undefined;
-                            rendered?: string | undefined;
-                        };
                         lineage: {
                             requestCode: string;
                             presetCode: string;
                             variantCode: string;
                             metadata?: Record<string, unknown> | undefined;
                             packetRefs?: {
-                                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                                 packetCode: string;
                                 packetVersion?: number | undefined;
                             }[] | undefined;
                         };
+                        compileMode: "scene_preview" | "script_support" | "production_prompt";
                         sections: {
                             title: string;
                             key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                             content: string;
                         }[];
                         compiledPrompt: string;
+                        negativePrompt: {
+                            clauses?: string[] | undefined;
+                            rendered?: string | undefined;
+                        };
                     };
                 };
                 validationReference: {
                     validation: {
-                        status: "accepted" | "validated" | "rejected";
+                        status: "accepted" | "rejected" | "validated";
+                        decision: "accepted" | "rejected";
+                        requestCode: string;
                         summary: {
                             totalPasses: number;
                             passedChecks: number;
                             warningCount: number;
                             violationCount: number;
                         };
-                        requestCode: string;
-                        decision: "accepted" | "rejected";
                         passResults: {
                             pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             passed: boolean;
@@ -7189,10 +7130,19 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                         }[] | undefined;
                     };
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
+                };
+                promptBundle: {
+                    sections: {
+                        title: string;
+                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                        content: string;
+                    }[];
+                    compiledPrompt: string;
+                    negativePrompt: string;
                 };
                 benchmarkAudit: {
                     auditCode: string;
@@ -7200,16 +7150,66 @@ export declare const studioActionRequestSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                     notes?: string[] | undefined;
                 };
-                promptBundle: {
-                    negativePrompt: string;
-                    sections: {
-                        title: string;
-                        key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                        content: string;
-                    }[];
-                    compiledPrompt: string;
-                };
                 packageMetadata?: Record<string, unknown> | undefined;
+            };
+        };
+        lineageReference: {
+            packetRef: {
+                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetCode: string;
+                packetVersion?: number | undefined;
+            };
+            persistence: {
+                status: "accepted" | "rejected" | "validated";
+                decision: {
+                    decision: "accepted" | "rejected";
+                    persisted: boolean;
+                    reasons?: string[] | undefined;
+                };
+                requestCode: string;
+                persistenceCode: string;
+                lineage: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion?: number | undefined;
+                    };
+                    lineageRecord: {
+                        packetRef: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion?: number | undefined;
+                        };
+                        lineageCode: string;
+                        nodes: {
+                            nodeCode: string;
+                            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                            label: string;
+                            packetRef?: {
+                                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                                packetCode: string;
+                                packetVersion?: number | undefined;
+                            } | undefined;
+                            metadata?: Record<string, unknown> | undefined;
+                        }[];
+                        edges: {
+                            edgeCode: string;
+                            edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                            fromNodeCode: string;
+                            toNodeCode: string;
+                            metadata?: Record<string, unknown> | undefined;
+                        }[];
+                        metadata?: Record<string, unknown> | undefined;
+                    };
+                };
+                summary: {
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
+                    nodeCount: number;
+                    edgeCount: number;
+                    artifactCount: number;
+                };
+                metadata?: Record<string, unknown> | undefined;
             };
         };
         metadata?: Record<string, unknown> | undefined;
@@ -7220,12 +7220,12 @@ export declare const studioActionDecisionShellSchema: z.ZodObject<{
     accepted: z.ZodBoolean;
     reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }, "strip", z.ZodTypeAny, {
-    accepted: boolean;
     decision: "inspect" | "project_queue" | "hold";
+    accepted: boolean;
     reasons: string[];
 }, {
-    accepted: boolean;
     decision: "inspect" | "project_queue" | "hold";
+    accepted: boolean;
     reasons?: string[] | undefined;
 }>;
 export declare const studioActionSummaryShellSchema: z.ZodObject<{
@@ -7257,13 +7257,13 @@ export declare const studioActionResultSchema: z.ZodObject<{
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
         metadata: Record<string, unknown>;
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
     }, {
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
         metadata?: Record<string, unknown> | undefined;
     }>;
     view: z.ZodObject<{
@@ -7289,11 +7289,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -7303,7 +7303,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
         metadata: Record<string, unknown>;
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
@@ -7311,7 +7311,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
     }, {
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
@@ -7324,11 +7324,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -7347,17 +7347,17 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             }, {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
@@ -7368,11 +7368,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -7412,11 +7412,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
                             packetCode: z.ZodString;
                             packetVersion: z.ZodDefault<z.ZodNumber>;
                         }, "strip", z.ZodTypeAny, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }>, "many">>;
@@ -7427,7 +7427,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
@@ -7437,7 +7437,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
@@ -7446,107 +7446,107 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         valid: z.ZodBoolean;
                         issues: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
                     }, "strip", z.ZodTypeAny, {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     }, {
                         valid: boolean;
                         issues?: string[] | undefined;
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 }, {
                     validation: {
                         valid: boolean;
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 }>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             }, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -7556,28 +7556,28 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             }>;
             validationReference: z.ZodObject<{
@@ -7586,11 +7586,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -7667,16 +7667,16 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }>;
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -7697,15 +7697,15 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         severity: "warning" | "blocker";
                     }[];
                 }, {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -7729,16 +7729,16 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 }>;
             }, "strip", z.ZodTypeAny, {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -7760,21 +7760,21 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
             }, {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -7797,7 +7797,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -7819,21 +7819,21 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     content: string;
                 }>, "many">;
             }, "strip", z.ZodTypeAny, {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
             }, {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
             }>;
             benchmarkAudit: z.ZodObject<{
                 auditCode: z.ZodString;
@@ -7868,16 +7868,16 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                 }>, "many">>;
             }, "strip", z.ZodTypeAny, {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             }, {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
@@ -7891,95 +7891,96 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 benchmarkAuditStatus: z.ZodEnum<["pending", "not_requested"]>;
                 outputCount: z.ZodNumber;
             }, "strip", z.ZodTypeAny, {
-                outputCount: number;
                 packageCode: string;
+                outputCount: number;
                 sectionCount: number;
                 validationDecision: "accepted" | "rejected";
                 benchmarkAuditStatus: "pending" | "not_requested";
             }, {
-                outputCount: number;
                 packageCode: string;
+                outputCount: number;
                 sectionCount: number;
                 validationDecision: "accepted" | "rejected";
                 benchmarkAuditStatus: "pending" | "not_requested";
             }>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+            packageMetadata: Record<string, unknown>;
             job: {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -8001,10 +8002,19 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 status: "pending" | "not_requested";
@@ -8012,48 +8022,38 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 auditCode: string;
                 notes: string[];
             };
-            packageMetadata: Record<string, unknown>;
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
-            };
         }, {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
                     metadata?: Record<string, unknown> | undefined;
                 }[] | undefined;
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
             job: {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -8063,41 +8063,41 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -8120,111 +8120,112 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
             };
-            benchmarkAudit: {
-                auditCode: string;
-                status?: "pending" | "not_requested" | undefined;
-                metadata?: Record<string, unknown> | undefined;
-                notes?: string[] | undefined;
-            };
             promptBundle: {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
+            };
+            benchmarkAudit: {
+                auditCode: string;
+                status?: "pending" | "not_requested" | undefined;
+                metadata?: Record<string, unknown> | undefined;
+                notes?: string[] | undefined;
             };
             packageMetadata?: Record<string, unknown> | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+            packageMetadata: Record<string, unknown>;
             job: {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -8246,10 +8247,19 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 status: "pending" | "not_requested";
@@ -8257,55 +8267,45 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 auditCode: string;
                 notes: string[];
             };
-            packageMetadata: Record<string, unknown>;
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
-            };
         };
     }, {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
                     metadata?: Record<string, unknown> | undefined;
                 }[] | undefined;
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
             job: {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -8315,41 +8315,41 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -8372,25 +8372,25 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
             };
-            benchmarkAudit: {
-                auditCode: string;
-                status?: "pending" | "not_requested" | undefined;
-                metadata?: Record<string, unknown> | undefined;
-                notes?: string[] | undefined;
-            };
             promptBundle: {
-                negativePrompt: string;
                 sections: {
                     title: string;
                     key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                     content: string;
                 }[];
                 compiledPrompt: string;
+                negativePrompt: string;
+            };
+            benchmarkAudit: {
+                auditCode: string;
+                status?: "pending" | "not_requested" | undefined;
+                metadata?: Record<string, unknown> | undefined;
+                notes?: string[] | undefined;
             };
             packageMetadata?: Record<string, unknown> | undefined;
         };
@@ -8401,11 +8401,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -8482,16 +8482,16 @@ export declare const studioActionResultSchema: z.ZodObject<{
             }>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 metadata: Record<string, unknown>;
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -8512,15 +8512,15 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 severity: "warning" | "blocker";
             }[];
         }, {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                 passed: boolean;
@@ -8544,16 +8544,16 @@ export declare const studioActionResultSchema: z.ZodObject<{
         }>;
     }, "strip", z.ZodTypeAny, {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 metadata: Record<string, unknown>;
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -8575,21 +8575,21 @@ export declare const studioActionResultSchema: z.ZodObject<{
             }[];
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
     }, {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                 passed: boolean;
@@ -8612,7 +8612,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
             }[] | undefined;
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
@@ -8623,11 +8623,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -8641,11 +8641,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
@@ -8656,11 +8656,11 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         packetCode: z.ZodString;
                         packetVersion: z.ZodDefault<z.ZodNumber>;
                     }, "strip", z.ZodTypeAny, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     }, {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     }>;
@@ -8673,31 +8673,31 @@ export declare const studioActionResultSchema: z.ZodObject<{
                             packetCode: z.ZodString;
                             packetVersion: z.ZodDefault<z.ZodNumber>;
                         }, "strip", z.ZodTypeAny, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }, {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }>>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
                     }, {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -8725,19 +8725,19 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -8751,17 +8751,17 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 }, {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -8778,25 +8778,25 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 }>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -8811,23 +8811,23 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 };
             }, {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -8849,8 +8849,8 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
             }, "strip", z.ZodTypeAny, {
                 decision: "accepted" | "rejected";
-                reasons: string[];
                 persisted: boolean;
+                reasons: string[];
             }, {
                 decision: "accepted" | "rejected";
                 persisted: boolean;
@@ -8863,51 +8863,50 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 artifactCount: z.ZodNumber;
                 decision: z.ZodEnum<["accepted", "rejected"]>;
             }, "strip", z.ZodTypeAny, {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             }, {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             }>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
+            status: "accepted" | "rejected" | "validated";
             metadata: Record<string, unknown>;
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons: string[];
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -8921,41 +8920,41 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 };
             };
-            decision: {
-                decision: "accepted" | "rejected";
-                reasons: string[];
-                persisted: boolean;
-            };
-            persistenceCode: string;
-        }, {
-            status: "accepted" | "validated" | "rejected";
             summary: {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             };
+        }, {
+            status: "accepted" | "rejected" | "validated";
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons?: string[] | undefined;
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -8971,52 +8970,52 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                 };
             };
-            decision: {
+            summary: {
                 decision: "accepted" | "rejected";
-                persisted: boolean;
-                reasons?: string[] | undefined;
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
             };
-            persistenceCode: string;
             metadata?: Record<string, unknown> | undefined;
         }>;
     }, "strip", z.ZodTypeAny, {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         persistence: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
+            status: "accepted" | "rejected" | "validated";
             metadata: Record<string, unknown>;
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons: string[];
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion: number;
                     };
                     metadata: Record<string, unknown>;
                     lineageCode: string;
                     nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                         label: string;
                         metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         } | undefined;
@@ -9030,48 +9029,48 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 };
             };
-            decision: {
-                decision: "accepted" | "rejected";
-                reasons: string[];
-                persisted: boolean;
-            };
-            persistenceCode: string;
-        };
-    }, {
-        packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-            packetCode: string;
-            packetVersion?: number | undefined;
-        };
-        persistence: {
-            status: "accepted" | "validated" | "rejected";
             summary: {
-                requestCode: string;
                 decision: "accepted" | "rejected";
+                requestCode: string;
                 nodeCount: number;
                 edgeCount: number;
                 artifactCount: number;
             };
+        };
+    }, {
+        packetRef: {
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetCode: string;
+            packetVersion?: number | undefined;
+        };
+        persistence: {
+            status: "accepted" | "rejected" | "validated";
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons?: string[] | undefined;
+            };
             requestCode: string;
+            persistenceCode: string;
             lineage: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 lineageRecord: {
                     packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                         packetCode: string;
                         packetVersion?: number | undefined;
                     };
                     lineageCode: string;
                     nodes: {
-                        label: string;
                         nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
                         packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         } | undefined;
@@ -9087,12 +9086,13 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     metadata?: Record<string, unknown> | undefined;
                 };
             };
-            decision: {
+            summary: {
                 decision: "accepted" | "rejected";
-                persisted: boolean;
-                reasons?: string[] | undefined;
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
             };
-            persistenceCode: string;
             metadata?: Record<string, unknown> | undefined;
         };
     }>;
@@ -9153,12 +9153,12 @@ export declare const studioActionResultSchema: z.ZodObject<{
         accepted: z.ZodBoolean;
         reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     }, "strip", z.ZodTypeAny, {
-        accepted: boolean;
         decision: "inspect" | "project_queue" | "hold";
+        accepted: boolean;
         reasons: string[];
     }, {
-        accepted: boolean;
         decision: "inspect" | "project_queue" | "hold";
+        accepted: boolean;
         reasons?: string[] | undefined;
     }>;
     summary: z.ZodObject<{
@@ -9183,6 +9183,13 @@ export declare const studioActionResultSchema: z.ZodObject<{
     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
 }, "strip", z.ZodTypeAny, {
     status: "ready" | "queued" | "inspection_ready" | "review_required";
+    metadata: Record<string, unknown>;
+    decision: {
+        decision: "inspect" | "project_queue" | "hold";
+        accepted: boolean;
+        reasons: string[];
+    };
+    requestCode: string;
     summary: {
         status: "ready" | "queued" | "inspection_ready" | "review_required";
         requestCode: string;
@@ -9190,25 +9197,18 @@ export declare const studioActionResultSchema: z.ZodObject<{
         selectedPacketCode: string;
         queueItemCount: number;
     };
-    metadata: Record<string, unknown>;
-    requestCode: string;
-    decision: {
-        accepted: boolean;
-        decision: "inspect" | "project_queue" | "hold";
-        reasons: string[];
-    };
     validationReference: {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 metadata: Record<string, unknown>;
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -9230,75 +9230,16 @@ export declare const studioActionResultSchema: z.ZodObject<{
             }[];
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
-        };
-    };
-    lineageReference: {
-        packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-            packetCode: string;
-            packetVersion: number;
-        };
-        persistence: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
-            metadata: Record<string, unknown>;
-            requestCode: string;
-            lineage: {
-                packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                    packetCode: string;
-                    packetVersion: number;
-                };
-                lineageRecord: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion: number;
-                    };
-                    metadata: Record<string, unknown>;
-                    lineageCode: string;
-                    nodes: {
-                        label: string;
-                        metadata: Record<string, unknown>;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                        packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion: number;
-                        } | undefined;
-                    }[];
-                    edges: {
-                        metadata: Record<string, unknown>;
-                        edgeCode: string;
-                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                        fromNodeCode: string;
-                        toNodeCode: string;
-                    }[];
-                };
-            };
-            decision: {
-                decision: "accepted" | "rejected";
-                reasons: string[];
-                persisted: boolean;
-            };
-            persistenceCode: string;
         };
     };
     panel: {
         metadata: Record<string, unknown>;
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
     };
     view: {
         metadata: Record<string, unknown>;
@@ -9310,7 +9251,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
         metadata: Record<string, unknown>;
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
@@ -9318,87 +9259,88 @@ export declare const studioActionResultSchema: z.ZodObject<{
     };
     artifactReference: {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons: {
                     code: string;
                     message: string;
                     metadata: Record<string, unknown>;
                 }[];
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
+            packageMetadata: Record<string, unknown>;
             job: {
                 metadata: Record<string, unknown>;
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 compiledPrompt: {
                     validation: {
-                        issues: string[];
                         valid: boolean;
+                        issues: string[];
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses: string[];
-                        rendered: string;
-                    };
                     lineage: {
                         metadata: Record<string, unknown>;
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         packetRefs: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion: number;
                         }[];
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses: string[];
+                        rendered: string;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    metadata: Record<string, unknown>;
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    metadata: Record<string, unknown>;
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         metadata: Record<string, unknown>;
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
@@ -9420,10 +9362,19 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[];
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 status: "pending" | "not_requested";
@@ -9431,15 +9382,64 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 auditCode: string;
                 notes: string[];
             };
-            packageMetadata: Record<string, unknown>;
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
+        };
+    };
+    lineageReference: {
+        packetRef: {
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetCode: string;
+            packetVersion: number;
+        };
+        persistence: {
+            status: "accepted" | "rejected" | "validated";
+            metadata: Record<string, unknown>;
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons: string[];
+            };
+            requestCode: string;
+            persistenceCode: string;
+            lineage: {
+                packetRef: {
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetCode: string;
+                    packetVersion: number;
+                };
+                lineageRecord: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion: number;
+                    };
+                    metadata: Record<string, unknown>;
+                    lineageCode: string;
+                    nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
+                        metadata: Record<string, unknown>;
+                        packetRef?: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion: number;
+                        } | undefined;
+                    }[];
+                    edges: {
+                        metadata: Record<string, unknown>;
+                        edgeCode: string;
+                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                        fromNodeCode: string;
+                        toNodeCode: string;
+                    }[];
+                };
+            };
+            summary: {
+                decision: "accepted" | "rejected";
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
             };
         };
     };
@@ -9459,6 +9459,12 @@ export declare const studioActionResultSchema: z.ZodObject<{
     };
 }, {
     status: "ready" | "queued" | "inspection_ready" | "review_required";
+    decision: {
+        decision: "inspect" | "project_queue" | "hold";
+        accepted: boolean;
+        reasons?: string[] | undefined;
+    };
+    requestCode: string;
     summary: {
         status: "ready" | "queued" | "inspection_ready" | "review_required";
         requestCode: string;
@@ -9466,23 +9472,17 @@ export declare const studioActionResultSchema: z.ZodObject<{
         selectedPacketCode: string;
         queueItemCount: number;
     };
-    requestCode: string;
-    decision: {
-        accepted: boolean;
-        decision: "inspect" | "project_queue" | "hold";
-        reasons?: string[] | undefined;
-    };
     validationReference: {
         validation: {
-            status: "accepted" | "validated" | "rejected";
+            status: "accepted" | "rejected" | "validated";
+            decision: "accepted" | "rejected";
+            requestCode: string;
             summary: {
                 totalPasses: number;
                 passedChecks: number;
                 warningCount: number;
                 violationCount: number;
             };
-            requestCode: string;
-            decision: "accepted" | "rejected";
             passResults: {
                 pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                 passed: boolean;
@@ -9505,74 +9505,15 @@ export declare const studioActionResultSchema: z.ZodObject<{
             }[] | undefined;
         };
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
-        };
-    };
-    lineageReference: {
-        packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-            packetCode: string;
-            packetVersion?: number | undefined;
-        };
-        persistence: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                requestCode: string;
-                decision: "accepted" | "rejected";
-                nodeCount: number;
-                edgeCount: number;
-                artifactCount: number;
-            };
-            requestCode: string;
-            lineage: {
-                packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                    packetCode: string;
-                    packetVersion?: number | undefined;
-                };
-                lineageRecord: {
-                    packetRef: {
-                        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                        packetCode: string;
-                        packetVersion?: number | undefined;
-                    };
-                    lineageCode: string;
-                    nodes: {
-                        label: string;
-                        nodeCode: string;
-                        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
-                        packetRef?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
-                            packetCode: string;
-                            packetVersion?: number | undefined;
-                        } | undefined;
-                        metadata?: Record<string, unknown> | undefined;
-                    }[];
-                    edges: {
-                        edgeCode: string;
-                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
-                        fromNodeCode: string;
-                        toNodeCode: string;
-                        metadata?: Record<string, unknown> | undefined;
-                    }[];
-                    metadata?: Record<string, unknown> | undefined;
-                };
-            };
-            decision: {
-                decision: "accepted" | "rejected";
-                persisted: boolean;
-                reasons?: string[] | undefined;
-            };
-            persistenceCode: string;
-            metadata?: Record<string, unknown> | undefined;
         };
     };
     panel: {
-        title: string;
         panelCode: string;
         panelKind: "package_inspector" | "validation_inspector" | "lineage_inspector" | "queue_projection";
+        title: string;
         metadata?: Record<string, unknown> | undefined;
     };
     view: {
@@ -9584,7 +9525,7 @@ export declare const studioActionResultSchema: z.ZodObject<{
     selection: {
         selectionCode: string;
         selectedPacketRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
@@ -9593,42 +9534,42 @@ export declare const studioActionResultSchema: z.ZodObject<{
     };
     artifactReference: {
         packetRef: {
-            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         productionPackage: {
-            status: "accepted" | "validated" | "rejected";
-            summary: {
-                outputCount: number;
-                packageCode: string;
-                sectionCount: number;
-                validationDecision: "accepted" | "rejected";
-                benchmarkAuditStatus: "pending" | "not_requested";
-            };
+            status: "accepted" | "rejected" | "validated";
             decision: {
-                accepted: boolean;
                 decision: "accepted" | "rejected";
+                accepted: boolean;
                 rejectionReasons?: {
                     code: string;
                     message: string;
                     metadata?: Record<string, unknown> | undefined;
                 }[] | undefined;
             };
+            summary: {
+                packageCode: string;
+                outputCount: number;
+                sectionCount: number;
+                validationDecision: "accepted" | "rejected";
+                benchmarkAuditStatus: "pending" | "not_requested";
+            };
             packageCode: string;
             packageMode: "prompt_bundle_only" | "production_ready" | "production_with_audit_placeholder";
             job: {
+                jobCode: string;
+                projectSlug: string;
                 presetCode: string;
                 variantCode: string;
-                projectSlug: string;
-                jobCode: string;
                 providerCode: string;
                 outputCount: number;
                 metadata?: Record<string, unknown> | undefined;
             };
             compileReference: {
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
@@ -9638,41 +9579,41 @@ export declare const studioActionResultSchema: z.ZodObject<{
                         issues?: string[] | undefined;
                     };
                     requestCode: string;
-                    compileMode: "scene_preview" | "script_support" | "production_prompt";
-                    negativePrompt: {
-                        clauses?: string[] | undefined;
-                        rendered?: string | undefined;
-                    };
                     lineage: {
                         requestCode: string;
                         presetCode: string;
                         variantCode: string;
                         metadata?: Record<string, unknown> | undefined;
                         packetRefs?: {
-                            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                             packetCode: string;
                             packetVersion?: number | undefined;
                         }[] | undefined;
                     };
+                    compileMode: "scene_preview" | "script_support" | "production_prompt";
                     sections: {
                         title: string;
                         key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
                         content: string;
                     }[];
                     compiledPrompt: string;
+                    negativePrompt: {
+                        clauses?: string[] | undefined;
+                        rendered?: string | undefined;
+                    };
                 };
             };
             validationReference: {
                 validation: {
-                    status: "accepted" | "validated" | "rejected";
+                    status: "accepted" | "rejected" | "validated";
+                    decision: "accepted" | "rejected";
+                    requestCode: string;
                     summary: {
                         totalPasses: number;
                         passedChecks: number;
                         warningCount: number;
                         violationCount: number;
                     };
-                    requestCode: string;
-                    decision: "accepted" | "rejected";
                     passResults: {
                         pass: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         passed: boolean;
@@ -9695,10 +9636,19 @@ export declare const studioActionResultSchema: z.ZodObject<{
                     }[] | undefined;
                 };
                 packetRef: {
-                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
+            };
+            promptBundle: {
+                sections: {
+                    title: string;
+                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
+                    content: string;
+                }[];
+                compiledPrompt: string;
+                negativePrompt: string;
             };
             benchmarkAudit: {
                 auditCode: string;
@@ -9706,16 +9656,66 @@ export declare const studioActionResultSchema: z.ZodObject<{
                 metadata?: Record<string, unknown> | undefined;
                 notes?: string[] | undefined;
             };
-            promptBundle: {
-                negativePrompt: string;
-                sections: {
-                    title: string;
-                    key: "system_frame" | "canon_constraints" | "context_packet_summary" | "mode_payload" | "output_instructions" | "negative_prompt_shell" | "lineage_metadata";
-                    content: string;
-                }[];
-                compiledPrompt: string;
-            };
             packageMetadata?: Record<string, unknown> | undefined;
+        };
+    };
+    lineageReference: {
+        packetRef: {
+            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetCode: string;
+            packetVersion?: number | undefined;
+        };
+        persistence: {
+            status: "accepted" | "rejected" | "validated";
+            decision: {
+                decision: "accepted" | "rejected";
+                persisted: boolean;
+                reasons?: string[] | undefined;
+            };
+            requestCode: string;
+            persistenceCode: string;
+            lineage: {
+                packetRef: {
+                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetCode: string;
+                    packetVersion?: number | undefined;
+                };
+                lineageRecord: {
+                    packetRef: {
+                        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                        packetCode: string;
+                        packetVersion?: number | undefined;
+                    };
+                    lineageCode: string;
+                    nodes: {
+                        nodeCode: string;
+                        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
+                        label: string;
+                        packetRef?: {
+                            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                            packetCode: string;
+                            packetVersion?: number | undefined;
+                        } | undefined;
+                        metadata?: Record<string, unknown> | undefined;
+                    }[];
+                    edges: {
+                        edgeCode: string;
+                        edgeKind: "derived_from" | "validated_by" | "audited_by" | "materialized_as";
+                        fromNodeCode: string;
+                        toNodeCode: string;
+                        metadata?: Record<string, unknown> | undefined;
+                    }[];
+                    metadata?: Record<string, unknown> | undefined;
+                };
+            };
+            summary: {
+                decision: "accepted" | "rejected";
+                requestCode: string;
+                nodeCount: number;
+                edgeCount: number;
+                artifactCount: number;
+            };
+            metadata?: Record<string, unknown> | undefined;
         };
     };
     normalizedActionType: "inspect_package" | "inspect_validation" | "inspect_lineage" | "queue_generation" | "queue_benchmark_review" | "queue_persistence_review";

@@ -1,0 +1,587 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://mikage.os/schemas/generation/pipeline-result.json",
+  "title": "Pipeline Generation Result Schema",
+  "description": "Schema for pipeline generation results",
+  "type": "object",
+  "properties": {
+    "result_id": {
+      "type": "string",
+      "description": "Unique identifier for this result",
+      "pattern": "^result_[a-zA-Z0-9_]+_[0-9]+$"
+    },
+    "request_metadata": {
+      "type": "object",
+      "description": "Original request metadata",
+      "properties": {
+        "request_id": {
+          "type": "string",
+          "description": "Original request identifier"
+        },
+        "mode": {
+          "type": "string",
+          "description": "Generation mode used"
+        },
+        "requested_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When request was made"
+        },
+        "initiated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When processing started"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When processing completed"
+        }
+      },
+      "required": ["request_id", "mode", "requested_at", "initiated_at", "completed_at"]
+    },
+    "selected_references": {
+      "type": "object",
+      "description": "References selected and used in generation",
+      "properties": {
+        "character_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "character_id": {
+                "type": "string",
+                "description": "Character identifier"
+              },
+              "reference_type": {
+                "type": "string",
+                "description": "Type of reference"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in reference match"
+              },
+              "used_in_generation": {
+                "type": "boolean",
+                "description": "Whether this reference was used"
+              }
+            },
+            "required": ["character_id", "reference_type", "confidence", "used_in_generation"]
+          }
+        },
+        "environment_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "environment_id": {
+                "type": "string",
+                "description": "Environment identifier"
+              },
+              "domain": {
+                "type": "string",
+                "description": "Environment domain"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in reference match"
+              },
+              "used_in_generation": {
+                "type": "boolean",
+                "description": "Whether this reference was used"
+              }
+            },
+            "required": ["environment_id", "domain", "confidence", "used_in_generation"]
+          }
+        },
+        "style_references": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "style_id": {
+                "type": "string",
+                "description": "Style identifier"
+              },
+              "style_category": {
+                "type": "string",
+                "description": "Style category"
+              },
+              "weight": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Weight applied to this style"
+              },
+              "used_in_generation": {
+                "type": "boolean",
+                "description": "Whether this style was applied"
+              }
+            },
+            "required": ["style_id", "style_category", "weight", "used_in_generation"]
+          }
+        }
+      }
+    },
+    "compiled_prompt": {
+      "type": "object",
+      "description": "Compiled prompt ready for generation",
+      "properties": {
+        "final_prompt": {
+          "type": "string",
+          "description": "Final compiled prompt text"
+        },
+        "compilation_stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "stage_name": {
+                "type": "string",
+                "description": "Name of compilation stage"
+              },
+              "input_prompt": {
+                "type": "string",
+                "description": "Prompt input to this stage"
+              },
+              "output_prompt": {
+                "type": "string",
+                "description": "Prompt output from this stage"
+              },
+              "modifications": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Modifications made at this stage"
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in stage output"
+              }
+            },
+            "required": ["stage_name", "input_prompt", "output_prompt", "confidence"]
+          }
+        },
+        "applied_constraints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "constraint_type": {
+                "type": "string",
+                "enum": ["forbidden_element", "required_element", "style_lock", "canon_compliance"]
+              },
+              "constraint_value": {
+                "type": "string",
+                "description": "Value of the constraint"
+              },
+              "applied": {
+                "type": "boolean",
+                "description": "Whether constraint was successfully applied"
+              },
+              "impact": {
+                "type": "string",
+                "description": "Impact of constraint on prompt"
+              }
+            },
+            "required": ["constraint_type", "constraint_value", "applied"]
+          }
+        },
+        "generation_parameters": {
+          "type": "object",
+          "description": "Parameters used for generation",
+          "properties": {
+            "sampler": {
+              "type": "string",
+              "description": "Sampler used"
+            },
+            "steps": {
+              "type": "integer",
+              "description": "Number of steps"
+            },
+            "cfg_scale": {
+              "type": "number",
+              "description": "CFG scale used"
+            },
+            "seed": {
+              "type": "integer",
+              "description": "Seed used for generation"
+            }
+          }
+        }
+      },
+      "required": ["final_prompt", "compilation_stages"]
+    },
+    "pre_validation_results": {
+      "type": "object",
+      "description": "Pre-generation validation results",
+      "properties": {
+        "validation_status": {
+          "type": "string",
+          "enum": ["passed", "failed", "warning"],
+          "description": "Overall validation status"
+        },
+        "confidence_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall confidence in validation"
+        },
+        "validation_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check_name": {
+                "type": "string",
+                "description": "Name of validation check"
+              },
+              "check_type": {
+                "type": "string",
+                "enum": ["canon_compliance", "style_guardrails", "character_identity", "environment_domain", "forbidden_elements"]
+              },
+              "status": {
+                "type": "string",
+                "enum": ["pass", "fail", "warning"]
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in this check"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "issue_type": {
+                      "type": "string",
+                      "description": "Type of issue"
+                    },
+                    "severity": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "critical"]
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Issue description"
+                    },
+                    "resolution": {
+                      "type": "string",
+                      "description": "Suggested resolution"
+                    }
+                  },
+                  "required": ["issue_type", "severity", "description"]
+                }
+              },
+              "required": ["check_name", "check_type", "status", "confidence"]
+            }
+          }
+        },
+        "blocking_issues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "issue_id": {
+                "type": "string",
+                "description": "Unique issue identifier"
+              },
+              "issue_type": {
+                "type": "string",
+                "description": "Type of blocking issue"
+              },
+              "severity": {
+                "type": "string",
+                "enum": ["high", "critical"]
+              },
+              "description": {
+                "type": "string",
+                "description": "Issue description"
+              },
+              "blocks_generation": {
+                "type": "boolean",
+                "description": "Whether this blocks generation"
+              },
+              "resolution_required": {
+                "type": "string",
+                "description": "Resolution required to proceed"
+              }
+            },
+            "required": ["issue_id", "issue_type", "severity", "description", "blocks_generation"]
+          }
+        }
+      },
+      "required": ["validation_status", "confidence_score", "validation_checks"]
+    },
+    "engine_result": {
+      "type": "object",
+      "description": "Content engine generation result",
+      "properties": {
+        "generation_status": {
+          "type": "string",
+          "enum": ["completed", "failed", "cancelled", "timeout"],
+          "description": "Generation execution status"
+        },
+        "asset_id": {
+          "type": "string",
+          "description": "Generated asset identifier"
+        },
+        "asset_uri": {
+          "type": "string",
+          "description": "URI to generated asset"
+        },
+        "mime_type": {
+          "type": "string",
+          "enum": ["image/png", "image/jpeg", "video/mp4", "text/plain"],
+          "description": "MIME type of generated asset"
+        },
+        "generation_time_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Time spent on generation in milliseconds"
+        },
+        "provider_used": {
+          "type": "string",
+          "description": "Generation provider that was used"
+        },
+        "metadata": {
+          "type": "object",
+          "description": "Asset metadata"
+        },
+        "quality_metrics": {
+          "type": "object",
+          "properties": {
+            "technical_quality": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Technical quality score"
+            },
+            "artistic_quality": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Artistic quality score"
+            },
+            "canon_compliance": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Canon compliance score"
+            }
+          }
+        }
+      },
+      "required": ["generation_status"]
+    },
+    "post_validation_results": {
+      "type": "object",
+      "description": "Post-generation validation results",
+      "properties": {
+        "validation_status": {
+          "type": "string",
+          "enum": ["passed", "failed", "warning"],
+          "description": "Overall validation status"
+        },
+        "confidence_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall confidence in validation"
+        },
+        "quality_assessment": {
+          "type": "object",
+          "properties": {
+            "overall_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Overall quality score"
+            },
+            "technical_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Technical quality score"
+            },
+            "artistic_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Artistic quality score"
+            },
+            "canon_compliance_score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Canon compliance score"
+            }
+          },
+          "required": ["overall_score"]
+        },
+        "validation_checks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "check_name": {
+                "type": "string",
+                "description": "Name of validation check"
+              },
+              "check_type": {
+                "type": "string",
+                "enum": ["visual_analysis", "canon_verification", "style_compliance", "quality_assessment"]
+              },
+              "status": {
+                "type": "string",
+                "enum": ["pass", "fail", "warning"]
+              },
+              "confidence": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Confidence in this check"
+              },
+              "issues": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "issue_type": {
+                      "type": "string",
+                      "description": "Type of issue"
+                    },
+                    "severity": {
+                      "type": "string",
+                      "enum": ["low", "medium", "high", "critical"]
+                    },
+                    "description": {
+                      "type": "string",
+                      "description": "Issue description"
+                    },
+                    "resolution": {
+                      "type": "string",
+                      "description": "Suggested resolution"
+                    }
+                  },
+                  "required": ["issue_type", "severity", "description"]
+                }
+              }
+            },
+            "required": ["check_name", "check_type", "status", "confidence"]
+          }
+        }
+      },
+      "required": ["validation_status", "confidence_score", "quality_assessment"]
+    },
+    "retry_fallback_recommendation": {
+      "type": "object",
+      "description": "Retry and fallback recommendations",
+      "properties": {
+        "final_decision": {
+          "type": "string",
+          "enum": ["accepted", "rejected", "retry", "fallback"],
+          "description": "Final decision on the generation result"
+        },
+        "retry_eligible": {
+          "type": "boolean",
+          "description": "Whether this result is eligible for retry"
+        },
+        "max_retries": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Maximum number of retries allowed"
+        },
+        "current_attempt": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Current retry attempt number"
+        },
+        "retry_strategy": {
+          "type": "string",
+          "enum": ["immediate", "delayed", "parameter_adjustment", "fallback"],
+          "description": "Recommended retry strategy"
+        },
+        "fallback_eligible": {
+          "type": "boolean",
+          "description": "Whether fallback options are available"
+        },
+        "fallback_strategy": {
+          "type": "string",
+          "enum": ["conservative_generation", "asset_substitution", "parameter_reduction", "style_adjustment"],
+          "description": "Recommended fallback strategy"
+        },
+        "success_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Probability of success with retry/fallback"
+        }
+      },
+      "required": ["final_decision", "retry_eligible", "max_retries", "current_attempt"]
+    },
+    "final_status": {
+      "type": "object",
+      "description": "Final pipeline status",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["completed", "failed", "cancelled", "requires_retry", "requires_fallback"],
+          "description": "Final pipeline status"
+        },
+        "success": {
+          "type": "boolean",
+          "description": "Whether the pipeline completed successfully"
+        },
+        "total_processing_time_ms": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total processing time in milliseconds"
+        },
+        "stage_breakdown": {
+          "type": "object",
+          "description": "Time spent in each stage",
+          "properties": {
+            "reference_selection_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "prompt_compilation_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "pre_validation_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "generation_ms": {
+              "type": "integer",
+              "minimum": 0
+            },
+            "post_validation_ms": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      },
+      "required": ["status", "success", "total_processing_time_ms"]
+    }
+  },
+  "required": [
+    "result_id",
+    "request_metadata",
+    "compiled_prompt",
+    "pre_validation_results",
+    "final_status"
+  ]
+}

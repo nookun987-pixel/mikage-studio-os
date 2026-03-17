@@ -398,14 +398,14 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         message: z.ZodString;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                     }, {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }>, "many">>;
                     violations: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -415,15 +415,15 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         severity: z.ZodEnum<["warning", "blocker"]>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }, {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }>, "many">>;
@@ -445,6 +445,12 @@ export declare const ingestionInputSchema: z.ZodObject<{
                     }>;
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
+                    warnings: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -461,17 +467,11 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    warnings: {
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                    }[];
                     violations: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 }, {
@@ -490,23 +490,29 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
-                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
+                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
                 }>;
             }, "strip", z.ZodTypeAny, {
                 validation: {
+                    warnings: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -523,17 +529,11 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    warnings: {
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                    }[];
                     violations: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -559,17 +559,17 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
-                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
+                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -748,6 +748,12 @@ export declare const ingestionInputSchema: z.ZodObject<{
             };
             validationReference: {
                 validation: {
+                    warnings: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -764,17 +770,11 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    warnings: {
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                    }[];
                     violations: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -882,17 +882,17 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
-                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
+                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -993,6 +993,12 @@ export declare const ingestionInputSchema: z.ZodObject<{
             };
             validationReference: {
                 validation: {
+                    warnings: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -1009,17 +1015,11 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    warnings: {
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                    }[];
                     violations: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -1134,17 +1134,17 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
-                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
+                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -1614,6 +1614,12 @@ export declare const ingestionInputSchema: z.ZodObject<{
             };
             validationReference: {
                 validation: {
+                    warnings: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -1630,17 +1636,11 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    warnings: {
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                    }[];
                     violations: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -1816,17 +1816,17 @@ export declare const ingestionInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
-                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
+                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -2221,14 +2221,14 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             message: z.ZodString;
                             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                         }, "strip", z.ZodTypeAny, {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         }, {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }>, "many">>;
                         violations: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -2238,15 +2238,15 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             severity: z.ZodEnum<["warning", "blocker"]>;
                             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                         }, "strip", z.ZodTypeAny, {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }, {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }>, "many">>;
@@ -2268,6 +2268,12 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                         }>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
+                        warnings: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2284,17 +2290,11 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        warnings: {
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        }[];
                         violations: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     }, {
@@ -2313,23 +2313,29 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
-                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
+                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     validation: {
+                        warnings: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2346,17 +2352,11 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        warnings: {
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        }[];
                         violations: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -2382,17 +2382,17 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
-                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
+                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -2571,6 +2571,12 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
+                        warnings: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2587,17 +2593,11 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        warnings: {
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        }[];
                         violations: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -2705,17 +2705,17 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
-                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
+                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -2816,6 +2816,12 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
+                        warnings: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2832,17 +2838,11 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        warnings: {
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        }[];
                         violations: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -2957,17 +2957,17 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
-                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
+                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -3437,6 +3437,12 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
+                        warnings: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -3453,17 +3459,11 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        warnings: {
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        }[];
                         violations: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -3639,17 +3639,17 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
-                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
+                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -3816,6 +3816,12 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
+                        warnings: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -3832,17 +3838,11 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        warnings: {
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        }[];
                         violations: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -4021,17 +4021,17 @@ export declare const ingestionRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
-                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
+                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
