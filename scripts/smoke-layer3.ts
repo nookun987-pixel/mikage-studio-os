@@ -1,5 +1,4 @@
 import {
-  benchmarkRequestSchema,
   canonValidationRequestSchema,
   orchestrationRequestAcceptedResponseSchema,
   orchestrationRequestSchema
@@ -48,12 +47,6 @@ const canonRequest = canonValidationRequestSchema.parse({
   queryMode: orchestrationRequest.canonQueryMode
 });
 
-const benchmarkShell = benchmarkRequestSchema.parse({
-  assetCode: 'asset_smoke_001',
-  benchmarkSetCodes: orchestrationRequest.benchmarkAudit.benchmarkSetCodes,
-  includeAuditShell: true
-});
-
 const acceptedResponse = orchestrationRequestAcceptedResponseSchema.parse({
   requestCode: orchestrationRequest.requestCode,
   status: 'validated',
@@ -72,8 +65,7 @@ const acceptedResponse = orchestrationRequestAcceptedResponseSchema.parse({
     }
   ],
   metadata: {
-    benchmarkShell,
-    canonRequest
+    initiatedBy: 'smoke-layer3'
   }
 });
 
@@ -84,7 +76,10 @@ console.log(
       contextPacketCount: orchestrationRequest.contextPackets.length,
       canonQueryMode: canonRequest.queryMode,
       productionPackageMode: orchestrationRequest.productionPackageMode,
-      acceptedStatus: acceptedResponse.status
+      acceptedStatus: acceptedResponse.status,
+      benchmarkSetCodes: orchestrationRequest.benchmarkAudit.benchmarkSetCodes,
+      providerCode: orchestrationRequest.providerCode,
+      outputCount: orchestrationRequest.outputCount
     },
     null,
     2
