@@ -2,7 +2,7 @@
  * Test script for orchestration service API
  */
 
-const testRequest = {
+const apiTestRequest = {
   commandType: 'execute_generation_pipeline',
   request: {
     requestCode: 'api_test_001',
@@ -84,25 +84,39 @@ console.log('🧪 Orchestration Service API Test');
 console.log('=====================================');
 console.log('');
 console.log('📋 Test Request Preview:');
-console.log('- Request Code:', testRequest.request.requestCode);
-console.log('- Preset/Variant:', `${testRequest.request.presetCode}/${testRequest.request.variantCode}`);
-console.log('- Provider:', testRequest.request.providerCode);
-console.log('- Output Count:', testRequest.request.outputCount);
+console.log('- Request Code:', apiTestRequest.request.requestCode);
+console.log('- Preset/Variant:', `${apiTestRequest.request.presetCode}/${apiTestRequest.request.variantCode}`);
+console.log('- Provider:', apiTestRequest.request.providerCode);
+console.log('- Output Count:', apiTestRequest.request.outputCount);
 console.log('');
 console.log('🚀 To test the API:');
 console.log('1. Start the server: pnpm --filter @mikage/orchestration-service dev');
 console.log('2. Test health: curl http://localhost:3000/health');
 console.log('3. Test pipeline: curl -X POST http://localhost:3000/api/v1/execute \\');
 console.log('   -H "Content-Type: application/json" \\');
-console.log('   -d \'' + JSON.stringify(testRequest, null, 2) + '\'');
+console.log('   -d \'' + JSON.stringify(apiTestRequest, null, 2) + '\'');
 console.log('');
 console.log('📊 Expected Response Format:');
 console.log('{');
 console.log('  "success": true,');
-console.log('  "data": {');
-console.log('    "finalStatus": "completed",');
-console.log('    "packageCode": "pkg_...",');
-console.log('    "executedSteps": [...]');
-console.log('  },');
+console.log('  "status": "completed",');
+console.log('  "requestCode": "api_test_001",');
+console.log('  "packageCode": "pkg_...",');
+console.log('  "validationDecision": "accepted",');
+console.log('  "benchmarkDecision": "approved",');
+console.log('  "studioAction": "queue_generation",');
+console.log('  "executionSteps": [');
+console.log('    {');
+console.log('      "step": "layer3_request_boundary",');
+console.log('      "status": "completed",');
+console.log('      "detail": "Accepted orchestration request..."');
+console.log('    },');
+console.log('    {');
+console.log('      "step": "layer4_prompt_compile",');
+console.log('      "status": "completed",');
+console.log('      "detail": "Compiled prompt for..."');
+console.log('    }');
+console.log('    ...');
+console.log('  ],');
 console.log('  "timestamp": "2025-..."');
 console.log('}');
