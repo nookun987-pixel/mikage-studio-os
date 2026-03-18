@@ -16,6 +16,8 @@
     "@mikage/contracts": "workspace:*",
     "@mikage/domain": "workspace:*",
     "@mikage/logging": "workspace:*",
-    "@mikage/storage": "workspace:*"
+    "@mikage/storage": "workspace:*",
+    "@mikage/provider-registry": "workspace:*",
+    "@mikage/providers": "workspace:*"
   }
 }

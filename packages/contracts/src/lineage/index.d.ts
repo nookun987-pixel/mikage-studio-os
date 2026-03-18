@@ -8,31 +8,31 @@ export declare const lineageNodeShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>>;
     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
 }, "strip", z.ZodTypeAny, {
-    nodeCode: string;
-    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
     label: string;
     metadata: Record<string, unknown>;
+    nodeCode: string;
+    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
     packetRef?: {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     } | undefined;
 }, {
-    nodeCode: string;
-    nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
     label: string;
+    nodeCode: string;
+    nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
     packetRef?: {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     } | undefined;
@@ -64,11 +64,11 @@ export declare const lineageRecordShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>;
@@ -81,31 +81,31 @@ export declare const lineageRecordShellSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>>;
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        nodeCode: string;
-        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
         label: string;
         metadata: Record<string, unknown>;
+        nodeCode: string;
+        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
         packetRef?: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         } | undefined;
     }, {
-        nodeCode: string;
-        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
         label: string;
+        nodeCode: string;
+        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
         packetRef?: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         } | undefined;
@@ -133,19 +133,19 @@ export declare const lineageRecordShellSchema: z.ZodObject<{
     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
 }, "strip", z.ZodTypeAny, {
     packetRef: {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     };
     metadata: Record<string, unknown>;
     lineageCode: string;
     nodes: {
-        nodeCode: string;
-        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
         label: string;
         metadata: Record<string, unknown>;
+        nodeCode: string;
+        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
         packetRef?: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         } | undefined;
@@ -159,17 +159,17 @@ export declare const lineageRecordShellSchema: z.ZodObject<{
     }[];
 }, {
     packetRef: {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     };
     lineageCode: string;
     nodes: {
-        nodeCode: string;
-        nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
         label: string;
+        nodeCode: string;
+        nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
         packetRef?: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         } | undefined;
@@ -190,11 +190,11 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
         packetCode: z.ZodString;
         packetVersion: z.ZodDefault<z.ZodNumber>;
     }, "strip", z.ZodTypeAny, {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     }, {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     }>;
@@ -205,11 +205,11 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -222,31 +222,31 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
-            nodeCode: string;
-            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
             label: string;
             metadata: Record<string, unknown>;
+            nodeCode: string;
+            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
             packetRef?: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             } | undefined;
         }, {
-            nodeCode: string;
-            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
             label: string;
+            nodeCode: string;
+            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
             packetRef?: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             } | undefined;
@@ -274,19 +274,19 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         metadata: Record<string, unknown>;
         lineageCode: string;
         nodes: {
-            nodeCode: string;
-            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
             label: string;
             metadata: Record<string, unknown>;
+            nodeCode: string;
+            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
             packetRef?: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             } | undefined;
@@ -300,17 +300,17 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
         }[];
     }, {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         lineageCode: string;
         nodes: {
-            nodeCode: string;
-            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
             label: string;
+            nodeCode: string;
+            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
             packetRef?: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             } | undefined;
@@ -327,25 +327,25 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
     }>;
 }, "strip", z.ZodTypeAny, {
     packetRef: {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion: number;
     };
     lineageRecord: {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         metadata: Record<string, unknown>;
         lineageCode: string;
         nodes: {
-            nodeCode: string;
-            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
             label: string;
             metadata: Record<string, unknown>;
+            nodeCode: string;
+            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
             packetRef?: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             } | undefined;
@@ -360,23 +360,23 @@ export declare const lineageReferenceShellSchema: z.ZodObject<{
     };
 }, {
     packetRef: {
-        packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+        packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
         packetCode: string;
         packetVersion?: number | undefined;
     };
     lineageRecord: {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         lineageCode: string;
         nodes: {
-            nodeCode: string;
-            nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
             label: string;
+            nodeCode: string;
+            nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
             packetRef?: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             } | undefined;
@@ -398,8 +398,8 @@ export declare const persistenceDecisionShellSchema: z.ZodObject<{
     reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
 }, "strip", z.ZodTypeAny, {
     decision: "accepted" | "rejected";
-    persisted: boolean;
     reasons: string[];
+    persisted: boolean;
 }, {
     decision: "accepted" | "rejected";
     persisted: boolean;
@@ -412,14 +412,14 @@ export declare const persistenceSummaryShellSchema: z.ZodObject<{
     artifactCount: z.ZodNumber;
     decision: z.ZodEnum<["accepted", "rejected"]>;
 }, "strip", z.ZodTypeAny, {
-    decision: "accepted" | "rejected";
     requestCode: string;
+    decision: "accepted" | "rejected";
     nodeCount: number;
     edgeCount: number;
     artifactCount: number;
 }, {
-    decision: "accepted" | "rejected";
     requestCode: string;
+    decision: "accepted" | "rejected";
     nodeCount: number;
     edgeCount: number;
     artifactCount: number;
@@ -439,32 +439,32 @@ export declare const persistenceInputSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             sourceCode: string;
-            sourceKind: "benchmark_audit" | "production_package";
+            sourceKind: "production_package" | "benchmark_audit";
         }, {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             sourceCode: string;
-            sourceKind: "benchmark_audit" | "production_package";
+            sourceKind: "production_package" | "benchmark_audit";
             metadata?: Record<string, unknown> | undefined;
         }>, "many">;
         assets: z.ZodArray<z.ZodObject<{
@@ -475,13 +475,13 @@ export declare const persistenceInputSchema: z.ZodObject<{
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
             metadata: Record<string, unknown>;
-            assetCode: string;
             assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+            assetCode: string;
             contentType: "text/plain" | "application/json";
             checksum: string;
         }, {
-            assetCode: string;
             assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+            assetCode: string;
             contentType: "text/plain" | "application/json";
             checksum: string;
             metadata?: Record<string, unknown> | undefined;
@@ -495,102 +495,102 @@ export declare const persistenceInputSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             assetCode: string;
             artifactCode: string;
-            artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+            artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
         }, {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             assetCode: string;
             artifactCode: string;
-            artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+            artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             metadata?: Record<string, unknown> | undefined;
         }>, "many">;
         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
     }, "strip", z.ZodTypeAny, {
-        status: "accepted" | "rejected" | "validated";
+        status: "accepted" | "validated" | "rejected";
         metadata: Record<string, unknown>;
         requestCode: string;
         ingestionCode: string;
         processingStatus: "received" | "persisted" | "extracted";
         sources: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             sourceCode: string;
-            sourceKind: "benchmark_audit" | "production_package";
+            sourceKind: "production_package" | "benchmark_audit";
         }[];
         assets: {
             metadata: Record<string, unknown>;
-            assetCode: string;
             assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+            assetCode: string;
             contentType: "text/plain" | "application/json";
             checksum: string;
         }[];
         artifacts: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             assetCode: string;
             artifactCode: string;
-            artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+            artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
         }[];
     }, {
-        status: "accepted" | "rejected" | "validated";
+        status: "accepted" | "validated" | "rejected";
         requestCode: string;
         ingestionCode: string;
         processingStatus: "received" | "persisted" | "extracted";
         sources: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             sourceCode: string;
-            sourceKind: "benchmark_audit" | "production_package";
+            sourceKind: "production_package" | "benchmark_audit";
             metadata?: Record<string, unknown> | undefined;
         }[];
         assets: {
-            assetCode: string;
             assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+            assetCode: string;
             contentType: "text/plain" | "application/json";
             checksum: string;
             metadata?: Record<string, unknown> | undefined;
         }[];
         artifacts: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             assetCode: string;
             artifactCode: string;
-            artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+            artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             metadata?: Record<string, unknown> | undefined;
         }[];
         metadata?: Record<string, unknown> | undefined;
@@ -600,73 +600,73 @@ export declare const persistenceInputSchema: z.ZodObject<{
     metadata: Record<string, unknown>;
     requestCode: string;
     ingestion: {
-        status: "accepted" | "rejected" | "validated";
+        status: "accepted" | "validated" | "rejected";
         metadata: Record<string, unknown>;
         requestCode: string;
         ingestionCode: string;
         processingStatus: "received" | "persisted" | "extracted";
         sources: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             sourceCode: string;
-            sourceKind: "benchmark_audit" | "production_package";
+            sourceKind: "production_package" | "benchmark_audit";
         }[];
         assets: {
             metadata: Record<string, unknown>;
-            assetCode: string;
             assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+            assetCode: string;
             contentType: "text/plain" | "application/json";
             checksum: string;
         }[];
         artifacts: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             assetCode: string;
             artifactCode: string;
-            artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+            artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
         }[];
     };
 }, {
     requestCode: string;
     ingestion: {
-        status: "accepted" | "rejected" | "validated";
+        status: "accepted" | "validated" | "rejected";
         requestCode: string;
         ingestionCode: string;
         processingStatus: "received" | "persisted" | "extracted";
         sources: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             sourceCode: string;
-            sourceKind: "benchmark_audit" | "production_package";
+            sourceKind: "production_package" | "benchmark_audit";
             metadata?: Record<string, unknown> | undefined;
         }[];
         assets: {
-            assetCode: string;
             assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+            assetCode: string;
             contentType: "text/plain" | "application/json";
             checksum: string;
             metadata?: Record<string, unknown> | undefined;
         }[];
         artifacts: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             assetCode: string;
             artifactCode: string;
-            artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+            artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             metadata?: Record<string, unknown> | undefined;
         }[];
         metadata?: Record<string, unknown> | undefined;
@@ -690,32 +690,32 @@ export declare const persistenceRequestSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
             }, {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
                 metadata?: Record<string, unknown> | undefined;
             }>, "many">;
             assets: z.ZodArray<z.ZodObject<{
@@ -726,13 +726,13 @@ export declare const persistenceRequestSchema: z.ZodObject<{
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
                 metadata: Record<string, unknown>;
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
             }, {
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
                 metadata?: Record<string, unknown> | undefined;
@@ -746,102 +746,102 @@ export declare const persistenceRequestSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>;
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             }, {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
                 metadata?: Record<string, unknown> | undefined;
             }>, "many">;
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
-            status: "accepted" | "rejected" | "validated";
+            status: "accepted" | "validated" | "rejected";
             metadata: Record<string, unknown>;
             requestCode: string;
             ingestionCode: string;
             processingStatus: "received" | "persisted" | "extracted";
             sources: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
             }[];
             assets: {
                 metadata: Record<string, unknown>;
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
             }[];
             artifacts: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             }[];
         }, {
-            status: "accepted" | "rejected" | "validated";
+            status: "accepted" | "validated" | "rejected";
             requestCode: string;
             ingestionCode: string;
             processingStatus: "received" | "persisted" | "extracted";
             sources: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
                 metadata?: Record<string, unknown> | undefined;
             }[];
             assets: {
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
                 metadata?: Record<string, unknown> | undefined;
             }[];
             artifacts: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
                 metadata?: Record<string, unknown> | undefined;
             }[];
             metadata?: Record<string, unknown> | undefined;
@@ -851,73 +851,73 @@ export declare const persistenceRequestSchema: z.ZodObject<{
         metadata: Record<string, unknown>;
         requestCode: string;
         ingestion: {
-            status: "accepted" | "rejected" | "validated";
+            status: "accepted" | "validated" | "rejected";
             metadata: Record<string, unknown>;
             requestCode: string;
             ingestionCode: string;
             processingStatus: "received" | "persisted" | "extracted";
             sources: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
             }[];
             assets: {
                 metadata: Record<string, unknown>;
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
             }[];
             artifacts: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             }[];
         };
     }, {
         requestCode: string;
         ingestion: {
-            status: "accepted" | "rejected" | "validated";
+            status: "accepted" | "validated" | "rejected";
             requestCode: string;
             ingestionCode: string;
             processingStatus: "received" | "persisted" | "extracted";
             sources: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
                 metadata?: Record<string, unknown> | undefined;
             }[];
             assets: {
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
                 metadata?: Record<string, unknown> | undefined;
             }[];
             artifacts: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
                 metadata?: Record<string, unknown> | undefined;
             }[];
             metadata?: Record<string, unknown> | undefined;
@@ -930,38 +930,38 @@ export declare const persistenceRequestSchema: z.ZodObject<{
         metadata: Record<string, unknown>;
         requestCode: string;
         ingestion: {
-            status: "accepted" | "rejected" | "validated";
+            status: "accepted" | "validated" | "rejected";
             metadata: Record<string, unknown>;
             requestCode: string;
             ingestionCode: string;
             processingStatus: "received" | "persisted" | "extracted";
             sources: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
             }[];
             assets: {
                 metadata: Record<string, unknown>;
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
             }[];
             artifacts: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 };
                 metadata: Record<string, unknown>;
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
             }[];
         };
     };
@@ -970,36 +970,36 @@ export declare const persistenceRequestSchema: z.ZodObject<{
     input: {
         requestCode: string;
         ingestion: {
-            status: "accepted" | "rejected" | "validated";
+            status: "accepted" | "validated" | "rejected";
             requestCode: string;
             ingestionCode: string;
             processingStatus: "received" | "persisted" | "extracted";
             sources: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 sourceCode: string;
-                sourceKind: "benchmark_audit" | "production_package";
+                sourceKind: "production_package" | "benchmark_audit";
                 metadata?: Record<string, unknown> | undefined;
             }[];
             assets: {
-                assetCode: string;
                 assetKind: "compiled_prompt" | "negative_prompt" | "validation_summary" | "benchmark_audit_summary" | "lineage_manifest";
+                assetCode: string;
                 contentType: "text/plain" | "application/json";
                 checksum: string;
                 metadata?: Record<string, unknown> | undefined;
             }[];
             artifacts: {
                 packetRef: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 };
                 assetCode: string;
                 artifactCode: string;
-                artifactKind: "lineage_manifest" | "prompt_bundle" | "validation_report" | "benchmark_report";
+                artifactKind: "prompt_bundle" | "lineage_manifest" | "validation_report" | "benchmark_report";
                 metadata?: Record<string, unknown> | undefined;
             }[];
             metadata?: Record<string, unknown> | undefined;
@@ -1017,11 +1017,11 @@ export declare const persistenceResultSchema: z.ZodObject<{
             packetCode: z.ZodString;
             packetVersion: z.ZodDefault<z.ZodNumber>;
         }, "strip", z.ZodTypeAny, {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         }, {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         }>;
@@ -1032,11 +1032,11 @@ export declare const persistenceResultSchema: z.ZodObject<{
                 packetCode: z.ZodString;
                 packetVersion: z.ZodDefault<z.ZodNumber>;
             }, "strip", z.ZodTypeAny, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             }, {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             }>;
@@ -1049,31 +1049,31 @@ export declare const persistenceResultSchema: z.ZodObject<{
                     packetCode: z.ZodString;
                     packetVersion: z.ZodDefault<z.ZodNumber>;
                 }, "strip", z.ZodTypeAny, {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 }, {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 }>>;
                 metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
             }, "strip", z.ZodTypeAny, {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
                 metadata: Record<string, unknown>;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 } | undefined;
             }, {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 } | undefined;
@@ -1101,19 +1101,19 @@ export declare const persistenceResultSchema: z.ZodObject<{
             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
         }, "strip", z.ZodTypeAny, {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             lineageCode: string;
             nodes: {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
                 metadata: Record<string, unknown>;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 } | undefined;
@@ -1127,17 +1127,17 @@ export declare const persistenceResultSchema: z.ZodObject<{
             }[];
         }, {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             lineageCode: string;
             nodes: {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 } | undefined;
@@ -1154,25 +1154,25 @@ export declare const persistenceResultSchema: z.ZodObject<{
         }>;
     }, "strip", z.ZodTypeAny, {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         lineageRecord: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             lineageCode: string;
             nodes: {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
                 metadata: Record<string, unknown>;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 } | undefined;
@@ -1187,23 +1187,23 @@ export declare const persistenceResultSchema: z.ZodObject<{
         };
     }, {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         lineageRecord: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             lineageCode: string;
             nodes: {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 } | undefined;
@@ -1225,8 +1225,8 @@ export declare const persistenceResultSchema: z.ZodObject<{
         reasons: z.ZodDefault<z.ZodArray<z.ZodString, "many">>;
     }, "strip", z.ZodTypeAny, {
         decision: "accepted" | "rejected";
-        persisted: boolean;
         reasons: string[];
+        persisted: boolean;
     }, {
         decision: "accepted" | "rejected";
         persisted: boolean;
@@ -1239,50 +1239,51 @@ export declare const persistenceResultSchema: z.ZodObject<{
         artifactCount: z.ZodNumber;
         decision: z.ZodEnum<["accepted", "rejected"]>;
     }, "strip", z.ZodTypeAny, {
-        decision: "accepted" | "rejected";
         requestCode: string;
+        decision: "accepted" | "rejected";
         nodeCount: number;
         edgeCount: number;
         artifactCount: number;
     }, {
-        decision: "accepted" | "rejected";
         requestCode: string;
+        decision: "accepted" | "rejected";
         nodeCount: number;
         edgeCount: number;
         artifactCount: number;
     }>;
     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
 }, "strip", z.ZodTypeAny, {
-    status: "accepted" | "rejected" | "validated";
-    metadata: Record<string, unknown>;
-    decision: {
+    status: "accepted" | "validated" | "rejected";
+    summary: {
+        requestCode: string;
         decision: "accepted" | "rejected";
-        persisted: boolean;
-        reasons: string[];
+        nodeCount: number;
+        edgeCount: number;
+        artifactCount: number;
     };
+    metadata: Record<string, unknown>;
     requestCode: string;
-    persistenceCode: string;
     lineage: {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion: number;
         };
         lineageRecord: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion: number;
             };
             metadata: Record<string, unknown>;
             lineageCode: string;
             nodes: {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
                 metadata: Record<string, unknown>;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion: number;
                 } | undefined;
@@ -1296,41 +1297,41 @@ export declare const persistenceResultSchema: z.ZodObject<{
             }[];
         };
     };
-    summary: {
+    decision: {
         decision: "accepted" | "rejected";
+        reasons: string[];
+        persisted: boolean;
+    };
+    persistenceCode: string;
+}, {
+    status: "accepted" | "validated" | "rejected";
+    summary: {
         requestCode: string;
+        decision: "accepted" | "rejected";
         nodeCount: number;
         edgeCount: number;
         artifactCount: number;
     };
-}, {
-    status: "accepted" | "rejected" | "validated";
-    decision: {
-        decision: "accepted" | "rejected";
-        persisted: boolean;
-        reasons?: string[] | undefined;
-    };
     requestCode: string;
-    persistenceCode: string;
     lineage: {
         packetRef: {
-            packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+            packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
             packetCode: string;
             packetVersion?: number | undefined;
         };
         lineageRecord: {
             packetRef: {
-                packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                 packetCode: string;
                 packetVersion?: number | undefined;
             };
             lineageCode: string;
             nodes: {
-                nodeCode: string;
-                nodeKind: "package" | "compile_output" | "validation_result" | "benchmark_audit" | "ingestion_artifact";
                 label: string;
+                nodeCode: string;
+                nodeKind: "benchmark_audit" | "ingestion_artifact" | "package" | "compile_output" | "validation_result";
                 packetRef?: {
-                    packetKind: "benchmark_audit" | "ingestion_artifact" | "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "lineage_record";
+                    packetKind: "orchestration_request" | "world_context" | "state_snapshot" | "canon_report" | "scene_packet" | "script_packet" | "production_package" | "benchmark_audit" | "ingestion_artifact" | "lineage_record";
                     packetCode: string;
                     packetVersion?: number | undefined;
                 } | undefined;
@@ -1346,13 +1347,12 @@ export declare const persistenceResultSchema: z.ZodObject<{
             metadata?: Record<string, unknown> | undefined;
         };
     };
-    summary: {
+    decision: {
         decision: "accepted" | "rejected";
-        requestCode: string;
-        nodeCount: number;
-        edgeCount: number;
-        artifactCount: number;
+        persisted: boolean;
+        reasons?: string[] | undefined;
     };
+    persistenceCode: string;
     metadata?: Record<string, unknown> | undefined;
 }>;
 export type LineageNodeShell = z.infer<typeof lineageNodeShellSchema>;

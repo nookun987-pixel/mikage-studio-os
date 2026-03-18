@@ -468,14 +468,14 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         message: z.ZodString;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
-                    }, {
                         category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    }, {
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }>, "many">>;
                     violations: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -485,15 +485,15 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         severity: z.ZodEnum<["warning", "blocker"]>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }, {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }>, "many">>;
@@ -515,12 +515,6 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                     }>;
                     metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                 }, "strip", z.ZodTypeAny, {
-                    warnings: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -537,11 +531,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    violations: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    warnings: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    }[];
+                    violations: {
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 }, {
@@ -560,29 +560,23 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
+                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
-                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
                 }>;
             }, "strip", z.ZodTypeAny, {
                 validation: {
-                    warnings: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -599,11 +593,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    violations: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    warnings: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    }[];
+                    violations: {
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -629,17 +629,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
+                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
-                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -818,12 +818,6 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
             };
             validationReference: {
                 validation: {
-                    warnings: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -840,11 +834,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    violations: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    warnings: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    }[];
+                    violations: {
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -952,17 +952,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
+                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
-                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -1063,12 +1063,6 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
             };
             validationReference: {
                 validation: {
-                    warnings: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -1085,11 +1079,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    violations: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    warnings: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    }[];
+                    violations: {
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -1204,17 +1204,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
+                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
-                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -1407,12 +1407,6 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
             };
             validationReference: {
                 validation: {
-                    warnings: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                        code: string;
-                        message: string;
-                        metadata: Record<string, unknown>;
-                    }[];
                     status: "accepted" | "validated" | "rejected";
                     summary: {
                         totalPasses: number;
@@ -1429,11 +1423,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         passed: boolean;
                         score: number;
                     }[];
-                    violations: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    warnings: {
                         code: string;
                         message: string;
                         metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                    }[];
+                    violations: {
+                        code: string;
+                        message: string;
+                        metadata: Record<string, unknown>;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                     }[];
                 };
@@ -1579,17 +1579,17 @@ export declare const benchmarkAuditInputSchema: z.ZodObject<{
                         score: number;
                         metadata?: Record<string, unknown> | undefined;
                     }[];
+                    metadata?: Record<string, unknown> | undefined;
                     warnings?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
-                    metadata?: Record<string, unknown> | undefined;
                     violations?: {
-                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         code: string;
                         message: string;
+                        category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                         severity: "warning" | "blocker";
                         metadata?: Record<string, unknown> | undefined;
                     }[] | undefined;
@@ -1954,14 +1954,14 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             message: z.ZodString;
                             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                         }, "strip", z.ZodTypeAny, {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
-                        }, {
                             category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }, {
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }>, "many">>;
                         violations: z.ZodDefault<z.ZodArray<z.ZodObject<{
@@ -1971,15 +1971,15 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             severity: z.ZodEnum<["warning", "blocker"]>;
                             metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                         }, "strip", z.ZodTypeAny, {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }, {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }>, "many">>;
@@ -2001,12 +2001,6 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                         }>;
                         metadata: z.ZodDefault<z.ZodRecord<z.ZodString, z.ZodUnknown>>;
                     }, "strip", z.ZodTypeAny, {
-                        warnings: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2023,11 +2017,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        violations: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        warnings: {
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }[];
+                        violations: {
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     }, {
@@ -2046,29 +2046,23 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
+                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
-                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
                     }>;
                 }, "strip", z.ZodTypeAny, {
                     validation: {
-                        warnings: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2085,11 +2079,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        violations: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        warnings: {
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }[];
+                        violations: {
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -2115,17 +2115,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
+                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
-                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -2304,12 +2304,6 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
-                        warnings: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2326,11 +2320,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        violations: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        warnings: {
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }[];
+                        violations: {
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -2438,17 +2438,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
+                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
-                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -2549,12 +2549,6 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
-                        warnings: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2571,11 +2565,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        violations: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        warnings: {
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }[];
+                        violations: {
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -2690,17 +2690,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
+                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
-                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -2893,12 +2893,6 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
-                        warnings: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -2915,11 +2909,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        violations: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        warnings: {
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }[];
+                        violations: {
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -3065,17 +3065,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
+                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
-                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
@@ -3212,12 +3212,6 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                 };
                 validationReference: {
                     validation: {
-                        warnings: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
-                            code: string;
-                            message: string;
-                            metadata: Record<string, unknown>;
-                        }[];
                         status: "accepted" | "validated" | "rejected";
                         summary: {
                             totalPasses: number;
@@ -3234,11 +3228,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             passed: boolean;
                             score: number;
                         }[];
-                        violations: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        warnings: {
                             code: string;
                             message: string;
                             metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
+                        }[];
+                        violations: {
+                            code: string;
+                            message: string;
+                            metadata: Record<string, unknown>;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                         }[];
                     };
@@ -3387,17 +3387,17 @@ export declare const benchmarkAuditRequestSchema: z.ZodObject<{
                             score: number;
                             metadata?: Record<string, unknown> | undefined;
                         }[];
+                        metadata?: Record<string, unknown> | undefined;
                         warnings?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;
-                        metadata?: Record<string, unknown> | undefined;
                         violations?: {
-                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             code: string;
                             message: string;
+                            category: "ontology" | "invariants" | "philosophical_axes" | "character_truth" | "visual_grammar" | "drift_risk";
                             severity: "warning" | "blocker";
                             metadata?: Record<string, unknown> | undefined;
                         }[] | undefined;

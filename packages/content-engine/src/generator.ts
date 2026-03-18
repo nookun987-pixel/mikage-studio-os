@@ -153,7 +153,7 @@ async function generateWithProvider(
   });
 
   if (!validationResult.valid) {
-    throw new Error(`Canon validation failed: ${validationResult.issues.map(i => i.message).join(', ')}`);
+    throw new Error(`Canon validation failed: ${validationResult.issues.map((i: { message: string }) => i.message).join(', ')}`);
   }
   
   switch (pkg.objective) {

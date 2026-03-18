@@ -30,10 +30,6 @@ export declare const generationExecuteRequestSchema: z.ZodObject<{
         seeds?: number[] | undefined;
     }>;
 }, "strip", z.ZodTypeAny, {
-    prompt: {
-        negativePrompt: string;
-        positivePrompt: string;
-    };
     generation: {
         variants: number;
         aspectRatio: string;
@@ -41,17 +37,21 @@ export declare const generationExecuteRequestSchema: z.ZodObject<{
         seeds: number[];
         cfg?: number | undefined;
     };
-}, {
     prompt: {
+        negativePrompt: string;
         positivePrompt: string;
-        negativePrompt?: string | undefined;
     };
+}, {
     generation: {
         variants: number;
         aspectRatio: string;
         model: string;
         cfg?: number | undefined;
         seeds?: number[] | undefined;
+    };
+    prompt: {
+        positivePrompt: string;
+        negativePrompt?: string | undefined;
     };
 }>;
 //# sourceMappingURL=index.d.ts.map
